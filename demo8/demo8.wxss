@@ -1,0 +1,10 @@
+@import "../lib/weui.wxss";
+
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+
+.buttonType{
+  width:300
+}

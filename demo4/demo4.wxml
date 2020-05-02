@@ -1,0 +1,48 @@
+
+<button>
+  <navigator url="/demo5/demo5" hover-class="navigator-hover">demo5</navigator>
+</button>
+
+<button>
+  <navigator url="/index/index" hover-class="navigator-hover">回到index页</navigator>
+</button>
+
+<view class="intro">一对多：数组、循环与wx:for</view>
+
+<view class="section">
+  <view>1.普通选择器与矩阵</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+
+<view>关键词：矩阵  array[index]</view>
+
+<view>2. wx:for</view>
+<view wx:for='{{array}}'> 国家{{index}}：{{item}}</view>
+
+<view>3. wx:for的一种错误用法</view>
+<view wx:for='array'> 国家{{index}}：{{item}}</view>
+
+<view>4. wx:for的另外一种书写方式</view>
+<view wx:for='{{array}}' wx:for-index='countryID' wx:for-item='countryName' >国家{{countryID}}：{{countryName}}</view>
+
+
+<view>5. wx:for、矩阵与block的结合</view>
+
+<block wx:for="{{['red','orange','yelllow','green','blue','indigo','purple']}}">
+  <view>编号：{{index+1}}</view>
+  <view>颜色：{{item}}</view>
+</block>
+
+
+<view>6. wx:for的嵌套</view>
+<view wx:for="{{num}}" wx:for-item='i' >
+  <view wx:for="{{num}}" wx:for-item='j' >
+    <view wx:if="{{i<=j}}">
+      {{i}}*{{j}}={{i*j}}
+    </view>
+  </view>
+</view>

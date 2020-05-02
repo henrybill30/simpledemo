@@ -1,0 +1,36 @@
+.map {
+  width: 95%;
+  height:350px;
+  border-style: solid;
+  border-color: aquamarine;
+  margin-left: auto;
+  margin-right: auto
+}
+.left {
+  width: 48%;
+  height: 40px;
+  border-style: solid;
+  border-color: aquamarine;
+  float: left;
+  margin-left: auto;
+  margin-right: auto
+}
+.right {
+  width: 48%;
+  height: 40px;
+  border-style: solid;
+  border-color: aquamarine;
+  float: right;
+  margin-left: auto;
+  margin-right: auto
+}
+.text {
+  width: 70%;
+  height: 100%;
+  float: left
+}
+.switch {
+  width: 30%;
+  height: 100%;
+  float: right
+}

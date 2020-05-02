@@ -1,0 +1,125 @@
+<!--miniprogram/pages/index/index.wxml-->
+<!--pages/databaseGuide/databaseGuide.wxml-->
+<view class="container">
+
+  <!-- 导航 -->
+  <view class="list">
+    <view class="list-item">
+      <text class="request-text">WXSS指引</text>
+    </view>
+    <view class="list-item">
+      <text class="request-text" wx:for="{{5}}" wx:key="index" style="color: {{step === index + 1 ? 'red': 'black'}}">{{index + 1}}</text>
+    </view>
+  </view>
+
+  <!-- WXSS指引 -->
+
+  <!-- 总体概述 -->
+  <view class="guide" wx:if="{{step === 1}}">
+    <text class="headline">WXSS指南</text>
+   <text class="p">想设计一个页面精美的微信小程序吗？想实现类似这样或者说比这个页面还要精美的界面吗?想设计精美的页面，离不开wxss，来，学长带你一步步学习wxss的属性，带你一步步设计出像这样精美的记事本小程序</text>
+   <text class="header">今天你想做什么呢？</text>  
+      <view class="active">
+    <textarea placeholder="记录生活的一点一滴~" placeholder-class="holder" value="{{inputValue1}}" bindinput="textarea1"></textarea>
+      </view>
+      <view class="flex">
+       <button class="upload">提交</button>
+       <button class="read">从云端获取事项</button>      
+      </view>
+    <div class="nav">
+      <button class="next" size="mini" type="default" bindtap="nextStep">下一步</button>
+    </div>
+  </view>
+
+  <!-- 改变字体大小 -->
+  <view class="guide" wx:if="{{step === 2}}">
+    <text class="headline">第一步：改变字体大小</text>
+      <text class="p">想改变字体大小，离不开WXSS中的font-size属性，就拿这句话说吧，这些字体的默认大小为16.5px</text>
+        <text>今天你想做什么呢？</text>  
+    <view class="margin">
+      <text class="p">想把字改得大一些吗，试试30px</text>
+    </view> 
+    <text class="step2set1">今天你想做什么呢？</text>
+     <view class="margin">
+      <text class="p">当然，把字体改小的话可以试试12px</text> 
+    </view> 
+        <text class="step2set2">今天你想做什么呢？</text> 
+      <text class="p">注：可以试试删了WXSS中的margin-top会发生什么</text>
+    <div class="nav">
+      <button class="prev" size="mini" type="default" bindtap="prevStep">上一步</button>
+      <button class="next" size="mini" type="default" bindtap="nextStep">下一步</button>
+    </div>
+  </view>
+
+  <!-- 添加颜色，为小程序增彩 -->
+  <view class="guide" wx:if="{{step === 3}}">
+    <text class="headline">第二步：添加颜色，为小程序增彩</text>
+      <text class="p">刚刚只是修改了字体大小，小程序看上去太单调了。。现在试着给小程序加一点颜色呗！其实也没有想象中的困难，利用WXSS中的color属性，只要在color属性后面加上想加的颜色的单词就OK了（e.g：color:red)</text>
+      <text class="margin">比如说：</text>
+        <text>今天你想做什么呢？</text>
+        <text class="step3set1">今天你想做什么呢？</text>
+        <button bindtap="upload">提交</button>
+        <button bindtap="read">从云端获取事项</button>
+        <text class="p">改变了文字的颜色，还想把这两个按钮的颜色改一下吗？其实，和改变文字的颜色类似，改变按钮的颜色要用和color有关的组件，但是，改变按钮要用background-color（学长之前就掉进了这个坑。。。）看看下面的例子怎么改：</text>
+         <button class="step3set2">提交</button>
+          <button class="step3set3">从云端获取事项</button>
+        <text class="p">还记得前面那个美美哒的输入框吗，但是，那个的颜色可不好改，但是，翻翻这个小程序的WXSS代码，有彩蛋哟</text>
+    <div class="nav">
+      <button class="prev" size="mini" type="default" bindtap="prevStep">上一步</button>
+      <button class="next" size="mini" type="default" bindtap="nextStep">下一步</button>
+    </div>
+  </view>
+
+  <!-- 修改排布，让小程序更整洁 -->
+  <view class="guide" wx:if="{{step === 4}}">
+    <text class="headline">第三步：修改排布，让小程序更整洁</text>
+      <text class="p">在说这步之前，来看学长曾经写过的一个小程序片段：</text>
+        <view class="my">
+          <textarea placeholder="这是一个输入框哟~" placeholder-class="holder"></textarea>
+      </view>
+        <button class="video">录制语音</button>
+        <button class="voice" >播放语音</button>
+        <button class="analyse">analyse</button>
+        <button class="step4set1">提交</button>
+        <button class="step4set2">从云端获取事项</button>
+      <text class="p">看上去是不是觉得有点不舒服呢？原来，是这五个按钮之间没有分隔。好在WXSS中有margin-top属性来帮助我们调整按钮之间的间隔，它的单位也是px哟</text>
+      <text class="p">现在整齐一些了</text>
+        <view class="my">
+           <textarea placeholder="这是一个输入框哟~" placeholder-class="holder"></textarea>
+        </view>
+        <button class="video1">录制语音</button>
+        <button class="voice1" >播放语音</button>
+        <button class="analyse1">analyse</button>
+        <button class="step4set3">提交</button>
+        <button class="step4set4">从云端获取事项</button>
+      <text class="p">还想让页面更紧凑一些吗？试试display中的flex属性</text>
+
+        <view class="my">
+           <textarea placeholder="这是一个输入框哟~" placeholder-class="holder"></textarea>
+        </view>
+        <view class="flex">
+          <!-- 为了页面更整洁，引入了border-radius属性，它可以让按钮有一个弧度，具体例子在WXSS里面有哟 -->
+          <button class="video2">录制语音</button>
+          <button class="voice2" >播放语音</button>
+          <button class="analyse2">analyse</button>
+        </view>
+        <button class="step4set3">提交</button>
+        <button class="step4set4">从云端获取事项</button>
+
+    <div class="nav">
+      <button class="prev" size="mini" type="default" bindtap="prevStep">上一步</button>
+      <button class="next" size="mini" type="default" bindtap="nextStep">下一步</button>
+    </div>
+  </view>
+
+  <!-- 结语 -->
+  <view class="guide" wx:if="{{step === 5}}">
+    <text class="headline">完成指引 !</text>
+    <text class="p">恭喜你，至此已完成WXSS操作入门基础，想用好WXSS的呢，平常可以多敲敲wxss的内容，可以点击调试器中的链接，查看更详尽的开发者文档</text>
+
+    <div class="nav">
+      <button class="prev" size="mini" type="default" bindtap="prevStep">上一步</button>
+    </div>
+  </view>
+
+</view>

@@ -1,0 +1,42 @@
+
+
+<view class="intro">最简组件------信息呈现</view>
+<view class="flex-item bc_lightblue">view显示框</view>
+<view><text>text文字</text></view>
+<text>inco图标</text>
+<icon type="info"/> 
+<view>
+  <text>progress进度条</text>
+  <progress percent="80" ></progress>
+</view>
+<view>image图片</view>
+<image style="width: 200px; height: 200px;" mode="scaleToFill" src="../resource/cat.jpg">  </image>
+
+
+
+<view class="intro">最简组件----人与设备的交互</view>
+
+<switch bindchange="switchChange" >switch开关</switch>
+<radio-group bindchange="radioBoxChange">
+  radio单选框
+  <radio value="a">a</radio>
+  <radio value="b">b</radio>
+</radio-group>
+<checkbox-group bindchange="checkBoxChange">
+  checkbox多选框
+  <checkbox value="x">x</checkbox>
+  <checkbox value="y">y</checkbox>
+  <checkbox value="z">z</checkbox>
+</checkbox-group>
+<slider bindchange="sliderChange">slider滑块</slider>
+<button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" >button按钮</button>
+
+
+<button>
+  <navigator url="/demo3/demo3" hover-class="navigator-hover">demo3</navigator>
+</button>
+
+<button>
+  <navigator url="/index/index" hover-class="navigator-hover">回到index页</navigator>
+</button>
+

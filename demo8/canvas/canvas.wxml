@@ -1,0 +1,23 @@
+<canvas class="canvas" disable-scroll="false" id="myCanvas" canvas-id="canvas1" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchcancel="touchCancel" binderror="error"></canvas>
+<view style="width:100%; height:52px">
+  <view style="width:100%; height:52px; margin-left: auto; margin-right: auto">
+    <view class="shape" style="background-color: {{is_selectedline ? 'yellow': 'white'}}" bindtap="line">
+      <image style="width: 100%; height: 100%" src="../../resource/line.png"></image>
+    </view>
+    <view class="shape" style="background-color: {{is_selectedvector_line ? 'yellow': 'white'}}" bindtap="vector_line">
+      <image style="width: 100%; height: 100%" src="../../resource/vector_line.png"></image>
+    </view>
+    <view class="shape" style="background-color: {{is_selectedrectangle ? 'yellow': 'white'}}" bindtap="rectangle">
+      <image style="width: 100%; height: 100%" src="../../resource/rectangle.png"></image>
+    </view>
+    <view class="shape" style="background-color: {{is_selectedroundedrectangle ? 'yellow': 'white'}}" bindtap="roundedrectangle">
+     <image style="width: 100%; height: 100%" src="../../resource/roundedrectangle.png"></image>
+    </view>
+    <view class="shape" style="background-color: {{is_selectedpolygon ? 'yellow': 'white'}}" bindtap="polygon">
+     <image style="width: 100%; height: 100%" src="../../resource/polygon.png"></image>
+    </view>
+    <view class="shape" style="background-color: {{is_selectedcircle ? 'yellow': 'white'}}" bindtap="circle">
+      <image style="width: 100%; height: 100%" src="../../resource/circle.png"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,191 @@
+/* miniprogram/pages/index/index.wxss */
+@import "../lib/guide.wxss";
+
+.guide .counter {
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+.margin
+{
+  margin-top: 15px;
+}
+.step2set1
+{
+  font-size:30px;
+  margin-top: 15px;
+}
+.step2set2
+{
+  font-size:12px;
+  margin-top: 15px;
+}
+.step3set1
+{
+  font-size:16.5px;
+  margin-top: 15px;
+  color: red;
+}
+.step3set2
+{
+  width: 600rpx;
+  font-size:16.5px;
+  margin-top: 15px;
+  background-color:gold; 
+}
+.step3set3
+{
+  width: 600rpx;
+  font-size:16.5px;
+  margin-top: 15px;
+  background-color:aqua; 
+}
+.my
+{
+  width:720rpx;
+  height:450rpx;
+  border:1px  black;
+  background-color:white;
+  text-align:left;
+  margin-top: 15px;
+  padding: 25rpx 0;
+  background-image:linear-gradient(190deg, #bd07ce, #1616ff);
+  opacity: 0.75
+}
+.step4set1
+{
+  width: 600rpx;
+  font-size:16.5px;
+  background-color:gold; 
+}
+.step4set2
+{
+  width: 600rpx;
+  font-size:16.5px;
+  background-color:aqua; 
+}
+.video
+{
+  font-size:15px;
+  background-color:#1173f3;
+}
+.voice
+{
+  font-size:15px;
+  background-color:greenyellow; 
+}
+.analyse
+{
+  font-size:15px;
+  background-color:red;
+}
+.step4set3
+{
+  margin-top:15px;
+  width: 600rpx;
+  font-size:16.5px;
+  background-color:gold; 
+}
+.step4set4
+{
+  margin-top:15px;
+  width: 600rpx;
+  font-size:16.5px;
+  background-color:aqua; 
+}
+.video1
+{
+  margin-top:15px;
+  background-color:#1173f3;
+}
+.voice1
+{
+  margin-top:15px;
+  background-color:greenyellow; 
+}
+.analyse1
+{
+  margin-top:15px;
+  background-color:red;
+}
+.video2
+{
+  font-size:15px;
+  background-color:#1173f3;
+  border-radius: 50px;
+ 
+}
+.voice2
+{
+  font-size:15px;
+  background-color:greenyellow; 
+  border-radius: 50px;
+}
+.analyse2
+{
+  font-size:15px;
+  background-color:red;
+  border-radius: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+彩蛋
+*/
+.header{
+  font-size:30px;
+  color:red;
+  text-align:center;
+}
+.active
+{
+  width:720rpx;
+  height:450rpx;
+  border:1px  black;
+  background-color:white;
+  text-align:left;
+  margin-top: 15px;
+  padding: 25rpx 0;
+  background-image:linear-gradient(190deg, #1373f3, #ec4c3a);
+  opacity: 0.75
+}
+.flex
+{
+  display:flex;
+  margin-top:15px;
+  column-gap: 40px;
+}
+.upload
+{
+  background-color:gold; 
+  border-radius: 50px;
+  width: 600rpx;
+  line-height: 20px;
+  margin-top: 20px;
+}
+.read
+{
+  background-color:aqua; 
+  border-radius: 50px;
+  width: 600rpx;
+  line-height: 20px;
+  margin-top: 20px;
+}

@@ -1,0 +1,51 @@
+<!--demo3/demo3.wxml-->
+<text>demo3/demo3.wxml</text>
+<view class="intro">最简组件----人与设备的交互</view>
+
+<switch bindchange="switchChange" >
+<view>
+switch开关的值是：{{switchValue}}
+</view>
+</switch>
+<radio-group bindchange="radioBoxChange">
+  <radio value="a">a</radio>
+  <radio value="b">b</radio>
+  <view>
+   radio单选框的值是：{{radioValue}}
+  </view>
+  
+</radio-group>
+<checkbox-group bindchange="checkBoxChange">
+  
+  <checkbox value="x">x</checkbox>
+  <checkbox value="y">y</checkbox>
+  <checkbox value="z">z</checkbox>
+  <view>
+   checkbox多选框的值是：{{checkBoxValue}}
+  </view>
+</checkbox-group>
+
+<slider bindchange="sliderChange"></slider>
+  <view>slider滑块的值是：{{sliderValue}}</view>
+
+<picker mode="time" value="{{timePickerValue}}" start="09:01" end="21:01" bindchange="timePickerChange">
+ <view class="picker">
+      timePicker的当前选择是: {{timePickerValue}}
+    </view>
+</picker>
+
+
+
+<button open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" >按钮获取用户信息</button>
+<view>
+  button按钮关联的获取用户昵称为{{buttonValue}}
+</view>
+
+
+<button>
+  <navigator url="/demo4/demo4" hover-class="navigator-hover">demo4</navigator>
+</button>
+
+<button>
+  <navigator url="/index/index" hover-class="navigator-hover">回到index页</navigator>
+</button>

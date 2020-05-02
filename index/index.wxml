@@ -1,0 +1,40 @@
+<view class="intro">目录：最简组件</view>
+
+
+<button style="width:auto" type='primary' >
+  <navigator url="/demo1/demo1" hover-class="navigator-hover">Demo1： 信息呈现</navigator>
+</button>
+
+
+<button style="width:auto"  >
+  <navigator url="/demo2/demo2" hover-class="navigator-hover">Demo2：交互事件</navigator>
+</button>
+
+
+<button style="width:auto" type='primary' >
+  <navigator url="/demo3/demo3" hover-class="navigator-hover">Demo3：数据传递</navigator>
+</button>
+
+<button style="width:auto"  >
+  <navigator url="/demo4/demo4" hover-class="navigator-hover">Demo4：数组与循环</navigator>
+</button>
+
+<button style="width:auto" type='primary' >
+  <navigator url="/demo5/demo5" hover-class="navigator-hover">Demo5：条件与分支</navigator>
+</button>
+
+<button style="width:auto"  >
+  <navigator url="/demo6/demo6" hover-class="navigator-hover">Demo6：API与回调 </navigator>
+</button>
+    
+<button style="width:auto" type='primary' >
+  <navigator url="/demo7/demo7" hover-class="navigator-hover">Demo7：数据与缓存</navigator>
+</button>
+    
+<button style="width:auto"  >
+  <navigator url="/demo8/demo8" hover-class="navigator-hover">Demo8：原生组件 </navigator>
+</button>
+
+<button style="width:auto"  type='primary'>
+  <navigator url="/demo9/demo9" hover-class="navigator-hover">Demo9：WXSS </navigator>
+</button>

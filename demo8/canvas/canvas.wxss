@@ -1,0 +1,15 @@
+.canvas {
+  width: 95%;
+  height: 350px;
+  background-color: whitesmoke;
+  border-style: solid;
+  border-color: aquamarine;
+  margin-left: auto;
+  margin-right: auto
+}
+.shape {
+  width: 15%;
+  height: 50px;
+  float: left;
+  padding: 0.5%
+}

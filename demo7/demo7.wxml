@@ -1,0 +1,21 @@
+
+<view class="intro">数据与本地数据缓存</view>
+
+<input name='key' placeholder="请输入key名称" bindinput="keyInput"/>
+<input name='value' placeholder="请输入value名称" bindinput="valueInput"/>
+<button type="primary" bindtap="setStorageSync">数据存储</button>
+
+
+<button type="primary" bindtap="removeStorageSync">数据删除</button>
+
+
+
+<button type="primary" bindtap="getStorageSync">存储数据获取</button>
+<view> value值：{{value}} </view>
+
+
+
+
+<button>
+  <navigator url="/index/index" hover-class="navigator-hover">回到index页</navigator>
+</button>

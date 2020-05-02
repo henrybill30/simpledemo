@@ -1,0 +1,20 @@
+<view class="intro">目录：原生组件</view>
+
+
+<button style="width:auto" type='primary' >
+  <navigator url="/demo8/camera/camera" hover-class="navigator-hover">组件1： 相机</navigator>
+</button>
+
+
+<button style="width:auto"  >
+  <navigator url="/demo8/canvas/canvas" hover-class="navigator-hover">组件2：画布</navigator>
+</button>
+
+
+<button style="width:auto" type='primary' >
+  <navigator url="/demo8/map/map" hover-class="navigator-hover">组件3：地图</navigator>
+</button>
+
+<button style="width:auto"  >
+  <navigator url="/demo8/video/video" hover-class="navigator-hover">组件4：视频</navigator>
+</button>
