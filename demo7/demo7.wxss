@@ -1,6 +1,0 @@
-/* demo7/demo7.wxss */
-
-.intro {
-  margin: 30px;
-  text-align: center;
-}

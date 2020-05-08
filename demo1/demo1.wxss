@@ -1,5 +1,0 @@
-/* demo1/demo1.wxss */
-.intro {
-  margin: 20px;
-  text-align: center;
-}

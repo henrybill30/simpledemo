@@ -1,4 +1,0 @@
-<video id="video" class="video" src="{{src}}" controls danmu-list="{{danmu}}" poster="../../resource/cat.jpg" show-mute-btn danmu-btn enable-danmu></video>
-<input class="input" placeholder="输入弹幕" confirm-type="完成" bindconfirm="confirm"></input>
-<button bindtap="send_danmu">发送弹幕</button>
-<button bindtap="showVideo">展示视频</button>
