@@ -1,2 +1,2 @@
 <!--miniprogram/login/login.wxml-->
-<button class='btn' type='primary' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>授权登录</button>
+<button class='btn' type='primary' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>授权 登录</button>
