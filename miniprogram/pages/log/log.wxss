@@ -1,0 +1,23 @@
+/* log/log.wxss */
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.log-item {
+  margin: 10rpx;
+}
+
+.eventsLogs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20rpx;
+}
+
+.eventsLog_detail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}

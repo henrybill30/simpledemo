@@ -1,0 +1,31 @@
+<view class="intro">
+  最简组件------信息呈现</view>
+
+<view class="flex-item bc_lightblue">view显示框</view>
+
+<view>
+  <text>text</text>
+  <text>文字</text>
+</view>
+
+<text>icon图标</text>
+<icon type="success" />
+<icon type="info" />
+<icon type="search" />
+
+<view>
+  <text>progress进度条</text>
+  <progress percent="80"></progress>
+</view>
+
+<view>image图片</view>
+<image style="width: 200px; height: 200px;" mode="scaleToFill" src="../resource/cat.jpg"> </image>
+
+
+
+<button bindtap='to' data-id='1'>
+  demo2
+</button>
+<button bindtap='to' data-id='2'>
+  回到index页
+</button>

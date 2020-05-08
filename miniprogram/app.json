@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/components/index/index",
+    "pages/components/information/information",
+    "pages/components/information/text/text",
+    "pages/components/information/view/view",
+    "pages/components/information/icon/icon",
+    "pages/components/information/progress/progress",
+    "pages/components/information/richtext/richtext",
+    "pages/components/information/swiper/swiper",
+    "pages/components/dataAndinteract/dataAndinteract",
+    "pages/components/dataAndinteract/button/button",
+    "pages/components/dataAndinteract/switch/switch",
+    "pages/components/dataAndinteract/radio/radio",
+    "pages/components/dataAndinteract/checkbox/checkbox",
+    "pages/components/dataAndinteract/picker/picker",
+    "pages/components/dataAndinteract/slider/slider",
+    "pages/components/dataAndinteract/input/input",
+    "pages/components/dataAndinteract/form/form",
+    "pages/components/arrayAndloop/arrayAndloop",
+    "pages/components/arrayAndloop/wxfor/wxfor",
+    "pages/components/condition/condition",
+    "pages/components/condition/wxif/wxif",
+    "pages/components/condition/wxelif/wxelif",
+    "pages/components/condition/wxelse/wxelse",
+    "pages/components/API/API",
+    "pages/components/API/system/system",
+    "pages/components/API/sensor/sensor",
+    "pages/components/API/vibration/vibration",
+    "pages/components/API/scan/scan",
+    "pages/components/API/location/location",
+    "pages/components/Storage/Storage",
+    "pages/components/Storage/setStorage/setStorage",
+    "pages/components/Storage/removeStorage/removeStorage",
+    "pages/components/Storage/getStorage/getStorage",
+    "pages/components/Storage/getInfo/getInfo",
+    "pages/components/Storage/clearStorage/clearStorage",
+    "pages/components/nativeComponent/nativeComponent",
+    "pages/components/nativeComponent/video/video",
+    "pages/components/nativeComponent/map/map",
+    "pages/components/nativeComponent/audio/audio",
+    "pages/components/nativeComponent/canvas/canvas",
+    "pages/components/nativeComponent/camera/camera",
+    "pages/log/log",
+    "pages/tongji/tongji"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "permission": {
+    "scope.userLocation": {
+      "desc": "小程序需要使用位置信息"
+    }
+  }
+}

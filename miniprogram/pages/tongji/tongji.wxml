@@ -1,0 +1,7 @@
+<!--miniprogram/tongji/tongji.wxml-->
+
+<view class="list">
+   <view>当前用户数：{{userNO}}</view> 
+   <view>本小程序访问总次数：{{visitNo}}</view> 
+   <view>用户操作组件总次数：{{oprNo}}</view> 
+</view>

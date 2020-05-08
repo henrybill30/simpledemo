@@ -1,0 +1,41 @@
+<view class="intro">简单的设备API</view>
+
+<view class="intro">1. 获取系统信息</view>
+
+<button type="primary" size="mini" bindtap="getSysInfo" >获取系统信息</button>
+<view>手机型号：{{sysInfo.model}}</view>
+<view>操作系统：{{sysInfo.system}}</view>
+
+
+<view class="intro">2. 传感器</view>
+<view>罗盘</view>
+<view>当前方向度数：{{degree}}</view>
+
+<view class="intro">加速度传感器</view>
+
+<view>X轴：{{res.x}}</view>
+<view>Y轴：{{res.y}}</view>
+<view>Z轴：{{res.z}}</view>
+
+<view class="intro">3. 振动</view>
+<button type='primary' bindtap="vib">点击振动</button>
+
+<view class="intro">4. 扫码</view>
+<button type='primary'  bindtap="scanCode">开始扫码</button>
+<view>字符集：{{res.charSet}}</view>
+<view>扫码类型：{{res.scanType}}</view>
+<view>扫码结果：{{res.result}}</view>
+
+<view class="intro">5. 获取位置信息</view>
+<button type="primary" bindtap="viewLocation">获取位置信息</button>
+<view>纬度：{{lat}}</view>
+<view>经度：{{long}}</view>
+<view>（如果在室内，会有一个室内定位的时间延迟）</view>
+
+
+<button bindtap='to' data-id='1'>
+  demo7
+</button>
+<button bindtap='to' data-id='2'>
+  回到index页
+</button>

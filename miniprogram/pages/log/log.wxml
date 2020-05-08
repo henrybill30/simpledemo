@@ -1,0 +1,16 @@
+<!--log/log.wxml-->
+<view class="container log-list">
+  <block wx:for="{{launchLogs}}" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+    <block wx:for="{{eventsLogs[index]}}" wx:for-item="myLog" wx:for-index="idx">
+      <view class='eventsLogs'>
+        <view>{{idx + 1}}、</view>
+        <view class='eventsLog_detail'>
+          <view>事件发生时间戳：{{myLog.time}}</view>
+          <view>事件类型：{{myLog.type}}</view>
+          <view>相关详情：{{myLog.value}}</view>
+        </view>
+      </view>
+    </block>
+  </block>
+</view>

@@ -1,0 +1,33 @@
+<view class="intro">一对多：条件与分支wx:if</view>
+<view>1. 开关与wx:if控制显示</view>
+<switch bindchange="xChange" >显示控制</switch>
+<block wx:if="{{x}}" >
+  <view> 第一个显示单元 </view>
+  <view>
+  <text>progress进度条</text>
+  <progress percent="80" ></progress>
+</view>
+<view>image图片</view>
+<image style="width: 200px; height: 200px;" mode="scaleToFill" src="../resource/cat.jpg">  </image>
+  <view> …… </view>
+<view> 第N个显示单元 </view>
+</block>
+
+<view>2. wx:if wx:elif wx:else</view>
+<text>k值为：{{k}}</text>
+<button bindtap="kAdd">点我加1</button>
+<button bindtap="kZero">归零</button>
+<view wx:if='{{k>7}}'> <image style="width: 200px; height: 200px;" mode="scaleToFill" src="../resource/cat.jpg">  </image> </view>
+<view wx:elif='{{k>5}}'> <image style="width: 200px; height: 200px;" mode="top" src="../resource/cat.jpg">  </image> </view>
+<view wx:elif='{{k>3}}'> <image style="width: 200px; height: 200px;" mode="bottom" src="../resource/cat.jpg">  </image> </view>
+<view wx:elif='{{k>1}}'> <image style="width: 200px; height: 200px;" mode="left" src="../resource/cat.jpg">  </image> </view>
+<view wx:else> <image style="width: 200px; height: 200px;" mode="center" src="../resource/cat.jpg">  </image> </view>
+
+
+
+<button bindtap='to' data-id='1'>
+  demo6
+</button>
+<button bindtap='to' data-id='2'>
+  回到index页
+</button>
