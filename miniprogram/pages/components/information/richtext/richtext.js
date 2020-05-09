@@ -3,45 +3,77 @@ Page({
   /**
    * 页面的初始数据
    */
-  onShareAppMessage() {
-    return {
-      title: 'rich-text',
-      path: 'page/component/pages/rich-text/rich-text'
-    }
-  },
-
   data: {
-    htmlSnip,
-    nodeSnip,
-    renderedByHtml: false,
-    renderedByNode: false,
+    html: '<div class="div_class" style="line-height: 60px; color: red;">Hello&nbsp;World!</div>',
     nodes: [{
       name: 'div',
       attrs: {
         class: 'div_class',
-        style: 'line-height: 60px; color: #1AAD19;'
+        style: 'line-height: 60px; color: red;'
       },
       children: [{
         type: 'text',
-        text: 'You never know what you\'re gonna get.'
+        text: 'Hello&nbsp;World!'
       }]
-    }]
+    }],
+    code:{
+      html: [
+        '<view class="page-section">',
+        '　<view class="rich-text-wrp">',
+        '　　<rich-text nodes="{{html}}" bindtap="tap">',
+        '　　</rich-text>',
+        '　</view>',
+        '</view>'
+      ],
+      js: [
+        "Page({",
+        "　data: {",
+        "　　html: '<div class=\"div_class\" style=\"line-height: 60px; color: red;\">Hello&nbsp;World!</div>',",
+        "　　nodes: [{",
+        "　　　name: 'div',",
+        "　　　attrs: {",
+        "　　　　class: 'div_class',",
+        "　　　　style: 'line-height: 60px; color: red;'",
+        "　　　},",
+        "　　　children: [{",
+        "　　　　type: 'text',",
+        "　　　　text: 'Hello&nbsp;World!'",
+        "　　　}]",
+        "　　}]",
+        "　},",
+        "　tap() {",
+        "　　console.log('tap')",
+        "　}",
+        "})"
+      ],
+      css: [
+        "rich - text {",
+        "　width: 700rpx;",
+        "　padding: 25rpx 0;",
+        "}",
+        ".rich - text - wrp {",
+        "　padding: 0 25rpx;",
+        "　background-color: #fff;",
+        "}",
+        ".page - section{",
+        "　width: 100 %;",
+        "　margin-bottom: 60rpx;",
+        "}",
+        ".page - section: last - child{",
+        "　margin-bottom: 0;",
+        "}",
+        ".page - section - title{",
+        "　font-size: 28rpx;",
+        "　color: #999999;",
+        "　margin-bottom: 10rpx;",
+        "　padding-left: 30rpx;",
+        "　padding-right: 30rpx;",
+        "}"
+      ]
+    }
   },
-  renderHtml() {
-    this.setData({
-      renderedByHtml: true
-    })
-  },
-  renderNode() {
-    this.setData({
-      renderedByNode: true
-    })
-  },
-  enterCode(e) {
-    console.log(e.detail.value)
-    this.setData({
-      htmlSnip: e.detail.value
-    })
+  tap() {
+    console.log('tap')
   },
 
   /**

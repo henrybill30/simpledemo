@@ -1,31 +1,37 @@
 <demo-block title="基础用法">
 
-  <demo-code height="180">
-    <view slot="demoname" class="container">
-      <view class="page-body">
-        <view class="page-section">
-          <view class="page-section-title">通过HTML String渲染</view>
-          <view class="page-content">
-            <scroll-view scroll-y>{{htmlSnip}}</scroll-view>
-            <button style="margin: 30rpx 0" type="primary" bindtap="renderHtml">渲染HTML</button>
-            <block wx:if="{{renderedByHtml}}">
-              <rich-text nodes="{{htmlSnip}}"></rich-text>
-            </block>
-          </view>
-        </view>
-
-        <view class="page-section">
-          <view class="page-section-title">通过节点渲染</view>
-          <view class="page-content">
-            <scroll-view scroll-y>{{nodeSnip}}</scroll-view>
-            <button style="margin: 30rpx 0" type="primary" bindtap="renderNode">渲染Node</button>
-            <block wx:if="{{renderedByNode}}">
-              <rich-text nodes="{{nodes}}"></rich-text>
-            </block>
-          </view>
-        </view>
+  <view class="page-section-title">传入html字符串</view>
+  <demo-code height="60">
+    <view slot="demoname" class="page-section">
+      <view class="rich-text-wrp">
+        <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
+      </view>
+    </view>
+    <view slot="democode">
+      <view class="page-section-title">html代码</view>
+      <view  wx:for-items="{{code.html}}" wx:for-item="item">
+        {{item}}
       </view>
 
+      <view class="page-section-title">js代码</view>
+      <view  wx:for-items="{{code.js}}" wx:for-item="item">
+        {{ item }}
+      </view>
+
+      <view class="page-section-title">css代码</view>
+      <view  wx:for-items="{{code.css}}" wx:for-item="item">
+        {{ item }}
+      </view>
+
+    </view>
+  </demo-code>
+
+  <view class="page-section-title">传入节点列表</view>
+  <demo-code height="60">
+    <view slot="demoname" class="page-section">
+      <view class="rich-text-wrp">
+        <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+      </view>
     </view>
   </demo-code>
 </demo-block>

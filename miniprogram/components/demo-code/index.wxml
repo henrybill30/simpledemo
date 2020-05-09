@@ -2,7 +2,6 @@
   <view class="demo-name">
     <slot name="demoname" />  
   </view>
-  
 </view>
 <view class="demo-code" wx:if="{{ showcode }}" bindtap="showCode">
   <slot name="democode" /> 
