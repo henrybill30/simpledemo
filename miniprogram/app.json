@@ -57,5 +57,8 @@
     "scope.userLocation": {
       "desc": "小程序需要使用位置信息"
     }
+  },
+  "usingComponents": {
+    "demo-block": "./components/demo-block/index"
   }
 }

@@ -1,0 +1,17 @@
+@import '../../lib/dist/common/index.wxss';
+
+.demo-block__title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(9, 12, 14, 0.692);
+  padding: 10px 5px 10px;
+}
+
+.demo-block--padding {
+  padding: 0 15px;
+}
+
+.demo-block--padding .demo-block__title {
+  padding-left: 0;
+}

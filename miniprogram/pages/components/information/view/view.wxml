@@ -1,1 +1,3 @@
-<view>view1</view>
+<demo-block title="最简用法">
+  <view>view</view>
+</demo-block>
