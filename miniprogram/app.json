@@ -59,6 +59,7 @@
     }
   },
   "usingComponents": {
-    "demo-block": "./components/demo-block/index"
+    "demo-block": "./components/demo-block/index",
+    "demo-code": "./components/demo-code/index"
   }
 }

@@ -1,1 +1,33 @@
-<view>progress</view>
+<demo-block title="基础用法">
+  <demo-code height="44">
+    <progress slot="demoname" percent="40" show-info stroke-width="3"/>
+    <view slot="democode">
+      {{ jichu[0] }}
+    </view>
+  </demo-code>
+  <demo-code height="44">
+    <progress slot="demoname" percent="60" />
+    <view slot="democode">
+      {{ jichu[1] }}
+    </view>
+  </demo-code>
+  <demo-code height="44">
+    <progress slot="demoname" percent="80" color="#10AEFF" active stroke-width="3" />
+    <view slot="democode">
+      {{ jichu[2] }}
+    </view>
+  </demo-code>
+</demo-block>
+
+
+<!-- <demo-block title="进阶用法">
+  <demo-code height="44">
+    <progress slot="demoname" percent="40" show-info stroke-width="3"/>
+  </demo-code>
+  <demo-code height="44">
+    <progress slot="demoname" percent="60" />
+  </demo-code>
+  <demo-code height="44">
+    <progress slot="demoname" percent="80" color="#10AEFF" active stroke-width="3" />
+  </demo-code>
+</demo-block> -->
