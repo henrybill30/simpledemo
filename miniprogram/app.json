@@ -60,6 +60,8 @@
   },
   "usingComponents": {
     "demo-block": "./components/demo-block/index",
-    "demo-code": "./components/demo-code/index"
+    "demo-code": "./components/demo-code/index",
+    "van-button": "./lib/dist/button/index",
+    "nav-button": "./components/nav-button/navbutton"
   }
 }

@@ -4,7 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    jichu: [
+      '<text slot="demonam">这是一个简单的text组件</text>'
+    ]
   },
 
   /**
