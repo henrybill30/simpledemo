@@ -1,16 +1,104 @@
+<view style="margin-bottom:20px">
 
-<demo-block title="基础用法">
-  <demo-code height="60">
-    <slider slot="demoname" bindchange="sliderChange">slider滑块</slider>
-    <view slot="democode">
-      <view class="code-type">html代码</view>
+  <demo-block title="基础用法">
+    <demo-code height="60">
+      <slider slot="demoname" bindchange="sliderChange">slider滑块</slider>
+      <view slot="democode">
+        {{jichu[0].html}}
+      </view>
+    </demo-code>
+  </demo-block>
+
+  <demo-block title="增强用法">
+    <demo-code height="60">
+      <view slot="demoname">
+        <text class="section__title">显示当前value:</text>
+        <slider show-value/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[0].html}}
+      </view>
+    </demo-code>
+
+    <demo-code height="60">
+      <view slot="demoname">
+        <text class="section__title">设置step:</text>
+        <slider show-value step="5"/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[1].html}}
+      </view>
+    </demo-code>
+
+    <demo-code height="60">
+      <view slot="demoname">
+        <text class="section__title">设置最小/最大值：</text>
+        <slider min="50" max="200" show-value/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[2].html}}
+      </view>
+    </demo-code>
+
+    <demo-code height="60">
+      <view slot="demoname">
+        <text class="section__title">改变滑块颜色：</text>
+        <slider block-color="#DBFC00" show-value/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[3].html}}
+      </view>
+    </demo-code>
+
+    <demo-code height="60">
+      <view slot="demoname">
+        <text class="section__title">改变滑块的大小(取值范围为 12 - 28)：</text>
+        <slider block-size="12" show-value/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[4].html}}
+      </view>
+    </demo-code>
+
+  </demo-block>
+
+  <demo-block title="常用事件">
+    <demo-code height="100">
+      <view slot="demoname">
+        <text class="section__title">bindchange：完成一次拖动后触发</text>
+        <slider bindchange="sliderChange1"/>
+        <view>slider组件当前值为：{{sliderValue1}}</view>
+      </view>
+      <view slot="democode">
+        <view class="code-type">html代码</view>
         <text>
-          {{jichu[0].html}}
+          {{event[0].html}}
         </text>
-      <view class="code-type">js代码</view>
+
+        <view class="code-type">js代码</view>
         <text>
-          {{jichu[0].js}}
+          {{event[0].js}}
         </text>
-    </view>
-  </demo-code>
-</demo-block>
+      </view>
+    </demo-code>
+
+    <demo-code height="100">
+      <view slot="demoname">
+        <text class="section__title">bindchanging：拖动中触发</text>
+        <slider bindchanging="sliderChange2"/>
+        <view>slider组件当前值为：{{sliderValue2}}</view>
+      </view>
+      <view slot="democode">
+        <view class="code-type">html代码</view>
+        <text>
+          {{event[1].html}}
+        </text>
+
+        <view class="code-type">js代码</view>
+        <text>
+          {{event[1].js}}
+        </text>
+      </view>
+    </demo-code>
+  </demo-block>
+</view>

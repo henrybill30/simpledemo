@@ -1,1 +1,59 @@
-<view>form</view>
+<demo-block title="基础用法">  
+  <demo-code height="500">
+    <form slot="demoname" bindsubmit="formSubmit" bindreset="formReset">
+      <view class="section section_gap">
+        <view class="section__title">switch</view>
+        <switch name="switch"/>
+      </view>
+      <view class="section section_gap">
+        <view class="section__title">slider</view>
+        <slider name="slider" show-value ></slider>
+      </view>
+
+      <view class="section">
+        <view class="section__title">input</view>
+        <input name="input" placeholder="please input here" />
+      </view>
+      <view class="section section_gap">
+        <view class="section__title">radio</view>
+        <radio-group name="radio-group">
+          <label><radio value="radio1"/>radio1</label>
+          <label><radio value="radio2"/>radio2</label>
+        </radio-group>
+      </view>
+      <view class="section section_gap">
+        <view class="section__title">checkbox</view>
+        <checkbox-group name="checkbox">
+          <label><checkbox value="checkbox1"/>checkbox1</label>
+          <label><checkbox value="checkbox2"/>checkbox2</label>
+        </checkbox-group>
+      </view>
+      <view class="btn-area">
+        <button class="submit-btn" formType="submit">Submit</button>
+        <button formType="reset">Reset</button>
+      </view>
+      <view class="showform">
+        表单提交结果显示区域：
+        <text>
+          {{showform}}
+        </text>
+      </view>
+    </form>
+    <view slot="democode">
+      <view class="code-type">html代码</view>
+      <text>
+        {{jichu[0].html}}
+      </text>
+
+      <view class="code-type">js代码</view>
+      <text>
+        {{jichu[0].js}}
+      </text>
+
+      <view class="code-type">css代码</view>
+      <text>
+        {{jichu[0].css}}
+      </text>
+    </view>
+  </demo-code>
+</demo-block>
