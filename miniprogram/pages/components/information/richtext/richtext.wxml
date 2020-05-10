@@ -8,20 +8,20 @@
       </view>
     </view>
     <view slot="democode">
-      <view class="page-section-title">html代码</view>
-      <view  wx:for-items="{{code.html}}" wx:for-item="item">
-        {{item}}
-      </view>
+      <view class="code-type">html代码</view>
+      <text>
+        {{code[0].html}}
+      </text>
 
-      <view class="page-section-title">js代码</view>
-      <view  wx:for-items="{{code.js}}" wx:for-item="item">
-        {{ item }}
-      </view>
+      <view class="code-type">js代码</view>
+      <text>
+        {{ code[0].js }}
+      </text>
 
-      <view class="page-section-title">css代码</view>
-      <view  wx:for-items="{{code.css}}" wx:for-item="item">
-        {{ item }}
-      </view>
+      <view class="code-type">css代码</view>
+      <text>
+        {{ code[0].css }}
+      </text>
 
     </view>
   </demo-code>
@@ -32,6 +32,23 @@
       <view class="rich-text-wrp">
         <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
       </view>
+    </view>
+    <view slot="democode">
+      <view class="code-type">html代码</view>
+      <text>
+        {{code[1].html}}
+      </text>
+
+      <view class="code-type">js代码</view>
+      <text>
+        {{ code[1].js }}
+      </text>
+
+      <view class="code-type">css代码</view>
+      <text>
+        {{ code[1].css }}
+      </text>
+
     </view>
   </demo-code>
 </demo-block>

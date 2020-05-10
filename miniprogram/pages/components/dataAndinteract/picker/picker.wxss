@@ -1,0 +1,17 @@
+@import "../../../../lib/weui.wxss";
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+}
+
+/* 自定义 */
+.code-type{
+  font-size: 32rpx;
+  color: #999999;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+.code-text{
+  word-wrap:break-word; 
+  word-break:break-all; 
+}

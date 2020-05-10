@@ -16,61 +16,110 @@ Page({
         text: 'Hello&nbsp;World!'
       }]
     }],
-    code:{
-      html: [
-        '<view class="page-section">',
-        '　<view class="rich-text-wrp">',
-        '　　<rich-text nodes="{{html}}" bindtap="tap">',
-        '　　</rich-text>',
-        '　</view>',
-        '</view>'
-      ],
-      js: [
-        "Page({",
-        "　data: {",
-        "　　html: '<div class=\"div_class\" style=\"line-height: 60px; color: red;\">Hello&nbsp;World!</div>',",
-        "　　nodes: [{",
-        "　　　name: 'div',",
-        "　　　attrs: {",
-        "　　　　class: 'div_class',",
-        "　　　　style: 'line-height: 60px; color: red;'",
-        "　　　},",
-        "　　　children: [{",
-        "　　　　type: 'text',",
-        "　　　　text: 'Hello&nbsp;World!'",
-        "　　　}]",
-        "　　}]",
-        "　},",
-        "　tap() {",
-        "　　console.log('tap')",
-        "　}",
-        "})"
-      ],
-      css: [
-        "rich - text {",
-        "　width: 700rpx;",
-        "　padding: 25rpx 0;",
-        "}",
-        ".rich - text - wrp {",
-        "　padding: 0 25rpx;",
-        "　background-color: #fff;",
-        "}",
-        ".page - section{",
-        "　width: 100 %;",
-        "　margin-bottom: 60rpx;",
-        "}",
-        ".page - section: last - child{",
-        "　margin-bottom: 0;",
-        "}",
-        ".page - section - title{",
-        "　font-size: 28rpx;",
-        "　color: #999999;",
-        "　margin-bottom: 10rpx;",
-        "　padding-left: 30rpx;",
-        "　padding-right: 30rpx;",
-        "}"
-      ]
-    }
+    code:[{
+      html: 
+        `<view class="page-section">
+        　<view class="rich-text-wrp">
+        　　<rich-text nodes="{{html}}" bindtap="tap">
+        　　</rich-text>
+        　</view>
+        </view>`
+      ,
+      js: 
+        `Page({
+        　data: {
+        　　html: '<div class=\"div_class\" style=\"line-height: 60px; color: red;\">Hello&nbsp;World!</div>'
+        　},
+        　tap() {
+        　　console.log('tap')
+        　}
+        })`
+      ,
+      css: 
+        `rich-text {
+        　width: 700rpx;
+        　padding: 25rpx 0;
+        }
+
+        .rich-text-wrp {
+        　padding: 0 25rpx;
+        　background-color: #fff;
+        }
+
+        .page-section{
+        　width: 100%;
+        　margin-bottom: 60rpx;
+        }
+
+        .page-section:last-child{
+        　margin-bottom: 0;
+        }
+
+        .page-section-title{
+        　font-size: 28rpx;
+        　color: #999999;
+        　margin-bottom: 10rpx;
+        　padding-left: 30rpx;
+        　padding-right: 30rpx;
+        }`
+    }, {
+      html:
+        `<view class="page-section">
+        　<view class="rich-text-wrp">
+        　　<rich-text nodes="{{html}}" bindtap="tap">
+        　　</rich-text>
+        　</view>
+        </view>`
+      ,
+      js:
+        `Page({
+        　data: {
+        　　nodes: [{
+        　　　name: 'div',
+        　　　attrs: {
+        　　　　class: 'div_class',
+        　　　　style: 'line-height: 60px; color: red;'
+        　　　},
+        　　　children: [{
+        　　　　type: 'text',
+        　　　　text: 'Hello&nbsp;World!'
+        　　　}]
+        　　}]
+        　},
+        　tap() {
+        　　console.log('tap')
+        　}
+        })`
+      ,
+      css:
+        `rich-text {
+        　width: 700rpx;
+        　padding: 25rpx 0;
+        }
+
+        .rich-text-wrp {
+        　padding: 0 25rpx;
+        　background-color: #fff;
+        }
+
+        .page-section{
+        　width: 100%;
+        　margin-bottom: 60rpx;
+        }
+
+        .page-section:last-child{
+        　margin-bottom: 0;
+        }
+
+        .page-section-title{
+        　font-size: 28rpx;
+        　color: #999999;
+        　margin-bottom: 10rpx;
+        　padding-left: 30rpx;
+        　padding-right: 30rpx;
+        }`
+      }
+    ]
   },
   tap() {
     console.log('tap')
