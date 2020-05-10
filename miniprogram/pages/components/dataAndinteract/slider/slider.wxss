@@ -1,1 +1,8 @@
 /* pages/components/dataAndinteract/slider/slider.wxss */
+
+.code-type{
+  font-size: 32rpx;
+  color: #999999;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}

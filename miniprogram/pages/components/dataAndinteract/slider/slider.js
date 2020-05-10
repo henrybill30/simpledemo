@@ -4,9 +4,39 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    jichu: [
+      {
+        html: `<slider bindchange="sliderChange">slider滑块</slider>`,
+        js: 
+        `Page({
+        　data: {},
+        　sliderChange: function (e) {
+        　　console.log('slider发生change事件，携带value值为：', e.detail.value)
+        　　let logs = wx.getStorageSync('logs') || []
+        　　logs.unshift({
+        　　　operation: true,
+        　　　time: Date.now(),
+        　　　type: "sliderChange",
+        　　　value: e.detail.value
+        　　})
+        　　wx.setStorageSync('logs', logs)
+        　},
+        })`
+      }
+    ]
   },
 
+  sliderChange: function (e) {
+    console.log('slider发生change事件，携带value值为：', e.detail.value)
+    let logs = wx.getStorageSync('logs') || []
+    logs.unshift({
+      operation: true,
+      time: Date.now(),
+      type: "sliderChange",
+      value: e.detail.value
+    })
+    wx.setStorageSync('logs', logs)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
