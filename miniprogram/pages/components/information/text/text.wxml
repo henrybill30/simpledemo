@@ -1,1 +1,8 @@
-<view>text</view>
+<demo-block title="基础用法">
+  <demo-code height="44">
+    <text slot="demoname">这是一个简单的text组件</text>
+    <view slot="democode">
+      {{jichu[0]}}
+    </view>
+  </demo-code>
+</demo-block>
