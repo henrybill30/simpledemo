@@ -1,1 +1,79 @@
-<view>wx:for</view>
+<demo-block title="选择器与矩阵">
+  <demo-code height="40">
+    <picker slot="demoname" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        当前选择：{{array[index]}}
+      </view>
+    </picker>
+    <view slot="democode">
+      <view class="code-type">html代码</view>
+      <parser class="code-sty" html="{{code[0].html}}" />
+
+      <view class="code-type">js代码</view>
+      <parser class="code-sty" html="{{code[0].js}}" />
+    </view>
+  </demo-code>
+</demo-block>
+
+<demo-block title="wx:for">
+  <demo-code height="110">
+    <view slot="demoname" wx:for='{{array}}'> 国家{{index}}：{{item}}</view>
+    <view slot="democode">
+      <view class="code-type">html代码</view>
+      <parser class="code-sty" html="{{code[1].html}}" />
+    </view>
+  </demo-code>
+</demo-block>
+
+<demo-block title="wx:for的一种错误用法">
+  <demo-code height="130">
+    <view slot="demoname" wx:for='array'> 国家{{index}}：{{item}}</view>
+    <view slot="democode">
+      <view class="code-type">html代码</view>
+      <parser class="code-sty" html="{{code[2].html}}" />
+    </view>
+  </demo-code>
+</demo-block>
+
+<demo-block title="wx:for的另外一种书写方式">
+  <demo-code height="110">
+    <view slot="demoname" wx:for='{{array}}' wx:for-index='countryID' wx:for-item='countryName' >国家{{countryID}}：{{countryName}}</view>
+    <view slot="democode">
+      <view class="code-type">html代码</view>
+      <parser class="code-sty" html="{{code[3].html}}" />
+    </view>
+  </demo-code>
+</demo-block>
+
+<demo-block title="wx:for、矩阵与block的结合">
+  <demo-code height="180">
+    <view slot="demoname">
+      <block wx:for="{{['red','orange','yelllow','green','blue','indigo','purple']}}">
+        <view style="display:flex; align-item: center">
+          <view style="flex-group:1">编号：{{index+1}} </view>
+          <view style="flex-group:1">颜色：{{item}} </view>
+        </view>
+      </block>
+    </view>
+    <view slot="democode">
+      <view class="code-type">html代码</view>
+      <parser class="code-sty" html="{{code[4].html}}" />
+    </view>
+  </demo-code>
+</demo-block>
+
+<demo-block title="wx:for的嵌套">
+  <demo-code height="260">
+    <view slot="demoname" wx:for="{{num}}" wx:for-item='i' >
+      <view wx:for="{{num}}" wx:for-item='j' >
+        <view wx:if="{{i<=j}}">
+          {{i}}*{{j}}={{i*j}}
+        </view>
+      </view>
+    </view>
+    <view slot="democode">
+      <view class="code-type">html代码</view>
+      <parser class="code-sty" html="{{code[5].html}}" />
+    </view>
+  </demo-code>
+</demo-block>

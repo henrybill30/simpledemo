@@ -2,7 +2,22 @@
   <demo-code height="44">
     <text slot="demoname">这是一个简单的text组件</text>
     <view slot="democode">
-      {{jichu[0]}}
+      <text style="font-size: 10px">{{jichu[0]}}</text>
+    </view>
+  </demo-code>
+  <demo-code height="44">
+    <text slot="demoname" selectable="true">这是一个可选择的text组件</text>
+    <view slot="democode">
+      <text style="font-size: 10px">{{jichu[1]}}</text>
+    </view>
+  </demo-code>
+  <demo-code height="44">
+    <text slot="demoname" selectable="true" space="emsp">这   是   一个显示连续空格的text组件</text>
+    <view slot="democode">
+      <text style="font-size: 10px">{{jichu[2]}}</text>
     </view>
   </demo-code>
 </demo-block>
+<view style="width:100%;position:fixed;bottom:0">
+  <nav-button pre_zujian="view" next_zujian="icon"></nav-button>
+</view>

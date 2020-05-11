@@ -1,1 +1,79 @@
-<view>button</view>
+<demo-block title="基础用法">
+  <demo-code height="44">
+    <view slot="demoname" style="display:flex">
+      <view style="flex-group:1">
+        <button size="primary" type="primary" bindtap="showdata">显示数据按钮</button>
+      </view>
+      <view style="flex-group:1">
+       <text>{{shuju}}</text>
+      </view>
+    </view>
+    <view slot="democode">
+      <text>js代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[0].js}}</text>
+      <text>wxml代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[0].wxml}}</text>
+    </view>
+  </demo-code>
+  <demo-code height="60">
+    <view slot="demoname" style="display:flex">
+      <view style="flex-group:1">
+        <button size="mini" type="default" open-type="contact" bindcontact="contact">打开会话</button>
+      </view>
+      <view style="flex-group:1">
+       <text>{{contactinfo}}</text>
+      </view>
+    </view>
+    <view slot="democode">
+      <text>js代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[1].js}}</text>
+      <text>wxml代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[1].wxml}}</text>
+    </view>
+  </demo-code>
+  <demo-code height="60">
+    <view slot="demoname" style="display:flex">
+      <!-- <view style="flex-group:1"> -->
+      <button size="mini" type="default" open-type="share">分享</button>
+      <!-- </view> -->
+      <!-- <view style="flex-group:1">
+       <text>{{target}}</text>
+      </view> -->
+    </view>
+    <view slot="democode">
+      <!-- <text>js代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[1].js}}</text> -->
+      <text>wxml代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[2].wxml}}</text>
+    </view>
+  </demo-code>
+  <demo-code height="60">
+    <view slot="demoname" style="display:flex">
+      <button size="mini" type="default" open-type="openSetting">打开授权页</button>
+    </view>
+    <view slot="democode">
+      <text>wxml代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[3].wxml}}</text>
+    </view>
+  </demo-code>
+  <demo-code height="60">
+    <view slot="demoname" style="display:flex">
+      <view style="flex-group:1">
+        <button size="mini" type="default" loading="true">加载按钮</button>
+      </view>
+      <view style="flex-group:1">
+       <button size="mini" type="default" disabled="true">禁用按钮</button>
+      </view>
+      <view style="flex-group:1">
+       <button size="mini" type="warn">警告按钮</button>
+      </view>
+    </view>
+    <view slot="democode">
+      <text>wxml代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[4].wxml}}</text>
+    </view>
+  </demo-code>
+</demo-block>
+<view style="width:100%;position:fixed;bottom:0">
+  <nav-button pre_zujian="首页" next_zujian="switch"></nav-button>
+</view>

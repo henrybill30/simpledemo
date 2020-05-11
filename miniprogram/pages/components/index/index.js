@@ -132,11 +132,11 @@ Page({
       })
     } else if (id == '8') {
       wx.navigateTo({
-        url: '/log/log',
+        url: '../../log/log',
       })
     } else if (id == '9') {
       wx.navigateTo({
-        url: '/tongji/tongji',
+        url: '../../tongji/tongji',
       })
     }
   },

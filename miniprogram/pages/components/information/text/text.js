@@ -5,7 +5,9 @@ Page({
    */
   data: {
     jichu: [
-      '<text slot="demonam">这是一个简单的text组件</text>'
+      '<text slot="demonam">这是一个简单的text组件</text>',
+      '<text selectable="true">这是一个可选择的text组件</text>',
+      '<text slot="demoname" selectable="true" space="emsp">这   是   一个显示连续空格的text组件</text>'
     ]
   },
 
@@ -41,7 +43,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+    wx.reLaunch({
+      url: '../../index/index',
+    })
   },
 
   /**
