@@ -2,27 +2,30 @@ Page({
   data: {
     code: [
       {
-        html: `<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-        　<view class="picker">
-        　　当前选择：{{array[index]}}
-        　</view>
-        </picker>`,
-        js: `Page({
-        　data: {
-        　　array: ['美国', '中国', '巴西', '日本'],
-        　　index: 0
-        　},
-        　bindPickerChange: function (e) {
-        　　console.log('picker发送选择改变，携带值为', e.detail.value)
-        　　this.setData({
-        　　　index: e.detail.value
-        　　})
-        　},
-        })`,
-        css: `.picker{
-        　padding: 13px;
-        　background-color: #FFFFFF;
-        }`
+        html: 
+`<pre><code class="language-html">@@<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+　<view class="picker">
+　　当前选择：{{array[index]}}
+　</view>
+</picker>@@</code></pre>`,
+        js: 
+`<pre><code class="language-js">@@Page({
+　data: {
+　　array: ['美国', '中国', '巴西', '日本'],
+　　index: 0
+　},
+　bindPickerChange: function (e) {
+　　console.log('picker发送选择改变，携带值为', e.detail.value)
+　　this.setData({
+　　　index: e.detail.value
+　　})
+　},
+})@@</code></pre>`,
+        css: 
+`<pre><code class="language-css">@@.picker{
+　padding: 13px;
+　background-color: #FFFFFF;
+}@@</code></pre>`
       }, {
         html: 
         `<picker 

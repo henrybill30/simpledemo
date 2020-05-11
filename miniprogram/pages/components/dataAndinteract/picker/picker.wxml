@@ -9,19 +9,13 @@
       </picker>
       <view slot="democode">
         <view class="code-type">html代码</view>
-        <text>
-          {{code[0].html}}
-        </text>
+        <parser class="code-sty" html="{{code[0].html}}" />
 
         <view class="code-type">js代码</view>
-        <text>
-          {{code[0].js}}
-        </text>
+        <parser class="code-sty" html="{{code[0].js}}" />
 
         <view class="code-type">css代码</view>
-        <text>
-          {{code[0].css}}
-        </text>
+        <parser class="code-sty" html="{{code[0].css}}" />
       </view>
     </demo-code>
   </view>

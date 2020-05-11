@@ -59,6 +59,7 @@
     }
   },
   "usingComponents": {
+    "parser": "./lib/parser/parser",
     "demo-block": "./components/demo-block/index",
     "demo-code": "./components/demo-code/index",
     "van-button": "./lib/dist/button/index",
