@@ -15,16 +15,18 @@ page{
 }
 
 .seed{
-  height: 240rpx;
-  width: 240rpx;
+  height: 250rpx;
+  width: 220rpx;
   align-self: center;
+  border-radius: 50%;
+  overflow:hidden;
 }
 
 .note{
   width:100%;
   padding-left:30rpx;
   font-size: 28rpx;
-  margin-top:30rpx;
+  margin-top:25rpx;
   color:#B2B2B2;
 }
 
