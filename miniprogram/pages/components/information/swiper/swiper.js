@@ -60,5 +60,10 @@ Page({
   },
   onLoad: function (options) {
     this.stringTemplate()
-  }
+  },
+  onUnload: function () {
+    wx.reLaunch({
+      url: '../../index/index',
+    })
+  },
 })

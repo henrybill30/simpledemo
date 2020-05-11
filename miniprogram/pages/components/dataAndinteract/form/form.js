@@ -99,5 +99,10 @@ Page({
     this.setData({
       showform: `form发生了reset事件`
     })
-  }
+  },
+  onUnload: function () {
+    wx.reLaunch({
+      url: '../../index/index',
+    })
+  },
 })
