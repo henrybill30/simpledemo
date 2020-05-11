@@ -1,4 +1,4 @@
-<view style="margin-bottom:20px">
+<view style="margin-bottom:64px">
 
   <demo-block title="基础用法">
     <demo-code height="60">
@@ -101,4 +101,8 @@
       </view>
     </demo-code>
   </demo-block>
+</view>
+
+<view style="width:100%;position:fixed;bottom:0">
+  <nav-button pre_zujian="picker" next_zujian="input"></nav-button>
 </view>

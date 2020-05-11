@@ -1,103 +1,109 @@
+<view style="margin-bottom:64px">
 
-<demo-block title="基础用法">
-  <demo-code height="44">
-    <input slot="demoname" placeholder="最简输入框"></input>
-    <view slot="democode">
-      {{jichu[0].html}}
-    </view>
-  </demo-code>
-</demo-block>
+  <demo-block title="基础用法">
+    <demo-code height="44">
+      <input slot="demoname" placeholder="最简输入框"></input>
+      <view slot="democode">
+        {{jichu[0].html}}
+      </view>
+    </demo-code>
+  </demo-block>
 
-<demo-block title="增强用法">
-  <demo-code height="44">
-    <view slot="demoname">
-      <input maxlength="10" placeholder="最大输入长度为10"/>
-    </view>
-    <view slot="democode">
-      {{zengqiang[0].html}}
-    </view>
-  </demo-code>
+  <demo-block title="增强用法">
+    <demo-code height="44">
+      <view slot="demoname">
+        <input maxlength="10" placeholder="最大输入长度为10"/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[0].html}}
+      </view>
+    </demo-code>
 
-  <demo-code height="44">
-    <view slot="demoname">
-      <input value="这是初始内容！" placeholder="包含初始内容"/>
-    </view>
-    <view slot="democode">
-      {{zengqiang[1].html}}
-    </view>
-  </demo-code>
+    <demo-code height="44">
+      <view slot="demoname">
+        <input value="这是初始内容！" placeholder="包含初始内容"/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[1].html}}
+      </view>
+    </demo-code>
 
-  <demo-code height="44">
-    <view slot="demoname">
-      <input password placeholder="请输入密码"/>
-    </view>
-    <view slot="democode">
-      {{zengqiang[2].html}}
-    </view>
-  </demo-code>
+    <demo-code height="44">
+      <view slot="demoname">
+        <input password placeholder="请输入密码"/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[2].html}}
+      </view>
+    </demo-code>
 
-  <demo-code height="44">
-    <view slot="demoname">
-      <input placeholder-style="color:red" placeholder="红色占位符"/>
-    </view>
-    <view slot="democode">
-      {{zengqiang[3].html}}
-    </view>
-  </demo-code>
+    <demo-code height="44">
+      <view slot="demoname">
+        <input placeholder-style="color:red" placeholder="红色占位符"/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[3].html}}
+      </view>
+    </demo-code>
 
-  <demo-code height="44">
-    <view slot="demoname">
-      <input disabled placeholder="禁用状态"/>
-    </view>
-    <view slot="democode">
-      {{zengqiang[4].html}}
-    </view>
-  </demo-code>
+    <demo-code height="44">
+      <view slot="demoname">
+        <input disabled placeholder="禁用状态"/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[4].html}}
+      </view>
+    </demo-code>
 
-  <demo-code height="44">
-    <view slot="demoname">
-      <input auto-focus placeholder="自动获取焦点"/>
-    </view>
-    <view slot="democode">
-      {{zengqiang[5].html}}
-    </view>
-  </demo-code>
-</demo-block>
+    <demo-code height="44">
+      <view slot="demoname">
+        <input auto-focus placeholder="自动获取焦点"/>
+      </view>
+      <view slot="democode">
+        {{zengqiang[5].html}}
+      </view>
+    </demo-code>
+  </demo-block>
 
-<demo-block title="带不同键盘的输入框">
-  <demo-code height="44">
-    <view slot="demoname">
-      <input type="text" placeholder="文本输入键盘"/>
-    </view>
-    <view slot="democode">
-      {{keyboard[0].html}}
-    </view>
-  </demo-code>
+  <demo-block title="带不同键盘的输入框">
+    <demo-code height="44">
+      <view slot="demoname">
+        <input type="text" placeholder="文本输入键盘"/>
+      </view>
+      <view slot="democode">
+        {{keyboard[0].html}}
+      </view>
+    </demo-code>
 
-  <demo-code height="44">
-    <view slot="demoname">
-      <input type="number" placeholder="数字输入键盘"/>
-    </view>
-    <view slot="democode">
-      {{keyboard[1].html}}
-    </view>
-  </demo-code>
+    <demo-code height="44">
+      <view slot="demoname">
+        <input type="number" placeholder="数字输入键盘"/>
+      </view>
+      <view slot="democode">
+        {{keyboard[1].html}}
+      </view>
+    </demo-code>
 
-  <demo-code height="44">
-    <view slot="demoname">
-      <input type="idcard" placeholder="身份证输入键盘"/>
-    </view>
-    <view slot="democode">
-      {{keyboard[2].html}}
-    </view>
-  </demo-code>
+    <demo-code height="44">
+      <view slot="demoname">
+        <input type="idcard" placeholder="身份证输入键盘"/>
+      </view>
+      <view slot="democode">
+        {{keyboard[2].html}}
+      </view>
+    </demo-code>
 
-  <demo-code height="44">
-    <view slot="demoname">
-      <input type="digit" placeholder="带小数点的数字输入键盘"/>
-    </view>
-    <view slot="democode">
-      {{keyboard[3].html}}
-    </view>
-  </demo-code>
-</demo-block>
+    <demo-code height="44">
+      <view slot="demoname">
+        <input type="digit" placeholder="带小数点的数字输入键盘"/>
+      </view>
+      <view slot="democode">
+        {{keyboard[3].html}}
+      </view>
+    </demo-code>
+  </demo-block>
+</view>
+
+<view style="width:100%;position:fixed;bottom:0">
+  <nav-button pre_zujian="slider" next_zujian="form"></nav-button>
+</view>

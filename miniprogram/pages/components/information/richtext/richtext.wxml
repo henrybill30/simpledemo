@@ -1,54 +1,60 @@
-<demo-block title="基础用法">
+<view style="margin-bottom:64px">
+  <demo-block title="基础用法">
 
-  <view class="page-section-title">传入html字符串</view>
-  <demo-code height="60">
-    <view slot="demoname" class="page-section">
-      <view class="rich-text-wrp">
-        <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
+    <view class="page-section-title">传入html字符串</view>
+    <demo-code height="60">
+      <view slot="demoname" class="page-section">
+        <view class="rich-text-wrp">
+          <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
+        </view>
       </view>
-    </view>
-    <view slot="democode">
-      <view class="code-type">html代码</view>
-      <text>
-        {{code[0].html}}
-      </text>
+      <view slot="democode">
+        <view class="code-type">html代码</view>
+        <text>
+          {{code[0].html}}
+        </text>
 
-      <view class="code-type">js代码</view>
-      <text>
-        {{ code[0].js }}
-      </text>
+        <view class="code-type">js代码</view>
+        <text>
+          {{ code[0].js }}
+        </text>
 
-      <view class="code-type">css代码</view>
-      <text>
-        {{ code[0].css }}
-      </text>
+        <view class="code-type">css代码</view>
+        <text>
+          {{ code[0].css }}
+        </text>
 
-    </view>
-  </demo-code>
-
-  <view class="page-section-title">传入节点列表</view>
-  <demo-code height="60">
-    <view slot="demoname" class="page-section">
-      <view class="rich-text-wrp">
-        <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
       </view>
-    </view>
-    <view slot="democode">
-      <view class="code-type">html代码</view>
-      <text>
-        {{code[1].html}}
-      </text>
+    </demo-code>
 
-      <view class="code-type">js代码</view>
-      <text>
-        {{ code[1].js }}
-      </text>
+    <view class="page-section-title">传入节点列表</view>
+    <demo-code height="60">
+      <view slot="demoname" class="page-section">
+        <view class="rich-text-wrp">
+          <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+        </view>
+      </view>
+      <view slot="democode">
+        <view class="code-type">html代码</view>
+        <text>
+          {{code[1].html}}
+        </text>
 
-      <view class="code-type">css代码</view>
-      <text>
-        {{ code[1].css }}
-      </text>
+        <view class="code-type">js代码</view>
+        <text>
+          {{ code[1].js }}
+        </text>
 
-    </view>
-  </demo-code>
-</demo-block>
+        <view class="code-type">css代码</view>
+        <text>
+          {{ code[1].css }}
+        </text>
+
+      </view>
+    </demo-code>
+  </demo-block>
+</view>
+
+<view style="width:100%;position:fixed;bottom:0">
+  <nav-button pre_zujian="progress" next_zujian="swiper"></nav-button>
+</view>

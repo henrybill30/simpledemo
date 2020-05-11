@@ -1,8 +1,10 @@
-<view style="display:flex">
-  <view style="flex-grow:1;height:100rpx;">
-    <van-button type="info" round bindtap="pre">{{pre_zujian}}</van-button>
-  </view>
-  <view style="flex-grow:1;height:100rpx;">
-    <van-button type="info" round bindtap="next">{{next_zujian}}</van-button>
-  </view>
+<view class="nav-container">
+  <van-row gutter="20">
+    <van-col span="12">
+      <van-button plain type="info" round bindtap="pre" custom-style="width:100%">{{pre_zujian}}</van-button>
+    </van-col>
+    <van-col span="12">
+      <van-button plain type="info" round bindtap="next" custom-style="width:100%">{{next_zujian}}</van-button>
+    </van-col>
+  </van-row>
 </view>
