@@ -11,17 +11,17 @@
       <view slot="democode">
         <view class="code-type">html代码</view>
         <text>
-          {{code[0].html}}
+          {{jichu[0].html}}
         </text>
 
         <view class="code-type">js代码</view>
         <text>
-          {{ code[0].js }}
+          {{ jichu[0].js }}
         </text>
 
         <view class="code-type">css代码</view>
         <text>
-          {{ code[0].css }}
+          {{ jichu[0].css }}
         </text>
 
       </view>
@@ -37,19 +37,78 @@
       <view slot="democode">
         <view class="code-type">html代码</view>
         <text>
-          {{code[1].html}}
+          {{jichu[1].html}}
         </text>
 
         <view class="code-type">js代码</view>
         <text>
-          {{ code[1].js }}
+          {{ jichu[1].js }}
         </text>
 
         <view class="code-type">css代码</view>
         <text>
-          {{ code[1].css }}
+          {{ jichu[1].css }}
         </text>
 
+      </view>
+    </demo-code>
+  </demo-block>
+
+  <demo-block title="增强用法">
+    <view class="page-section-title">显示连续空格</view>
+    <demo-code height="60">
+      <view slot="demoname" class="page-section">
+        <view class="rich-text-wrp">
+          <rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>
+        </view>
+      </view>
+      <view slot="democode">
+        <view class="code-type">html代码</view>
+        <text>
+          {{zengqiang[0].html}}
+        </text>
+
+        <view class="code-type">js代码</view>
+        <text>
+          {{ zengqiang[0].js }}
+        </text>
+      </view>
+    </demo-code>
+    <demo-code height="60">
+      <view slot="demoname" class="page-section">
+        <view class="rich-text-wrp">
+          <rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>
+        </view>
+      </view>
+      <view slot="democode">
+        <view class="code-type">html代码</view>
+        <text>
+          {{zengqiang[1].html}}
+        </text>
+
+        <view class="code-type">js代码</view>
+        <text>
+          {{ zengqiang[1].js }}
+        </text>
+
+      </view>
+    </demo-code>
+    <demo-code height="60">
+      <view slot="demoname" class="page-section">
+        <view class="rich-text-wrp">
+          <rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>
+        </view>
+      </view>
+      <view slot="democode">
+        <view class="code-type">html代码</view>
+        <text>
+          {{zengqiang[2].html}}
+        </text>
+
+        <view class="code-type">js代码</view>
+        <text>
+          {{ zengqiang[2].js }}
+        </text>
       </view>
     </demo-code>
   </demo-block>

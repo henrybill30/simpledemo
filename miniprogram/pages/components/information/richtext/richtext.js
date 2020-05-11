@@ -4,6 +4,9 @@ Page({
    * 页面的初始数据
    */
   data: {
+    nbsphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是根据字体设置大小的&nbsp;&nbsp;&nbsp;&nbsp;四个连续空格!</div>',
+    ensphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是中文字符空格一半大小的&ensp;&ensp;&ensp;&ensp;四个连续空格!</div>',
+    emsphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是中文字符空格大小的&emsp;&emsp;&emsp;&emsp;四个连续空格!</div>',
     html: '<div class="div_class" style="line-height: 60px; color: red;">Hello&nbsp;World!</div>',
     nodes: [{
       name: 'div',
@@ -16,7 +19,7 @@ Page({
         text: 'Hello&nbsp;World!'
       }]
     }],
-    code:[{
+    jichu:[{
       html: 
         `<view class="page-section">
         　<view class="rich-text-wrp">
@@ -62,7 +65,7 @@ Page({
         　padding-left: 30rpx;
         　padding-right: 30rpx;
         }`
-    }, {
+      }, {
       html:
         `<view class="page-section">
         　<view class="rich-text-wrp">
@@ -118,6 +121,33 @@ Page({
         　padding-left: 30rpx;
         　padding-right: 30rpx;
         }`
+      }
+    ],
+    zengqiang: [
+      {
+        html: `<rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>`,
+        js: 
+        `Page({
+        　data: {
+        　　nbsphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是根据字体设置大小的&nbsp;&nbsp;&nbsp;&nbsp;四个连续空格!</div>'
+        　}
+        })`
+      }, {
+        html: `<rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>`,
+        js:
+        `Page({
+        　data: {
+        　　ensphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是中文字符空格一半大小的&ensp;&ensp;&ensp;&ensp;四个连续空格!</div>'
+        　}
+        })`
+      }, {
+        html: `<rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>`,
+        js:
+          `Page({
+        　data: {
+        　　emsphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是中文字符空格大小的&emsp;&emsp;&emsp;&emsp;四个连续空格!</div>'
+        　}
+        })`
       }
     ]
   },
