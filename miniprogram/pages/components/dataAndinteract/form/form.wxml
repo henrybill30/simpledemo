@@ -1,6 +1,6 @@
 <view style="margin-bottom:64px">
   <demo-block title="基础用法">  
-    <demo-code height="500" htmlcode="{{jichu[0].html}}" jscode="{{jichu[0].js}}" csscode="{{jichu[0].css}}">
+    <demo-code height="1100" htmlcode="{{jichu[0].html}}" jscode="{{jichu[0].js}}" csscode="{{jichu[0].css}}">
       <form bindsubmit="formSubmit" bindreset="formReset">
         <view class="section section_gap">
           <view class="section__title">switch</view>

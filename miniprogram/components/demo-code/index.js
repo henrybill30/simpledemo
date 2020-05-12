@@ -8,7 +8,10 @@ Component({
     // multipleSlots: true // 在组件定义时的选项中启用多slot支持
   },
   properties: {
-    height: Number,
+    height: {
+      type: Number,
+      value: 80
+    },
     htmlcode: String,
     jscode: String,
     csscode: String

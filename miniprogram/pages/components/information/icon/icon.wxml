@@ -1,5 +1,5 @@
 <demo-block title="基础用法">
-  <demo-code height="80" htmlcode="{{code[0].html}}">
+  <demo-code height="150" htmlcode="{{code[0].html}}">
     <view style="display:flex;">
       <view style='flex-grow:1;height:80rpx;'>
         <view style="display: flex; flex-direction:column; align-items: center">
@@ -33,21 +33,21 @@
       </view>
     </view>
   </demo-code>
-  <demo-code height="80" htmlcode="{{code[1].html}}">
+  <demo-code height="150" htmlcode="{{code[1].html}}">
     <view style="display:flex;">
-      <view style='flex-grow:1;height:80rpx;'>
+      <view style='width:33.3%;height:80rpx;'>
         <view style="display: flex; flex-direction:column; align-items: center">
           <icon style="flex-grow:1" type="success_no_circle" size="40"></icon>
           <text style="flex-grow:1; font-size:10px">多选控件已选择</text>
         </view>
       </view>
-      <view style='flex-grow:1;height:80rpx;'>
+      <view style='width:33.3%;height:80rpx;'>
         <view style="display: flex; flex-direction:column; align-items: center">
           <icon style="flex-grow:1" type="circle" size="40"></icon>
           <text style="flex-grow:1; font-size:10px">多选控件未选择</text>
         </view>
       </view>
-      <view style='red;flex-grow:1;height:80rpx;'>
+      <view style='red;width:33.3%;height:80rpx;'>
         <view style="display: flex; flex-direction:column; align-items: center">
           <icon style="flex-grow:1" type="download" size="40"></icon>
           <text style="flex-grow:1; font-size:10px">下载</text>
@@ -55,21 +55,21 @@
       </view>
     </view>
   </demo-code>
-    <demo-code height="80" htmlcode="{{code[2].html}}">
+    <demo-code height="150" htmlcode="{{code[2].html}}">
     <view style="display:flex;">
-      <view style='flex-grow:1;height:80rpx;'>
+      <view style='width:33.3%;height:80rpx;'>
         <view style="display: flex; flex-direction:column; align-items: center">
           <icon style="flex-grow:1" type="info_circle" size="40"></icon>
           <text style="flex-grow:1; font-size:10px">提示</text>
         </view>
       </view>
-      <view style='flex-grow:1;height:80rpx;'>
+      <view style='width:33.3%;height:80rpx;'>
         <view style="display: flex; flex-direction:column; align-items: center">
           <icon style="flex-grow:1" type="cancel" size="40"></icon>
           <text style="flex-grow:1; font-size:10px">停止或关闭</text>
         </view>
       </view>
-      <view style='red;flex-grow:1;height:80rpx;'>
+      <view style='red;width:33.3%;height:80rpx;'>
         <view style="display: flex; flex-direction:column; align-items: center">
           <icon style="flex-grow:1" type="search" size="40"></icon>
           <text style="flex-grow:1; font-size:10px">搜索</text>

@@ -1,7 +1,7 @@
 .demo-container{
   background-color: #fff;
-  margin-bottom: 2px;
-  padding-left: 10px;
+  margin-bottom: 2rpx;
+  padding-left: 10rpx;
   position:relative;
 }
 .demo-name{
@@ -12,9 +12,9 @@
 }
 .demo-code{
   background-color: #fff;
-  min-height: 20px;
-  margin-bottom: 2px;
-  padding: 10px
+  min-height: 20rpx;
+  margin-bottom: 2rpx;
+  padding: 10rpx
 }
 
 .code-type{

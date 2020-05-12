@@ -1,5 +1,5 @@
 <demo-block title="基础用法">
-  <demo-code height="44" htmlcode="{{code[0].html}}" jscode="{{code[0].js}}">
+  <demo-code height="80" htmlcode="{{code[0].html}}" jscode="{{code[0].js}}">
     <view style="display:flex; align-items:center">
       <view style="flex-group:1">
         <switch bindchange="change1"/>{{change1}}

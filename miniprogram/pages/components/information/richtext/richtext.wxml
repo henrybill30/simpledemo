@@ -2,7 +2,7 @@
   <demo-block title="基础用法">
 
     <view class="page-section-title">传入html字符串</view>
-    <demo-code height="60" htmlcode="{{code[0].html}}" jscode="{{code[0].js}}" csscode="{{code[0].css}}">
+    <demo-code height="120" htmlcode="{{code[0].html}}" jscode="{{code[0].js}}" csscode="{{code[0].css}}">
       <view class="page-section">
         <view class="rich-text-wrp">
           <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
@@ -11,7 +11,7 @@
     </demo-code>
 
     <view class="page-section-title">传入节点列表</view>
-    <demo-code height="60" htmlcode="{{code[1].html}}" jscode="{{code[1].js}}" csscode="{{code[1].css}}">
+    <demo-code height="120" htmlcode="{{code[1].html}}" jscode="{{code[1].js}}" csscode="{{code[1].css}}">
       <view class="page-section">
         <view class="rich-text-wrp">
           <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
@@ -22,21 +22,21 @@
 
   <demo-block title="增强用法">
     <view class="page-section-title">显示连续空格</view>
-    <demo-code height="60" htmlcode="{{code[2].html}}" jscode="{{code[2].js}}" csscode="{{code[2].css}}">
+    <demo-code height="100" htmlcode="{{code[2].html}}" jscode="{{code[2].js}}" csscode="{{code[2].css}}">
       <view class="page-section">
         <view class="rich-text-wrp">
           <rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>
         </view>
       </view>
     </demo-code>
-    <demo-code height="60" htmlcode="{{code[3].html}}" jscode="{{code[3].js}}" csscode="{{code[3].css}}">
+    <demo-code height="100" htmlcode="{{code[3].html}}" jscode="{{code[3].js}}" csscode="{{code[3].css}}">
       <view class="page-section">
         <view class="rich-text-wrp">
           <rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>
         </view>
       </view>
     </demo-code>
-    <demo-code height="60" htmlcode="{{code[4].html}}" jscode="{{code[4].js}}" csscode="{{code[4].css}}">
+    <demo-code height="100" htmlcode="{{code[4].html}}" jscode="{{code[4].js}}" csscode="{{code[4].css}}">
       <view class="page-section">
         <view class="rich-text-wrp">
           <rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>

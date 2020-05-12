@@ -1,51 +1,51 @@
 <view style="margin-bottom:64px">
 
   <demo-block title="基础用法">
-    <demo-code height="44" htmlcode="{{jichu[0].html}}">
+    <demo-code height="80" htmlcode="{{jichu[0].html}}">
       <input placeholder="最简输入框"></input>
     </demo-code>
   </demo-block>
 
   <demo-block title="增强用法">
-    <demo-code height="44" htmlcode="{{zengqiang[0].html}}">
+    <demo-code height="80" htmlcode="{{zengqiang[0].html}}">
       <input maxlength="10" placeholder="最大输入长度为10"/>
     </demo-code>
 
-    <demo-code height="44" htmlcode="{{zengqiang[1].html}}">
+    <demo-code height="80" htmlcode="{{zengqiang[1].html}}">
       <input value="这是初始内容！" placeholder="包含初始内容"/>
     </demo-code>
 
-    <demo-code height="44" htmlcode="{{zengqiang[2].html}}">
+    <demo-code height="80" htmlcode="{{zengqiang[2].html}}">
       <input password placeholder="请输入密码"/>
     </demo-code>
 
-    <demo-code height="44" htmlcode="{{zengqiang[3].html}}">
+    <demo-code height="80" htmlcode="{{zengqiang[3].html}}">
       <input placeholder-style="color:red" placeholder="红色占位符"/>
     </demo-code>
 
-    <demo-code height="44" htmlcode="{{zengqiang[4].html}}">
+    <demo-code height="80" htmlcode="{{zengqiang[4].html}}">
       <input disabled placeholder="禁用状态"/>
     </demo-code>
 
-    <demo-code height="44" htmlcode="{{zengqiang[5].html}}">
+    <demo-code height="80" htmlcode="{{zengqiang[5].html}}">
       <input auto-focus placeholder="自动获取焦点"/>
     </demo-code>
   </demo-block>
 
   <demo-block title="带不同键盘的输入框">
-    <demo-code height="44" htmlcode="{{keyboard[0].html}}">
+    <demo-code height="80" htmlcode="{{keyboard[0].html}}">
       <input type="text" placeholder="文本输入键盘"/>
     </demo-code>
 
-    <demo-code height="44" htmlcode="{{keyboard[1].html}}">
+    <demo-code height="80" htmlcode="{{keyboard[1].html}}">
       <input type="number" placeholder="数字输入键盘"/>
     </demo-code>
 
-    <demo-code height="44" htmlcode="{{keyboard[2].html}}">
+    <demo-code height="80" htmlcode="{{keyboard[2].html}}">
       <input type="idcard" placeholder="身份证输入键盘"/>
     </demo-code>
 
-    <demo-code height="44" htmlcode="{{keyboard[3].html}}">
+    <demo-code height="80" htmlcode="{{keyboard[3].html}}">
       <input type="digit" placeholder="带小数点的数字输入键盘"/>
     </demo-code>
   </demo-block>

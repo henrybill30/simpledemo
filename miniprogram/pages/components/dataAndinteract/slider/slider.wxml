@@ -1,41 +1,41 @@
 <view style="margin-bottom:64px">
 
   <demo-block title="基础用法">
-    <demo-code height="60" htmlcode="{{jichu[0].html}}">
+    <demo-code height="120" htmlcode="{{jichu[0].html}}">
       <slider bindchange="sliderChange">slider滑块</slider>
     </demo-code>
   </demo-block>
 
   <demo-block title="增强用法">
-    <demo-code height="60" htmlcode="{{zengqiang[0].html}}">
+    <demo-code height="120" htmlcode="{{zengqiang[0].html}}">
       <view>
         <text class="section__title">显示当前value:</text>
         <slider show-value/>
       </view>
     </demo-code>
 
-    <demo-code height="60" htmlcode="{{zengqiang[1].html}}">
+    <demo-code height="120" htmlcode="{{zengqiang[1].html}}">
       <view>
         <text class="section__title">设置step:</text>
         <slider show-value step="5"/>
       </view>
     </demo-code>
 
-    <demo-code height="60" htmlcode="{{zengqiang[2].html}}">
+    <demo-code height="120" htmlcode="{{zengqiang[2].html}}">
       <view>
         <text class="section__title">设置最小/最大值：</text>
         <slider min="50" max="200" show-value/>
       </view>
     </demo-code>
 
-    <demo-code height="60" htmlcode="{{zengqiang[3].html}}">
+    <demo-code height="120" htmlcode="{{zengqiang[3].html}}">
       <view>
         <text class="section__title">改变滑块颜色：</text>
         <slider block-color="#DBFC00" show-value/>
       </view>
     </demo-code>
 
-    <demo-code height="60" htmlcode="{{zengqiang[4].html}}">
+    <demo-code height="120" htmlcode="{{zengqiang[4].html}}">
       <view>
         <text class="section__title">改变滑块的大小(取值范围为 12 - 28)：</text>
         <slider block-size="12" show-value/>
@@ -45,7 +45,7 @@
   </demo-block>
 
   <demo-block title="常用事件">
-    <demo-code height="100" htmlcode="{{event[0].html}}" jscode="{{event[0].js}}">
+    <demo-code height="200" htmlcode="{{event[0].html}}" jscode="{{event[0].js}}">
       <view>
         <text class="section__title">bindchange：完成一次拖动后触发</text>
         <slider bindchange="sliderChange1"/>
@@ -53,7 +53,7 @@
       </view>
     </demo-code>
 
-    <demo-code height="100" htmlcode="{{event[1].html}}" jscode="{{event[1].js}}">
+    <demo-code height="200" htmlcode="{{event[1].html}}" jscode="{{event[1].js}}">
       <view>
         <text class="section__title">bindchanging：拖动中触发</text>
         <slider bindchanging="sliderChange2"/>

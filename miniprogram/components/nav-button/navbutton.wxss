@@ -1,4 +1,4 @@
 .nav-container{
-  padding: 5px 10%;
+  padding: 5rpx 10%;
   background-color: #F8F8F8
 }
