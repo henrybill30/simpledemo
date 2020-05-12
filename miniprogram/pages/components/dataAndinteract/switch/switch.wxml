@@ -1,1 +1,24 @@
-<view>switch</view>
+<demo-block title="基础用法">
+  <demo-code height="44">
+    <view slot="demoname" style="display:flex; align-items:center">
+      <view style="flex-group:1">
+        <switch bindchange="change1"/>{{change1}}
+      </view>
+      <view style="flex-group:1">
+        <switch disabled="true"/>禁用状态
+      </view>
+      <view style="flex-group:1">
+        <switch color="blue"/>改变颜色
+      </view>
+    </view>
+    <view slot="democode">
+      <text>js代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[0].js}}</text>
+      <text>wxml代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[0].wxml}}</text>
+    </view>
+  </demo-code>
+</demo-block>
+<view style="width:100%;position:fixed;bottom:0">
+  <nav-button pre_zujian="button" next_zujian="radio"></nav-button>
+</view>

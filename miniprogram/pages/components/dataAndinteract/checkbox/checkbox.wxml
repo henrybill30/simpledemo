@@ -1,1 +1,46 @@
-<view>checkbox</view>
+<demo-block title="基础用法">
+  <demo-code height="44">
+    <view slot="demoname" style="display:flex; align-items:center">
+      <view style="flex-group:1">
+        <checkbox checked="{{checked}}" bindtap="change1">{{change1}}</checkbox>
+      </view>
+      <view style="flex-group:1">
+        <checkbox disabled="true">禁用</checkbox>
+      </view>
+      <view style="flex-group:1">
+        <checkbox color="blue" checked="{{checked}}" bindtap="change1">变颜色{{change1}}</checkbox>
+      </view>
+    </view>
+    <view slot="democode">
+      <text>js代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[0].js}}</text>
+      <text>wxml代码\n</text>
+      <text selectable="true" space="emsp">{{jichu[0].wxml}}</text>
+    </view>
+  </demo-code>
+</demo-block>
+<demo-block title="增强用法">
+  <demo-code height="150">
+    <view slot="demoname" style="display:flex;flex-direction: column">
+      <checkbox-group style="flex-group:1" bindchange="change2">
+        <label wx:for-items="{{language}}" wx:for-item="item" wx:key="value">
+          <view>
+            <checkbox value="{{item.value}}" checked="{{item.checked}}">{{item.value}}</checkbox>
+          </view>
+        </label>
+      </checkbox-group>
+      <view style="flex-group:1">
+        <text>已选择：{{checked_value}}</text>
+      </view>
+    </view>
+    <view slot="democode">
+      <text>js代码\n</text>
+      <text selectable="true" space="emsp">{{zengqiang[0].js}}</text>
+      <text>wxml代码\n</text>
+      <text selectable="true" space="emsp">{{zengqiang[0].wxml}}</text>
+    </view>
+  </demo-code>
+</demo-block>
+<view style="width:100%;position:fixed;bottom:0">
+  <nav-button pre_zujian="radio" next_zujian="picker"></nav-button>
+</view>

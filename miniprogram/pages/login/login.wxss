@@ -1,5 +1,48 @@
 /* miniprogram/login/login.wxss */
-.btn{
-  width: 600rpx;
-  top: 250rpx;
+page{
+    height: 100%;
+    background-color: #fff;
+}
+
+.device{
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 300rpx 0;
+  box-sizing: border-box;
+}
+
+.seed{
+  height: 250rpx;
+  width: 220rpx;
+  align-self: center;
+  border-radius: 50%;
+  overflow:hidden;
+}
+
+.note{
+  width:100%;
+  padding-left:30rpx;
+  font-size: 28rpx;
+  margin-top:25rpx;
+  color:#B2B2B2;
+}
+
+.save-btn{
+    width: 680rpx;
+    height: 80rpx;
+    /* line-height: 80rpx; */
+    text-align: center;
+    margin-top:20rpx; 
+    border-radius: 6rpx;
+    box-sizing: border-box;
+    background-color: #09BB07;
+    color:#fff;
+}
+
+button[type="default"]{
+    background-color: #ffffff;
+    color:#000;
 }

@@ -356,5 +356,10 @@ Page({
     this.setData({
       region: e.detail.value
     })
-  }
+  },
+  onUnload: function () {
+    wx.reLaunch({
+      url: '../../index/index',
+    })
+  },
 })
