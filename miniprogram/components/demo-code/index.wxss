@@ -16,3 +16,14 @@
   margin-bottom: 2px;
   padding: 10px
 }
+
+.code-type{
+  font-size: 32rpx;
+  color: #999999;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+.code-sty{
+  background-color: #1E1E1E;
+  color: white
+}

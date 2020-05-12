@@ -1,127 +1,53 @@
 <view style="margin-bottom:64px">
   <view class="section">
     <view class="section__title">普通选择器</view>
-    <demo-code height="47">
-      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" slot="demoname">
+    <demo-code height="47" htmlcode="{{code[0].html}}" jscode="{{code[0].js}}" csscode="{{code[0].css}}"> 
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
         <view class="picker">
           当前选择：{{array[index]}}
         </view>
       </picker>
-      <view slot="democode">
-        <view class="code-type">html代码</view>
-        <parser class="code-sty" html="{{code[0].html}}" />
-
-        <view class="code-type">js代码</view>
-        <parser class="code-sty" html="{{code[0].js}}" />
-
-        <view class="code-type">css代码</view>
-        <parser class="code-sty" html="{{code[0].css}}" />
-      </view>
     </demo-code>
   </view>
   <view class="section">
     <view class="section__title">多列选择器</view>
-    <demo-code height="47">
-      <picker slot="demoname" mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <demo-code height="47" htmlcode="{{code[1].html}}" jscode="{{code[1].js}}" csscode="{{code[1].css}}">
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
         <view class="picker">
           当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
         </view>
       </picker>
-      <view slot="democode">
-        <view class="code-type">html代码</view>
-        <text class="code-text">
-          {{code[1].html}}
-        </text>
-
-        <view class="code-type">js代码</view>
-        <text>
-          {{code[1].js}}
-        </text>
-
-        <view class="code-type">css代码</view>
-        <text>
-          {{code[1].css}}
-        </text>
-      </view>
     </demo-code>
   </view>
   <view class="section">
     <view class="section__title">时间选择器</view>
-    <demo-code height="47">
-      <picker slot="demoname" mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
+    <demo-code height="47" htmlcode="{{code[2].html}}" jscode="{{code[2].js}}" csscode="{{code[2].css}}">
+      <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
         <view class="picker">
           当前选择: {{time}}
         </view>
       </picker>
-      <view slot="democode">
-        <view class="code-type">html代码</view>
-        <text class="code-text">
-          {{code[2].html}}
-        </text>
-
-        <view class="code-type">js代码</view>
-        <text>
-          {{code[2].js}}
-        </text>
-
-        <view class="code-type">css代码</view>
-        <text>
-          {{code[2].css}}
-        </text>
-      </view>
     </demo-code>
   </view>
 
   <view class="section">
     <view class="section__title">日期选择器</view>
-    <demo-code height="47">
-      <picker slot="demoname" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+    <demo-code height="47"htmlcode="{{code[3].html}}" jscode="{{code[3].js}}" csscode="{{code[3].css}}">
+      <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
         <view class="picker">
           当前选择: {{date}}
         </view>
       </picker>
-      <view slot="democode">
-        <view class="code-type">html代码</view>
-        <text class="code-text">
-          {{code[3].html}}
-        </text>
-
-        <view class="code-type">js代码</view>
-        <text>
-          {{code[3].js}}
-        </text>
-
-        <view class="code-type">css代码</view>
-        <text>
-          {{code[3].css}}
-        </text>
-      </view>
     </demo-code>
   </view>
   <view class="section">
     <view class="section__title">省市区选择器</view>
-    <demo-code height="47">
-      <picker slot="demoname" mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+    <demo-code height="47"htmlcode="{{code[4].html}}" jscode="{{code[4].js}}" csscode="{{code[4].css}}">
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
         <view class="picker">
           当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
         </view>
       </picker>
-      <view slot="democode">
-        <view class="code-type">html代码</view>
-        <text class="code-text">
-          {{code[4].html}}
-        </text>
-
-        <view class="code-type">js代码</view>
-        <text>
-          {{code[4].js}}
-        </text>
-
-        <view class="code-type">css代码</view>
-        <text>
-          {{code[4].css}}
-        </text>
-      </view>
     </demo-code>
   </view>
 </view>

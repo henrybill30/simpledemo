@@ -1,8 +1,15 @@
 <view class="demo-container" style="min-height: {{height}}px" bindlongpress="showCode">
   <view class="demo-name">
-    <slot name="demoname" />  
+    <slot />  
   </view>
 </view>
-<view class="demo-code" wx:if="{{ showcode }}" bindtap="showCode">
-  <slot name="democode" /> 
+<view class="demo-code" wx:if="{{ showcode }}" bindtap="doubleClick">
+  <view class="code-type" wx:if="{{ htmlcode&&(codeNum>1) }}">wxml代码</view>
+  <parser class="code-sty" wx:if="{{ htmlcode }}" bindlongpress="copyhtml" html="{{htmlcode}}" />
+
+  <view class="code-type" wx:if="{{ jscode&&(codeNum>1) }}">js代码</view>
+  <parser class="code-sty" wx:if="{{ jscode }}" bindlongpress="copyjs" html="{{jscode}}" />
+
+  <view class="code-type" wx:if="{{ csscode&&(codeNum>1) }}">wxss代码</view>
+  <parser class="code-sty" wx:if="{{ csscode }}" bindlongpress="copycss" html="{{csscode}}" />
 </view>

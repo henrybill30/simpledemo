@@ -10,11 +10,3 @@
   height: 150px;
   background-color: #FADBDB
 }
-
-/* 非demo样式 */
-.code-type{
-  font-size: 32rpx;
-  color: #999999;
-  padding-left: 10rpx;
-  padding-right: 10rpx;
-}

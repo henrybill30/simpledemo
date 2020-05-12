@@ -1,7 +1,7 @@
 <view style="margin-bottom:64px">
   <demo-block title="基础用法">  
-    <demo-code height="500">
-      <form slot="demoname" bindsubmit="formSubmit" bindreset="formReset">
+    <demo-code height="500" htmlcode="{{jichu[0].html}}" jscode="{{jichu[0].js}}" csscode="{{jichu[0].css}}">
+      <form bindsubmit="formSubmit" bindreset="formReset">
         <view class="section section_gap">
           <view class="section__title">switch</view>
           <switch name="switch"/>
@@ -40,22 +40,6 @@
           </text>
         </view>
       </form>
-      <view slot="democode">
-        <view class="code-type">html代码</view>
-        <text>
-          {{jichu[0].html}}
-        </text>
-
-        <view class="code-type">js代码</view>
-        <text>
-          {{jichu[0].js}}
-        </text>
-
-        <view class="code-type">css代码</view>
-        <text>
-          {{jichu[0].css}}
-        </text>
-      </view>
     </demo-code>
   </demo-block>
 </view>
