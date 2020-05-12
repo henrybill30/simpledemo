@@ -5,10 +5,35 @@ Page({
    */
   data: {
     change1: "关闭",
+    code:[
+      {
+        html:
+`<switch bindchange="change1"/>{{change1}}
+<switch disabled="false"/>禁用状态
+<switch color="blue"/>改变颜色`,
+        js:
+`Page({
+  data:{
+    change1: "关闭"
+  },
+  change1: function(e){
+    if(e.detail.value == true){
+      this.setData({
+        change1:"打开"  
+      })
+    }else{
+      this.setData({
+        change1:"关闭"
+      })
+    }
+  },
+})`
+      }
+    ],
     jichu: [
       {
-        'js': 'data:{\n  change1: "关闭"\n},\nchange1: function(e){\n  if(e.detail.value == true){\n    this.setData({\n    change1:"打开"\n  })\n  }else{\n    this.setData({\n    change1:"关闭"\n    })\n  }\n},\n',
-        'wxml': '<switch bindchange="change1"/>{{change1}}\n<switch disabled="false"/>禁用状态\n<switch color="blue"/>改变颜色'
+        'js': '',
+        'wxml': ''
       }
     ]
   },
@@ -59,7 +84,7 @@ Page({
    */
   onUnload: function () {
     wx.reLaunch({
-      url: '../../index/index',
+      url: '../../components/index/index',
     })
   },
 

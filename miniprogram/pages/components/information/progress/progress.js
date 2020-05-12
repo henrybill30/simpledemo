@@ -4,11 +4,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    jichu: [
-      '<progress percent="40" show-info stroke-width="3"/>',
-      '<progress percent="60" />',
-      '<progress percent="80" color="#10AEFF" active stroke-width="3" />'
-    ]   
+    code: [
+      {
+        html:
+`<progress percent="40" show-info stroke-width="3"/>`
+      },
+      {
+        html:
+`<progress percent="60" />`
+      },
+      {
+        html:
+`<progress percent="80" color="#10AEFF" active stroke-width="3" />`
+      },
+    ],
   },
 
   /**
@@ -44,7 +53,7 @@ Page({
    */
   onUnload: function () {
     wx.reLaunch({
-      url: '../../index/index',
+      url: '../../components/index/index',
     })
   },
 

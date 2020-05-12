@@ -4,10 +4,24 @@ Page({
    * 页面的初始数据
    */
   data: {
+    code: [
+      {
+        html:
+`<icon type="success" size="50"></icon> \n<icon type="info" size="50"></icon> \n<icon type="warn" size="50" color="gray"></icon> \n<icon type="warn" size="40" ></icon> \n<icon type="waiting" size="40"></icon>`
+      },
+      {
+        html:
+`<icon type="success_no_circle" size="50"></icon> \n<icon type="circle" size="50"></icon> \n<icon type="download" size="50"></icon>`
+      },
+      {
+        html:
+`<icon type="info_circle" size="50"></icon> \n<icon type="cancel" size="50"></icon> \n<icon type="search" size="50"></icon>`
+      },
+    ],
     jichu: [
-      '<icon type="success" size="50"></icon> \n<icon type="info" size="50"></icon> \n<icon type="warn" size="50" color="gray"></icon> \n<icon type="warn" size="40" ></icon> \n<icon type="waiting" size="40"></icon>',
-      '<icon type="success_no_circle" size="50"></icon> \n<icon type="circle" size="50"></icon> \n<icon type="download" size="50"></icon>',
-      '<icon type="info_circle" size="50"></icon> \n<icon type="cancel" size="50"></icon> \n<icon type="search" size="50"></icon>',
+      '',
+      '',
+      '',
     ]
   },
 
@@ -44,7 +58,7 @@ Page({
    */
   onUnload: function () {
     wx.reLaunch({
-      url: '../../index/index',
+      url: '../../components/index/index',
     })
   },
 

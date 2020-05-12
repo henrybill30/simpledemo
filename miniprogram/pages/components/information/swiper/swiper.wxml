@@ -3,8 +3,8 @@
   <view class="page-body">
 
     <demo-block title="基础用法">
-      <demo-code height="160">
-        <view slot="demoname" class="page-section page-section-spacing swiper">
+      <demo-code height="160" htmlcode="{{code[0].html}}">
+        <view class="page-section page-section-spacing swiper">
           <swiper
             indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
             interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
@@ -15,9 +15,6 @@
             </block>
           </swiper>
         </view>
-        <text slot="democode">
-          {{code}}
-        </text>
       </demo-code>
     </demo-block>
     

@@ -19,137 +19,138 @@ Page({
         text: 'Hello&nbsp;World!'
       }]
     }],
-    jichu:[{
-      html: 
-        `<view class="page-section">
-        　<view class="rich-text-wrp">
-        　　<rich-text nodes="{{html}}" bindtap="tap">
-        　　</rich-text>
-        　</view>
-        </view>`
-      ,
-      js: 
-        `Page({
-        　data: {
-        　　html: '<div class=\"div_class\" style=\"line-height: 60px; color: red;\">Hello&nbsp;World!</div>'
-        　},
-        　tap() {
-        　　console.log('tap')
-        　}
-        })`
-      ,
-      css: 
-        `rich-text {
-        　width: 700rpx;
-        　padding: 25rpx 0;
-        }
-
-        .rich-text-wrp {
-        　padding: 0 25rpx;
-        　background-color: #fff;
-        }
-
-        .page-section{
-        　width: 100%;
-        　margin-bottom: 60rpx;
-        }
-
-        .page-section:last-child{
-        　margin-bottom: 0;
-        }
-
-        .page-section-title{
-        　font-size: 28rpx;
-        　color: #999999;
-        　margin-bottom: 10rpx;
-        　padding-left: 30rpx;
-        　padding-right: 30rpx;
-        }`
-      }, {
-      html:
-        `<view class="page-section">
-        　<view class="rich-text-wrp">
-        　　<rich-text nodes="{{html}}" bindtap="tap">
-        　　</rich-text>
-        　</view>
-        </view>`
-      ,
-      js:
-        `Page({
-        　data: {
-        　　nodes: [{
-        　　　name: 'div',
-        　　　attrs: {
-        　　　　class: 'div_class',
-        　　　　style: 'line-height: 60px; color: red;'
-        　　　},
-        　　　children: [{
-        　　　　type: 'text',
-        　　　　text: 'Hello&nbsp;World!'
-        　　　}]
-        　　}]
-        　},
-        　tap() {
-        　　console.log('tap')
-        　}
-        })`
-      ,
+    code: [
+      {
+        html:
+`<view class="page-section">
+  <view class="rich-text-wrp">
+    <rich-text nodes="{{html}}" bindtap="tap">
+    </rich-text>
+  </view>
+</view>`,
+        js:
+`Page({
+  data: {
+    html: '<div class=\"div_class\" style=\"line-height: 60px; color: red;\">Hello&nbsp;World!</div>'
+  },
+  tap() {
+    console.log('tap')
+  }
+})`,
       css:
-        `rich-text {
-        　width: 700rpx;
-        　padding: 25rpx 0;
-        }
+`rich-text {
+　width: 700rpx;
+　padding: 25rpx 0;
+}
 
-        .rich-text-wrp {
-        　padding: 0 25rpx;
-        　background-color: #fff;
-        }
+.rich-text-wrp {
+　padding: 0 25rpx;
+　background-color: #fff;
+}
 
-        .page-section{
-        　width: 100%;
-        　margin-bottom: 60rpx;
-        }
+.page-section{
+　width: 100%;
+　margin-bottom: 60rpx;
+}
 
-        .page-section:last-child{
-        　margin-bottom: 0;
-        }
+.page-section:last-child{
+　margin-bottom: 0;
+}
 
-        .page-section-title{
-        　font-size: 28rpx;
-        　color: #999999;
-        　margin-bottom: 10rpx;
-        　padding-left: 30rpx;
-        　padding-right: 30rpx;
-        }`
+.page-section-title{
+　font-size: 28rpx;
+　color: #999999;
+　margin-bottom: 10rpx;
+　padding-left: 30rpx;
+　padding-right: 30rpx;
+}`
+      },
+      {
+        html:
+`<view class="page-section">
+  <view class="rich-text-wrp">
+    <rich-text nodes="{{html}}" bindtap="tap">
+    </rich-text>
+  </view>
+</view>`,
+        js:
+`Page({
+  data: {
+    nodes: [{
+      name: 'div',
+      attrs: {
+        class: 'div_class',
+        style: 'line-height: 60px; color: red;'
+      },
+      children: [{
+        type: 'text',
+        text: 'Hello&nbsp;World!'
+      }]
+    }]
+  },
+  tap() {
+    console.log('tap')
+  }
+})`,
+        css:
+`rich-text {
+　width: 700rpx;
+　padding: 25rpx 0;
+}
+
+.rich-text-wrp {
+　padding: 0 25rpx;
+　background-color: #fff;
+}
+
+.page-section{
+　width: 100%;
+　margin-bottom: 60rpx;
+}
+
+.page-section:last-child{
+　margin-bottom: 0;
+}
+
+.page-section-title{
+　font-size: 28rpx;
+　color: #999999;
+　margin-bottom: 10rpx;
+　padding-left: 30rpx;
+　padding-right: 30rpx;
+}`
+      },
+      {
+        html:
+`<rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>`,
+        js:
+`Page({
+  data: {
+    nbsphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是根据字体设置大小的&nbsp;&nbsp;&nbsp;&nbsp;四个连续空格!</div>'
+  }
+})`
+      },
+      {
+        html:
+`<rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>`,
+        js:
+`Page({
+  data: {
+    ensphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是中文字符空格一半大小的&ensp;&ensp;&ensp;&ensp;四个连续空格!</div>'
+  }
+})`
+      },
+      {
+        html:
+`<rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>`,
+        js:
+`Page({
+  data: {
+    emsphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是中文字符空格大小的&emsp;&emsp;&emsp;&emsp;四个连续空格!</div>'
+  }
+})`
       }
     ],
-    zengqiang: [
-      {
-        html: `<rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>`,
-        js: 
-        `Page({
-        　data: {
-        　　nbsphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是根据字体设置大小的&nbsp;&nbsp;&nbsp;&nbsp;四个连续空格!</div>'
-        　}
-        })`
-      }, {
-        html: `<rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>`,
-        js:
-        `Page({
-        　data: {
-        　　ensphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是中文字符空格一半大小的&ensp;&ensp;&ensp;&ensp;四个连续空格!</div>'
-        　}
-        })`
-      }, {
-        html: `<rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>`,
-        js:
-          `Page({
-        　data: {
-        　　emsphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是中文字符空格大小的&emsp;&emsp;&emsp;&emsp;四个连续空格!</div>'
-        　}
-        })`
-      }
-    ]
   },
   tap() {
     console.log('tap')
@@ -188,7 +189,7 @@ Page({
    */
   onUnload: function () {
     wx.reLaunch({
-      url: '../../index/index',
+      url: '../../components/index/index',
     })
   },
 

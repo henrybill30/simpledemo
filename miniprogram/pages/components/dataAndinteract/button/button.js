@@ -7,23 +7,71 @@ Page({
     shuju: "",
     contactinfo: "",
     info: "",
+    code:[
+      {
+        html:
+`<button size="primary" type="primary" bindtap="showdata">显示数据按钮</button>
+<text>{{shuju}}</text>`,
+        js:
+`Page({
+  data:{
+    shuju: ""
+  },
+  showdata: function(){
+    this.setData({
+      shuju:"显示数据"
+    })
+  }
+})`
+      },
+      {
+        html:
+`<button size="mini" type="default" open-type="contacct" bindcontact="contact">显示数据按钮</button>
+<text>{{shuju}}</text>`,
+        js:
+`Page({
+  data:{
+    contact: ""
+  },
+  contact: function(e){
+    this.setData({
+      contactinfo: "页面路径: "+e.detail.path+",\n 对应参数: "+e.detail.query
+    })
+  }
+})`
+      },
+      {
+        html:
+`<button size="mini" type="default" open-type="share">分享</button>`
+      },
+      {
+        html:
+`<button size="mini" type="default" open-type="openSetting">打开授权设置</button>`
+      },
+      {
+        html:
+`<button size="mini" type="default" loading="true">加载按钮</button>
+<button size="mini" type="default" disable="true">禁用按钮</button>
+<button size="mini" type="warn">警告按钮</button>`
+      }
+    ],
     jichu:[
       {
-        'js': 'data:{\n  shuju: ""\n},\n\nshowdata: function(){\n  this.setData({\n    shuju:"显示数据"\n  })\n},\n',
-        'wxml': ' <button size="primary" type="primary" bindtap="showdata">显示数据按钮</button>\n<text>{{shuju}}</text>'
+        'js': '',
+        'wxml': ' '
       },
       {
-        'js': 'data:{\n  contact: ""\n},\n\ncontact: function(e){\n  this.setData({\n    contactinfo: "页面路径: "+e.detail.path+",\n 对应参数: "+e.detail.query\n  })\n},\n',
-        'wxml': ' <button size="mini" type="default" open-type="contacct" bindcontact="contact">显示数据按钮</button>\n<text>{{shuju}}</text>'
+        'js': '',
+        'wxml': ' '
       },
       {
-        'wxml': '<button size="mini" type="default" open-type="share">分享</button>'
+        'wxml': ''
       },
       {
-        'wxml': '<button size="mini" type="default" open-type="openSetting">分享</button>'
+        'wxml': ''
       },
       {
-        'wxml': '<button size="mini" type="default" loading="true">加载按钮</button>\n<button size="mini" type="default" disable="true">禁用按钮</button>\n<button size="mini" type="warn">警告按钮</button>'
+        'wxml': ''
       }
     ]
   },
@@ -105,7 +153,7 @@ Page({
    */
   onUnload: function () {
     wx.reLaunch({
-      url: '../../index/index',
+      url: '../../components/index/index',
     })
   },
 

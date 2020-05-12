@@ -1,6 +1,6 @@
 <demo-block title="基础用法">
-  <demo-code height="44">
-    <view slot="demoname" style="display:flex; align-items:center">
+  <demo-code height="44" htmlcode="{{code[0].html}}" jscode="{{code[0].js}}">
+    <view style="display:flex; align-items:center">
       <view style="flex-group:1">
         <switch bindchange="change1"/>{{change1}}
       </view>
@@ -10,12 +10,6 @@
       <view style="flex-group:1">
         <switch color="blue"/>改变颜色
       </view>
-    </view>
-    <view slot="democode">
-      <text>js代码\n</text>
-      <text selectable="true" space="emsp">{{jichu[0].js}}</text>
-      <text>wxml代码\n</text>
-      <text selectable="true" space="emsp">{{jichu[0].wxml}}</text>
     </view>
   </demo-code>
 </demo-block>

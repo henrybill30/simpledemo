@@ -4,35 +4,42 @@ Page({
    * 页面的初始数据
    */
   data: {
-    jichu: [
-      '<view>这是一个简单的view组件</view>',
-      '<view hover-class="view2" hover-start-time="10" hover-stay-time="400">这是增加了点击态效果的view组件</view>'
+    code:[
+      {
+        'html': 
+`<view>这是一个简单的view组件</view>`
+      },
+      {
+        'html':
+`<view hover-class="view2" hover-start-time="10" hover-stay-time="400">这是增加了点击态效果的view组件</view>`
+      },
+      {
+        'html':
+`<view style="display:flex;">
+  <view style='background-color:red;flex-grow:1;height:100rpx;'>水平</view>
+  <view style='background-color:rgb(105, 170, 243);flex-grow:1;height:100rpx;'>并排</view>
+  <view style='background-color:rgba(146, 245, 162, 0.932);flex-grow:1;height:100rpx;'>view组件</view>
+</view>`
+      },
+      {
+        html:
+`<view style='display:flex;height:100rpx;'>
+  <view style='background-color:red;width:250rpx'>左右</view>
+  <view style='flex-grow:1;display:flex;flex-direction:column;'>
+    <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>混合</view>
+    <view style='flex-grow:1;background-color:rgba(146, 245, 162, 0.932)'>view组件</view>
+  </view>
+</view>`
+      },
+      {
+        html:
+`<view style='display:flex;flex-direction:column;height:150rpx;'>
+  <view style='flex-grow:1;background-color:red'>上下</view>
+  <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>排列</view>
+  <view style='flex-grow:1;background-color:rgba(146, 245, 162, 0.932)'>view组件</view>
+</view>`
+      }
     ],
-    zengqiang: [
-      [
-        '<view style="display:flex;">',
-        " <view style='background-color:red;flex-grow:1;height:100rpx;'>水平</view>",
-        " <view style='background-color:rgb(105, 170, 243);flex-grow:1;height:100rpx;'>并排</view>",
-        " <view style='background-color:rgba(146, 245, 162, 0.932);flex-grow:1;height:100rpx;'>view组件</view>",
-        "</view>"
-      ],
-      [
-        '<view style="display:flex;height:100rpx;">',
-        "<view style='background - color: red; width: 250rpx'>左右</view>",
-          '<view style="flex-grow:1;display:flex;flex-direction:column;">',
-            "<view style='flex-grow:1;background-color:rgb(105, 170, 243)'>混合</view>",
-            "<view style='flex-grow:1;background-color:rgba(146, 245, 162, 0.932)'>view组件</view>",
-          '</view>',
-        '</view>',
-      ],
-      [
-        "<view style='display:flex;flex-direction:column;height:150rpx;'>",
-          "<view style='flex-grow:1;background-color:red'>上下</view>",
-          "<view style='flex-grow:1;background-color:rgb(105, 170, 243)'>排列</view>",
-          "<view style='flex-grow:1;background-color:rgba(146, 245, 162, 0.932)'>view组件</view>",
-        "</view>"
-      ]
-    ]
   },
 
   /**
@@ -68,7 +75,7 @@ Page({
    */
   onUnload: function () {
     wx.reLaunch({
-      url: '../index/index',
+      url: '../../components/index/index',
     })
   },
 

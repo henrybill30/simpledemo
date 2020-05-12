@@ -9,24 +9,42 @@ Page({
     duration: 500,
     previousMargin: 0,
     nextMargin: 0,
-    code: ''
+    code: [
+      {
+        html:
+`<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">　
+  <swiper-item>
+    <view class="swiper-item demo-text-2"></view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swiper-item demo-text-3"></view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swiper-item demo-text-1"></view>
+  </swiper-item>
+</swiper>`
+      }
+    ]
   },
   stringTemplate: function () {
+    let code = [
+      {
+        html:
+`<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">　
+  <swiper-item>
+    <view class="swiper-item demo-text-2"></view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swiper-item demo-text-3"></view>
+  </swiper-item>
+  <swiper-item>
+    <view class="swiper-item demo-text-1"></view>
+  </swiper-item>
+</swiper>`
+      }
+    ]
     this.setData({
-      code: `<swiper indicator-dots="${this.data.indicatorDots}" autoplay="${this.data.autoplay}" circular="${this.data.circular}" vertical="${this.data.vertical}" interval="${this.data.interval}" duration="${this.data.duration}" previous-margin="${this.data.previousMargin}px" next-margin="${this.data.nextMargin}px">　
-      　<swiper-item>
-      　　<view class="swiper-item demo-text-2">
-      　　</view>
-      　</swiper-item>
-      　<swiper-item>
-      　　<view class="swiper-item demo-text-3">
-      　　</view>
-      　</swiper-item>
-      　<swiper-item>
-      　　<view class="swiper-item demo-text-1">
-      　　</view>
-      　</swiper-item>
-      </swiper>`
+      code: code
     }) 
   },
   changeProperty: function (e) {
@@ -63,7 +81,7 @@ Page({
   },
   onUnload: function () {
     wx.reLaunch({
-      url: '../../index/index',
+      url: '../../components/index/index',
     })
   },
 })
