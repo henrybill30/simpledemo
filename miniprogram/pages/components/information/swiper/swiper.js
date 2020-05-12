@@ -26,27 +26,27 @@ Page({
       }
     ]
   },
-  stringTemplate: function () {
-    let code = [
-      {
-        html:
-`<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">　
-  <swiper-item>
-    <view class="swiper-item demo-text-2"></view>
-  </swiper-item>
-  <swiper-item>
-    <view class="swiper-item demo-text-3"></view>
-  </swiper-item>
-  <swiper-item>
-    <view class="swiper-item demo-text-1"></view>
-  </swiper-item>
-</swiper>`
-      }
-    ]
-    this.setData({
-      code: code
-    }) 
-  },
+//   stringTemplate: function () {
+//     let code = [
+//       {
+//         html:
+// `<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">　
+//   <swiper-item>
+//     <view class="swiper-item demo-text-2"></view>
+//   </swiper-item>
+//   <swiper-item>
+//     <view class="swiper-item demo-text-3"></view>
+//   </swiper-item>
+//   <swiper-item>
+//     <view class="swiper-item demo-text-1"></view>
+//   </swiper-item>
+// </swiper>`
+//       }
+//     ]
+//     this.setData({
+//       code: code
+//     }) 
+//   },
   changeProperty: function (e) {
     var propertyName = e.currentTarget.dataset.propertyName
     var newData = {}
@@ -77,7 +77,7 @@ Page({
     })
   },
   onLoad: function (options) {
-    this.stringTemplate()
+    // this.stringTemplate()
   },
   onUnload: function () {
     wx.reLaunch({
