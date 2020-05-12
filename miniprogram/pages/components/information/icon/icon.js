@@ -58,7 +58,7 @@ Page({
    */
   onUnload: function () {
     wx.reLaunch({
-      url: '../../components/index/index',
+      url: '../../index/index',
     })
   },
 

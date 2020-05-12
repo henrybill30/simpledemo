@@ -22,11 +22,11 @@ Component({
     next: function () {
       if (this.properties.next_zujian == "首页") {
         wx.navigateTo({
-          url: '../../index/index',
+          url: '/../../index/index',
         })
       } else {
         wx.navigateTo({
-          url: '../' + this.properties.next_zujian + '/' + this.properties.next_zujian,
+          url: '/../' + this.properties.next_zujian + '/' + this.properties.next_zujian,
         })
       }
     }
