@@ -100,7 +100,6 @@ Component({
   lifetimes: {
     attached: function () {
       // 在组件实例进入页面节点树时执行
-      console.log('pppppppppp', this.properties.htmlcode)
       if (this.properties.htmlcode){
         this.setData({
           htmlcode: `<pre><code class="language-html">@@${this.properties.htmlcode}@@</code></pre>`,
@@ -113,7 +112,6 @@ Component({
           codeNum: this.data.codeNum+1
         })
       }
-      console.log(this.data.codeNum)
       if (this.properties.csscode) {
         this.setData({
           csscode: `<pre><code class="language-css">@@${this.properties.csscode}@@</code></pre>`,

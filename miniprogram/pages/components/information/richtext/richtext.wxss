@@ -24,9 +24,3 @@ rich-text {
   padding-left: 30rpx;
   padding-right: 30rpx;
 }
-.code-type{
-  font-size: 32rpx;
-  color: #999999;
-  padding-left: 10rpx;
-  padding-right: 10rpx;
-}

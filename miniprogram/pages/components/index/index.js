@@ -88,25 +88,25 @@ Page({
     ]
   },
   onLoad: function() {
-    let that = this
-    if (!app.globalData.openid) {
-      wx.navigateTo({
-        url: "/pages/login/login"
-      })
-      console.log('[main]login please')
-    } else {
-      console.log('[main]login success')
-    }
-    wx.cloud.callFunction({
-      name: 'getAdmin',
-      success: res => {
-        if (res.result.admin_openid == getApp().globalData.openid) {
-          that.setData({
-            admin: 1
-          })
-        }
-      }
-    })
+    // let that = this
+    // if (!app.globalData.openid) {
+    //   wx.navigateTo({
+    //     url: "/pages/login/login"
+    //   })
+    //   console.log('[main]login please')
+    // } else {
+    //   console.log('[main]login success')
+    // }
+    // wx.cloud.callFunction({
+    //   name: 'getAdmin',
+    //   success: res => {
+    //     if (res.result.admin_openid == getApp().globalData.openid) {
+    //       that.setData({
+    //         admin: 1
+    //       })
+    //     }
+    //   }
+    // })
   },
   to: function(e) {
     let id = e.target.dataset.id
@@ -155,7 +155,7 @@ Page({
     for (let i = 0, len = list.length; i < len; ++i) {
       if (list[i].id === id) {
         list[i].open = !list[i].open
-      } else {
+      } else { 
         list[i].open = false
       }
     }

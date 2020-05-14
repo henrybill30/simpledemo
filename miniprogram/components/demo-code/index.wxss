@@ -1,6 +1,6 @@
 .demo-container{
   background-color: #fff;
-  margin-bottom: 2rpx;
+  margin: 5rpx 15rpx 25rpx 10rpx;
   padding-left: 10rpx;
   position:relative;
 }
@@ -13,7 +13,7 @@
 .demo-code{
   background-color: #fff;
   min-height: 20rpx;
-  margin-bottom: 2rpx;
+  margin: 5rpx 15rpx 5rpx 10rpx;
   padding: 10rpx
 }
 

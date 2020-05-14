@@ -1,11 +1,11 @@
 <demo-block title="基础用法">
-  <demo-code height="80" htmlcode="{{code[0].html}}">
+  <demo-code height="80" htmlcode="{{textcode[0].html}}">
     <text>这是一个简单的text组件</text>
   </demo-code>
-  <demo-code height="80" htmlcode="{{code[1].html}}">
+  <demo-code height="80" htmlcode="{{textcode[1].html}}">
     <text selectable="true">这是一个可选择的text组件</text>
   </demo-code>
-  <demo-code height="80" htmlcode="{{code[2].html}}">
+  <demo-code height="80" htmlcode="{{textcode[2].html}}">
     <text selectable="true" space="emsp">这   是   一个显示连续空格的text组件</text>
   </demo-code>
 </demo-block>

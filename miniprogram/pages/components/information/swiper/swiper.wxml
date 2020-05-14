@@ -2,7 +2,7 @@
   <view class="page-body">
 
     <demo-block title="基础用法">
-      <demo-code height="320" htmlcode="{{code[0].html}}">
+      <demo-code height="320" htmlcode="{{swipercode[0].html}}">
         <view class="page-section page-section-spacing swiper">
           <swiper
             indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"

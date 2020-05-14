@@ -1,2 +1,9 @@
-<!--pages/components/dataAndinteract/dataAndinteract.wxml-->
-<text>pages/components/dataAndinteract/dataAndinteract.wxml</text>
+<view id="container">
+  <view id="slide-area" style="{{toright?'left:0':'right:0'}}">
+    <view id="view" wx:for="{{background}}">
+      <view class="view" wx:if="{{item.show}}">lll</view>
+    </view>
+  </view>
+</view>
+<van-icon name="arrow-left" class="left-btn" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
+<van-icon name="arrow" class="right-btn" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />

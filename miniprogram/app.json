@@ -65,6 +65,7 @@
     "van-button": "./lib/dist/button/index",
     "van-row": "./lib/dist/row/index",
     "van-col": "./lib/dist/col/index",
+    "van-icon": "./lib/dist/icon/index",
     "nav-button": "./components/nav-button/navbutton"
   }
 }

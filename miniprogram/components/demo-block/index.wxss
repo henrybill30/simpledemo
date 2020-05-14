@@ -2,9 +2,9 @@
 
 .demo-block__title {
   margin: 0;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
-  color: rgba(9, 12, 14, 0.692);
+  color: black;
   padding: 10px 5px 10px;
 }
 
@@ -14,4 +14,8 @@
 
 .demo-block--padding .demo-block__title {
   padding-left: 0;
+}
+
+.demo-block{
+  padding:  5rpx 5rpx 0 10rpx;
 }
