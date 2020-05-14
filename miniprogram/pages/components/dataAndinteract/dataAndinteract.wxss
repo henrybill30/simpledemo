@@ -1,34 +1,32 @@
-#container{
-  width: 90vw;
-  height: 100vh;
-  margin: 0 5vw;
-  overflow: hidden;
-  position: relative
-}
-#slide-area{
-  width: 200%;
-  position: absolute;
-}
-#view{
-  /* height: 150vh; */
-  /* width: 50%; */
-  /* background-color: green; */
-  display: inline-block
-}
-.view{
-  height: 150vh;
-  width: 90vw;
-  /* background-color: green; */
-  display: inline-block
-}
 
 .left-btn{
   position: fixed;
   left: 5rpx;
-  top:45%
+  top:45%;
 }
 .right-btn{
   position: fixed;
   right: 5rpx;
   top:45%
+}
+
+/* picker */
+
+@import "../../../lib/weui.wxss";
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+}
+/* form */
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+.submit-btn{
+  background-color: #07C160;
+  margin: 5px 0;
+}
+.showform{
+  height: 150px;
+  background-color: #FADBDB
 }

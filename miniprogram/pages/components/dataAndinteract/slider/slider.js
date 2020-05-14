@@ -6,12 +6,12 @@ Page({
   data: {
     sliderValue1: 0,
     sliderValue2: 0,
-    jichu: [
+    sliderjichu: [
       {
         html: `<slider bindchange="sliderChange">slider滑块</slider>`
       }
     ],
-    zengqiang: [
+    sliderzengqiang: [
       {
         html: `<slider show-value/>`
       }, {
@@ -24,7 +24,7 @@ Page({
         html: `<slider block-size="12" show-value/>`
       }
     ], 
-    event: [
+    sliderevent: [
       {
         html: 
         `<slider bindchanging="sliderChange1" show-value/>

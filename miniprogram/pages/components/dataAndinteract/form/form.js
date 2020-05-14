@@ -1,6 +1,6 @@
 Page({
   data: {
-    jichu: [
+    formjichu: [
       {
 html: 
 `<form slot="demoname" bindsubmit="formSubmit" bindreset="formReset">

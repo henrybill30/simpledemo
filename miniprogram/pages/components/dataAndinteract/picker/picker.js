@@ -1,6 +1,6 @@
 Page({
   data: {
-    code: [
+    pickercode: [
       {
         html: 
 `<picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">

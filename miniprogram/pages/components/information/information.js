@@ -5,33 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    width: -1,
-    buttonForbid: false,
-    toright: true,
+    // width: -1,
+    // buttonForbid: false,
     currentPage: 0,
     pageNum: 6,
-    swiperitem: [
-      {
-        value: "view1",
-        show: true
-      }, {
-        value: "view2",
-        show: false
-      }, {
-        value: "view3",
-        show: false
-      }, {
-        value: "view4",
-        show: false
-      }, {
-        value: "view5",
-        show: false
-      },
-      {
-        value: "view6",
-        show: false
-      },
-    ],
     viewcode: [
       {
         'html':
@@ -322,107 +299,27 @@ Page({
   },
   
   tobefore(e) {
-    if (this.data.currentPage === 0 || this.data.buttonForbid) {
+    if (this.data.currentPage === 0) {
       return
     }
-    let list1 = this.data.swiperitem
-    list1[parseInt(this.data.currentPage) - 1].show = true
     this.setData({
-      swiperitem: list1,
-      toright: false,
-      buttonForbid: true
+      currentPage: parseInt(this.data.currentPage) - 1
     })
-    var query = wx.createSelectorQuery();
-    //选择id
-    var that = this;
-    let width = this.data.width;;
-    // query.select('#container').boundingClientRect(function (rect) {
-      // console.log(rect.width)
-      // that.setData({
-      // width = rect.width
-      // })
-      that.animate('#slide-area', [
-        { opacity: 1.0, translateX: 0 },
-        { opacity: 1.0, translateX: 0.5 * width },
-        { opacity: 1.0, translateX: width },
-      ], 300, function () {
-        let list2 = that.data.swiperitem
-        list2[parseInt(that.data.currentPage)].show = false
-        that.setData({
-          swiperitem: list2,
-          currentPage: parseInt(that.data.currentPage) - 1,
-          toright: true,
-          buttonForbid: false
-        })
-        that.clearAnimation('#slide-area', { opacity: true, translateX: true }, function () {
-
-          console.log("清除了#container上的opacity和rotate属性")
-        })
-      }.bind(that))
-    // }).exec();
-
   },
   tonext(e) {
-    if (this.data.currentPage === this.data.pageNum - 1 || this.data.buttonForbid) {
+    if (this.data.currentPage === this.data.pageNum-1) {
       return
     }
-    let list1 = this.data.swiperitem
-    list1[parseInt(this.data.currentPage) + 1].show = true
     this.setData({
-      swiperitem: list1,
-      toright: true,
-      buttonForbid: true
+      currentPage: parseInt(this.data.currentPage)+1
     })
-    var query = wx.createSelectorQuery();
-    //选择id
-    var that = this;
-    let width = this.data.width;
-    // query.select('#container').boundingClientRect(function (rect) {
-      // console.log(rect.width)
-      // that.setData({
-      // width = rect.width
-      // })
-      that.animate('#slide-area', [
-        { opacity: 1.0, translateX: 0 },
-        { opacity: 1.0, translateX: -0.5 * width },
-        { opacity: 1.0, translateX: -width },
-      ], 300, function () {
-          let list2 = that.data.swiperitem
-        list2[parseInt(that.data.currentPage)].show = false
-        that.setData({
-          swiperitem: list2,
-          currentPage: parseInt(that.data.currentPage) + 1,
-          buttonForbid: false
-        })
-          // console.log(that.data.swiperitem)
-        that.clearAnimation('#slide-area', { opacity: true, translateX: true }, function () {
-          console.log("清除了#container上的opacity和rotate属性")
-        })
-      }.bind(that))
-    // }).exec();
-
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var query = wx.createSelectorQuery();
-    //选择id
-    var that = this;
-    query.select('#container').boundingClientRect(function (rect) {
-      // console.log(rect.width)
-      // that.setData({
-      that.setData({
-        width: rect.width
-      })
-    }).exec();
-    console.log(options)
-    let list = this.data.swiperitem
-    list[0].show = false
-    list[options.index].show = true
     this.setData({
-      swiperitem: list,
-      currentPage: options.index
+      currentPage: parseInt(options.index)
     })
   },
 

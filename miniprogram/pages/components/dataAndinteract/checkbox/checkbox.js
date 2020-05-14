@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    change1: "未选中",
+    checkboxchange: "未选中",
     checked: false,
     checked_value: "",
     language: [
@@ -32,26 +32,26 @@ Page({
     code: [
       {
         html:
-`<checkbox checked="{{checked}}" bindtap="change1">{{change1}}</checkbox>
+`<checkbox checked="{{checked}}" bindtap="checkboxchange">{{checkboxchange}}</checkbox>
 <checkbox disabled="true">禁用</checkbox>
-<checkbox color="blue" checked="{{checked}}" bindtap="change1">变颜色{{change1}}</checkbox>`,
+<checkbox color="blue" checked="{{checked}}" bindtap="checkboxchange">变颜色{{checkboxchange}}</checkbox>`,
         js:
 `Page({
   data:{
-    change1: "未选中",
+    checkboxchange: "未选中",
     checked: false,
   },
-  change1: function(e){
+  checkboxchange: function(e){
     this.setData({
       checked: !this.data.checked
     })
     if(this.data.checked == true){
       this.setData({
-        change1:"选中"
+        checkboxchange:"选中"
       })
     }else{
       this.setData({
-        change1:"未选中"
+        checkboxchange:"未选中"
       })
     }
   },
@@ -60,7 +60,7 @@ Page({
       {
         html:
 `<view style="display:flex;flex-direction: column">
-  <checkbox-group style="flex-group:1" bindchange="change2">
+  <checkbox-group style="flex-group:1" bindchange="checkboxchange2">
     <label wx:for-items="{{language}}" wx:for-item="item" wx:key="value">
       <view>
         <checkbox value="{{item.value}}" checked="{{item.checked}}">{{item.value}}</checkbox>
@@ -98,7 +98,7 @@ Page({
       },
     ],
   },
-  change2: function (e) {
+  checkboxchange2: function (e) {
     let items = this.data.language;
     let values = e.detail.value;
     for (let i = 0; i < items.length; i++) {
@@ -119,22 +119,22 @@ Page({
     ],
   },
 
-  change1: function (e) {
+  checkboxchange: function (e) {
     this.setData({
       checked: !this.data.checked
     })
     if (this.data.checked == true) {
       this.setData({
-        change1: "选中"
+        checkboxchange: "选中"
       })
     } else {
       this.setData({
-        change1: "未选中"
+        checkboxchange: "未选中"
       })
     }
   },
 
-  change2: function (e) {
+  checkboxchange2: function (e) {
     let items = this.data.language;
     let values = e.detail.value;
     for (let i = 0; i < items.length; i++) {

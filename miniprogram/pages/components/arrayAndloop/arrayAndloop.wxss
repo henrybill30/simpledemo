@@ -1,1 +1,10 @@
-/* pages/components/arrayAndloop/arrayAndloop.wxss */
+.left-btn{
+  position: fixed;
+  left: 5rpx;
+  top:45%;
+}
+.right-btn{
+  position: fixed;
+  right: 5rpx;
+  top:45%
+}

@@ -1,5 +1,5 @@
 <demo-block title="基础用法">
-  <demo-code height="80" htmlcode="{{code[0].html}}" jscode="{{code[0].js}}">
+  <demo-code height="80" htmlcode="{{radiocode[0].html}}" jscode="{{radiocode[0].js}}">
     <view style="display:flex; align-items:center">
       <view style="flex-group:1">
         <radio checked="{{checked}}" bindtap="change1"/>{{change1}}
@@ -14,7 +14,7 @@
   </demo-code>
 </demo-block>
 <demo-block title="增强用法">
-  <demo-code height="350" htmlcode="{{code[1].html}}" jscode="{{code[1].js}}">
+  <demo-code height="350" htmlcode="{{radiocode[1].html}}" jscode="{{radiocode[1].js}}">
     <view style="display:flex;flex-direction: column">
       <radio-group  style="flex-group:1" bindchange="change2">
         <label wx:for-items="{{language}}" wx:for-item="item" wx:key="value">

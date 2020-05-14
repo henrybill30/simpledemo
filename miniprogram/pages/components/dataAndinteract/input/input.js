@@ -4,12 +4,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    jichu: [
+    inputjichu: [
       {
         html: `<input placeholder="最简输入框"></input>`
       }
     ], 
-    zengqiang: [
+    inputzengqiang: [
       {
         html: `<input maxlength="10" placeholder="最大输入长度为10"/>`
       }, {
@@ -24,7 +24,7 @@ Page({
         html: `<input auto-focus placeholder="自动获取焦点"/>`
       }
     ], 
-    keyboard: [
+    inputkeyboard: [
       {
         html: `<input type="text" placeholder="文本输入键盘"/>`
       }, {
