@@ -25,7 +25,7 @@
 .left-btn{
   position: fixed;
   left: 5rpx;
-  top:45%
+  top:45%;
 }
 .right-btn{
   position: fixed;

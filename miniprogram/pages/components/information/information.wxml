@@ -283,5 +283,5 @@
     </view>
   </view>
 </view>
-<van-icon name="arrow-left" class="left-btn" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
-<van-icon name="arrow" class="right-btn" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
+<van-icon name="arrow-left" size="40" class="left-btn" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
+<van-icon name="arrow" size="40" class="right-btn" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
