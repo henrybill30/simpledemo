@@ -62,10 +62,13 @@
     "parser": "./lib/parser/parser",
     "demo-block": "./components/demo-block/index",
     "demo-code": "./components/demo-code/index",
+    "demo-tabbar": "./components/demo-tabbar/index",
     "van-button": "./lib/dist/button/index",
     "van-row": "./lib/dist/row/index",
     "van-col": "./lib/dist/col/index",
     "van-icon": "./lib/dist/icon/index",
+    "van-tabbar": "./lib/dist/tabbar/index",
+    "van-tabbar-item": "./lib/dist/tabbar-item/index",
     "nav-button": "./components/nav-button/navbutton"
   }
 }

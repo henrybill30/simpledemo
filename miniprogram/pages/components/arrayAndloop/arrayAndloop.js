@@ -5,8 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
+    active: 0,
+    active2: 'home',
+    active3: 0,
+    active4: 0,
+    active5: 0,
+    active6: 0,
+    icon: {
+      normal: 'https://img.yzcdn.cn/vant/user-inactive.png',
+      active: 'https://img.yzcdn.cn/vant/user-active.png'
+    },
+
+
     currentPage: 0,
     pageNum: 1,
+    icon: {
+      active: './积木编程.png',
+      inactive: './积木编程.png',
+    },
     //wxfor
     array: ['美国', '中国', '巴西', '日本'],
     index: 1,
@@ -105,6 +121,17 @@ Page({
     this.setData({
       currentPage: parseInt(this.data.currentPage) + 1
     })
+  },
+  onChange(event) {
+    console.log(event)
+    const { key } = event.currentTarget.dataset;
+    this.setData({ [key]: event.detail });
+  },
+
+  handleChange(event) {
+    const { key } = event.currentTarget.dataset;
+    this.setData({ [key]: event.detail });
+    wx.showToast({ title: `点击标签 ${event.detail + 1}`, icon: 'none' });
   },
   /**
    * 生命周期函数--监听页面加载

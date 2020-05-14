@@ -31,7 +31,7 @@
     <demo-block title="wx:for、矩阵与block的结合">
       <demo-code height="360" htmlcode="{{wxforcode[4].html}}">
         <view>
-          <block wx:for="{{['red','orange','yelllow','green','blue','indigo','purple']}}">
+          <block wx:for="{{['red','orange','yelllow','green','blue','indigo','purple']}}" wx:key="item">
             <view style="display:flex; align-item: center">
               <view style="flex-group:1">编号：{{index+1}} </view>
               <view style="flex-group:1">颜色：{{item}} </view>
@@ -43,8 +43,8 @@
 
     <demo-block title="wx:for的嵌套">
       <demo-code height="500" htmlcode="{{wxforcode[5].html}}">
-        <view wx:for="{{num}}" wx:for-item='i' >
-          <view wx:for="{{num}}" wx:for-item='j' >
+        <view wx:for="{{num}}" wx:for-item='i' wx:key="i">
+          <view wx:for="{{num}}" wx:for-item='j' wx:key="j">
             <view wx:if="{{i<=j}}">
               {{i}}*{{j}}={{i*j}}
             </view>
@@ -56,3 +56,5 @@
 </view>
 <van-icon name="arrow-left" size="30" class="left-btn" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
 <van-icon name="arrow" size="30" class="right-btn" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
+
+<demo-tabbar/>

@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    active: 'home',
     currentPage: 0,
     pageNum: 8,
     //button
