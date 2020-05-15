@@ -1,6 +1,6 @@
 Component({
   data: {
-    active: 0,
+    active: 1,
     icon: [{
       inactive: 'https://wx2.sinaimg.cn/mw690/006D4XS4gy1gesflc4yqtj305k05kwed.jpg',
       active: 'https://wx1.sinaimg.cn/mw690/006D4XS4gy1gesflc1sb9j305k05ka9y.jpg'
@@ -22,9 +22,38 @@ Component({
   methods: {
     onChange(event) {
       console.log(event)
-      const { key } = event.currentTarget.dataset;
-      this.setData({ [key]: event.detail });
-    },
+      this.setData({ 
+        active: event.detail 
+      });
+      switch (event.detail ){
+        case 0:
+          console.log("0");
+          wx.switchTab({
+            url: '../../components/componentstear/index'
+          })
+          break;
+        case 1:
+          console.log("1");
+          wx.switchTab({
+            url: '../../components/index/index'
+          })
+          break;
+        case 2:
+          console.log("2");
+          wx.switchTab({
+            url: '../../components/componentsidentify/index'
+          })
+          break;
+        case 3:
+          console.log("3");
+          wx.switchTab({
+            url: '../../components/person/index'
+          })
+          break;
+        default:
+          console.log("default");
+      }
+    }
   },
   lifetimes: {
     attached: function () {
