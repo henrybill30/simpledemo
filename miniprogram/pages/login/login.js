@@ -8,46 +8,57 @@ Page({
 
   },
 
-  getUserInfo: function(e) {
+  getUserInfo: async function(e) {
     // console.log(JSON.parse(e.detail.rawData).nickName);
     getApp().globalData.nickname = JSON.parse(e.detail.rawData).nickName
+    console.log(getApp().globalData.envID)
     wx.cloud.callFunction({
       name: 'login',
+      data: {
+        envID: getApp().globalData.envID,
+        username: JSON.parse(e.detail.rawData).nickName
+      },
       success: res => {
-        // console.log(res)
-        getApp().globalData.openid = res.result.openid
-        console.log(getApp().globalData)
-
-        let that = getApp()
-        //周期性上传新数据到云数据库
-        that.globalData.timer = setInterval(function() {
+        // console.log("111: " + JSON.stringify(res.result))
+        if(res.result.state == true){
+          getApp().globalData.openid = res.result.openid
           console.log(getApp().globalData)
-          let logs = wx.getStorageSync('logs') || []
-          let length = logs.length
-          if (length > that.globalData.past) {
-            let newLogs = logs.slice(0, length - that.globalData.past)
-            console.log(that.globalData.nickname, that.globalData.openid, newLogs )
-            wx.cloud.callFunction({
-              name: 'add',
-              data: {
-                nickname: that.globalData.nickname,
-                openid: that.globalData.openid,
-                newLogs
-              },
-              success: res => {
-                console.log("add success")
-                console.log(res)
-                that.globalData.past = length
-              },
-              fail: res => {
-                console.log("add fail")
-                console.log(res)
-              }
-            })
-          }
-        }, 1000 * 10)
+          console.log(res.result.msg)
+        }else {
+          console.log(res.result.msg)
+        }
+        
 
-        wx.redirectTo({
+        // let that = getApp()
+        // //周期性上传新数据到云数据库
+        // that.globalData.timer = setInterval(function() {
+        //   console.log(getApp().globalData)
+        //   let logs = wx.getStorageSync('logs') || []
+        //   let length = logs.length
+        //   if (length > that.globalData.past) {
+        //     let newLogs = logs.slice(0, length - that.globalData.past)
+        //     console.log(that.globalData.nickname, that.globalData.openid, newLogs )
+        //     wx.cloud.callFunction({
+        //       name: 'add',
+        //       data: {
+        //         nickname: that.globalData.nickname,
+        //         openid: that.globalData.openid,
+        //         newLogs
+        //       },
+        //       success: res => {
+        //         console.log("add success")
+        //         console.log(res)
+        //         that.globalData.past = length
+        //       },
+        //       fail: res => {
+        //         console.log("add fail")
+        //         console.log(res)
+        //       }
+        //     })
+        //   }
+        // }, 1000 * 10)
+
+        wx.switchTab({
           url: '../components/index/index',
         })
       }
