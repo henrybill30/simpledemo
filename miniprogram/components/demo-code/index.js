@@ -115,7 +115,7 @@ Component({
           num: this.properties.num
         },
         success: res => {
-          // console.log("111: " + JSON.stringify(res.result.data[0].code.html))
+          console.log("111: " + JSON.stringify(res.result.data[0].code.html))
           if(res.result.data[0].code.html){
             this.setData({
               htmlcode: `<pre><code class="language-html">@@${res.result.data[0].code.html}@@</code></pre>`,

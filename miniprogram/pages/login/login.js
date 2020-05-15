@@ -8,7 +8,7 @@ Page({
 
   },
 
-  getUserInfo: function(e) {
+  getUserInfo: async function(e) {
     // console.log(JSON.parse(e.detail.rawData).nickName);
     getApp().globalData.nickname = JSON.parse(e.detail.rawData).nickName
     console.log(getApp().globalData.envID)
@@ -19,6 +19,7 @@ Page({
         username: JSON.parse(e.detail.rawData).nickName
       },
       success: res => {
+        // console.log("111: " + JSON.stringify(res.result))
         if(res.result.state == true){
           getApp().globalData.openid = res.result.openid
           console.log(getApp().globalData)
