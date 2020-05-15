@@ -1,6 +1,35 @@
-{
+{ "tabBar": {
+    "selectedColor": "#1196DB",
+    "list": [
+      {
+        "pagePath": "pages/components/componentstear/index",
+        "text": "组件拆解",
+        "iconPath": "./pages/components/componentstear/积木编程.png",
+        "selectedIconPath": "./pages/components/componentstear/积木编程 (1).png"
+      }, {
+        "pagePath": "pages/components/index/index",
+        "text": "组件识别",
+        "iconPath": "./pages/components/componentstear/识别1.png",
+        "selectedIconPath": "./pages/components/componentstear/识别2.png"
+      }, {
+        "pagePath": "pages/components/componentsidentify/index",
+        "text": "组件叠加",
+        "iconPath": "./pages/components/componentstear/叠加.png",
+        "selectedIconPath": "./pages/components/componentstear/叠加 (1).png"
+      },
+      {
+        "pagePath": "pages/components/person/index",
+        "text": "个人中心",
+        "iconPath": "./pages/components/componentstear/个人中心 - 选中.png",
+        "selectedIconPath": "./pages/components/componentstear/个人中心 - 选中 (1).png"
+      }
+    ]
+  },
   "pages": [
     "pages/components/index/index",
+    "pages/components/componentstear/index",
+    "pages/components/componentsidentify/index",
+    "pages/components/person/index",
     "pages/login/login",
     "pages/components/information/information",
     "pages/components/information/text/text",
@@ -67,8 +96,6 @@
     "van-row": "./lib/dist/row/index",
     "van-col": "./lib/dist/col/index",
     "van-icon": "./lib/dist/icon/index",
-    "van-tabbar": "./lib/dist/tabbar/index",
-    "van-tabbar-item": "./lib/dist/tabbar-item/index",
     "nav-button": "./components/nav-button/navbutton"
   }
 }

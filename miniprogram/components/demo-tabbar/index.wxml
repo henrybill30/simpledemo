@@ -10,13 +10,13 @@
       slot="icon"
       src="{{ icon[0].inactive }}"
       mode="aspectFit"
-      style="width: 80rpx; height: 42rpx;"
+      style="width: 60rpx; height: 522rpx;"
     />
     <image
       slot="icon-active"
       src="{{ icon[0].active }}"
       mode="aspectFit"
-      style="width: 80rpx; height: 40rpx;"
+      style="width: 64rpx; height: 52rpx;"
     />
     组件拆解
   </van-tabbar-item>
@@ -25,13 +25,13 @@
       slot="icon"
       src="{{ icon[1].inactive }}"
       mode="aspectFit"
-      style="width: 80rpx; height: 40rpx;"
+      style="width: 64rpx; height: 52rpx;"
     />
     <image
       slot="icon-active"
       src="{{ icon[1].active }}"
       mode="aspectFit"
-      style="width: 80rpx; height: 40rpx;"
+      style="width: 64rpx; height: 52rpx;"
     />
     组件识别
   </van-tabbar-item><van-tabbar-item>
@@ -39,13 +39,13 @@
       slot="icon"
       src="{{ icon[2].inactive }}"
       mode="aspectFit"
-      style="width: 80rpx; height: 40rpx;"
+      style="width: 64rpx; height: 52rpx;"
     />
     <image
       slot="icon-active"
       src="{{ icon[2].active }}"
       mode="aspectFit"
-      style="width: 80rpx; height: 40rpx;"
+      style="width: 64rpx; height: 52rpx;"
     />
     组件叠加
   </van-tabbar-item>
@@ -54,13 +54,13 @@
       slot="icon"
       src="{{ icon[3].inactive }}"
       mode="aspectFit"
-      style="width: 80rpx; height: 40rpx;"
+      style="width: 64rpx; height: 52rpx;"
     />
     <image
       slot="icon-active"
       src="{{ icon[3].active }}"
       mode="aspectFit"
-      style="width: 80rpx; height: 40rpx;"
+      style="width: 64rpx; height: 52rpx;"
     />
     个人中心
   </van-tabbar-item>

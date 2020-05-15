@@ -1,3 +1,7 @@
 {
+  "usingComponents": {
+    "van-tabbar": "../../lib/dist/tabbar/index",
+    "van-tabbar-item": "../../lib/dist/tabbar-item/index"
+  },
   "component": true
 }

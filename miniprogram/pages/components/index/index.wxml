@@ -63,4 +63,4 @@
   查看统计数据
 </button>
 <view style="height:100rpx;width:100vw"></view>
-<demo-tabbar/>
+<!-- <demo-tabbar/> -->
