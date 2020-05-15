@@ -1,14 +1,20 @@
 <view style="margin-bottom:64px">
   <demo-block title="基础用法">
-    <demo-code height="80" htmlcode="{{code[0].html}}" jscode="{{code[0].js}}" csscode="{{code[0].css}}">
+    <!-- <demo-code height="80" htmlcode="{{code[0].html}}" jscode="{{code[0].js}}" csscode="{{code[0].css}}">
       <view>这是一个简单的view组件</view>
     </demo-code>
     <demo-code height="80" htmlcode="{{code[1].html}}" jscode="{{code[1].js}}" csscode="{{code[1].css}}">
       <view hover-class="view2" hover-start-time="10" hover-stay-time="400">这是增加了点击态效果的view组件</view>
+    </demo-code> -->
+    <demo-code height="80" name="view" type="basic" num="0">
+      <view>这是一个简单的view组件</view>
+    </demo-code>
+    <demo-code height="80" name="view" type="basic" num="1">
+      <view hover-class="view2" hover-start-time="10" hover-stay-time="400">这是增加了点击态效果的view组件</view>
     </demo-code>
   </demo-block>
   <demo-block title="增强用法">
-    <demo-code height="180" htmlcode="{{code[2].html}}" jscode="{{code[2].js}}" csscode="{{code[2].css}}">
+    <!-- <demo-code height="180" name="view" type="basic" num="1">
       <view style="display:flex;">
         <view style='background-color:red;flex-grow:1;height:100rpx;'>水平</view>
         <view style='background-color:rgb(105, 170, 243);flex-grow:1;height:100rpx;'>并排</view>
@@ -25,6 +31,29 @@
       </view>
     </demo-code>
     <demo-code height="180" htmlcode="{{code[4].html}}" jscode="{{code[4].js}}" csscode="{{code[4].css}}">
+      <view style='display:flex;flex-direction:column;height:150rpx;'>
+        <view style='flex-grow:1;background-color:red'>上下</view>
+        <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>排列</view>
+        <view style='flex-grow:1;background-color:rgba(146, 245, 162, 0.932)'>view组件</view>
+      </view>
+    </demo-code> -->
+    <demo-code height="180" name="view" type="strength" num="0">
+      <view style="display:flex;">
+        <view style='background-color:red;flex-grow:1;height:100rpx;'>水平</view>
+        <view style='background-color:rgb(105, 170, 243);flex-grow:1;height:100rpx;'>并排</view>
+        <view style='background-color:rgba(146, 245, 162, 0.932);flex-grow:1;height:100rpx;'>view组件</view>
+      </view>
+    </demo-code>
+    <demo-code height="180" name="view" type="strength" num="1">
+      <view style='display:flex;height:100rpx;'>
+        <view style='background-color:red;width:250rpx'>左右</view>
+          <view style='flex-grow:1;display:flex;flex-direction:column;'>
+            <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>混合</view>
+            <view style='flex-grow:1;background-color:rgba(146, 245, 162, 0.932)'>view组件</view>
+          </view>
+      </view>
+    </demo-code>
+    <demo-code height="180" name="view" type="strength" num="2">
       <view style='display:flex;flex-direction:column;height:150rpx;'>
         <view style='flex-grow:1;background-color:red'>上下</view>
         <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>排列</view>

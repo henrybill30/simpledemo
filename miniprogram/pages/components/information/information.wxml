@@ -2,22 +2,22 @@
   <view wx:if="{{currentPage==0}}">
       <view>
         <demo-block title="基础用法">
-          <demo-code height="80" htmlcode="{{viewcode[0].html}}" jscode="{{viewcode[0].js}}" csscode="{{viewcode[0].css}}">
+          <demo-code height="80" name="view" type="basic" num="0">
             <view>这是一个简单的view组件</view>
           </demo-code>
-          <demo-code height="80" htmlcode="{{viewcode[1].html}}" jscode="{{viewcode[1].js}}" csscode="{{viewcode[1].css}}">
+          <demo-code height="80" name="view" type="basic" num="1">
             <view hover-class="view2" hover-start-time="10" hover-stay-time="400">这是增加了点击态效果的view组件</view>
           </demo-code>
         </demo-block>
         <demo-block title="增强用法">
-          <demo-code height="180" htmlcode="{{viewcode[2].html}}" jscode="{{viewcode[2].js}}" csscode="{{viewcode[2].css}}">
+          <demo-code height="180" name="view" type="strength" num="0">
             <view style="display:flex;">
               <view style='background-color:red;flex-grow:1;height:100rpx;'>水平</view>
               <view style='background-color:rgb(105, 170, 243);flex-grow:1;height:100rpx;'>并排</view>
               <view style='background-color:rgba(146, 245, 162, 0.932);flex-grow:1;height:100rpx;'>view组件</view>
             </view>
           </demo-code>
-          <demo-code height="180" htmlcode="{{viewcode[3].html}}" jscode="{{viewcode[3].js}}" csscode="{{viewcode[3].css}}">
+          <demo-code height="180" name="view" type="strength" num="1">
             <view style='display:flex;height:100rpx;'>
               <view style='background-color:red;width:250rpx'>左右</view>
                 <view style='flex-grow:1;display:flex;flex-direction:column;'>
@@ -26,7 +26,7 @@
                 </view>
             </view>
           </demo-code>
-          <demo-code height="180" htmlcode="{{viewcode[4].html}}" jscode="{{viewcode[4].js}}" csscode="{{viewcode[4].css}}">
+          <demo-code height="180" name="view" type="strength" num="2">
             <view style='display:flex;flex-direction:column;height:150rpx;'>
               <view style='flex-grow:1;background-color:red'>上下</view>
               <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>排列</view>
@@ -39,13 +39,13 @@
   <!-- </view> -->
   <view wx:if="{{currentPage==1}}">
       <demo-block title="基础用法">
-        <demo-code height="80" htmlcode="{{textcode[0].html}}">
+        <demo-code name="text" type="basic" num="0">
           <text>这是一个简单的text组件</text>
         </demo-code>
-        <demo-code height="80" htmlcode="{{textcode[1].html}}">
+        <demo-code height="80" name="text" type="basic" num="1">
           <text selectable="true">这是一个可选择的text组件</text>
         </demo-code>
-        <demo-code height="80" htmlcode="{{textcode[2].html}}">
+        <demo-code height="80" name="text" type="basic" num="2">
           <text selectable="true" space="emsp">这   是   一个显示连续空格的text组件</text>
         </demo-code>
       </demo-block>
@@ -54,7 +54,7 @@
   <view wx:if="{{currentPage==2}}">
     
       <demo-block title="基础用法">
-        <demo-code height="150" htmlcode="{{iconcode[0].html}}">
+        <demo-code name="icon" type="basic" num="0">
           <view style="display:flex;">
             <view style='flex-grow:1;height:80rpx;'>
               <view style="display: flex; flex-direction:column; align-items: center">
@@ -88,7 +88,7 @@
             </view>
           </view>
         </demo-code>
-        <demo-code height="150" htmlcode="{{iconcode[1].html}}">
+        <demo-code height="150" name="icon" type="basic" num="1">
           <view style="display:flex;">
             <view style='width:33.3%;height:80rpx;'>
               <view style="display: flex; flex-direction:column; align-items: center">
@@ -110,7 +110,7 @@
             </view>
           </view>
         </demo-code>
-          <demo-code height="150" htmlcode="{{iconcode[2].html}}">
+        <demo-code height="150" name="icon" type="basic" num="2">
           <view style="display:flex;">
             <view style='width:33.3%;height:80rpx;'>
               <view style="display: flex; flex-direction:column; align-items: center">
@@ -137,13 +137,13 @@
   <view wx:if="{{currentPage==3}}">
     
       <demo-block title="基础用法">
-        <demo-code height="80" htmlcode="{{progresscode[0].html}}">
+        <demo-code height="80" name="progress" type="basic" num="0">
           <progress percent="40" show-info stroke-width="3"/>
         </demo-code>
-        <demo-code height="80" htmlcode="{{progresscode[1].html}}">
+        <demo-code height="80" name="progress" type="basic" num="1">
           <progress percent="60" />
         </demo-code>
-        <demo-code height="80" htmlcode="{{progresscode[2].html}}">
+        <demo-code height="80" name="progress" type="basic" num="2">
           <progress percent="80" color="#10AEFF" active stroke-width="3" />
         </demo-code>
       </demo-block>
@@ -152,18 +152,16 @@
     
       <view>
         <demo-block title="基础用法">
-
           <view class="card-title">传入html字符串</view>
-          <demo-code height="120" htmlcode="{{richtextcode[0].html}}" jscode="{{richtextcode[0].js}}" csscode="{{richtextcode[0].css}}">
+          <demo-code height="120" name="richtext" type="basic" num="0">
             <view class="page-section">
               <view class="rich-text-wrp">
                 <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
               </view>
             </view>
           </demo-code>
-
           <view class="card-title">传入节点列表</view>
-          <demo-code height="120" htmlcode="{{richtextcode[1].html}}" jscode="{{richtextcode[1].js}}" csscode="{{richtextcode[1].css}}">
+          <demo-code height="120" name="richtext" type="basic" num="1">
             <view class="page-section">
               <view class="rich-text-wrp">
                 <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
@@ -174,21 +172,21 @@
 
         <demo-block title="增强用法">
           <view class="card-title">显示连续空格</view>
-          <demo-code height="300" htmlcode="{{richtextcode[2].html}}" jscode="{{richtextcode[2].js}}" csscode="{{richtextcode[2].css}}">
+          <demo-code height="100" name="richtext" type="strength" num="0">
             <view class="page-section">
               <view class="rich-text-wrp">
                 <rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>
               </view>
             </view>
           </demo-code>
-          <demo-code height="300" htmlcode="{{richtextcode[3].html}}" jscode="{{richtextcode[3].js}}" csscode="{{richtextcode[3].css}}">
+          <demo-code height="300" name="richtext" type="strength" num="1">
             <view class="page-section">
               <view class="rich-text-wrp">
                 <rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>
               </view>
             </view>
           </demo-code>
-          <demo-code height="200" htmlcode="{{richtextcode[4].html}}" jscode="{{richtextcode[4].js}}" csscode="{{richtextcode[4].css}}">
+          <demo-code height="200" name="richtext" type="strength" num="2">
             <view class="page-section">
               <view class="rich-text-wrp">
                 <rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>
@@ -202,7 +200,7 @@
     
       <view class="page-body">
         <demo-block title="基础用法">
-          <demo-code height="320" htmlcode="{{swipercode[0].html}}">
+          <demo-code height="320" name="swiper" type="basic" num="0">
             <view class="page-section page-section-spacing swiper">
               <swiper
                 indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"

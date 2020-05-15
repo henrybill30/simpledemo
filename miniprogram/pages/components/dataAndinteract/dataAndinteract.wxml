@@ -1,7 +1,7 @@
 <view class="container">
   <view wx:if="{{currentPage==0}}">
     <demo-block title="基础用法">
-      <demo-code height="80" htmlcode="{{buttoncode[0].html}}" jscode="{{buttoncode[0].js}}">
+      <demo-code height="80" name="button" type="basic" num="0">
         <view style="display:flex">
           <view style="flex-group:1">
             <button size="primary" type="primary" bindtap="showdata">显示数据按钮</button>
@@ -11,7 +11,7 @@
           </view>
         </view>
       </demo-code>
-      <demo-code height="120" htmlcode="{{buttoncode[1].html}}" jscode="{{buttoncode[1].js}}">
+      <demo-code height="120" name="button" type="basic" num="1">
         <view style="display:flex">
           <view style="flex-group:1">
             <button size="mini" type="default" open-type="contact" bindcontact="contact">打开会话</button>
@@ -21,7 +21,7 @@
           </view>
         </view>
       </demo-code>
-      <demo-code height="120" htmlcode="{{buttoncode[2].html}}">
+      <demo-code height="120" name="button" type="basic" num="2">
         <view style="display:flex">
           <!-- <view style="flex-group:1"> -->
           <button size="mini" type="default" open-type="share">分享</button>
@@ -31,12 +31,12 @@
           </view> -->
         </view>
       </demo-code>
-      <demo-code height="120" htmlcode="{{buttoncode[3].html}}">
+      <demo-code height="120" name="button" type="basic" num="3">
         <view style="display:flex">
           <button size="mini" type="default" open-type="openSetting">打开授权页</button>
         </view>
       </demo-code>
-      <demo-code height="120" htmlcode="{{buttoncode[4].html}}">
+      <demo-code height="120" name="button" type="basic" num="4">
         <view style="display:flex">
           <view style="flex-group:1">
             <button size="mini" type="default" loading="true">加载按钮</button>
@@ -53,7 +53,7 @@
   </view>
   <view wx:if="{{currentPage==1}}">
     <demo-block title="基础用法">
-      <demo-code height="80" htmlcode="{{switchcode[0].html}}" jscode="{{switchcode[0].js}}">
+      <demo-code height="80" name="switch" type="basic" num="0">
         <view style="display:flex; align-items:center">
           <view style="flex-group:1">
             <switch bindchange="switchchange"/>{{switchchange}}
@@ -70,7 +70,7 @@
   </view>
   <view wx:if="{{currentPage==2}}">
     <demo-block title="基础用法">
-      <demo-code height="80" htmlcode="{{radiocode[0].html}}" jscode="{{radiocode[0].js}}">
+      <demo-code height="80" name="radio" type="basic" num="0">
         <view style="display:flex; align-items:center">
           <view style="flex-group:1">
             <radio checked="{{checked}}" bindtap="change1"/>{{change1}}
@@ -85,7 +85,7 @@
       </demo-code>
     </demo-block>
     <demo-block title="增强用法">
-      <demo-code height="350" htmlcode="{{radiocode[1].html}}" jscode="{{radiocode[1].js}}">
+      <demo-code height="350" name="radio" type="strength" num="0">
         <view style="display:flex;flex-direction: column">
           <radio-group  style="flex-group:1" bindchange="change2">
             <label wx:for-items="{{language}}" wx:for-item="item" wx:key="value">
@@ -103,7 +103,7 @@
   </view>
   <view wx:if="{{currentPage==3}}">
     <demo-block title="基础用法">
-      <demo-code height="80" htmlcode="{{checkboxcode[0].html}}" jscode="{{checkboxcode[0].js}}">
+      <demo-code height="80" name="checkbox" type="basic" num="0">
         <view style="display:flex; align-items:center">
           <view style="flex-group:1">
             <checkbox checked="{{checked}}" bindtap="checkboxchange">{{checkboxchange}}</checkbox>
@@ -118,7 +118,7 @@
       </demo-code>
     </demo-block>
     <demo-block title="增强用法">
-      <demo-code height="360" htmlcode="{{checkboxcode[1].html}}" jscode="{{checkboxcode[1].js}}">
+      <demo-code height="360" name="checkbox" type="strength" num="0">
         <view style="display:flex;flex-direction: column">
           <checkbox-group style="flex-group:1" bindchange="checkboxchange2">
             <label wx:for-items="{{language}}" wx:for-item="item" wx:key="value">
@@ -138,7 +138,7 @@
     <view>
       <view class="section">
         <view class="section__title">普通选择器</view>
-        <demo-code height="88" htmlcode="{{pickercode[0].html}}" jscode="{{pickercode[0].js}}" csscode="{{pickercode[0].css}}"> 
+        <demo-code height="88" name="picker" type="basic" num="0"> 
           <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
             <view class="picker">
               当前选择：{{array[index]}}
@@ -148,7 +148,7 @@
       </view>
       <view class="section">
         <view class="section__title">多列选择器</view>
-        <demo-code height="160" htmlcode="{{pickercode[1].html}}" jscode="{{pickercode[1].js}}" csscode="{{pickercode[1].css}}">
+        <demo-code height="160" name="picker" type="basic" num="1">
           <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
             <view class="picker">
               当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
@@ -158,7 +158,7 @@
       </view>
       <view class="section">
         <view class="section__title">时间选择器</view>
-        <demo-code height="88" htmlcode="{{pickercode[2].html}}" jscode="{{pickercode[2].js}}" csscode="{{pickercode[2].css}}">
+        <demo-code height="88" name="picker" type="basic" num="2">
           <picker mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="bindTimeChange">
             <view class="picker">
               当前选择: {{time}}
@@ -169,7 +169,7 @@
 
       <view class="section">
         <view class="section__title">日期选择器</view>
-        <demo-code height="88"htmlcode="{{pickercode[3].html}}" jscode="{{pickercode[3].js}}" csscode="{{pickercode[3].css}}">
+        <demo-code height="88" name="picker" type="basic" num="3">
           <picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
             <view class="picker">
               当前选择: {{date}}
@@ -179,7 +179,7 @@
       </view>
       <view class="section">
         <view class="section__title">省市区选择器</view>
-        <demo-code height="88"htmlcode="{{pickercode[4].html}}" jscode="{{pickercode[4].js}}" csscode="{{pickercode[4].css}}">
+        <demo-code height="88" name="picker" type="basic" num="4">
           <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
             <view class="picker">
               当前选择：{{region[0]}}，{{region[1]}}，{{region[2]}}
@@ -191,41 +191,41 @@
   </view>
   <view wx:if="{{currentPage==5}}">
     <demo-block title="基础用法">
-      <demo-code height="120" htmlcode="{{sliderjichu[0].html}}">
+      <demo-code height="120" name="slider" type="basic" num="0">
         <slider bindchange="sliderChange">slider滑块</slider>
       </demo-code>
     </demo-block>
 
     <demo-block title="增强用法">
-      <demo-code height="120" htmlcode="{{sliderzengqiang[0].html}}">
+      <demo-code height="120" name="slider" type="strength" num="0">
         <view>
           <text class="section__title">显示当前value:</text>
           <slider show-value/>
         </view>
       </demo-code>
 
-      <demo-code height="120" htmlcode="{{sliderzengqiang[1].html}}">
+      <demo-code height="120" name="slider" type="strength" num="1">
         <view>
           <text class="section__title">设置step:</text>
           <slider show-value step="5"/>
         </view>
       </demo-code>
 
-      <demo-code height="120" htmlcode="{{sliderzengqiang[2].html}}">
+      <demo-code height="120" name="slider" type="strength" num="2">
         <view>
           <text class="section__title">设置最小/最大值：</text>
           <slider min="50" max="200" show-value/>
         </view>
       </demo-code>
 
-      <demo-code height="120" htmlcode="{{sliderzengqiang[3].html}}">
+      <demo-code height="120" name="slider" type="strength" num="3">
         <view>
           <text class="section__title">改变滑块颜色：</text>
           <slider block-color="#DBFC00" show-value/>
         </view>
       </demo-code>
 
-      <demo-code height="120" htmlcode="{{sliderzengqiang[4].html}}">
+      <demo-code height="120" name="slider" type="strength" num="4">
         <view>
           <text class="section__title">改变滑块的大小(取值范围为 12 - 28)：</text>
           <slider block-size="12" show-value/>
@@ -235,7 +235,7 @@
     </demo-block>
 
     <demo-block title="常用事件">
-      <demo-code height="200" htmlcode="{{sliderevent[0].html}}" jscode="{{sliderevent[0].js}}">
+      <demo-code height="200" name="slider" type="strength" num="5">
         <view>
           <text class="section__title">bindchange：完成一次拖动后触发</text>
           <slider bindchange="sliderChange1"/>
@@ -243,7 +243,7 @@
         </view>
       </demo-code>
 
-      <demo-code height="200" htmlcode="{{sliderevent[1].html}}" jscode="{{sliderevent[1].js}}">
+      <demo-code height="200" name="slider" type="strength" num="6">
         <view>
           <text class="section__title">bindchanging：拖动中触发</text>
           <slider bindchanging="sliderChange2"/>
@@ -254,58 +254,58 @@
   </view>
   <view wx:if="{{currentPage==6}}">
     <demo-block title="基础用法">
-      <demo-code height="80" htmlcode="{{inputjichu[0].html}}">
+      <demo-code height="80" name="input" type="basic" num="0">
         <input placeholder="最简输入框"></input>
       </demo-code>
     </demo-block>
 
     <demo-block title="增强用法">
-      <demo-code height="80" htmlcode="{{inputzengqiang[0].html}}">
+      <demo-code height="80" name="input" type="strength" num="0">
         <input maxlength="10" placeholder="最大输入长度为10"/>
       </demo-code>
 
-      <demo-code height="80" htmlcode="{{inputzengqiang[1].html}}">
+      <demo-code height="80" name="input" type="strength" num="1">
         <input value="这是初始内容！" placeholder="包含初始内容"/>
       </demo-code>
 
-      <demo-code height="80" htmlcode="{{inputzengqiang[2].html}}">
+      <demo-code height="80" name="input" type="strength" num="2">
         <input password placeholder="请输入密码"/>
       </demo-code>
 
-      <demo-code height="80" htmlcode="{{inputzengqiang[3].html}}">
+      <demo-code height="80" name="input" type="strength" num="3">
         <input placeholder-style="color:red" placeholder="红色占位符"/>
       </demo-code>
 
-      <demo-code height="80" htmlcode="{{inputzengqiang[4].html}}">
+      <demo-code height="80" name="input" type="strength" num="4">
         <input disabled placeholder="禁用状态"/>
       </demo-code>
 
-      <demo-code height="80" htmlcode="{{inputzengqiang[5].html}}">
+      <demo-code height="80" name="input" type="strength" num="5">
         <input auto-focus placeholder="自动获取焦点"/>
       </demo-code>
     </demo-block>
 
     <demo-block title="带不同键盘的输入框">
-      <demo-code height="80" htmlcode="{{inputkeyboard[0].html}}">
+      <demo-code height="80" name="input" type="strength" num="6">
         <input type="text" placeholder="文本输入键盘"/>
       </demo-code>
 
-      <demo-code height="80" htmlcode="{{inputkeyboard[1].html}}">
+      <demo-code height="80" name="input" type="strength" num="7">
         <input type="number" placeholder="数字输入键盘"/>
       </demo-code>
 
-      <demo-code height="80" htmlcode="{{inputkeyboard[2].html}}">
+      <demo-code height="80" name="input" type="strength" num="8">
         <input type="idcard" placeholder="身份证输入键盘"/>
       </demo-code>
 
-      <demo-code height="80" htmlcode="{{inputkeyboard[3].html}}">
+      <demo-code height="80" name="input" type="strength" num="9">
         <input type="digit" placeholder="带小数点的数字输入键盘"/>
       </demo-code>
     </demo-block>
   </view>
   <view wx:if="{{currentPage==7}}">
     <demo-block title="基础用法">  
-      <demo-code height="1100" htmlcode="{{formjichu[0].html}}" jscode="{{formjichu[0].js}}" csscode="{{formjichu[0].css}}">
+      <demo-code height="1100" name="form" type="basic" num="0">
         <form bindsubmit="formSubmit" bindreset="formReset">
           <view class="section section_gap">
             <view class="section__title">switch</view>
