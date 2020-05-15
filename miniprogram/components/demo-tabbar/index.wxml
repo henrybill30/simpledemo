@@ -10,7 +10,7 @@
       slot="icon"
       src="{{ icon[0].inactive }}"
       mode="aspectFit"
-      style="width: 60rpx; height: 522rpx;"
+      style="width: 60rpx; height: 52rpx;"
     />
     <image
       slot="icon-active"
