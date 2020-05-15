@@ -3,7 +3,9 @@ page {
   height: 100%;
   font-size: 32rpx;
   line-height: 1.6;
-  /* font-family: "宋体" */
+}
+view{
+  font-family: "宋体";
 }
 .container{
   margin: 0 60rpx 100rpx 60rpx

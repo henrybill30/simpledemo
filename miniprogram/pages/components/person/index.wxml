@@ -1,1 +1,15 @@
-<view>个人中心</view>
+
+<view class="center-box">
+  <view class="cu-avatar lg round margin-left"  style="background-image:url(./用户头像.png);" bindtap="headimgHD">
+    <open-data type="userAvatarUrl" class="userAvatar"></open-data>  
+  </view>  
+</view> 
+<view class="center-box">
+  <open-data type="userNickName" lang="zh_CN"></open-data>
+</view>
+
+<van-overlay show="{{ showimg }}" bindtap="hideHeadimgHD">
+    <view class="wrapper">
+      <image class="hdimg" src="{{ uesrImg }}"></image>
+    </view>
+  </van-overlay>

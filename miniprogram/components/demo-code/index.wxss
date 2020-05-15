@@ -3,22 +3,19 @@
   margin: 5rpx 15rpx 25rpx 10rpx;
   /* padding-left: 15rpx; */
   position:relative;
-  border:1rpx solid #E9EBEC;
+  border:1rpx solid #C0C0C0;
   border-radius:2rpx;
   box-shadow: 0rpx 0rpx 10rpx #6F6F6F;
 }
 .line{
   width: 99%;
   height: 1rpx;
-  border-top:2rpx solid #E9EBEC;
-  margin: 10rpx 0
+  border-top:4rpx solid #E9EBEC;
+  margin: 10rpx 1rpx;
 }
 .demo-name{
   width: 95%;
   padding: 35rpx 15rpx 25rpx 15rpx;
-  /* position: absolute; */
-  /* top: 50%; */
-  /* transform: translate(0%, -50%); */
 }
 .demo-code{
   background-color: #fff;

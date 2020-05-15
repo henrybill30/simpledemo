@@ -1,0 +1,53 @@
+.cu-avatar {
+	font-variant: small-caps;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	background-color: #ccc;
+	color: var(--white);
+	white-space: nowrap;
+	position: relative;
+	width: 64rpx;
+	height: 64rpx;
+	background-size: cover;
+	background-position: center;
+	vertical-align: middle;
+	font-size: 1.5em;
+  overflow:hidden;
+}
+
+.cu-avatar.lg {
+	width: 196rpx;
+	height: 196rpx;
+	font-size: 2em;
+}
+
+.round {
+	border-radius: 5000rpx;
+}
+
+.userAvatar{
+  width: 196rpx;
+	height: 196rpx;
+}
+.center-box{
+  display: flex;
+  justify-content: space-around;
+  margin: 25rpx
+}
+
+.hdimg{
+  width: 100vw;
+  height: 100vw
+}
+
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}

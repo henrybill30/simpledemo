@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-overlay": "../../../lib/dist/overlay/index"
+  },
   "navigationBarTitleText": "个人中心"
 }
