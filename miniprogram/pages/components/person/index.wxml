@@ -9,7 +9,7 @@
 </view>
 
 <van-overlay show="{{ showimg }}" bindtap="hideHeadimgHD">
-    <view class="wrapper">
-      <image class="hdimg" src="{{ uesrImg }}" catchtap="noop"></image>
-    </view>
-  </van-overlay>
+  <view class="wrapper">
+    <image class="hdimg" src="{{ uesrImg }}"></image>
+  </view>
+</van-overlay>
