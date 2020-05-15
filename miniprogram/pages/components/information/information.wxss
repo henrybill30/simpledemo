@@ -152,7 +152,7 @@ button:last-child{
 }
 .info{
   position: absolute;
-  right: 0;
+  right: 75rpx;
   color: #353535;
   font-size: 30rpx;
 }

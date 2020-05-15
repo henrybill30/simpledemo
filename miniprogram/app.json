@@ -12,7 +12,7 @@
         "iconPath": "./pages/components/componentstear/识别1.png",
         "selectedIconPath": "./pages/components/componentstear/识别2.png"
       }, {
-        "pagePath": "pages/components/componentsidentify/index",
+        "pagePath": "pages/components/componentpileup/index",
         "text": "组件叠加",
         "iconPath": "./pages/components/componentstear/叠加.png",
         "selectedIconPath": "./pages/components/componentstear/叠加 (1).png"
@@ -28,7 +28,7 @@
   "pages": [
     "pages/components/index/index",
     "pages/components/componentstear/index",
-    "pages/components/componentsidentify/index",
+    "pages/components/componentpileup/index",
     "pages/components/person/index",
     "pages/login/login",
     "pages/components/information/information",

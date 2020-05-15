@@ -8,5 +8,5 @@ view{
   font-family: "宋体";
 }
 .container{
-  margin: 0 60rpx 100rpx 60rpx
+  margin: 0 60rpx 120rpx 60rpx
 }

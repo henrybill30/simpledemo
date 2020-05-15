@@ -41,7 +41,7 @@ Component({
         case 2:
           console.log("2");
           wx.switchTab({
-            url: '../../components/componentsidentify/index'
+            url: '../../components/componentpileup/index'
           })
           break;
         case 3:

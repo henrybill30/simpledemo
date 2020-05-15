@@ -135,7 +135,7 @@
     </demo-block>
   </view>
   <view wx:if="{{currentPage==4}}">
-    <view>
+    <view >
       <view class="section">
         <view class="section__title">普通选择器</view>
         <demo-code height="88" name="picker" type="basic" num="0"> 
@@ -177,7 +177,7 @@
           </picker>
         </demo-code>
       </view>
-      <view class="section">
+      <view class="section" style="margin-bottom:50rpx">
         <view class="section__title">省市区选择器</view>
         <demo-code height="88" name="picker" type="basic" num="4">
           <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
