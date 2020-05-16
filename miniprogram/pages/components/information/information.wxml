@@ -1,3 +1,8 @@
+<page-meta>
+  <navigation-bar
+    title="{{nbTitle}}"
+  />
+</page-meta>
 <view class="container">
   <view wx:if="{{currentPage==0}}">
       <view>

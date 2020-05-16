@@ -9,6 +9,8 @@ Page({
     // buttonForbid: false,
     currentPage: 0,
     pageNum: 6,
+    nbTitle: '',
+    titleArr: ['view组件', 'text组件','icon组件','progress组件','rich-text组件','swiper组件'],
     //richtext
     nbsphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是根据字体设置大小的&nbsp;&nbsp;&nbsp;&nbsp;四个连续空格!</div>',
     ensphtml: '<div class="div_class" style="line-height: 60px; color: red;">这是中文字符空格一半大小的&ensp;&ensp;&ensp;&ensp;四个连续空格!</div>',
@@ -82,12 +84,19 @@ Page({
   },
   tobefore(e) {
     if (this.data.currentPage === 0) {
+      this.setData({
+        nbTitle: this.data.titleArr[0]
+      })
       return
     }
     var that = this;
     this.setData({
       currentPage: parseInt(this.data.currentPage) - 1,
+<<<<<<< HEAD
       leftanimation: 'fade'
+=======
+      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
+>>>>>>> master
     })
     setTimeout(function () {
       that.setData({
@@ -97,12 +106,19 @@ Page({
   },
   tonext(e) {
     if (this.data.currentPage === this.data.pageNum-1) {
+      this.setData({
+        nbTitle: this.data.titleArr[this.data.pageNum - 1]
+      })
       return
     }
     var that = this;
     this.setData({
       currentPage: parseInt(this.data.currentPage)+1,
+<<<<<<< HEAD
       rightanimation: 'fade'
+=======
+      nbTitle: this.data.titleArr[parseInt(this.data.currentPage)+1]
+>>>>>>> master
     })
     setTimeout(function () {
       that.setData({
@@ -115,7 +131,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      currentPage: parseInt(options.index)
+      currentPage: parseInt(options.index),
+      nbTitle: this.data.titleArr[parseInt(options.index)]
     })
   },
 

@@ -8,6 +8,8 @@ Page({
     active: 'home',
     currentPage: 0,
     pageNum: 8,
+    nbTitle: '',
+    titleArr: ['button组件', 'switch组件', 'radio组件', 'checkbox组件', 'picker组件', 'slider组件', 'input组件', 'form组件'],
     //button
     shuju: "",
     contactinfo: "",
@@ -374,12 +376,19 @@ Page({
 
   tobefore(e) {
     if (this.data.currentPage === 0) {
+      this.setData({
+        nbTitle: this.data.titleArr[0]
+      })
       return
     }
     var that = this;
     this.setData({
       currentPage: parseInt(this.data.currentPage) - 1,
+<<<<<<< HEAD
       leftanimation: 'fade'
+=======
+      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
+>>>>>>> master
     })
     setTimeout(function () {
       that.setData({
@@ -389,12 +398,19 @@ Page({
   },
   tonext(e) {
     if (this.data.currentPage === this.data.pageNum - 1) {
+      this.setData({
+        nbTitle: this.data.titleArr[this.data.pageNum - 1]
+      })
       return
     }
     var that = this;
     this.setData({
       currentPage: parseInt(this.data.currentPage) + 1,
+<<<<<<< HEAD
       rightanimation: 'fade'
+=======
+      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) + 1]
+>>>>>>> master
     })
     setTimeout(function () {
       that.setData({
@@ -407,7 +423,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      currentPage: parseInt(options.index)
+      currentPage: parseInt(options.index),
+      nbTitle: this.data.titleArr[parseInt(options.index)]
     })
     //button
     wx.getSetting({

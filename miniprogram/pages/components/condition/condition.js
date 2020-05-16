@@ -5,14 +5,79 @@ Page({
    * 页面的初始数据
    */
   data: {
+    currentPage: 0,
+    pageNum: 3,
+    nbTitle: '',
+    titleArr: ['wx:if使用', 'wx:elif使用', 'wx:else使用'],
+    x: false,
+    randomNum: Math.round(Math.random()*10),
+    guessNum: -1,
+    randomNum1: Math.round(Math.random() * 10),
+    guessNum1: -1,
+    imagePos:[
+      '上','下','左','右','左上','右上','左下','右下','中间'
+    ],
+    imgUrl: '../../../resource/cat.jpg',
+    index: 0,
+  },
 
+  xChange: function (e) {
+    this.setData({
+      x: e.detail.value
+    })
+  },
+
+  guess: function(e) {
+    this.setData({
+      guessNum: e.detail.value
+    })
+  },
+
+  guess1: function (e) {
+    this.setData({
+      guessNum1: e.detail.value
+    })
+  },
+
+  bindPickerChange(e) {
+    this.setData({
+      index: e.detail.value
+    })
+  },
+
+  tobefore(e) {
+    if (this.data.currentPage === 0) {
+      this.setData({
+        nbTitle: this.data.titleArr[0]
+      })
+      return
+    }
+    this.setData({
+      currentPage: parseInt(this.data.currentPage) - 1,
+      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
+    })
+  },
+  tonext(e) {
+    if (this.data.currentPage === this.data.pageNum - 1) {
+      this.setData({
+        nbTitle: this.data.titleArr[this.data.pageNum - 1]
+      })
+      return
+    }
+    this.setData({
+      currentPage: parseInt(this.data.currentPage) + 1,
+      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) + 1]
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      currentPage: parseInt(options.index),
+      nbTitle: this.data.titleArr[parseInt(options.index)]
+    })
   },
 
   /**
@@ -26,7 +91,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+  
   },
 
   /**
@@ -64,3 +129,156 @@ Page({
 
   }
 })
+
+// wxifcode: [
+//       {
+//         html: 
+// `<switch bindchange="xChange">显示控制</switch>
+// <block wx:if="{{x}}" >
+//   <view> 第一个显示单元 </view>
+//   <view>
+//     <text>progress进度条</text>
+//   <progress percent="80" ></progress>
+//   </view>
+//     <view>image图片</view>
+//     <image style="width: 200px; height: 200px;" mode="scaleToFill" src="../../../resource/cat.jpg">  </image>
+//   <view> …… </view>
+//   <view> 第N个显示单元 </view>
+// </block>`,
+// js:
+// `Page({
+//   data: {
+//     x: false,
+//   },
+//   xChange: function (e) {
+//     this.setData({
+//       x: e.detail.value
+//     })
+//   },
+// })`
+//       },
+//       {
+// html:
+// `<view >猜数字</view>
+// <view class="weui-cells weui-cells_after-title">
+//   <view class="weui-cell weui-cell_input">
+//     <input class="weui-input" placeholder="10以内数字" type="number" bindconfirm="guess"></input>
+//   </view>
+// </view>
+// <view wx:if="{{guessNum==randomNum}}">
+//   <text>恭喜猜对了！！！这样我才会显示</text>
+// </view>`,
+// js:
+// `Page({
+//   data: {
+//     randomNum: Math.round(Math.random()*10),
+//     guessNum: -1,
+//   },
+//   guess: function(e) {
+//     this.setData({
+//       guessNum: e.detail.value
+//     })
+//   },
+// })`
+//       },
+//       {
+// html:
+// `<view class="weui-label">显示图片位置</view>
+// <picker bindchange="bindPickerChange" value="{{index}}" range="{{imagePos}}">
+//   <view class="weui-input">{{imagePos[index]}}</view>
+// </picker>
+//  <view wx:if="{{index==0}}" style="display:flex; justify-content: center;">
+//   <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top"></image>
+// </view>
+// <view wx:elif="{{index==1}}" style="display:flex; justify-content: center;">
+//   <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom"></image>
+// </view>
+// <view wx:elif="{{index==2}}" style="display:flex; justify-content: center;">
+//   <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="left"></image>
+// </view>
+// <view wx:elif="{{index==3}}" style="display:flex; justify-content:center">
+//   <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="right"></image>
+// </view>
+// <view wx:elif="{{index==4}}" style="display:flex; justify-content:center">
+//   <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top left"></image>
+// </view>
+// <view wx:elif="{{index==5}}" style="display:flex; justify-content:center">
+//   <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top right"></image>
+// </view>
+// <view wx:elif="{{index==6}}" style="display:flex; justify-content:center">
+//   <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom left"></image>
+// </view>
+// <view wx:elif="{{index==7}}" style="display:flex; justify-content:center">
+//   <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom right"></image>
+// </view>
+// <view wx:elif="{{index==8}}" style="display:flex; justify-content:center">
+//   <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="center"></image>
+// </view>`,
+// js:
+// `Page({
+//   data: {
+//     imagePos:[
+//       '上','下','左','右','左上','右上','左下','右下','中间'
+//     ],
+//     imgUrl: '../../../resource/cat.jpg',
+//     index: 0,
+//   },
+//   bindPickerChange(e) {
+//     this.setData({
+//       index: e.detail.value
+//     })
+//   },
+// })`
+//       },
+//       {
+// html:
+// `<switch bindchange="xChange" >显示控制</switch>
+// <block wx:if="{{!x}}" >
+//   <text>\nx为false显示这一单元</text>
+// </block>
+// <block wx:else>
+//   <text>\nelse,显示这一单元</text>
+// </block>`,
+// js:
+// `Page({
+//   data: {
+//     x: false,
+//   },
+//   xChange: function (e) {
+//     this.setData({
+//       x: e.detail.value
+//     })
+//   },
+// })`
+//       },
+//       {
+// html:
+// `<view>猜数字升级</view>
+// <view class="weui-cells weui-cells_after-title">
+//   <view class="weui-cell weui-cell_input">
+//     <input class="weui-input" placeholder="10以内数字" type="number" bindconfirm="guess"></input>
+//   </view>
+// </view>
+// <view wx:if="{{guessNum==randomNum}}">
+//   <text>恭喜猜对了！！！这样我才会显示</text>
+// </view>
+// <view wx:elif="{{guessNum==-1}}">
+//   <text>准备开始</text>
+// </view>
+// <view wx:else>
+//   <text>猜错了...再猜一次！</text>
+// </view>`,
+// js:
+// `Page({
+//   data: {
+//     randomNum: Math.round(Math.random()*10),
+//     guessNum: -1,
+//   },
+//   guess: function(e) {
+//     this.setData({
+//       guessNum: e.detail.value
+//     })
+//   },
+// })`
+//       }
+//     ]
