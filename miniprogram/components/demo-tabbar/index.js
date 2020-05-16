@@ -2,17 +2,17 @@ Component({
   data: {
     active: 1,
     icon: [{
-      inactive: 'https://wx2.sinaimg.cn/mw690/006D4XS4gy1gesflc4yqtj305k05kwed.jpg',
-      active: 'https://wx1.sinaimg.cn/mw690/006D4XS4gy1gesflc1sb9j305k05ka9y.jpg'
+      inactive: 'http://pic.yupoo.com/253673/db990bbf/c6b97c13.png',
+      active: 'http://pic.yupoo.com/253673/70a2c46b/03eb75b0.png'
     }, {
-        inactive: 'https://wx3.sinaimg.cn/mw690/006D4XS4gy1gesf79fcb2j305k05kdfu.jpg',
-        active: 'https://wx1.sinaimg.cn/mw690/006D4XS4gy1gesf7wxppuj305k05k74b.jpg'
+        inactive: 'http://pic.yupoo.com/253673/9d264693/dbb2b6e3.png',
+        active: 'http://pic.yupoo.com/253673/3ed5e101/13259079.png'
       }, {
-        inactive: 'https://wx2.sinaimg.cn/mw690/006D4XS4gy1gesfl98as5j305l05kmx7.jpg',
-        active: 'https://wx4.sinaimg.cn/mw690/006D4XS4gy1gesfl8wlv6j305l05kt8s.jpg'
+        inactive: 'http://pic.yupoo.com/253673/2708e419/75a83e9c.png',
+        active: 'http://pic.yupoo.com/253673/62e13938/9fc95b5f.png'
       }, {
-        inactive: 'https://wx1.sinaimg.cn/mw690/006D4XS4gy1gesflbhq61j305k05kglg.jpg',
-        active: 'https://wx3.sinaimg.cn/mw690/006D4XS4gy1gesflboe22j305k05kq2s.jpg'
+        inactive: 'http://pic.yupoo.com/253673/cbd62833/39f91498.png',
+        active: 'http://pic.yupoo.com/253673/9608e3fe/4fa0927b.png'
       }]
   },
   options: {

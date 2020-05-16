@@ -16,6 +16,6 @@ view{
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(236, 235, 219, 0.699);
+  background: #EDE1D9;
   z-index: -1
 }
