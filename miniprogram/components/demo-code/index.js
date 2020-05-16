@@ -44,6 +44,24 @@ Component({
       this.setData({
         showcode: !this.data.showcode
       })
+      wx.cloud.callFunction({
+        name: 'addRecord',
+        data: {
+          envID: getApp().globalData.envID,
+          openid: getApp().globalData.openid,
+          behavior: 'showCode',
+          component: this.properties.name,
+          cpType: this.properties.type,
+          cpNum: this.properties.num,
+          time: new Date()
+        },
+        success: res => {
+          console.log("result: " + JSON.stringify(res.result))
+        },
+        fail: err => {
+          console.log("error: " + JSON.stringify(err))
+        }
+      })
     },
     copyhtml: function (e) {
       var content = this.properties.htmlcode.split("@@")[1];
