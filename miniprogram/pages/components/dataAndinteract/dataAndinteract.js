@@ -386,7 +386,11 @@ Page({
       currentPage: parseInt(this.data.currentPage) - 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       leftanimation: 'fade'
+=======
+      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
+>>>>>>> master
 =======
       nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
 >>>>>>> master
@@ -412,7 +416,11 @@ Page({
       currentPage: parseInt(this.data.currentPage) + 1,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       rightanimation: 'fade'
+=======
+      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) + 1]
+>>>>>>> master
 =======
       nbTitle: this.data.titleArr[parseInt(this.data.currentPage) + 1]
 >>>>>>> master
