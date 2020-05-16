@@ -1,2 +1,57 @@
-<!--pages/components/API/API.wxml-->
-<text>pages/components/API/API.wxml</text>
+<view class="container">
+  <view wx:if="{{currentPage==0}}">
+    <demo-block title="基本用法">
+      <demo-code height="80" name="系统信息" type="basic" num="0">
+        <button bindtap="getSystemMsg">获取系统信息</button>
+        <view>设备品牌及型号：{{sysInfo.model}}</view>
+        <view>设备像素比：{{sysInfo.pixelRatio}}</view>
+        <view>可使用窗口宽度:{{sysInfo.windowWidth}}</view>
+        <view>可使用窗口高度：{{sysInfo.windowHeight}}</view>
+        <view>微信设置的语言：{{sysInfo.language}}</view>
+        <view>微信版本号：{{sysInfo.version}}</view>
+        <view>操作系统及版本：{{sysInfo.system}}</view>
+      </demo-code>
+    </demo-block>
+  </view>
+  <view wx:if="{{currentPage==1}}">
+    <demo-block title="陀螺仪">
+      <demo-code height="80" name="传感器" type="basic" num="0">
+        <button bindtap="startGyroscope" style="margin-bottom:20rpx">打开陀螺仪</button>
+        <button bindtap="stopGyroscope">关闭陀螺仪</button>
+        
+        <view>x：{{gyroscope.x}}</view>
+        <view>y：{{gyroscope.y}}</view>
+        <view>z: {{gyroscope.z}}</view>
+      </demo-code>
+    </demo-block>
+  </view>
+  <view wx:if="{{currentPage==2}}">
+    <demo-block title="基本用法">
+      <demo-code height="80" name="振动" type="basic" num="0">
+        <button bindtap="vibrate" data-time="{{true}}" style="margin-bottom:20rpx">较长时间振动</button>
+
+        <button bindtap="vibrate" data-time="{{false}}">较短时间振动</button>
+      </demo-code>
+    </demo-block>
+  </view>
+  <view wx:if="{{currentPage==3}}">
+    <demo-block title="基本用法">
+      <demo-code height="80" name="扫码" type="basic" num="0">
+        <button bindtap="scanCode">扫码</button>
+        <web-view src="{{toUrl}}" wx:if="{{toUrl!=''}}"></web-view>
+      </demo-code>
+    </demo-block>
+  </view>
+  <view wx:if="{{currentPage==4}}">
+    <demo-block title="基本用法">
+      <demo-code height="80" name="获取位置信息" type="basic" num="0">
+        <button bindtap="getLocation">查看当前位置</button>
+      </demo-code>
+    </demo-block>
+  </view>
+</view>
+
+<van-icon name="arrow-left" size="30"  class="left-btn animation-{{leftanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
+<van-icon name="arrow" size="30"class="right-btn animation-{{rightanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
+
+<demo-tabbar/>

@@ -5,24 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    active: 0,
-    active2: 'home',
-    active3: 0,
-    active4: 0,
-    active5: 0,
-    active6: 0,
-    icon: {
-      normal: 'https://img.yzcdn.cn/vant/user-inactive.png',
-      active: 'https://img.yzcdn.cn/vant/user-active.png'
-    },
-
-
     currentPage: 0,
     pageNum: 1,
-    icon: {
-      active: './积木编程.png',
-      inactive: './积木编程.png',
-    },
     //wxfor
     array: ['美国', '中国', '巴西', '日本'],
     index: 1,

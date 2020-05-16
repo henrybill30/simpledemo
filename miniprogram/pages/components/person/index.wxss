@@ -1,3 +1,18 @@
+.bgc{
+  position: absolute;
+  width: 100vw;
+  height: 60vw;
+  background-size:100% 100%;
+  opacity: 0.8;
+  z-index: -1;
+}
+.user{
+  width: 100vw;
+  height: 60vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .cu-avatar {
 	font-variant: small-caps;
 	margin: 0;
@@ -36,7 +51,9 @@
 .center-box{
   display: flex;
   justify-content: space-around;
-  margin: 25rpx
+  /* margin: 25rpx */
+  color: black;
+  opacity: 1;
 }
 
 .hdimg{
