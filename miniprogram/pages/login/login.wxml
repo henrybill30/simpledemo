@@ -1,6 +1,6 @@
 <!--miniprogram/login/login.wxml-->
 <view class="device">
-    <image src='../../resource/cover.png' class='seed'></image>
+    <!-- <image src='../../resource/cover.png' class='seed'></image> -->
     <view>
       <view class='note'>1、同意当前小程序获取我的微信头像；</view>
       <view class='note'>2、同意当前小程序获取我的微信昵称等其他信息；</view>

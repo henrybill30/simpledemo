@@ -67,10 +67,9 @@ Page({
         open: false,
         pages: [
           ['wx.setStorageSync', 'setStorage'], 
-          ['wx.removeStorageSync', 'removeStorage'], 
           ['wx.getStorageSync', 'getStorage'], 
           ['wx.getStorageInfo', 'getInfo'], 
-          ['wx.clearStorageSync', 'clearStorage']
+          ['wx.removeStorageSync', 'removeStorage']
         ]
       },
       {
@@ -89,14 +88,14 @@ Page({
   },
   onLoad: function() {
     let that = this
-    // if (!app.globalData.openid) {
-    //   wx.navigateTo({
-    //     url: "/pages/login/login"
-    //   })
-    //   console.log('[main]login please')
-    // } else {
-    //   console.log('[main]login success')
-    // }
+    if (!app.globalData.openid) {
+      wx.navigateTo({
+        url: "/pages/login/login"
+      })
+      console.log('[main]login please')
+    } else {
+      console.log('[main]login success')
+    }
     wx.cloud.callFunction({
       name: 'getAdmin',
       success: res => {

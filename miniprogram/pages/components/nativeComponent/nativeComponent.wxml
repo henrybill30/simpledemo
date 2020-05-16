@@ -1,2 +1,27 @@
-<!--pages/components/nativeComponent/nativeComponent.wxml-->
-<text>pages/components/nativeComponent/nativeComponent.wxml</text>
+<page-meta>
+  <navigation-bar
+    title="{{nbTitle}}"
+  />
+</page-meta>
+<view class="page-color"></view>
+<view class="container">
+  <view wx:if="{{currentPage==0}}">
+    <text>尚未开发，敬请期待</text>
+  </view>
+  <!-- </view> -->
+  <view wx:if="{{currentPage==1}}">
+      <text>尚未开发，敬请期待</text>
+  </view>
+  <view wx:if="{{currentPage==2}}">
+      <text>尚未开发，敬请期待</text>
+  </view>
+  <view wx:if="{{currentPage==3}}">
+      <text>尚未开发，敬请期待</text>
+  </view>
+  <view wx:if="{{currentPage==4}}">
+      <text>尚未开发，敬请期待</text>
+  </view>
+</view>
+<van-icon name="arrow-left" size="30" class="left-btn animation-{{leftanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
+<van-icon name="arrow" size="30" class="right-btn animation-{{rightanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
+<demo-tabbar/>

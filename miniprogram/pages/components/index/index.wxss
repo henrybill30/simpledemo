@@ -90,7 +90,7 @@
 
 
 .kind-list-item {
-  margin: 20rpx 0;
+  margin: 20rpx 60rpx;
   background-color: #FFFFFF;
   border-radius: 4rpx;
   overflow: hidden;
@@ -106,7 +106,7 @@
   height: 60rpx;
 }
 .kind-list-item-hd {
-  padding: 30rpx;
+  padding: 20rpx;
   display: flex;
   align-items: center;
 
