@@ -15,8 +15,8 @@ page{
 }
 
 .seed{
-  height: 250rpx;
-  width: 220rpx;
+  height: 300rpx;
+  width: 200rpx;
   align-self: center;
   border-radius: 50%;
   overflow:hidden;

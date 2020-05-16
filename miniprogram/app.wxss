@@ -6,7 +6,7 @@ page {
   line-height: 1.6;
 }
 view{
-  font-family: "宋体";
+  font-family: "黑体";
 }
 .container{
   margin: 0 60rpx 120rpx 60rpx
@@ -16,6 +16,6 @@ view{
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(30deg, #EBD4EF 30%, #5cc49e 80%);
+  background: rgba(236, 235, 219, 0.699);
   z-index: -1
 }
