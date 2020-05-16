@@ -92,19 +92,8 @@ Page({
     var that = this;
     this.setData({
       currentPage: parseInt(this.data.currentPage) - 1,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      leftanimation: 'fade'
-=======
+      leftanimation: 'fade',
       nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
->>>>>>> master
-=======
-      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
->>>>>>> master
-=======
-      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
->>>>>>> master
     })
     setTimeout(function () {
       that.setData({
@@ -122,19 +111,8 @@ Page({
     var that = this;
     this.setData({
       currentPage: parseInt(this.data.currentPage)+1,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-      rightanimation: 'fade'
-=======
+      rightanimation: 'fade',
       nbTitle: this.data.titleArr[parseInt(this.data.currentPage)+1]
->>>>>>> master
-=======
-      nbTitle: this.data.titleArr[parseInt(this.data.currentPage)+1]
->>>>>>> master
-=======
-      nbTitle: this.data.titleArr[parseInt(this.data.currentPage)+1]
->>>>>>> master
     })
     setTimeout(function () {
       that.setData({
