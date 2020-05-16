@@ -44,32 +44,38 @@ Page({
       index: e.detail.value
     })
   },
-
   tobefore(e) {
     if (this.data.currentPage === 0) {
-      this.setData({
-        nbTitle: this.data.titleArr[0]
-      })
       return
     }
+    var that = this;
     this.setData({
       currentPage: parseInt(this.data.currentPage) - 1,
+      leftanimation: 'fade',
       nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
     })
+    setTimeout(function () {
+      that.setData({
+        leftanimation: ''
+      })
+    }, 200)
   },
   tonext(e) {
     if (this.data.currentPage === this.data.pageNum - 1) {
-      this.setData({
-        nbTitle: this.data.titleArr[this.data.pageNum - 1]
-      })
       return
     }
+    var that = this;
     this.setData({
       currentPage: parseInt(this.data.currentPage) + 1,
+      rightanimation: 'fade',
       nbTitle: this.data.titleArr[parseInt(this.data.currentPage) + 1]
     })
+    setTimeout(function () {
+      that.setData({
+        rightanimation: ''
+      })
+    }, 200)
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
