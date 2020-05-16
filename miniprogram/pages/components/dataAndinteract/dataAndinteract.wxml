@@ -349,7 +349,7 @@
     </demo-block>
   </view>
 </view>
-<van-icon name="arrow-left" size="30" class="left-btn" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
-<van-icon name="arrow" size="30" class="right-btn" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
+<van-icon name="arrow-left" size="30" class="left-btn animation-{{leftanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
+<van-icon name="arrow" size="30"  class="right-btn animation-{{rightanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
 
 <demo-tabbar/>

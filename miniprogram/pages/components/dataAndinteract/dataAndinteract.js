@@ -376,17 +376,31 @@ Page({
     if (this.data.currentPage === 0) {
       return
     }
+    var that = this;
     this.setData({
-      currentPage: parseInt(this.data.currentPage) - 1
+      currentPage: parseInt(this.data.currentPage) - 1,
+      leftanimation: 'fade'
     })
+    setTimeout(function () {
+      that.setData({
+        leftanimation: ''
+      })
+    }, 200)
   },
   tonext(e) {
     if (this.data.currentPage === this.data.pageNum - 1) {
       return
     }
+    var that = this;
     this.setData({
-      currentPage: parseInt(this.data.currentPage) + 1
+      currentPage: parseInt(this.data.currentPage) + 1,
+      rightanimation: 'fade'
     })
+    setTimeout(function () {
+      that.setData({
+        rightanimation: ''
+      })
+    }, 200)
   },
   /**
    * 生命周期函数--监听页面加载

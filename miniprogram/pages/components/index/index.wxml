@@ -55,12 +55,11 @@
   Demo7：数据与缓存
 </button> -->
 
-<button style="width:auto" type='warn' bindtap='to' data-id='8'>
+<!-- <button style="width:auto" type='warn' bindtap='to' data-id='8'>
   查看操作日志
 </button>
 
 <button wx:if="{{admin}}" style="width:auto" type='warn' bindtap='to' data-id='9'>
   查看统计数据
-</button>
-<view style="height:100rpx;width:100vw"></view>
+</button> -->
 <!-- <demo-tabbar/> -->

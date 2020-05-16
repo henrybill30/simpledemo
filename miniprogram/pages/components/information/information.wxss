@@ -7,7 +7,7 @@
 .right-btn{
   position: fixed;
   right: 5rpx;
-  top:45%
+  top:45%;
 }
 
 /* view */
