@@ -24,6 +24,15 @@
         <view>z: {{gyroscope.z}}</view>
       </demo-code>
     </demo-block>
+    <demo-block title="罗盘">
+      <demo-code height="80" name="传感器" type="basic" num="1">
+        <button bindtap="startCompass" style="margin-bottom:20rpx">打开罗盘</button>
+        <button bindtap="stopCompass">关闭罗盘</button>
+        
+        <view>方向：{{compass.direction}}</view>
+        <view>精度：{{compass.accuracy}}</view>
+      </demo-code>
+    </demo-block>
   </view>
   <view wx:if="{{currentPage==2}}">
     <demo-block title="基本用法">

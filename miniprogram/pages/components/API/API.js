@@ -9,7 +9,8 @@ Page({
     pageNum: 5,
     sysInfo: {},
     toUrl: '',
-    gyroscope: {}
+    gyroscope: {},
+    compass: {}
   },
   //系统信息
   getSystemMsg(){
@@ -87,6 +88,27 @@ Page({
           longitude,
           scale: 18
         })
+      }
+    })
+  },
+  //罗盘
+  startCompass(){
+    let that = this;
+    wx.startCompass({
+      success(res){
+        console.log(res);
+        wx.onCompassChange((result)=>{
+          that.setData({
+            compass: result
+          })
+        })
+      }
+    })
+  },
+  stopCompass() {
+    wx.stopCompass({
+      success(){
+        console.log('罗盘已关闭')
       }
     })
   },
