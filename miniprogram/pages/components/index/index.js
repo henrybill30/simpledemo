@@ -89,14 +89,14 @@ Page({
   },
   onLoad: function() {
     let that = this
-    if (!app.globalData.openid) {
-      wx.navigateTo({
-        url: "/pages/login/login"
-      })
-      console.log('[main]login please')
-    } else {
-      console.log('[main]login success')
-    }
+    // if (!app.globalData.openid) {
+    //   wx.navigateTo({
+    //     url: "/pages/login/login"
+    //   })
+    //   console.log('[main]login please')
+    // } else {
+    //   console.log('[main]login success')
+    // }
     wx.cloud.callFunction({
       name: 'getAdmin',
       success: res => {

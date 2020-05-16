@@ -1,4 +1,5 @@
 { "tabBar": {
+    "backgroundColor": "#D3AADB",
     "selectedColor": "#1196DB",
     "list": [
       {

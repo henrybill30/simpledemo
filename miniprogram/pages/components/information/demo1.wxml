@@ -1,6 +1,5 @@
 <view class="intro">
   最简组件------信息呈现</view>
-
 <view class="flex-item bc_lightblue">view显示框</view>
 
 <view>

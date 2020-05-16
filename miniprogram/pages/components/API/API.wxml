@@ -3,6 +3,7 @@
     title="{{nbTitle}}"
   />
 </page-meta>
+<view class="page-color"></view>
 <view class="container">
   <view wx:if="{{currentPage==0}}">
     <demo-block title="基本用法">

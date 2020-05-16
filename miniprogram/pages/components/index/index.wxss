@@ -3,6 +3,8 @@
 .intro {
   margin: 30px;
   text-align: center;
+  font-size: 18px;
+  font-family: "黑体"
 }
 
 .buttonType{
