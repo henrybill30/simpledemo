@@ -107,46 +107,46 @@ Page({
       }
     })
   },
-  to: function(e) {
-    let id = e.target.dataset.id
-    if (id == '1') {
-      wx.navigateTo({
-        url: '/demo1/demo1',
-      })
-    } else if (id == '2') {
-      wx.navigateTo({
-        url: '/demo2/demo2',
-      })
-    } else if (id == '3') {
-      wx.navigateTo({
-        url: '/demo3/demo3',
-      })
-    } else if (id == '4') {
-      wx.navigateTo({
-        url: '/demo4/demo4',
-      })
-    } else if (id == '5') {
-      wx.navigateTo({
-        url: '/demo5/demo5',
-      })
-    } else if (id == '6') {
-      wx.navigateTo({
-        url: '/demo6/demo6',
-      })
-    } else if (id == '7') {
-      wx.navigateTo({
-        url: '/demo7/demo7',
-      })
-    } else if (id == '8') {
-      wx.navigateTo({
-        url: '../../log/log',
-      })
-    } else if (id == '9') {
-      wx.navigateTo({
-        url: '../../tongji/tongji',
-      })
-    }
-  },
+  // to: function(e) {
+  //   let id = e.target.dataset.id
+  //   if (id == '1') {
+  //     wx.navigateTo({
+  //       url: '/demo1/demo1',
+  //     })
+  //   } else if (id == '2') {
+  //     wx.navigateTo({
+  //       url: '/demo2/demo2',
+  //     })
+  //   } else if (id == '3') {
+  //     wx.navigateTo({
+  //       url: '/demo3/demo3',
+  //     })
+  //   } else if (id == '4') {
+  //     wx.navigateTo({
+  //       url: '/demo4/demo4',
+  //     })
+  //   } else if (id == '5') {
+  //     wx.navigateTo({
+  //       url: '/demo5/demo5',
+  //     })
+  //   } else if (id == '6') {
+  //     wx.navigateTo({
+  //       url: '/demo6/demo6',
+  //     })
+  //   } else if (id == '7') {
+  //     wx.navigateTo({
+  //       url: '/demo7/demo7',
+  //     })
+  //   } else if (id == '8') {
+  //     wx.navigateTo({
+  //       url: '../../log/log',
+  //     })
+  //   } else if (id == '9') {
+  //     wx.navigateTo({
+  //       url: '../../tongji/tongji',
+  //     })
+  //   }
+  // },
 
   kindToggle(e) {
     const id = e.currentTarget.id

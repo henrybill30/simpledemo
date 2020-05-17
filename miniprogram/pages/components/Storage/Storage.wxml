@@ -8,8 +8,8 @@
   <view wx:if="{{currentPage==0}}">
     <demo-block title="基础用法">
       <demo-code height="80" name="setStorage" type="basic" num="0">
-        <input name='key' placeholder="请输入key名称" bindconfirm="keyInput"/>
-        <input name='value' placeholder="请输入value名称" bindconfirm="valueInput"/>
+        <input name='key' placeholder="请输入key名称" bindinput="keyInput"/>
+        <input name='value' placeholder="请输入value名称" bindinput="valueInput"/>
         <button type="primary" disabled="{{disabled}}" bindtap="setStorageSync">数据存储</button>
       </demo-code>
     </demo-block>
@@ -17,7 +17,7 @@
   <view wx:if="{{currentPage==1}}">
     <demo-block title="基础用法">
       <demo-code height="80" name="getStorage" type="basic" num="0">
-        <input name='key1' placeholder="请输入key名称" bindconfirm="keyInput1"/>
+        <input name='key1' placeholder="请输入key名称" bindinput="keyInput1"/>
         <button type="primary" disabled="{{disabled1}}" bindtap="getStorageSync">数据获取</button>
         <text>获取的值为：{{value2}}</text>
       </demo-code>
@@ -41,7 +41,7 @@
   <view wx:if="{{currentPage==3}}">
     <demo-block title="基本用法">
       <demo-code height="80" name="removeStorage" type="basic" num="0">
-        <input name='key2' placeholder="请输入key名称" bindconfirm="keyInput2"/>
+        <input name='key2' placeholder="请输入key名称" bindinput="keyInput2"/>
         <button type="primary" disabled="{{disabled2}}" bindtap="removeStorageSync">数据删除</button>
         <view style="display:flex;">
           <view style="flex-group:1;display:flex;flex-direction:column">
