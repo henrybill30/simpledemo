@@ -16,7 +16,7 @@
 }
 .demo-name{
   width: 95%;
-  padding: 35rpx 15rpx 25rpx 15rpx;
+  padding: 25rpx 15rpx 25rpx 15rpx;
 }
 .demo-code{
   background-color: #fff;

@@ -5,9 +5,6 @@ page {
   font-size: 32rpx;
   line-height: 1.6;
 }
-view{
-  font-family: "黑体";
-}
 .container{
   margin: 0 60rpx 120rpx 60rpx
 }
