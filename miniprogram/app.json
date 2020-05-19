@@ -1,74 +1,78 @@
-{ "tabBar": {
-    "backgroundColor": "#FFFFFF",
-    "selectedColor": "#1196DB",
-    "list": [
-      {
-        "pagePath": "pages/components/componentstear/index",
-        "text": "组件拆解",
-        "iconPath": "./pages/components/componentstear/积木编程.png",
-        "selectedIconPath": "./pages/components/componentstear/积木编程 (1).png"
-      }, {
-        "pagePath": "pages/components/index/index",
-        "text": "组件识别",
-        "iconPath": "./pages/components/componentstear/识别1.png",
-        "selectedIconPath": "./pages/components/componentstear/识别2.png"
-      }, {
-        "pagePath": "pages/components/componentpileup/index",
-        "text": "组件叠加",
-        "iconPath": "./pages/components/componentstear/叠加.png",
-        "selectedIconPath": "./pages/components/componentstear/叠加 (1).png"
-      },
-      {
-        "pagePath": "pages/components/person/index",
-        "text": "个人中心",
-        "iconPath": "./pages/components/componentstear/个人中心 - 选中.png",
-        "selectedIconPath": "./pages/components/componentstear/个人中心 - 选中 (1).png"
-      }
-    ]
-  },
-  "pages": [
-    "pages/components/index/index",
-    "pages/components/componentstear/index",
-    "pages/components/componentpileup/index",
-    "pages/components/person/index",
-    "pages/login/login",
-    "pages/components/information/information",
-    "pages/components/dataAndinteract/dataAndinteract",
-    "pages/components/arrayAndloop/arrayAndloop",
-    "pages/components/condition/condition",
-    "pages/components/API/API",
-    "pages/components/Storage/Storage",
-    "pages/components/nativeComponent/nativeComponent",
-    "pages/components/nativeComponent/video/video",
-    "pages/components/nativeComponent/map/map",
-    "pages/components/nativeComponent/audio/audio",
-    "pages/components/nativeComponent/canvas/canvas",
-    "pages/components/nativeComponent/camera/camera",
-    "pages/log/log",
-    "pages/tongji/tongji"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json",
-  "permission": {
-    "scope.userLocation": {
-      "desc": "小程序需要使用位置信息"
+{
+    "tabBar": {
+        "backgroundColor": "#FFFFFF",
+        "selectedColor": "#1196DB",
+        "list": [
+            {
+                "pagePath": "pages/components/componentstear/index",
+                "text": "组件拆解",
+                "iconPath": "./pages/components/componentstear/积木编程.png",
+                "selectedIconPath": "./pages/components/componentstear/积木编程 (1).png"
+            },
+            {
+                "pagePath": "pages/components/index/index",
+                "text": "组件识别",
+                "iconPath": "./pages/components/componentstear/识别1.png",
+                "selectedIconPath": "./pages/components/componentstear/识别2.png"
+            },
+            {
+                "pagePath": "pages/components/componentpileup/index",
+                "text": "组件叠加",
+                "iconPath": "./pages/components/componentstear/叠加.png",
+                "selectedIconPath": "./pages/components/componentstear/叠加 (1).png"
+            },
+            {
+                "pagePath": "pages/components/person/index",
+                "text": "个人中心",
+                "iconPath": "./pages/components/componentstear/个人中心 - 选中.png",
+                "selectedIconPath": "./pages/components/componentstear/个人中心 - 选中 (1).png"
+            }
+        ]
+    },
+    "pages": [
+        "pages/components/index/index",
+        "pages/components/componentstear/index",
+        "pages/components/componentpileup/index",
+        "pages/components/person/index",
+        "pages/login/login",
+        "pages/components/information/information",
+        "pages/components/dataAndinteract/dataAndinteract",
+        "pages/components/arrayAndloop/arrayAndloop",
+        "pages/components/condition/condition",
+        "pages/components/API/API",
+        "pages/components/Storage/Storage",
+        "pages/components/nativeComponent/nativeComponent",
+        "pages/components/nativeComponent/video/video",
+        "pages/components/nativeComponent/map/map",
+        "pages/components/nativeComponent/audio/audio",
+        "pages/components/nativeComponent/canvas/canvas",
+        "pages/components/nativeComponent/camera/camera",
+        "pages/log/log",
+        "pages/tongji/tongji",
+        "pages/components/layout/layout"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "permission": {
+        "scope.userLocation": {
+            "desc": "小程序需要使用位置信息"
+        }
+    },
+    "usingComponents": {
+        "parser": "./lib/parser/parser",
+        "demo-block": "./components/demo-block/index",
+        "demo-code": "./components/demo-code/index",
+        "demo-tabbar": "./components/demo-tabbar/index",
+        "van-button": "./lib/dist/button/index",
+        "van-row": "./lib/dist/row/index",
+        "van-col": "./lib/dist/col/index",
+        "van-icon": "./lib/dist/icon/index",
+        "nav-button": "./components/nav-button/navbutton"
     }
-  },
-  "usingComponents": {
-    "parser": "./lib/parser/parser",
-    "demo-block": "./components/demo-block/index",
-    "demo-code": "./components/demo-code/index",
-    "demo-tabbar": "./components/demo-tabbar/index",
-    "van-button": "./lib/dist/button/index",
-    "van-row": "./lib/dist/row/index",
-    "van-col": "./lib/dist/col/index",
-    "van-icon": "./lib/dist/icon/index",
-    "nav-button": "./components/nav-button/navbutton"
-  }
 }

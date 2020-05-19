@@ -83,30 +83,36 @@ Page({
           ['canvas', 'canvas'],
           ['camera', 'camera']
         ]
-      },
+      }, {
+        id: 'layout', // 路径
+        name: '样式布局', // 类目说明
+        pages: [
+          ['flex 布局']
+        ]
+      }
     ]
   },
-  onLoad: function() {
-    let that = this
-    if (!app.globalData.openid) {
-      wx.navigateTo({
-        url: "/pages/login/login"
-      })
-      console.log('[main]login please')
-    } else {
-      console.log('[main]login success')
-    }
-    wx.cloud.callFunction({
-      name: 'getAdmin',
-      success: res => {
-        if (res.result.admin_openid == getApp().globalData.openid) {
-          that.setData({
-            admin: 1
-          })
-        }
-      }
-    })
-  },
+  // onLoad: function() {
+  //   let that = this
+  //   if (!app.globalData.openid) {
+  //     wx.navigateTo({
+  //       url: "/pages/login/login"
+  //     })
+  //     console.log('[main]login please')
+  //   } else {
+  //     console.log('[main]login success')
+  //   }
+  //   wx.cloud.callFunction({
+  //     name: 'getAdmin',
+  //     success: res => {
+  //       if (res.result.admin_openid == getApp().globalData.openid) {
+  //         that.setData({
+  //           admin: 1
+  //         })
+  //       }
+  //     }
+  //   })
+  // },
   // to: function(e) {
   //   let id = e.target.dataset.id
   //   if (id == '1') {

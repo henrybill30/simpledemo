@@ -1,0 +1,33 @@
+/* miniprogram/pages/components/layout/layout.wxss */
+page {
+  height: 100%;
+  background-color: #EDE1D9;
+}
+.center-vertical-horizon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200rpx;
+}
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
+.box {
+  height: 100rpx;
+  width: 100rpx;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.flex-spacebetween {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-width-adaptive {
+  display: flex;
+}
+.flex-grow {
+  flex: 1;
+}
