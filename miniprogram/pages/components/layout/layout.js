@@ -12,8 +12,25 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-
+    onLoad: async function (options) {
+      // await insertDemoCode2CloudDatabase()
+      const event = {
+        envID: getApp().globalData.envID,
+        openid: getApp().globalData.openid,
+        behavior: 'browse',
+        component: 'layout',
+        cpType: 'layout',
+        cpNum: null,
+        time: new Date()
+      }
+      try {
+        await wx.cloud.callFunction({
+          name: 'addRecord',
+          data: event
+        })
+      } catch(e) {
+        console.error(e)
+      }
     },
 
     /**
@@ -65,3 +82,129 @@ Page({
 
     }
 })
+
+
+// 示例代码插入云数据库，只需执行一次
+async function insertDemoCode2CloudDatabase () {
+  const envID = getApp().globalData.envID
+  const dataArr = [{
+    envID,
+    name: 'flex',
+    type: 'centerVerticalHorizon',
+    num: 0,
+    code: {
+      html: 
+`<view class="center-vertical-horizon">
+垂直水平居中
+</view>`,
+      js: ``,
+      css: 
+`.center-vertical-horizon {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 200rpx;
+}`
+    }
+  }, {
+    envID,
+    name: 'flex',
+    type: 'flexStart',
+    num: 0,
+    code: {
+      html:
+`<view class="flex-start">
+<view class="box" style="background-color: beige"></view>
+<view class="box" style="background-color: ghostwhite"></view>
+<view class="box" style="background-color: lightblue"></view>
+</view>`,
+      js: ``,
+      css:
+`.flex-start {
+display: flex;
+justify-content: flex-start;
+}
+.box {
+height: 100rpx;
+width: 100rpx;
+}`
+    }
+  }, {
+    envID,
+    name: 'flex',
+    type: 'flexColumn',
+    num: 0,
+    code: {
+      html:
+`<view class="flex-column">
+<view class="box" style="background-color: beige"></view>
+<view class="box" style="background-color: ghostwhite"></view>
+<view class="box" style="background-color: lightblue"></view>
+</view>`,
+      js: ``,
+      css:
+`.flex-column {
+display: flex;
+flex-direction: column;
+}
+.box {
+height: 100rpx;
+width: 100rpx;
+}`
+    }
+  }, {
+    envID,
+    name: 'flex',
+    type: 'flexSpacebetween',
+    num: 0,
+    code: {
+      html:
+`<view class="flex-spacebetween">
+<view class="box" style="background-color: beige"></view>
+<view class="box" style="background-color: ghostwhite"></view>
+<view class="box" style="background-color: lightblue"></view>
+</view>`,
+      js: ``,
+      css:
+`.flex-spacebetween {
+display: flex;
+justify-content: space-between;
+}
+.box {
+height: 100rpx;
+width: 100rpx;
+}`
+    }
+  }, {
+    envID,
+    name: 'flex',
+    type: 'flexWidthAdaptive',
+    num: 0,
+    code: {
+      html:
+`<view class="flex-width-adaptive">
+<view class="box flex-grow" style="background-color: beige"></view>
+<view class="box flex-grow" style="background-color: ghostwhite"></view>
+<view class="box flex-grow" style="background-color: lightblue"></view>
+</view>`,
+      js: ``,
+      css:
+`.flex-width-adaptive {
+display: flex;
+}
+.flex-grow {
+flex: 1;
+}
+.box {
+height: 100rpx;
+width: 100rpx;
+}`
+    }
+  }]
+  await Promise.all(dataArr.map(data => {
+    wx.cloud.callFunction({
+      name: 'addComponent',
+      data
+    })
+  }))
+}
