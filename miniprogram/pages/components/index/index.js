@@ -89,30 +89,39 @@ Page({
         pages: [
           ['flex 布局']
         ]
+      }, {
+        id: 'cloud',
+        name: '云开发',
+        pages: [
+          ['用户信息'],
+          ['文本存储'],
+          ['文件存储'],
+          ['订阅消息']
+        ]
       }
     ]
   },
-  // onLoad: function() {
-  //   let that = this
-  //   if (!app.globalData.openid) {
-  //     wx.navigateTo({
-  //       url: "/pages/login/login"
-  //     })
-  //     console.log('[main]login please')
-  //   } else {
-  //     console.log('[main]login success')
-  //   }
-  //   wx.cloud.callFunction({
-  //     name: 'getAdmin',
-  //     success: res => {
-  //       if (res.result.admin_openid == getApp().globalData.openid) {
-  //         that.setData({
-  //           admin: 1
-  //         })
-  //       }
-  //     }
-  //   })
-  // },
+  onLoad: function() {
+    let that = this
+    if (!app.globalData.openid) {
+      wx.navigateTo({
+        url: "/pages/login/login"
+      })
+      console.log('[main]login please')
+    } else {
+      console.log('[main]login success')
+    }
+    wx.cloud.callFunction({
+      name: 'getAdmin',
+      success: res => {
+        if (res.result.admin_openid == getApp().globalData.openid) {
+          that.setData({
+            admin: 1
+          })
+        }
+      }
+    })
+  },
   // to: function(e) {
   //   let id = e.target.dataset.id
   //   if (id == '1') {

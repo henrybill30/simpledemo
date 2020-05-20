@@ -68,6 +68,12 @@
 					"name": "pages/components/layout/layout",
 					"pathName": "pages/components/layout/layout",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/components/cloud/cloud",
+					"pathName": "pages/components/cloud/cloud",
+					"scene": null
 				}
 			]
 		}

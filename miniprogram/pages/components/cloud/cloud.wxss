@@ -1,0 +1,5 @@
+/* miniprogram/pages/components/cloud/cloud.wxss */
+page {
+  height: 100%;
+  background-color: #EDE1D9;
+}

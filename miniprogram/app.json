@@ -49,7 +49,8 @@
         "pages/components/nativeComponent/camera/camera",
         "pages/log/log",
         "pages/tongji/tongji",
-        "pages/components/layout/layout"
+        "pages/components/layout/layout",
+        "pages/components/cloud/cloud"
     ],
     "window": {
         "backgroundTextStyle": "light",

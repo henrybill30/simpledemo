@@ -1,0 +1,31 @@
+<!--miniprogram/pages/components/cloud/cloud.wxml-->
+<page-meta>
+  <navigation-bar
+    title="{{pageTitle}}"
+  />
+</page-meta>
+
+<demo-block title="用户信息" wx:if="{{currentPage === 0}}">
+  <view>待开发</view>
+</demo-block>
+
+<demo-block title="文本存储" wx:if="{{currentPage === 1}}">
+  <demo-code name="textRestore" type="basic" num="0">
+    <form bindsubmit="updateText">
+      <textarea style="border: 1rpx solid gray; margin: 0 auto" name="textarea"/>
+      <view style="margin: 30rpx auto">{{ text === undefined ? '暂无存储文本' : '已存储文本：' + text}}</view>
+      <button type="primary" form-type="submit"> 提交 </button>
+    </form>
+  </demo-code>
+</demo-block>
+
+<demo-block title="文件存储" wx:if="{{currentPage === 2}}">
+  <view>待开发</view>
+</demo-block>
+
+<demo-block title="订阅消息" wx:if="{{currentPage === 3}}">
+  <view>待开发</view>
+</demo-block>
+
+<van-icon name="arrow-left" size="30" class="left-btn {{leftAnimation}}" wx:if="{{currentPage !== MIN_PAGE}}" bindtap="toBefore"/>
+<van-icon name="arrow" size="30" class="right-btn {{rightAnimation}}" wx:if="{{currentPage !== MAX_PAGE}}" bindtap="toNext" />
