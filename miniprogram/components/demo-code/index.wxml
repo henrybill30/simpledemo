@@ -2,15 +2,15 @@
   <view class="demo-name">
     <slot />  
   </view>
-<view class="line" wx:if="{{ showcode }}"></view>
-<view class="demo-code" wx:if="{{ showcode }}" bindtap="doubleClick">
-  <view class="code-type" wx:if="{{ htmlcode&&(codeNum>1) }}">wxml代码</view>
-  <parser class="code-sty" wx:if="{{ htmlcode }}" bindlongpress="copyhtml" html="{{htmlcode}}" />
+  <view class="line" wx:if="{{ showcode }}"></view>
+  <view class="demo-code" wx:if="{{ showcode }}" bindtap="doubleClick">
+    <view class="code-type" wx:if="{{ htmlcode&&(codeNum>1) }}">wxml代码</view>
+    <parser class="code-sty" wx:if="{{ htmlcode }}" catchlongpress="copyhtml" html="{{htmlcode}}" />
 
-  <view class="code-type" wx:if="{{ jscode&&(codeNum>1) }}">js代码</view>
-  <parser class="code-sty" wx:if="{{ jscode }}" bindlongpress="copyjs" html="{{jscode}}" />
+    <view class="code-type" wx:if="{{ jscode&&(codeNum>1) }}">js代码</view>
+    <parser class="code-sty" wx:if="{{ jscode }}" catchlongpress="copyjs" html="{{jscode}}" />
 
-  <view class="code-type" wx:if="{{ csscode&&(codeNum>1) }}">wxss代码</view>
-  <parser class="code-sty" wx:if="{{ csscode }}" bindlongpress="copycss" html="{{csscode}}" />
-</view>
+    <view class="code-type" wx:if="{{ csscode&&(codeNum>1) }}">wxss代码</view>
+    <parser class="code-sty" wx:if="{{ csscode }}" catchlongpress="copycss" html="{{csscode}}" />
+  </view>
 </view>
