@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "van-overlay": "../../../lib/dist/overlay/index"
+    "van-overlay": "/lib/dist/overlay/index",
+    "van-cell": "/lib/dist/cell/index"
   },
   "navigationBarTitleText": "个人中心"
 }

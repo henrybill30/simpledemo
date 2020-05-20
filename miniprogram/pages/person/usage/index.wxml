@@ -1,0 +1,16 @@
+<!--miniprogram/pages/person/usage/index.wxml-->
+<view class="height-40"/>
+<van-panel title="组件">
+  <view class="desc">
+    长按组件说明即可显示示例代码
+  </view>
+</van-panel>
+<view class="height-40"/>
+<van-panel title="示例代码" id="margin-top-40">
+  <view class="desc">
+    长按示例代码可对进行复制
+  </view>
+  <view class="desc">
+    双击示例代码可隐藏
+  </view>
+</van-panel>

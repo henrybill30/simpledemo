@@ -11,6 +11,15 @@
   </view>
 </view>
 
+<van-cell title="使用说明"
+  is-link
+  link-type="navigateTo"
+  url="./usage/index"/>
+<van-cell title="关于组件学习"
+  is-link
+  link-type="navigateTo"
+  url="./about/index"/>
+
 <van-overlay show="{{ showimg }}" bindtap="hideHeadimgHD">
   <view class="wrapper">
     <image class="hdimg" src="{{ uesrImg }}"></image>

@@ -33,7 +33,6 @@
         "pages/components/index/index",
         "pages/components/componentstear/index",
         "pages/components/componentpileup/index",
-        "pages/components/person/index",
         "pages/login/login",
         "pages/components/information/information",
         "pages/components/dataAndinteract/dataAndinteract",
@@ -51,7 +50,9 @@
         "pages/tongji/tongji",
         "pages/components/layout/layout",
         "pages/components/cloud/cloud",
-        "pages/person/index"
+        "pages/person/index",
+        "pages/person/about/index",
+        "pages/person/usage/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

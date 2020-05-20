@@ -67,12 +67,20 @@
 					"id": -1,
 					"name": "pages/components/layout/layout",
 					"pathName": "pages/components/layout/layout",
+					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
 					"name": "pages/components/cloud/cloud",
 					"pathName": "pages/components/cloud/cloud",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/index",
+					"pathName": "pages/person/index",
 					"scene": null
 				}
 			]

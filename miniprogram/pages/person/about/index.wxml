@@ -1,0 +1,4 @@
+<!--miniprogram/pages/person/about/index.wxml-->
+<view style="margin: 40rpx auto; font-size: 40rpx; text-align: center">
+  组件学习小程序
+</view>
