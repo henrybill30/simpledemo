@@ -47,7 +47,7 @@ Component({
         case 3:
           console.log("3");
           wx.switchTab({
-            url: '../../components/person/index'
+            url: '../../person/index'
           })
           break;
         default:

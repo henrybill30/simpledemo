@@ -22,7 +22,7 @@
                 "selectedIconPath": "./pages/components/componentstear/叠加 (1).png"
             },
             {
-                "pagePath": "pages/components/person/index",
+                "pagePath": "pages/person/index",
                 "text": "个人中心",
                 "iconPath": "./pages/components/componentstear/个人中心 - 选中.png",
                 "selectedIconPath": "./pages/components/componentstear/个人中心 - 选中 (1).png"
@@ -50,7 +50,8 @@
         "pages/log/log",
         "pages/tongji/tongji",
         "pages/components/layout/layout",
-        "pages/components/cloud/cloud"
+        "pages/components/cloud/cloud",
+        "pages/person/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
