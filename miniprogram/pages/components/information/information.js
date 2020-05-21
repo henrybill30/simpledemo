@@ -49,7 +49,7 @@ Page({
     newData[propertyName] = e.detail.value
     this.setData(newData)
 
-    this.stringTemplate()
+    // this.stringTemplate()
   },
   changeIndicatorDots: function (e) {
     this.setData({
