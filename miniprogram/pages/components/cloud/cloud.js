@@ -34,7 +34,8 @@ Page({
         ],
         leftAnimation: '', // 页面切换效果
         rightAnimation: '',
-        text: undefined // 文本存储
+        text: undefined, // 文本存储
+        imgUrl: '' // 文件存储
     },
 
     // 文本存储 更新已存储文本
@@ -67,6 +68,89 @@ Page({
         this.setData({
             text: data[0] && data[0].text
         })
+    },
+
+    // 文件存储 获取已上传文件
+    async getImg() {
+        const DEFAULT_IMG_URL = '/resource/cat.jpg'
+
+        const event = {
+            envID: getApp().globalData.envID,
+            openid: getApp().globalData.openid,
+            action: 'get'
+        }
+        try {
+            const res = await wx.cloud.callFunction({
+                name: 'fileRestore',
+                data: event
+                })
+            const data = res.result.data
+            this.setData({
+                imgUrl: (data[0] && data[0].fileID) || DEFAULT_IMG_URL 
+            })
+        } catch(e) {
+            console.error(e)
+            this.setData({
+                imgUrl: DEFAULT_IMG_URL
+            })
+        }
+    },
+
+    // 文件存储 更换图片
+    async updateImg() {
+        // 需用户登录 用户 openid 作为存储索引
+        const openid = getApp().globalData.openid
+        if(!openid) {
+            wx.navigateTo({
+                url: '/pages/login/login'
+            })
+            return
+        }
+        wx.chooseImage({
+            count: 1,
+            sizeType: ['original', 'compressed'],
+            sourceType: ['album', 'camera'],
+            success: async res => {
+                let fileID = this.data.imgUrl
+                await deleteFile(fileID) // 删除已有文件
+                const filePath = res.tempFilePaths[0]
+                const cloudPath = `${openid}-${(new Date).getTime()}`
+                fileID = await uploadFile(cloudPath, filePath) // 上传新文件
+                await updateFileID(fileID) // 数据库中更新文件 ID
+            }
+        })
+
+        // 上传文件到云存储
+        const uploadFile = async (cloudPath, filePath) => {
+            const res = await wx.cloud.uploadFile({
+                cloudPath,
+                filePath
+            })
+            const fileID = res.fileID
+            this.setData({
+                imgUrl: fileID
+            })
+            return fileID
+        }
+        // 从云存储中删除文件
+        const deleteFile = async fileID => {
+            let res =  await wx.cloud.deleteFile({
+                fileList: [fileID]
+            })
+        }
+        // 云数据库中更新对应用户上传的文件
+        const updateFileID = async newFileID => {
+            const event = {
+                envID: getApp().globalData.envID,
+                openid: getApp().globalData.openid,
+                action: 'update',
+                fileID: newFileID
+            }
+            await wx.cloud.callFunction({
+                name: 'fileRestore',
+                data: event
+            })
+        }
     },
 
     async toBefore(e) {
@@ -140,8 +224,8 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: async function (options) {
-        // await insertDemoCode2CloudDatabase ()
-        const currentPage = parseInt(options.index)
+        // await insertDemoCode2CloudDatabase()
+        const currentPage = parseInt(options.index) || 0
         const components = this.data.components
         const pageTitle = components[currentPage].title
         this.setData({
@@ -150,6 +234,7 @@ Page({
             MAX_PAGE: this.data.components.length - 1
         })
         await this.getText()
+        await this.getImg()
 
         await this.addRecord()
     },
@@ -207,53 +292,83 @@ Page({
 // 示例代码插入云数据库，只需执行一次
 async function insertDemoCode2CloudDatabase () {
   const envID = getApp().globalData.envID
-  const dataArr = [{
-    envID,
-    name: 'textRestore',
+  const dataArr = [
+// {
+//     envID,
+//     name: 'textRestore',
+//     type: 'basic',
+//     num: 0,
+//     code: {
+//       html: ``,
+//       js:
+// `// 根据指定 id，将所需存储文本存入数据库
+// async function addText(id, text) {
+//     // 1. 获取数据库引用
+//     const db = wx.cloud.database()
+//     // 2. 构造查询语句
+//     return await db.collection('Text').add({
+//         data: {
+//             id,
+//             text
+//         }
+//     })
+// }
+
+// // 根据指定 id 获取存储文本
+// async function getText(id) {
+//     // 1. 获取数据库引用
+//     const db = wx.cloud.database()
+//     // 2. 构造查询语句
+//     return await db.collection('Text').where({
+//         id
+//     }).get()
+// }
+
+// // 根据指定 id 及 新文本 更新已有文本
+// async function updateText(id, newText) {
+//     // 1. 获取数据库引用
+//     const db = wx.cloud.database()
+//     // 2. 构造更新语句
+//     return await db.collection('Text').where({
+//         id
+//     }).update({
+//         data: {
+//             text: newText
+//         }
+//     })
+// }`,
+//       css: ``
+//     }
+
+// },
+{
+    envID: getApp().globalData.envID,
+    name: 'fileRestore',
     type: 'basic',
     num: 0,
     code: {
-      html: ``,
-      js:
-`// 根据指定 id，将所需存储文本存入数据库
-async function addText(id, text) {
-    // 1. 获取数据库引用
-    const db = wx.cloud.database()
-    // 2. 构造查询语句
-    return await db.collection('Text').add({
-        data: {
-            id,
-            text
-        }
-    })
+        html: ``,
+        js:
+`// 将本地文件 filePath 上传到云存储 cloudPath ，返回对应文件 id
+async function uploadFile(cloudPath, filePath) {
+  const res = await wx.cloud.uploadFile({
+    cloudPath,
+    filePath
+  })
+  const fileID = res.fileID
+  return fileID
 }
 
-// 根据指定 id 获取存储文本
-async function getText(id) {
-    // 1. 获取数据库引用
-    const db = wx.cloud.database()
-    // 2. 构造查询语句
-    return await db.collection('Text').where({
-        id
-    }).get()
-}
-
-// 根据指定 id 及 新文本 更新已有文本
-async function updateText(id, newText) {
-    // 1. 获取数据库引用
-    const db = wx.cloud.database()
-    // 2. 构造更新语句
-    return await db.collection('Text').where({
-        id
-    }).update({
-        data: {
-            text: newText
-        }
-    })
+// 根据文件 id 删除云存储中的文件
+async function deleteFile(fileID) {
+  await wx.cloud.deleteFile({
+    fileList: [fileID]
+  })
 }`,
-      css: ``
+    css: ``
     }
-  }]
+}
+        ]
   await Promise.all(dataArr.map(data => {
     wx.cloud.callFunction({
       name: 'addComponent',

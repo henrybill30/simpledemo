@@ -58,9 +58,10 @@ Page({
         //   }
         // }, 1000 * 10)
 
-        wx.switchTab({
-          url: '../components/index/index',
-        })
+        // wx.switchTab({
+        //   url: '../components/index/index',
+        // })
+        wx.navigateBack()
       }
     })
   },
