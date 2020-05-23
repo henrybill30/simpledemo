@@ -1,6 +1,9 @@
-<view class="header">组件拆解</view>
+<!-- <view class="header">组件拆解</view> -->
 <view class="page-color"></view>
 
+<view class="guide">
+  提示：点击以下示例小程序所在的卡片，可以跳转到对应的小程序中，进行组件拆解练习。
+</view>
 <demo-card 
   imgurl="https://img2.woyaogexing.com/2018/09/25/a7ecc2686e6e43698d1cebfdce8eb237!400x400.jpeg"
   title="小程序标题"

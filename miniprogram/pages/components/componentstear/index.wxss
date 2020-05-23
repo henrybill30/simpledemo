@@ -1,58 +1,15 @@
 .header{
-  text-align: center
+  text-align: center;
+  margin: 15rpx;
 }
-.card{
+.guide{
   margin: 5%;
-  width: 90%;
-  height: 30vw;
+  padding: 15rpx;
+  /* width: 90%; */
   background-color: white;
   /* border:1rpx solid #C0C0C0; */
   border-radius:15rpx;
   box-shadow: 0rpx 0rpx 4rpx #EDE1D9;
   display: flex;
   align-items: center;
-}
-
-.cu-avatar {
-	font-variant: small-caps;
-	margin: 0 0 0 15rpx;
-	padding: 0;
-	display: flex;
-	text-align: center;
-	justify-content: center;
-	align-items: center;
-	background-color: #ccc;
-	color: var(--white);
-	white-space: nowrap;
-	position: relative;
-	width: 64rpx;
-	height: 64rpx;
-	background-size: cover;
-	background-position: center;
-	vertical-align: middle;
-	font-size: 1.5em;
-  overflow:hidden;
-}
-
-.cu-avatar.lg {
-	width: 196rpx;
-	height: 196rpx;
-	font-size: 2em;
-}
-
-.round {
-	border-radius: 5000rpx;
-}
-
-.info{
-  height: 196rpx;
-  margin: 20rpx;
-  width:420rpx
-}
-.title{
-  font-size: 40rpx
-}
-.detail{
-  font-size: 30rpx;
-  color: gray
 }
