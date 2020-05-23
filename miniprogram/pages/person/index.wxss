@@ -109,3 +109,9 @@
   background-color:rgba(0,0,0,.7);
   z-index: 1;
 }
+.guide-text{
+  width: 400rpx;
+  background-color: white;
+  padding: 15rpx;
+  border-radius:10rpx;
+}

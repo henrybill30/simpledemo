@@ -4,7 +4,9 @@ Page({
     showimg: false,
     top: 0,
     left: 0,
-    width:0,
+    bottom: 0,
+    width: 0,
+    height: 0,
     isNewUser: false
   },
   headimgHD:function () {
@@ -57,7 +59,7 @@ Page({
 
     let isNewUser = getApp().globalData.isNewUser
     console.log(isNewUser)
-    if (!isNewUser) return; //老用户直接跳过
+    // if (!isNewUser) return; //老用户直接跳过
     that.setData({
       isNewUser: isNewUser
     })
@@ -76,7 +78,9 @@ Page({
       that.setData({
         top: res[0].top,
         left: res[0].left,
-        width: res[0].width
+        width: res[0].width,
+        bottom: res[0].bottom,
+        height: res[0].height 
       })
     })
   },

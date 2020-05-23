@@ -1,12 +1,19 @@
 
 <view class="bgc" style="background-image:url('http://pic.yupoo.com/253673/e65df0a6/b8ab7e09.jpg');"></view>
-<view class="mask" wx:if="{{isNewUser}}">
+<view class="mask" wx:if="{{true}}">
   <van-cell  
     style="position:fixed;top:{{top}}px;left:{{left}}px;width:{{width}}px"
     title="使用说明"
     is-link
     link-type="navigateTo"
     url="./usage/index"/>
+  <view style="width:100vw;height:{{top}}px;position:relative">
+    <image style="width:200rpx;height:259rpx;position:absolute;bottom:20rpx;left:30rpx;" src="./引导.png"/>
+    <view class="guide-text"  style="position:absolute;bottom:80rpx;left:280rpx;">
+      欢迎来到组件学习小程序！
+      初次使用，让我们先来简单了解一下使用说明！
+    </view>
+  </view>
 </view>
 <view class="user">  
   <view class="center-box">
