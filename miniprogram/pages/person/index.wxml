@@ -1,6 +1,6 @@
 
 <view class="bgc" style="background-image:url('http://pic.yupoo.com/253673/e65df0a6/b8ab7e09.jpg');"></view>
-<view class="mask" wx:if="{{true}}">
+<view class="mask" wx:if="{{isNewUser}}">
   <van-cell  
     style="position:fixed;top:{{top}}px;left:{{left}}px;width:{{width}}px"
     title="使用说明"
