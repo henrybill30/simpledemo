@@ -1,10 +1,8 @@
-.header{
-  text-align: center
-}
+
 .card{
   margin: 5%;
   width: 90%;
-  height: 30vw;
+  /* height: 240rpx; */
   background-color: white;
   /* border:1rpx solid #C0C0C0; */
   border-radius:15rpx;
@@ -15,7 +13,7 @@
 
 .cu-avatar {
 	font-variant: small-caps;
-	margin: 0 0 0 15rpx;
+	margin: 15rpx 0 15rpx 15rpx;
 	padding: 0;
 	display: flex;
 	text-align: center;
@@ -44,8 +42,13 @@
 	border-radius: 5000rpx;
 }
 
+.avatar{
+  width: 196rpx;
+	height: 196rpx;
+}
+
 .info{
-  height: 196rpx;
+  min-height: 196rpx;
   margin: 20rpx;
   width:420rpx
 }

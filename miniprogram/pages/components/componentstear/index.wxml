@@ -1,3 +1,9 @@
-<view>组件拆解</view>
-<text>尚未开发，敬请期待！</text>
+<view class="header">组件拆解</view>
 <view class="page-color"></view>
+
+<demo-card 
+  imgurl="https://img2.woyaogexing.com/2018/09/25/a7ecc2686e6e43698d1cebfdce8eb237!400x400.jpeg"
+  title="小程序标题"
+> 
+  小程序简介
+</demo-card>

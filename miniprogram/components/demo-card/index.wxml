@@ -1,0 +1,11 @@
+<view class="card" bindtap="to">
+  <view class="cu-avatar lg round margin-left">
+    <image class="avatar" src="{{imgurl}}"></image>
+  </view>
+  <view class="info">
+    <view class="title">{{title}}</view>
+    <view class="detail">
+      <slot />
+    </view>
+  </view>
+</view>
