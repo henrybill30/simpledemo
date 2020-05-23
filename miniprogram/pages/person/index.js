@@ -1,7 +1,11 @@
 Page({
   data: {
     uesrImg: '',
-    showimg: false
+    showimg: false,
+    top: 0,
+    left: 0,
+    width:0,
+    isNewUser: false
   },
   headimgHD:function () {
     this.setData({
@@ -50,8 +54,33 @@ Page({
         })
       }
     })
-  },
 
+    let isNewUser = getApp().globalData
+    console.log(isNewUser,'kkk')
+    let query = wx.createSelectorQuery()
+    query.select('#direction').boundingClientRect(function (rect) {
+      rect.id      // 节点的ID
+      rect.left    // 节点的左边界坐标
+      rect.right   // 节点的右边界坐标
+      rect.top     // 节点的上边界坐标
+      rect.bottom  // 节点的下边界坐标
+      rect.width   // 节点的宽度
+      rect.height  // 节点的高度
+    })
+    query.exec(function (res) {
+      that.setData({
+        top: res[0].top,
+        left: res[0].left,
+        width: res[0].width
+      })
+    })
+  },
+  onReady: function () {
+    
+  },
+  onShow(){
+    
+  },
   onReady: function () {
 
   }

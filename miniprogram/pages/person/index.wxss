@@ -12,6 +12,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-shadow: 0 3rpx 50rpx rgba(0, 0, 0, 0.2);
 }
 .cu-avatar {
 	font-variant: small-caps;
@@ -62,10 +63,49 @@
   height: 100vw
 }
 
-
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+
+.list-card{
+  margin: 50rpx 30rpx;
+  /* width: 90%; */
+  background-color: white;
+  /* border:1rpx solid #C0C0C0; */
+  border-radius:15rpx;
+  box-shadow: 0 0 50rpx rgba(0, 0, 0, 0.1);
+}
+
+.shadow-warp {
+	position: relative;
+	box-shadow: 0 0 50rpx rgba(0, 0, 0, 0.1);
+}
+
+.shadow-warp:before,
+.shadow-warp:after {
+	position: absolute;
+	content: "";
+	top: 20rpx;
+	bottom: 30rpx;
+	left: 20rpx;
+	width: 50%;
+	box-shadow: 0 30rpx 20rpx rgba(0, 0, 0, 0.2);
+	transform: rotate(-3deg);
+	z-index: -1;
+}
+
+.shadow-warp:after {
+	right: 20rpx;
+	left: auto;
+	transform: rotate(3deg);
+}
+.mask{
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-color:rgba(0,0,0,.7);
+  z-index: 1;
 }
