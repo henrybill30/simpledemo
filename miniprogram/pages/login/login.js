@@ -29,10 +29,11 @@ Page({
             wx.switchTab({
               url: '/pages/person/index'
             })
+          } else {
+            wx.switchTab({
+              url: '/pages/components/index/index'
+            })
           }
-          wx.switchTab({
-            url: '/pages/components/index/index'
-          })
         }else {
           console.log(res.result.msg)
         }
