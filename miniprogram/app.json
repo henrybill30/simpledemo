@@ -16,12 +16,6 @@
                 "selectedIconPath": "./pages/components/componentstear/识别2.png"
             },
             {
-                "pagePath": "pages/components/componentpileup/index",
-                "text": "组件叠加",
-                "iconPath": "./pages/components/componentstear/叠加.png",
-                "selectedIconPath": "./pages/components/componentstear/叠加 (1).png"
-            },
-            {
                 "pagePath": "pages/person/index",
                 "text": "个人中心",
                 "iconPath": "./pages/components/componentstear/个人中心 - 选中.png",
@@ -52,7 +46,8 @@
         "pages/components/cloud/cloud",
         "pages/person/index",
         "pages/person/about/index",
-        "pages/person/usage/index"
+        "pages/person/usage/index",
+        "pages/person/feedback/index"
     ],
     "window": {
         "backgroundTextStyle": "light",

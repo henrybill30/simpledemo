@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-toast": "/lib/dist/toast/index"
+  },
+  "navigationBarTitleText": "反馈"
+}

@@ -19,6 +19,7 @@
   </view>
 </view>
 
+
 <view class="list-card shadow-warp">
   <van-cell id="direction" title="使用说明"
     is-link
@@ -28,6 +29,10 @@
     is-link
     link-type="navigateTo"
     url="./about/index"/>
+  <van-cell title="反馈"
+  is-link
+  link-type="navigateTo"
+  url="./feedback/index"/>
 </view>
 <van-overlay show="{{ showimg }}" bindtap="hideHeadimgHD">
   <view class="wrapper">

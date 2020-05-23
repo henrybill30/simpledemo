@@ -55,8 +55,13 @@ Page({
       }
     })
 
-    let isNewUser = getApp().globalData
-    console.log(isNewUser,'kkk')
+    let isNewUser = getApp().globalData.isNewUser
+    console.log(isNewUser)
+    if (!isNewUser) return; //老用户直接跳过
+    that.setData({
+      isNewUser: isNewUser
+    })
+    //定位使用说明位置
     let query = wx.createSelectorQuery()
     query.select('#direction').boundingClientRect(function (rect) {
       rect.id      // 节点的ID
@@ -76,12 +81,13 @@ Page({
     })
   },
   onReady: function () {
-    
   },
   onShow(){
-    
+    let isNewUser = getApp().globalData.isNewUser
+    this.setData({
+      isNewUser: isNewUser
+    })
   },
   onReady: function () {
-
   }
 })

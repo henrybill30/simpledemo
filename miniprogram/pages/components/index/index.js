@@ -104,7 +104,7 @@ Page({
   onLoad: function() {
     let that = this
     if (!app.globalData.openid) {
-      wx.navigateTo({
+      wx.redirectTo({
         url: "/pages/login/login"
       })
       console.log('[main]login please')
