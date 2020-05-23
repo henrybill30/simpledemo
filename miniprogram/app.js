@@ -15,6 +15,16 @@ App({
     past: 0,
     timer: null,
     nickname: "",
-    openid: ""
+    openid: "",
+    isNewUser: true
   }
 })
+
+
+
+// {
+//   "pagePath": "pages/components/componentpileup/index",
+//   "text": "组件叠加",
+//   "iconPath": "./pages/components/componentstear/叠加.png",
+//   "selectedIconPath": "./pages/components/componentstear/叠加 (1).png"
+// },

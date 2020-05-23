@@ -60,6 +60,7 @@ exports.main = async (event, context) => {
     return {
       state: true,
       msg: '新用户———存储成功！',
+      isNewUser: true,
       openid: wxContext.OPENID
     }
   }
@@ -67,6 +68,7 @@ exports.main = async (event, context) => {
   return {
     state: true,
     msg: '用户已存储',
+    isNewUser: false,
     openid: wxContext.OPENID
   }
 }

@@ -22,8 +22,17 @@ Page({
         // console.log("111: " + JSON.stringify(res.result))
         if(res.result.state == true){
           getApp().globalData.openid = res.result.openid
+          getApp().globalData.isNewUser = res.result.isNewUser
           console.log(getApp().globalData)
           console.log(res.result.msg)
+          if(res.result.isNewUser){
+            wx.switchTab({
+              url: '/pages/person/index'
+            })
+          }
+          wx.switchTab({
+            url: '/pages/components/index/index'
+          })
         }else {
           console.log(res.result.msg)
         }
@@ -57,11 +66,6 @@ Page({
         //     })
         //   }
         // }, 1000 * 10)
-
-        // wx.switchTab({
-        //   url: '../components/index/index',
-        // })
-        wx.navigateBack()
       }
     })
   },
