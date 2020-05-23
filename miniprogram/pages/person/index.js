@@ -1,7 +1,13 @@
 Page({
   data: {
     uesrImg: '',
-    showimg: false
+    showimg: false,
+    top: 0,
+    left: 0,
+    bottom: 0,
+    width: 0,
+    height: 0,
+    isNewUser: false
   },
   headimgHD:function () {
     this.setData({
@@ -50,9 +56,42 @@ Page({
         })
       }
     })
+
+    let isNewUser = getApp().globalData.isNewUser
+    console.log(isNewUser)
+    // if (!isNewUser) return; //老用户直接跳过
+    that.setData({
+      isNewUser: isNewUser
+    })
+    //定位使用说明位置
+    let query = wx.createSelectorQuery()
+    query.select('#direction').boundingClientRect(function (rect) {
+      rect.id      // 节点的ID
+      rect.left    // 节点的左边界坐标
+      rect.right   // 节点的右边界坐标
+      rect.top     // 节点的上边界坐标
+      rect.bottom  // 节点的下边界坐标
+      rect.width   // 节点的宽度
+      rect.height  // 节点的高度
+    })
+    query.exec(function (res) {
+      that.setData({
+        top: res[0].top,
+        left: res[0].left,
+        width: res[0].width,
+        bottom: res[0].bottom,
+        height: res[0].height 
+      })
+    })
   },
-
   onReady: function () {
-
+  },
+  onShow(){
+    let isNewUser = getApp().globalData.isNewUser
+    this.setData({
+      isNewUser: isNewUser
+    })
+  },
+  onReady: function () {
   }
 })

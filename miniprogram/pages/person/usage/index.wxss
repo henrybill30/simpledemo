@@ -1,10 +1,15 @@
 /* miniprogram/pages/person/usage/index.wxss */
 .desc {
-  padding: 0 20rpx;
+  padding: 0 30rpx;
 }
 .height-40{
   height: 40rpx;
 }
 .red{
   color: red
+}
+.title{
+  font-size: 30rpx;
+  padding: 30rpx;
+  background-color: #F9F9F9
 }

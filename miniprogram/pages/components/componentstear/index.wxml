@@ -2,11 +2,17 @@
 <view class="page-color"></view>
 
 <view class="guide">
-  提示：点击以下示例小程序所在的卡片，可以跳转到对应的小程序中，进行组件拆解练习。
+  提示：微信搜索下列小程序，体验它们的功能、设计，思考这些程序中使用了哪些组件，进行组件拆解练习。
 </view>
 <demo-card 
-  imgurl="https://img2.woyaogexing.com/2018/09/25/a7ecc2686e6e43698d1cebfdce8eb237!400x400.jpeg"
-  title="小程序标题"
+  imgurl="/../../resource/yixinishang.jpg"
+  title="衣兮霓裳"
 > 
-  小程序简介
+  打造属于自己的传统服饰，并且学习了解中国传统服饰文化
+</demo-card>
+<demo-card 
+  imgurl="/../../resource/saomazhiyao.jpg"
+  title="扫码知药"
+> 
+  帮助老人查看药品信息，了解健康知识
 </demo-card>
