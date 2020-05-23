@@ -19,6 +19,10 @@
   is-link
   link-type="navigateTo"
   url="./about/index"/>
+<van-cell title="反馈"
+ is-link
+ link-type="navigateTo"
+ url="./feedback/index"/>
 
 <van-overlay show="{{ showimg }}" bindtap="hideHeadimgHD">
   <view class="wrapper">

@@ -52,7 +52,8 @@
         "pages/components/cloud/cloud",
         "pages/person/index",
         "pages/person/about/index",
-        "pages/person/usage/index"
+        "pages/person/usage/index",
+        "pages/person/feedback/index"
     ],
     "window": {
         "backgroundTextStyle": "light",
