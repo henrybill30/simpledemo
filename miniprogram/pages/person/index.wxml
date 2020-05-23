@@ -30,10 +30,11 @@
     link-type="navigateTo"
     url="./about/index"/>
   <van-cell title="反馈"
-  is-link
-  link-type="navigateTo"
-  url="./feedback/index"/>
+    is-link
+    link-type="navigateTo"
+    url="./feedback/index"/>
 </view>
+
 <van-overlay show="{{ showimg }}" bindtap="hideHeadimgHD">
   <view class="wrapper">
     <image class="hdimg" src="{{ uesrImg }}"></image>
