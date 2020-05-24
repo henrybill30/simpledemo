@@ -2,28 +2,30 @@ const app = getApp()
 
 Page({
   data: {
-    open: true
+    open: true,
+    st: 0
   },
-  stop(){
-    if (this.data.open){
-      this.setData({
-        open: false
-      })
-      return
-    } else{
-      this.setData({
-        open: true
-      })
-      wx.createSelectorQuery()
-        .select('#canvas')
-        .fields({
-          node: true,
-          size: true,
-        })
-        .exec(this.init.bind(this))
-    }
-  },
+  // stop(){
+  //   if (this.data.open){
+  //     this.setData({
+  //       open: false
+  //     })
+  //     return
+  //   } else{
+  //     this.setData({
+  //       open: true
+  //     })
+  //     wx.createSelectorQuery()
+  //       .select('#canvas')
+  //       .fields({
+  //         node: true,
+  //         size: true,
+  //       })
+  //       .exec(this.init.bind(this))
+  //   }
+  // },
   onLoad: function () {
+    let that = this;
     this.position = {
       x: 150,
       y: 150,
@@ -31,6 +33,16 @@ Page({
       r: 50
     }
     this.x = -100
+    wx.startCompass({
+      success(res) {
+        console.log(res);
+        wx.onCompassChange((result) => {
+          that.setData({
+            st: result.direction
+          })
+        })
+      }
+    })
 
     // 通过 SelectorQuery 获取 Canvas 节点
     wx.createSelectorQuery()
@@ -72,12 +84,7 @@ Page({
 
   drawline(ctx) {
     const p = this.position
-    if(p.st<360){
-      p.st = p.st + 4
-    } else {
-      p.st = p.st - 358
-    }
-    
+    p.st = this.data.st
     console.log(p.x, p.y, p.r, p.st)
     function line(x, y, r, st) {
       ctx.beginPath()
