@@ -4,6 +4,7 @@
 <van-panel title="组件">
   <view class="desc">
     <text class="red">长按</text>组件示例卡片即可<text class="red">显示示例代码</text>
+    <image style="height:200rpx;width:100%" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/长按卡片.jpg"></image>
   </view>
 </van-panel>
 <view class="height-40"/>
