@@ -7,10 +7,11 @@ var highlight = function (content, attrs) {
   // content = content.replace(/&gt;/g, '>');
   // content = content.replace(/&amp;/g, '&');
   //提取出对应语言
-  var m = content.match(/"languages?-(.*)"/i)[1].split('">@@<')[0];
+  var m = content.match(/"languages?-(.*)"/i)[1].split('">@@')[0];
   var lang = m ? m : 'js'
   let realcontent = content.split('@@')[1]
   return Prism.highlight(realcontent, Prism.languages[lang], lang)
+
 }
 
 module.exports = {
