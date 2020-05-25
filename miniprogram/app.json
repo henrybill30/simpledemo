@@ -44,6 +44,7 @@
         "pages/tongji/tongji",
         "pages/components/layout/layout",
         "pages/components/cloud/cloud",
+        "pages/components/cloud/detail/detail",
         "pages/person/index",
         "pages/person/about/index",
         "pages/person/usage/index",

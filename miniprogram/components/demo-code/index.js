@@ -120,6 +120,25 @@ Component({
         }
       })
     },
+    copycloud: function (e) {
+      var content = this.properties.cloudcode.split("@@")[1];
+      wx.showActionSheet({
+        itemList: ['复制代码'],
+        success(res) {
+          var tabIndex = res.tapIndex;
+          if (tabIndex == 0) {
+            wx.setClipboardData({
+              data: content,
+              success(res) {
+                wx.showToast({
+                  title: '代码已复制'
+                })
+              }
+            })
+          }
+        }
+      })
+    },
   },
   lifetimes: {
     attached: async function () {
@@ -142,7 +161,7 @@ Component({
           }
           if(res.result.data[0].code.cloudcode){
             this.setData({
-              htmlcode: `<pre><code class="language-html">@@${res.result.data[0].code.cloudcode}@@</code></pre>`,
+              cloudcode: `<pre><code class="language-js">@@${res.result.data[0].code.cloudcode}@@</code></pre>`,
               codeNum: this.data.codeNum + 1
             })
           }

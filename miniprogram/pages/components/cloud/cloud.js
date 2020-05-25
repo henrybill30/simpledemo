@@ -1,4 +1,5 @@
-// miniprogram/pages/components/cloud/cloud.js
+const util = require('../../../utils/util.js')
+
 Page({
 
     /**
@@ -30,12 +31,28 @@ Page({
                 name: 'subscribeMsg',
                 type: 'basic',
                 num: 0
+            }, {
+              title: '云数据库',
+              name: 'database',
+              type: 'basic',
+              num: 0
             }
         ],
         leftAnimation: '', // 页面切换效果
         rightAnimation: '',
         text: undefined, // 文本存储
-        imgUrl: '' // 文件存储
+        imgUrl: '', // 文件存储
+
+        //云数据库
+        openid: '',
+        todoListFetched: false,
+        todoList: [],
+        searchContent: '',
+        newContent: '',
+        filtered: false,
+        loading: false,
+        timetype: true, //默认显示服务端时间
+        showMilliseconds: false //默认不显示毫秒
     },
 
     // 文本存储 更新已存储文本
@@ -220,23 +237,226 @@ Page({
         }
     },
 
+    //云数据库
+    createTodo() {
+      // 创建 todo
+      if (this.data.loading) {
+        return
+      }
+      const { newContent } = this.data
+      if (!newContent) {
+        return
+      }
+
+      this.setData({ loading: true })
+      const db = wx.cloud.database()
+      db.collection('todos').add({
+        data: {
+          description: newContent,
+          done: false,
+          serverTime: db.serverDate(),
+          clientTime: new Date()
+        },
+        success: res => {
+          // 在返回结果中会包含新创建的记录的 _id
+          console.log(res)
+          this.queryTodoList()
+          wx.showToast({
+            title: '新增记录成功',
+          })
+          console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '新增记录失败'
+          })
+          console.error('[数据库] [新增记录] 失败：', err)
+        },
+        complete: () => {
+          this.setData({ loading: false })
+        }
+      })
+    },
+
+    queryTodoList() {
+      // 获取用户 todos 列表
+      wx.showLoading({
+        title: '正在查询...'
+      })
+      const db = wx.cloud.database()
+      db.collection('todos').where({
+        _openid: this.data.openid
+      }).get({
+        success: res => {
+          let list = res.data
+          list.map((item)=>{
+            if (this.data.timetype){
+              item.time = util.formatDateTime(item.serverTime, this.data.showMilliseconds)
+            } else {
+              item.time = util.formatDateTime(item.clientTime, this.data.showMilliseconds)
+            }
+            return item
+          })
+          this.setData({
+            todoListFetched: true,
+            todoList: res.data,
+            filtered: false
+            // todotime: util.formatDateTime(res.data.time, true)
+          })
+          console.log('[数据库] [查询记录] 成功: ', res)
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '查询记录失败'
+          })
+          console.error('[数据库] [查询记录] 失败：', err)
+        },
+        complete: () => {
+          wx.hideLoading()
+        }
+      })
+    },
+
+    searchTodo() {
+      // 搜索todo
+      const { searchContent } = this.data
+      console.log(searchContent,'searchContent')
+      if (!searchContent) {
+        this.queryTodoList()
+        return
+      }
+
+      const db = wx.cloud.database()
+      let descriptionCondition = searchContent
+      const execResult = /([\s\S]*)$/.exec(searchContent)
+      console.log(execResult, 'ooo')
+      if (execResult) {
+        console.log(execResult)
+        const reStr = execResult[1].trim().replace(/\s+/g, '|')
+        console.log(reStr)
+        descriptionCondition = db.RegExp({
+          regexp: reStr
+        })
+      }
+      wx.showLoading({
+        title: '正在查询...'
+      })
+      db.collection('todos').where({
+        _openid: this.data.openid,
+        description: descriptionCondition
+      }).get({
+        success: res => {
+          this.setData({
+            todoList: res.data,
+            filtered: true
+          })
+          console.log('[数据库] [查询记录] 成功: ', res)
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '查询记录失败'
+          })
+          console.error('[数据库] [查询记录] 失败：', err)
+        },
+        complete: () => {
+          wx.hideLoading()
+        }
+      })
+    },
+
+    toggleComplete(e) {
+      // 更新选项是否完成
+      if (this.data.loading) {
+        return
+      }
+      const { id: todoId, index } = e.currentTarget.dataset
+      const todo = this.data.todoList[index]
+
+      this.setData({ loading: true })
+      const db = wx.cloud.database()
+      db.collection('todos').doc(todoId).update({
+        data: { done: !todo.done },
+        success: () => {
+          this.setData({
+            [`todoList[${index}].done`]: !todo.done
+          })
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '更新失败',
+          })
+          console.error('[数据库] [更新记录] 失败：', err)
+        },
+        complete: () => {
+          this.setData({ loading: false })
+        }
+      })
+    },
+
+    toDetail(e) {
+      // 前往详情页
+      const { id: todoId } = e.currentTarget.dataset
+      wx.navigateTo({
+        url: `./detail/detail?todoId=${todoId}`,
+      })
+    },
+
+    onInputSearchContent(e) {
+      // 输入搜索内容
+      this.setData({
+        searchContent: e.detail.value
+      })
+      this.searchTodo()
+    },
+
+    onInputNewContent(e) {
+      // 输入新的todo
+      this.setData({
+        newContent: e.detail.value
+      })
+    },
+    switch1Change(e){
+      this.setData({
+        timetype: e.detail.value
+      })
+      this.queryTodoList()
+    },
+    switch2Change(e){
+      this.setData({
+        showMilliseconds: e.detail.value
+      })
+      this.queryTodoList()
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: async function (options) {
-        // await insertDemoCode2CloudDatabase()
-        const currentPage = parseInt(options.index) || 0
-        const components = this.data.components
-        const pageTitle = components[currentPage].title
-        this.setData({
-            currentPage,
-            pageTitle,
-            MAX_PAGE: this.data.components.length - 1
-        })
-        await this.getText()
-        await this.getImg()
+      // await insertDemoCode2CloudDatabase()
+      const currentPage = parseInt(options.index) || 0
+      const components = this.data.components
+      const pageTitle = components[currentPage].title
+      this.setData({
+        currentPage,
+        pageTitle,
+        MAX_PAGE: this.data.components.length - 1
+      })
+      await this.getText()
+      await this.getImg()
 
-        await this.addRecord()
+      await this.addRecord()
+
+      // 云数据库 获取用户openid
+      console.log(getApp().globalData.openid)
+      if (getApp().globalData.openid) {
+        this.setData({
+          openid: getApp().globalData.openid
+        })
+      }
     },
 
     /**
@@ -250,7 +470,8 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+      // 云数据库 从detail页面返回后 更新表单
+      this.queryTodoList()
     },
 
     /**

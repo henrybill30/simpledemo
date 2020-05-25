@@ -4,35 +4,91 @@
     title="{{pageTitle}}"
   />
 </page-meta>
+<view class="page-color"></view>
+<view class="container">
+  <view wx:if="{{currentPage === 0}}">
+    <demo-block title="用户信息">
+      <text>待开发</text>
+    </demo-block>
+  </view>
 
-<view class="container" wx:if="{{currentPage === 0}}">
-  <demo-block title="用户信息">
-    <text>待开发</text>
+  <demo-block title="文本存储" wx:if="{{currentPage === 1}}">
+    <demo-code name="textRestore" type="basic" num="0">
+      <form bindsubmit="updateText">
+        <textarea style="border: 1rpx solid gray; margin: 0 auto;width:100%" name="textarea"/>
+        <view style="margin: 30rpx auto">{{ text === undefined ? '暂无存储文本' : '已存储文本：' + text}}</view>
+        <button type="primary" form-type="submit"> 提交 </button>
+      </form>
+    </demo-code>
+  </demo-block>
+
+  <demo-block title="文件存储" wx:if="{{currentPage === 2}}">
+    <demo-code name="fileRestore" type="basic" num="0">
+      <view style="display:flex; justify-content:center; margin-bottom: 40rpx">
+        <image src="{{imgUrl}}"></image>
+      </view>
+      <button type="primary" bindtap="updateImg">更换图片</button>
+    </demo-code>
+  </demo-block>
+
+  <demo-block title="订阅消息" wx:if="{{currentPage === 3}}">
+    <view>待开发</view>
+  </demo-block>
+
+  <demo-block title="云数据库" wx:if="{{currentPage === 4}}">
+    <demo-code name="cloudDatabase" type="basic" num="0">
+      <view class="page-body">
+        <view class="page-section">
+          <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+              <view class="weui-cell__hd" style="margin-right: 10rpx">
+                <icon class="weui-icon-checkbox_circle" type="search" size="20"></icon>
+              </view>
+              <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="搜索（关键词一 关键词二 ……）" value="{{searchContent}}" bindinput="onInputSearchContent"/>
+              </view>
+            </view>
+          </view>
+          <view style="margin:20rpx">
+            时间格式:(
+              <text wx:if="{{timetype}}">服务端时间</text>
+              <text wx:if="{{!timetype}}">客户端时间</text>
+            )
+            <switch checked="{{timetype}}" bindchange="switch1Change"/>
+          </view>
+          <view style="margin:20rpx">
+            是否显示毫秒数：
+            <switch checked="{{showMilliseconds}}" bindchange="switch2Change"/>
+          </view>
+            
+          <view class="weui-cells__title">Todo List</view>
+          <view class="weui-cells weui-cells_after-title todolist" wx:if="{{openid}}">
+            <view wx:for="{{todoList}}" wx:key="_id" data-id="{{item._id}}" bindtap="toDetail">
+              <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__hd" data-id="{{item._id}}" data-index="{{index}}" catchtap="toggleComplete" style="margin-right: 10rpx">
+                  <icon class="weui-icon-checkbox_circle" type="circle" wx:if="{{!item.done}}"></icon>
+                  <icon class="weui-icon-checkbox_success" type="success" wx:else></icon>
+                </view>
+                <view class="weui-cell__bd">{{item.description}}</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+              </view>
+              <view class="time">{{item.time}}</view>
+            </view>
+            <view class="weui-cell weui-cell_input" wx:if="{{todoList.length < 5 && !filtered}}">
+              <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="添加新的 Todo" value="{{newContent}}" focus="{{todoListFetched && !todoList.length}}" bindinput="onInputNewContent" bindconfirm="createTodo" />
+              </view>
+            </view>
+          </view>
+
+          <view class="page-body-info" wx:if="{{!todoList.length && filtered}}">
+            <text class="page-body-text">无数据</text>
+          </view>
+        </view>
+      </view>
+    </demo-code>
   </demo-block>
 </view>
-
-<demo-block title="文本存储" wx:if="{{currentPage === 1}}">
-  <demo-code name="textRestore" type="basic" num="0">
-    <form bindsubmit="updateText">
-      <textarea style="border: 1rpx solid gray; margin: 0 auto" name="textarea"/>
-      <view style="margin: 30rpx auto">{{ text === undefined ? '暂无存储文本' : '已存储文本：' + text}}</view>
-      <button type="primary" form-type="submit"> 提交 </button>
-    </form>
-  </demo-code>
-</demo-block>
-
-<demo-block title="文件存储" wx:if="{{currentPage === 2}}">
-  <demo-code name="fileRestore" type="basic" num="0">
-    <view style="display:flex; justify-content:center; margin-bottom: 40rpx">
-      <image src="{{imgUrl}}"></image>
-    </view>
-    <button type="primary" bindtap="updateImg">更换图片</button>
-  </demo-code>
-</demo-block>
-
-<demo-block title="订阅消息" wx:if="{{currentPage === 3}}">
-  <view>待开发</view>
-</demo-block>
 
 <van-icon name="arrow-left" size="30" class="left-btn {{leftAnimation}}" wx:if="{{currentPage !== MIN_PAGE}}" bindtap="toBefore"/>
 <van-icon name="arrow" size="30" class="right-btn {{rightAnimation}}" wx:if="{{currentPage !== MAX_PAGE}}" bindtap="toNext" />
