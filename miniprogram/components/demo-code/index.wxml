@@ -7,6 +7,9 @@
     <view class="code-type" wx:if="{{ htmlcode&&(codeNum>1) }}">wxml代码</view>
     <parser class="code-sty" wx:if="{{ htmlcode }}" catchlongpress="copyhtml" html="{{htmlcode}}" />
 
+    <view class="code-type" wx:if="{{ cloudcode&&(codeNum>1) }}">云函数代码</view>
+    <parser class="code-sty" wx:if="{{ cloudcode }}" catchlongpress="copyhtml" html="{{cloudcode}}" />
+
     <view class="code-type" wx:if="{{ jscode&&(codeNum>1) }}">js代码</view>
     <parser class="code-sty" wx:if="{{ jscode }}" catchlongpress="copyjs" html="{{jscode}}" />
 

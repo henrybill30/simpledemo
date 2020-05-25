@@ -133,10 +133,16 @@ Component({
           num: this.properties.num
         },
         success: res => {
-          // console.log("111: " + JSON.stringify(res.result.data[0].code.html))
+          // console.log("111: " + JSON.stringify(res.result.data[0].code.js))
           if(res.result.data[0].code.html){
             this.setData({
               htmlcode: `<pre><code class="language-html">@@${res.result.data[0].code.html}@@</code></pre>`,
+              codeNum: this.data.codeNum + 1
+            })
+          }
+          if(res.result.data[0].code.cloudcode){
+            this.setData({
+              htmlcode: `<pre><code class="language-html">@@${res.result.data[0].code.cloudcode}@@</code></pre>`,
               codeNum: this.data.codeNum + 1
             })
           }
@@ -157,24 +163,6 @@ Component({
           console.log("2222: " + err)
         }
       })
-      // if (this.properties.htmlcode){
-      //   this.setData({
-      //     htmlcode: `<pre><code class="language-html">@@${this.properties.htmlcode}@@</code></pre>`,
-      //     codeNum: this.data.codeNum+1
-      //   })
-      // }
-      // if (this.properties.jscode) {
-      //   this.setData({
-      //     jscode: `<pre><code class="language-js">@@${this.properties.jscode}@@</code></pre>`,
-      //     codeNum: this.data.codeNum+1
-      //   })
-      // }
-      // if (this.properties.csscode) {
-      //   this.setData({
-      //     csscode: `<pre><code class="language-css">@@${this.properties.csscode}@@</code></pre>`,
-      //     codeNum: this.data.codeNum+1
-      //   })
-      // }
     },
     detached: function () {
       // 在组件实例被从页面节点树移除时执行

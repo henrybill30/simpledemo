@@ -16,3 +16,4 @@
     <text class="red">双击</text>示例代码可<text class="red">隐藏</text>
   </view>
 </van-panel>
+<!-- <button bindtap="del">删除用户</button> -->

@@ -5,9 +5,11 @@
   />
 </page-meta>
 
-<demo-block title="用户信息" wx:if="{{currentPage === 0}}">
-  <view>待开发</view>
-</demo-block>
+<view class="container" wx:if="{{currentPage === 0}}">
+  <demo-block title="用户信息">
+    <text>待开发</text>
+  </demo-block>
+</view>
 
 <demo-block title="文本存储" wx:if="{{currentPage === 1}}">
   <demo-code name="textRestore" type="basic" num="0">
