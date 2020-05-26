@@ -4,11 +4,15 @@ Component({
       type: String,
       value: ''
     },
-    title: String
+    title: String,
+    appid: String
   },
   methods: {
     to(){
-      console.log('跳转到……')
+      console.log('跳转到……', this.properties.appid)
+      wx.navigateToMiniProgram({
+        appId: this.properties.appid
+      })
     }
   }
 });
