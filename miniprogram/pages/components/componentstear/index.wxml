@@ -12,6 +12,13 @@
   打造属于自己的传统服饰，并且学习了解中国传统服饰文化
 </demo-card>
 <demo-card 
+  imgurl="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/偕成长.jpg"
+  title="偕成长"
+  appid="wx20c87eea3546120a"
+> 
+  通过设置并完成任务清单培养成长型思维
+</demo-card>
+<demo-card 
   imgurl="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/saomazhiyao.jpg"
   title="扫码知药"
   appid="wx18dca1ef8dc2fa0e"
