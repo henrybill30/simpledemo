@@ -26,6 +26,10 @@ exports.main = async (event, context) => {
             res = await updateFileID(event.openid, event.fileID, cloudDemo)
             break
         }
+        case 'delete': {
+            res = await deleteFileID(event.openid, cloudDemo)
+            break
+        }
         default: {
             res = { errCode: -1, errMsg: '未定义动作'}
         }
@@ -46,6 +50,16 @@ async function updateFileID(openid, newFileID, collection) {
     }).update({
         data: {
             fileID: newFileID
+        }
+    })
+}
+
+async function deleteFileID(openid, collection) {
+    return await collection.where({
+        openid
+    }).update({
+        data: {
+            fileID: ''
         }
     })
 }

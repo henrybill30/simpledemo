@@ -1,5 +1,5 @@
 const util = require('../../../utils/util.js')
-
+const envID = getApp().globalData.envID
 Page({
 
     /**
@@ -12,37 +12,32 @@ Page({
         MAX_PAGE: 0,
         components: [
             {
-                title: '用户信息',
-                name: 'userInfo',
+                title: '云函数',
+                name: 'cloudFunction',
                 type: 'basic',
                 num: 0
-            }, {
-                title: '文本存储',
-                name: 'textRestore',
-                type: 'basic',
-                num: 0
-            }, {
-                title: '文件存储',
-                name: 'fileRestore',
-                type: 'basic',
-                num: 0
-            }, {
-                title: '订阅消息',
-                name: 'subscribeMsg',
-                type: 'basic',
-                num: 0
-            }, {
+            },{
               title: '云数据库',
               name: 'database',
               type: 'basic',
               num: 0
+            },{
+                title: '云存储',
+                name: 'cloudRestore',
+                type: 'basic',
+                num: 0
             }
+            // },{
+            //     title: '订阅消息',
+            //     name: 'subscribeMsg',
+            //     type: 'basic',
+            //     num: 0
+            // }
         ],
         leftAnimation: '', // 页面切换效果
         rightAnimation: '',
         text: undefined, // 文本存储
         imgUrl: '', // 文件存储
-
         //云数据库
         openid: '',
         todoListFetched: false,
@@ -52,7 +47,51 @@ Page({
         filtered: false,
         loading: false,
         timetype: true, //默认显示服务端时间
-        showMilliseconds: false //默认不显示毫秒
+        showMilliseconds: false, //默认不显示毫秒
+        A: 0,
+        B: 0,
+        result: 0,
+        Openid: ''
+    },
+
+    inputA(e) {
+        this.setData({
+            A: e.detail.value
+        }) 
+    },
+
+    inputB(e) {
+        this.setData({
+            B: e.detail.value
+        }) 
+    },
+
+    async sum() {
+        let result = await wx.cloud.callFunction({
+            name: 'expSum',
+            data: {
+                envID: envID,
+                A: this.data.A,
+                B: this.data.B
+            },
+        })
+        console.log(result)
+        this.setData({
+            result: result.result.result
+        })
+    },
+
+    async getInfo() {
+      let result = await wx.cloud.callFunction({
+        name: 'expGetInfo',
+        data: {
+          envID: envID,
+        }
+      })
+      console.log(result.result)
+      this.setData({
+        Openid: result.result.openid
+      })
     },
 
     // 文本存储 更新已存储文本
@@ -104,6 +143,7 @@ Page({
             const data = res.result.data
             this.setData({
                 imgUrl: (data[0] && data[0].fileID) || DEFAULT_IMG_URL 
+
             })
         } catch(e) {
             console.error(e)
@@ -168,6 +208,23 @@ Page({
                 data: event
             })
         }
+    },
+
+    async deleteImg(){
+      let res =  await wx.cloud.deleteFile({
+        fileList: [this.data.imgUrl]
+      })
+      const event = {
+        envID: getApp().globalData.envID,
+        openid: getApp().globalData.openid,
+        action: 'delete',
+      }
+      await wx.cloud.callFunction({
+        name: 'fileRestore',
+        data: event
+      })
+      await this.getImg()
+      console.log(res)
     },
 
     async toBefore(e) {
@@ -457,6 +514,34 @@ Page({
           openid: getApp().globalData.openid
         })
       }
+//     wx.cloud.callFunction({
+//       name: 'addComponent',
+//       data: {
+//         envID: getApp().globalData.envID,
+//         name : 'cloudRestore',
+//         type: 'basic',
+//         num: 2,
+//         code: {
+//           js: 
+// `Page({
+//     data: {
+//         imgUrl: '',
+//     },
+//     async deleteImg(){
+//       let res =  await wx.cloud.deleteFile({
+//         fileList: [this.data.imgUrl]
+//       })
+//     },
+// })`,
+//         },
+//         success: function(res) {
+//           console.log(1111 + ":" + res)
+//         },
+//         fail: function(err) {
+//           console.log(11111 + "err: " + err)
+//         }
+//       }
+//     })
     },
 
     /**

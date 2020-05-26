@@ -5,15 +5,37 @@
   />
 </page-meta>
 <view class="page-color"></view>
-<view class="container">
-  <view wx:if="{{currentPage === 0}}">
-    <demo-block title="用户信息">
-      <text>待开发</text>
+  <view class="container" wx:if="{{currentPage === 0}}">
+    <demo-block title="云函数实现加法">
+      <demo-code name="cloudFunction" type="basic" num="0">
+        <view style="display:flex;">
+          <input class="input" bindblur="inputA" type="number" placeholder="输入A"></input>
+          <text class="text">+</text>
+          <input class="input" bindblur="inputB" type="number"  placeholder="输入B"></input>
+          <text class="text">=</text>
+          <text class="input" space="emsp">{{result}}</text>
+        </view>
+        <button style="margin-top:10px;margin-left:auto;margin-right:auto;;width:80%" bindtap="sum">运行云函数获取结果</button>
+      </demo-code>
+    </demo-block>
+    <demo-block title="云函数获取用户信息">
+      <demo-code name="cloudFunction" type="basic" num="1">
+        <view style="border: 3px solid black">
+          <block wx:if="{{Openid?false:true}}">
+            <text>点击下方按钮获取用户openid</text>
+          </block>
+          <block wx:else>
+            <text style="margin-right:auto;margin-left:auto;font-size:38rpx;word-break:break-all">openid: {{Openid}}</text>
+          </block>
+        </view>
+        <button bindtap="getInfo">云函数获取openid</button>
+      </demo-code>
     </demo-block>
   </view>
 
-  <demo-block title="文本存储" wx:if="{{currentPage === 1}}">
-    <demo-code name="textRestore" type="basic" num="0">
+  <view wx:if="{{currentPage === 2}}">
+  <demo-block title="文本存储">
+    <demo-code name="cloudRestore" type="basic" num="0">
       <form bindsubmit="updateText">
         <textarea style="border: 1rpx solid gray; margin: 0 auto;width:100%" name="textarea"/>
         <view style="margin: 30rpx auto">{{ text === undefined ? '暂无存储文本' : '已存储文本：' + text}}</view>
@@ -21,21 +43,38 @@
       </form>
     </demo-code>
   </demo-block>
-
-  <demo-block title="文件存储" wx:if="{{currentPage === 2}}">
-    <demo-code name="fileRestore" type="basic" num="0">
+  <demo-block title="文件存储">
+    <demo-code name="cloudRestore" type="basic" num="1">
       <view style="display:flex; justify-content:center; margin-bottom: 40rpx">
         <image src="{{imgUrl}}"></image>
       </view>
-      <button type="primary" bindtap="updateImg">更换图片</button>
+      <view style="border: 3px solid black;" wx:if="{{imgUrl!='/resource/cat.jpg'}}">
+        <text style="word-break:break-all">fileID: {{imgUrl}}</text>
+      </view>
+      <button type="primary" bindtap="updateImg">上传图片</button>
     </demo-code>
   </demo-block>
-
-  <demo-block title="订阅消息" wx:if="{{currentPage === 3}}">
-    <view>待开发</view>
+  <demo-block title="文件删除">
+    <demo-code name="cloudRestore" type="basic" num="2">
+      <view style="display:flex; justify-content:center; margin-bottom: 40rpx" wx:if="{{imgUrl!='/resource/cat.jpg'}}">
+        <image src="{{imgUrl}}"></image>
+      </view>
+      <view style="display:flex; justify-content:center; margin-bottom: 40rpx" wx:else>
+        <text>请先上传图片</text>
+      </view>
+      <view style="border: 3px solid black;" wx:if="{{imgUrl!='/resource/cat.jpg'}}">
+        <text style="word-break:break-all">fileID: {{imgUrl}}</text>
+      </view>
+      <button type="primary" disabled="{{imgUrl=='/resource/cat.jpg'}}" bindtap="deleteImg">删除图片</button>
+    </demo-code>
   </demo-block>
+  </view>
 
-  <demo-block title="云数据库" wx:if="{{currentPage === 4}}">
+  <!-- <demo-block title="订阅消息" wx:if="{{currentPage === 3}}">
+    <view>待开发</view>
+  </demo-block> -->
+
+  <demo-block title="云数据库" wx:if="{{currentPage === 1}}">
     <demo-code name="cloudDatabase" type="basic" num="0">
       <view class="page-body">
         <view class="page-section">
@@ -88,7 +127,6 @@
       </view>
     </demo-code>
   </demo-block>
-</view>
 
 <van-icon name="arrow-left" size="30" class="left-btn {{leftAnimation}}" wx:if="{{currentPage !== MIN_PAGE}}" bindtap="toBefore"/>
 <van-icon name="arrow" size="30" class="right-btn {{rightAnimation}}" wx:if="{{currentPage !== MAX_PAGE}}" bindtap="toNext" />
