@@ -27,4 +27,9 @@ App({
 //   "text": "组件叠加",
 //   "iconPath": "./pages/components/componentstear/叠加.png",
 //   "selectedIconPath": "./pages/components/componentstear/叠加 (1).png"
+// },{
+//   "pagePath": "pages/components/componentstear/index",
+//   "text": "组件拆解",
+//   "iconPath": "./pages/components/componentstear/积木编程.png",
+//   "selectedIconPath": "./pages/components/componentstear/积木编程 (1).png"
 // },

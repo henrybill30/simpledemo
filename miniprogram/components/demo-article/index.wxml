@@ -1,0 +1,6 @@
+<!--components/demo-article/index.wxml-->
+<view class="article-card">
+  <view class="title">组件学习</view>
+  <view class="content">内容:干哈干哈开发路上的风景立刻返回文案回复 安徽发挥发挥书法家考虑好了客户覅二号奥利弗恒大华府空间大化肥u给v赌博反抗军回复</view>
+  <view class="author">作者 2020-2-29</view>
+</view>
