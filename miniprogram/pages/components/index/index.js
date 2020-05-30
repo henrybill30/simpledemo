@@ -118,6 +118,7 @@ Page({
           that.setData({
             admin: 1
           })
+          getApp().globalData.isAdmin = true
         }
       }
     })

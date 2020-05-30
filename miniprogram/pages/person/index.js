@@ -7,7 +7,7 @@ Page({
     bottom: 0,
     width: 0,
     height: 0,
-    isNewUser: false
+    isNewUser: false,
   },
   headimgHD:function () {
     this.setData({
@@ -22,7 +22,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
     let that = this;
     wx.getUserInfo({
       success: function (res) {

@@ -1,7 +1,6 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 
-// cloud.init()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
@@ -14,15 +13,21 @@ exports.main = async (event, context) => {
   const db = cloud.database({
     env: event.envID,
   })
-
   const components = db.collection('Components')
 
-  return await components.add({
-    data: {
+  try {
+    return await components.where({
       name: event.name,
       type: event.type,
-      num: event.num,
-      code: event.code
-    }
-  })
+      num: event.num
+    })
+    .update({
+      data: {
+        code: db.command.set(event.code)
+      },
+    })
+  } catch(e) {
+    console.error(e)
+  }
+  
 }

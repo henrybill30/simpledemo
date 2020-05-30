@@ -24,6 +24,10 @@
   </view>
 </view>
 
+<view style="width: 200px;margin-left:auto;margin-right:auto; border:1px solid black">
+  <navigator wx:if="{{admin}}" url="/pages/code/index" class="navigator">添加代码</navigator>
+</view>
+
 
 <!-- <button style="width:auto" type='primary' bindtap='to' data-id='1'>
   Demo1： 信息呈现

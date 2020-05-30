@@ -1,0 +1,34 @@
+/* miniprogram/pages/code/index.wxss */
+.codename {
+  width: 100%;
+  margin-top: 2px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.text {
+  width: min-content;
+}
+
+.input {
+  /* padding-left: 3px; */
+  width: 20%;
+  border: 1px solid cadetblue;
+}
+
+
+.ql-container {
+  box-sizing: border-box;
+  padding: 5px 15px;
+  width: 100%;
+  min-height: 30vh;
+  height: auto;
+  /* border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; */
+  background: #fffbf0;
+  margin-top: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}

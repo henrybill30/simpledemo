@@ -1,0 +1,31 @@
+<!--miniprogram/pages/code/index.wxml-->
+<form catchsubmit="formSubmit">
+  <view class="codename">
+    <text class="text">name:</text>
+    <view class="input">
+      <input name="nameinput"></input>
+    </view>
+    <text class="text">type:</text>
+    <view class="input">
+      <input name="typeinput"></input>
+    </view>
+    <text class="text">num:</text>
+    <view class="input">
+      <input name="numinput"></input>
+    </view>
+  </view>
+  <view class="codename">
+    <button style="border: 1px solid cadetblue;" formType="submit">查询</button>
+  </view>
+</form>
+<form catchsubmit="editorSubmit">
+  <editor id="editorWxml" name="Wxml" class="ql-container" placeholder="Wxml代码..." bindready="onEditorReadyWxml"></editor>
+  <editor id="editorJs" name="Js" class="ql-container" placeholder="Js代码..." bindready="onEditorReadyJs"></editor>
+  <editor id="editorWxss" name="Wxss" class="ql-container" placeholder="Wxss代码..." bindready="onEditorReadyWxss"></editor>
+  <editor id="editorCloud" name="Cloud" class="ql-container" placeholder="Cloud代码..." bindready="onEditorReadyCloud"></editor>
+    <view class="codename">
+      <button style="border: 1px solid cadetblue;" formType="submit">修改/新建</button>
+  </view>
+</form>
+
+
