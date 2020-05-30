@@ -16,4 +16,6 @@
     <view class="code-type" wx:if="{{ csscode&&(codeNum>1) }}">wxss代码</view>
     <parser class="code-sty" wx:if="{{ csscode }}" catchlongpress="copycss" html="{{csscode}}" />
   </view>
+  <!-- <view class="foot">
+  </view> -->
 </view>

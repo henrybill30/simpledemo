@@ -39,3 +39,8 @@
   background-color: #1E1E1E;
   color: white
 }
+.foot{
+  height: 40rpx;
+  width: 100%;
+  background-color: #FCEAD1;
+}

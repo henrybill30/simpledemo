@@ -5,7 +5,7 @@
   safe-area-inset-bottom="{{ false }}"
   bind:change="onChange"
 >
-  <van-tabbar-item>
+  <!-- <van-tabbar-item>
     <image
       slot="icon"
       src="{{ icon[0].inactive }}"
@@ -19,22 +19,23 @@
       style="width: 60rpx; height: 56rpx;"
     />
     组件拆解
-  </van-tabbar-item>
+  </van-tabbar-item> -->
   <van-tabbar-item>
     <image
       slot="icon"
-      src="{{ icon[1].inactive }}"
+      src="{{ icon[0].inactive }}"
       mode="aspectFit"
       style="width: 60rpx; height: 56rpx;"
     />
     <image
       slot="icon-active"
-      src="{{ icon[1].active }}"
+      src="{{ icon[0].active }}"
       mode="aspectFit"
       style="width: 60rpx; height: 56rpx;"
     />
     组件识别
-  </van-tabbar-item><van-tabbar-item>
+  </van-tabbar-item>
+  <!-- <van-tabbar-item>
     <image
       slot="icon"
       src="{{ icon[2].inactive }}"
@@ -48,17 +49,17 @@
       style="width: 60rpx; height: 56rpx;"
     />
     组件叠加
-  </van-tabbar-item>
+  </van-tabbar-item> -->
   <van-tabbar-item>
     <image
       slot="icon"
-      src="{{ icon[3].inactive }}"
+      src="{{ icon[1].inactive }}"
       mode="aspectFit"
       style="width: 60rpx; height: 56rpx;"
     />
     <image
       slot="icon-active"
-      src="{{ icon[3].active }}"
+      src="{{ icon[1].active }}"
       mode="aspectFit"
       style="width: 60rpx; height: 56rpx;"
     />
