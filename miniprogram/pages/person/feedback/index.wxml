@@ -1,10 +1,61 @@
 <!--miniprogram/pages/person/feedback/index.wxml-->
-<view class="section">
-  <view bindtap="getOption" class="option {{choose===item.code?'sel':''}}" data-code="{{item.code}}" wx:for="{{options}}" wx:key="index">
-  {{item.title}}
-</view>
-</view>
-<textarea bindinput="getInputValue" class="content" data-type="content" placeholder="写下你想告诉我们的吧~" value="{{content}}"></textarea>
-<button bindtap="confirm" class="confirm">提交反馈</button>
+<block wx:if="{{ step === 1 }}">
+  <view style="margin: 80rpx auto; font-size: 40rpx; text-align:center">
+      请选择反馈内容
+      <text style="font-size: 24rpx; color: gray;">可多选</text>
+  </view>
+  <van-checkbox-group value="{{ checkedOptions }}" bind:change="onChange">
+    <van-cell-group>
+      <van-cell
+        wx:for="{{ options }}"
+        wx:key="index"
+        wx:for-item="title"
+        title="{{ title }}"
+        value-class="value-class"
+        clickable
+        data-index="{{ index }}"
+        bind:click="toggle"
+      >
+        <van-checkbox
+          catch:tap="noop"
+          class="checkboxes-{{ index }}"
+          name="{{ title }}"
+          shape="square"
+        />
+      </van-cell>
+    </van-cell-group>
+  </van-checkbox-group>
+  <button bindtap="nextStep" class="confirm">下一步</button>
+</block>
+
+<block wx:if="{{ step === 2 }}">
+  <view style="margin: 80rpx auto; font-size: 40rpx; text-align:center">
+    补充反馈信息
+  </view>
+  <van-panel title="其他信息（可选填）">
+    <textarea bindinput="getInputValue" class="content" data-type="content" placeholder="写下你想告诉我们的吧~" value="{{ otherInfo }}"></textarea>
+  </van-panel>
+  <van-panel title="联系方式（可选填）">
+    <van-field
+      value="{{ contact }}"
+      placeholder="微信/手机号"
+      bind:change="onContactChange"
+    />
+  </van-panel>
+  <van-panel title="添加图片（可选填）">
+    <view style="padding: 29rpx">
+      <van-uploader
+        file-list="{{ imgList }}"
+        multiple
+        deletable="{{ deletable }}"
+        max-count="9"
+        bind:after-read="afterRead"
+      />
+    </view>
+  </van-panel>
+
+  <button bindtap="confirm" class="confirm">提交反馈</button>
+</block>
 
 <van-toast id="van-toast" />
+<van-notify id="van-notify" />

@@ -83,6 +83,13 @@
 					"id": -1,
 					"name": "pages/person/index",
 					"pathName": "pages/person/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/feedback/index",
+					"pathName": "pages/person/feedback/index",
 					"scene": null
 				}
 			]

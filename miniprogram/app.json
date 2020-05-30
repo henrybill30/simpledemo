@@ -1,75 +1,75 @@
 {
-  "tabBar": {
-    "backgroundColor": "#FFFFFF",
-    "selectedColor": "#1196DB",
-    "list": [
-      {
-        "pagePath": "pages/components/index/index",
-        "text": "组件识别",
-        "iconPath": "./pages/components/componentstear/识别1.png",
-        "selectedIconPath": "./pages/components/componentstear/识别2.png"
-      },
-      {
-        "pagePath": "pages/person/index",
-        "text": "个人中心",
-        "iconPath": "./pages/components/componentstear/个人中心 - 选中.png",
-        "selectedIconPath": "./pages/components/componentstear/个人中心 - 选中 (1).png"
-      }
-    ]
-  },
-  "pages": [
-    "pages/components/index/index",
-    "pages/components/componentstear/index",
-    "pages/components/componentpileup/index",
-    "pages/login/login",
-    "pages/components/information/information",
-    "pages/components/dataAndinteract/dataAndinteract",
-    "pages/components/arrayAndloop/arrayAndloop",
-    "pages/components/condition/condition",
-    "pages/components/API/API",
-    "pages/components/Storage/Storage",
-    "pages/components/nativeComponent/nativeComponent",
-    "pages/components/nativeComponent/video/video",
-    "pages/components/nativeComponent/map/map",
-    "pages/components/nativeComponent/audio/audio",
-    "pages/components/nativeComponent/canvas/canvas",
-    "pages/components/nativeComponent/camera/camera",
-    "pages/log/log",
-    "pages/tongji/tongji",
-    "pages/components/layout/layout",
-    "pages/components/cloud/cloud",
-    "pages/components/cloud/detail/detail",
-    "pages/person/index",
-    "pages/person/about/index",
-    "pages/person/usage/index",
-    "pages/person/feedback/index",
-    "pages/components/article/article",
-    "pages/code/index"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
-  },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json",
-  "permission": {
-    "scope.userLocation": {
-      "desc": "小程序需要使用位置信息"
+    "tabBar": {
+        "backgroundColor": "#FFFFFF",
+        "selectedColor": "#1196DB",
+        "list": [
+            {
+                "pagePath": "pages/components/index/index",
+                "text": "组件识别",
+                "iconPath": "./pages/components/componentstear/识别1.png",
+                "selectedIconPath": "./pages/components/componentstear/识别2.png"
+            },
+            {
+                "pagePath": "pages/person/index",
+                "text": "个人中心",
+                "iconPath": "./pages/components/componentstear/个人中心 - 选中.png",
+                "selectedIconPath": "./pages/components/componentstear/个人中心 - 选中 (1).png"
+            }
+        ]
+    },
+    "pages": [
+        "pages/components/index/index",
+        "pages/components/componentstear/index",
+        "pages/components/componentpileup/index",
+        "pages/login/login",
+        "pages/components/information/information",
+        "pages/components/dataAndinteract/dataAndinteract",
+        "pages/components/arrayAndloop/arrayAndloop",
+        "pages/components/condition/condition",
+        "pages/components/API/API",
+        "pages/components/Storage/Storage",
+        "pages/components/nativeComponent/nativeComponent",
+        "pages/components/nativeComponent/video/video",
+        "pages/components/nativeComponent/map/map",
+        "pages/components/nativeComponent/audio/audio",
+        "pages/components/nativeComponent/canvas/canvas",
+        "pages/components/nativeComponent/camera/camera",
+        "pages/log/log",
+        "pages/tongji/tongji",
+        "pages/components/layout/layout",
+        "pages/components/cloud/cloud",
+        "pages/components/cloud/detail/detail",
+        "pages/person/index",
+        "pages/person/about/index",
+        "pages/person/usage/index",
+        "pages/person/feedback/index",
+        "pages/components/article/article",
+        "pages/code/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "light", 
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json",
+    "permission": {
+        "scope.userLocation": {
+            "desc": "小程序需要使用位置信息"
+        }
+    },
+    "usingComponents": {
+        "parser": "./lib/parser/parser",
+        "demo-block": "./components/demo-block/index",
+        "demo-code": "./components/demo-code/index",
+        "demo-card": "./components/demo-card/index",
+        "demo-tabbar": "./components/demo-tabbar/index",
+        "demo-article": "./components/demo-article/index",
+        "van-button": "./lib/dist/button/index",
+        "van-row": "./lib/dist/row/index",
+        "van-col": "./lib/dist/col/index",
+        "van-icon": "./lib/dist/icon/index",
+        "nav-button": "./components/nav-button/navbutton"
     }
-  },
-  "usingComponents": {
-    "parser": "./lib/parser/parser",
-    "demo-block": "./components/demo-block/index",
-    "demo-code": "./components/demo-code/index",
-    "demo-card": "./components/demo-card/index",
-    "demo-tabbar": "./components/demo-tabbar/index",
-    "demo-article": "./components/demo-article/index",
-    "van-button": "./lib/dist/button/index",
-    "van-row": "./lib/dist/row/index",
-    "van-col": "./lib/dist/col/index",
-    "van-icon": "./lib/dist/icon/index",
-    "nav-button": "./components/nav-button/navbutton"
-  }
 }
