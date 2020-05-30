@@ -2,3 +2,15 @@
 <view style="margin: 40rpx auto; font-size: 40rpx; text-align: center">
   组件学习小程序
 </view>
+<view style="margin:0 24rpx 20rpx 25rpx">
+　　小程序入门找不到方向，看官方文档内容又太多，体验官方示例小程序又没有代码，“组件学习”帮助你利用碎片化时间进行小程序入门级学习。
+</view>
+<view style="margin:20rpx 25rpx">
+　　这是一款为微信小程序初学者打造的<text style="font-weight:bold;">小程序组件字典</text>，从初学的角度将小程序各类组件重新分类，展示组件的各种<text style="font-weight:bold;">基础用法</text>。不仅如此，你还可以查看每个组件用法的<text style="font-weight:bold;">实现代码</text>，体验“看完即会用”的学习过程。
+</view>
+<view style="margin:20rpx 25rpx">
+　　PS：“组件学习”目前还在进行迭代更新，如果在使用过程中有任何问题，麻烦向我们反馈，非常感谢！
+</view>
+<view style="margin:20rpx 25rpx">
+开发者：黄冰尧、刘泽通、朱龙海
+</view>
