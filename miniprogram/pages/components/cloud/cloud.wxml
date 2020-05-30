@@ -44,8 +44,10 @@
                 <icon class="weui-icon-checkbox_circle" type="search" size="20"></icon>
               </view>
               <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="搜索（关键词一 关键词二 ……）" value="{{searchContent}}" bindinput="onInputSearchContent"/>
+                <input class="weui-input" placeholder="请输入搜索关键词" value="{{searchContent}}" bindinput="onInputSearchContent"/>
+                
               </view>
+              <button style="width:100rpx;height:60rpx;padding:10rpx" class="btn"  bindtap="searchTodo">搜索</button>
             </view>
           </view>
             
@@ -64,8 +66,9 @@
             </view>
             <view class="weui-cell weui-cell_input" wx:if="{{todoList.length < 5 && !filtered}}">
               <view class="weui-cell__bd">
-                <input class="weui-input" placeholder="添加新的 Todo" value="{{newContent}}" focus="{{todoListFetched && !todoList.length}}" bindinput="onInputNewContent" bindconfirm="createTodo" />
+                <input class="weui-input" placeholder="添加新的 Todo" value="{{newContent}}" focus="{{todoListFetched && !todoList.length}}" bindinput="onInputNewContent" />
               </view>
+              <button style="width:100rpx;height:60rpx;padding:10rpx" class="btn"  bindtap="createTodo">添加</button>
             </view>
           </view>
 

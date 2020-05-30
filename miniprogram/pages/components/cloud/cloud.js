@@ -318,6 +318,9 @@ Page({
           // 在返回结果中会包含新创建的记录的 _id
           console.log(res)
           this.queryTodoList()
+          this.setData({
+            newContent: ""
+          })
           wx.showToast({
             title: '新增记录成功',
           })
@@ -467,7 +470,6 @@ Page({
       this.setData({
         searchContent: e.detail.value
       })
-      this.searchTodo()
     },
 
     onInputNewContent(e) {

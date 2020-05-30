@@ -23,3 +23,18 @@
 .text {
   padding: 0px 2px 0px 2px
 }
+.weui-input{
+  width: 360rpx;
+}
+.weui-cell{
+  padding: 0 10rpx;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+.btn{
+  background-color: #2DB7F5;
+  color: white;
+  font-size: 30rpx;
+}
