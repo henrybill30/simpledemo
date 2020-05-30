@@ -1,1 +1,8 @@
 /* miniprogram/pages/person/about/index.wxss */
+.layout{
+  margin: 30rpx;
+  /* border: 1px solid black; */
+  border-radius: 4rpx;
+  background-color: #FAFAFA;
+  padding: 10rpx 20rpx; 
+}
