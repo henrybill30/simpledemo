@@ -15,10 +15,7 @@ exports.main = async (event, context) => {
     })
     const feedback = db.collection('Feedback')
 
-    const {openid, type, title, content, timestamp} = event
-    const data = {
-        openid, type, title, content, timestamp
-    }
+    const { data } = event
 
     let res = {}
 
