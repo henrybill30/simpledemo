@@ -1,4 +1,6 @@
 .tabbar-position{
   padding:4rpx 0 2rpx 0;
   border-top:2rpx solid #E0E0E0;
+  /* background-color: #F2F2F2; */
+  z-index: 1000;
 }

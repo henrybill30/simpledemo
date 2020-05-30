@@ -5,7 +5,8 @@ Component({
     codeNum: 0, // 计算代码种类数，只为一种不显示代码名
     htmlcode: ``,
     jscode: ``,
-    csscode: ``
+    csscode: ``,
+    collected: false
   },
   options: {
     // multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -39,11 +40,18 @@ Component({
         lastTapTime: curTime
       })
     },
+    collected(){
+      this.setData({
+        collected: !this.data.collected
+      })
+    },
     showCode: function (event) {
-      console.log(event, "long")
       this.setData({
         showcode: !this.data.showcode
       })
+      if(!this.data.showcode){
+        return
+      }
       wx.cloud.callFunction({
         name: 'addRecord',
         data: {

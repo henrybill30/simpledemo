@@ -1,28 +1,28 @@
 
 .demo-container{
-  background-color: #fff;
+  background-color: #E3FAFA;
   margin: 5rpx 15rpx 25rpx 10rpx;
   /* padding-left: 15rpx; */
   position:relative;
-  border:1rpx solid #C0C0C0;
+  border:1rpx solid #BFC6C6;
   border-radius:2rpx;
-  box-shadow: 0rpx 0rpx 10rpx #6F6F6F;
+  box-shadow: 0rpx 0rpx 10rpx #A28E7E;
 }
 .line{
-  width: 99%;
   height: 1rpx;
-  border-top:4rpx solid #E9EBEC;
-  margin: 10rpx 1rpx;
+  border-top:3rpx solid #8E9898;
+  margin: 1rpx;
 }
 .demo-name{
+  background-color: #E3FAFA;
   width: 95%;
   padding: 25rpx 15rpx 25rpx 15rpx;
 }
 .demo-code{
-  background-color: #fff;
+  background-color: #E3FAFA;
   min-height: 20rpx;
   /* margin: 0rpx 13rpx 25rpx 8rpx; */
-  margin:2rpx;
+  margin:5rpx 1rpx;
   padding: 1rpx;
   /* border:1rpx solid #E9EBEC; */
   /* border-radius:5rpx; */
@@ -40,7 +40,10 @@
   color: white
 }
 .foot{
+  padding: 0 10rpx;
+  margin:2rpx;
   height: 40rpx;
-  width: 100%;
-  background-color: #FCEAD1;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
 }
