@@ -1,6 +1,6 @@
 
 .demo-container{
-  background-color: #E3FAFA;
+  background-color: #fff;
   margin: 5rpx 15rpx 25rpx 10rpx;
   /* padding-left: 15rpx; */
   position:relative;
@@ -14,12 +14,12 @@
   margin: 1rpx;
 }
 .demo-name{
-  background-color: #E3FAFA;
+  background-color: #fff;
   width: 95%;
   padding: 25rpx 15rpx 25rpx 15rpx;
 }
 .demo-code{
-  background-color: #E3FAFA;
+  background-color: #fff;
   min-height: 20rpx;
   /* margin: 0rpx 13rpx 25rpx 8rpx; */
   margin:5rpx 1rpx;

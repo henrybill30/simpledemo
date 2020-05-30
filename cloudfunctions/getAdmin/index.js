@@ -6,6 +6,6 @@ cloud.init()
 // 云函数入口函数
 exports.main = async (event, context) => {
   return {
-    admin_openid: "o1iyM5foZDxqYIKgHkZDdyVbnA5o"
+    admin_openid: "o1iyM5WKbagD1SLujsClKXggefXw"
   }
 }
