@@ -90,7 +90,7 @@ Page({
       css: css.text=="\n"?"":css.text,
       cloudcode: cloudcode.text=="\n"?"":cloudcode.text
     }
-    console.log("code: " + JSON.stringify(code))
+    // console.log("code: " + JSON.stringify(code))
     if(that.data.isExist){
       let result = await wx.cloud.callFunction({
         name: 'updateComponent',
@@ -102,7 +102,13 @@ Page({
           code: code
         }
       })
-      console.log(JSON.stringify(result))
+      if(result.result.stats.updated == 1){
+        wx.showToast({
+          title: '修改成功！',
+          icon: 'success'
+        })
+      }
+      // console.log(JSON.stringify(result))
     }else {
       let result = await wx.cloud.callFunction({
         name: 'addComponent',
@@ -114,7 +120,13 @@ Page({
           code: code
         }
       })
-      console.log(JSON.stringify(result))
+      if(result.result._id){
+        wx.showToast({
+          title: '创建成功！',
+          icon: 'success'
+        })
+      }
+      // console.log(JSON.stringify(result))
     }
   },
 

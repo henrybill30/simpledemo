@@ -6,7 +6,7 @@ page {
   line-height: 1.6;
 }
 .container{
-  margin: 0 60rpx 120rpx 60rpx
+  margin: 0 60rpx 60rpx 60rpx
 }
 .page-color{
   position: fixed;
