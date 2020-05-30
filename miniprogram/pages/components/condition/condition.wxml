@@ -28,7 +28,7 @@
             <view >猜数字</view>
             <view class="weui-cells weui-cells_after-title">
               <view class="weui-cell weui-cell_input">
-                <input class="weui-input" placeholder="输入10以内数字" type="text" bindconfirm="guess"></input>
+                <input class="weui-input" placeholder="输入10以内数字" type="text" bindinput="guess"></input>
               </view>
             </view>
             <view wx:if="{{guessNum==randomNum}}">
@@ -102,7 +102,7 @@
         <view >猜数字升级</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
-            <input class="weui-input" placeholder="输入10以内数字" type="text" bindconfirm="guess1"></input>
+            <input class="weui-input" placeholder="输入10以内数字" type="text" bindinput="guess1"></input>
           </view>
         </view>
         <view wx:if="{{guessNum1==randomNum1}}">
