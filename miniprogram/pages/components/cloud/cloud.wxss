@@ -16,8 +16,9 @@
   background-color: #f4f4f4
 }
 .input {
-  border: 2px solid black;
-  width: 30%
+  border: 1rpx solid black;
+  width: 30%;
+  height: 46rpx;
 }
 .text {
   padding: 0px 2px 0px 2px
