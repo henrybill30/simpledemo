@@ -136,4 +136,4 @@
 
 <van-icon name="arrow-left" size="30" class="left-btn {{leftAnimation}}" wx:if="{{currentPage !== MIN_PAGE}}" bindtap="toBefore"/>
 <van-icon name="arrow" size="30" class="right-btn {{rightAnimation}}" wx:if="{{currentPage !== MAX_PAGE}}" bindtap="toNext" />
-<demo-tabbar/>
+<!-- <demo-tabbar/> -->
