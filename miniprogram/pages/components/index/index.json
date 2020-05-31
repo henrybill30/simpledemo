@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-divider": "/lib/dist/divider/index",
+    "van-cell": "/lib/dist/cell/index"
+  },
   "navigationBarTitleText": "组件识别"
 }

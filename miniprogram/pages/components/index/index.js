@@ -5,99 +5,64 @@ Page({
     list: [
       {
         id: 'information',
+        imgUrl: './pics/information.png',
         name: '信息呈现',
-        open: false,
-        pages: [
-          ['view', 'view'], 
-          ['text', 'text'], 
-          ['icon', 'icon'], 
-          ['progress', 'progress'], 
-          ['rich-text', 'richtext'], 
-          ['swiper', 'swiper']
-        ]
+        url: '../information/information',
+        children: ['view', 'text', 'icon', 'progress', 'rich-text', 'swiper']
       },
       {
         id: 'dataAndinteract',
         name: '数据与交互',
-        open: false,
-        pages: [
-          ['button', 'button'], 
-          ['switch', 'switch'], 
-          ['radio', 'radio'], 
-          ['checkbox', 'checkbox'], 
-          ['picker', 'picker'], 
-          ['slider', 'slider'], 
-          ['input', 'input'], 
-          ['form', 'form']
-        ]
+        imgUrl: './pics/dataAndInteract.png',
+        url: '../dataAndinteract/dataAndinteract',
+        children: ['button', 'switch', 'radio', 'checkbox', 'picker', 'slider', 'input', 'form']
       },
       {
         id: 'arrayAndloop',
         name: '数组与循环',
-        open: false,
-        pages: [
-          ['wx:for', 'wxfor']
-        ]
+        imgUrl: './pics/arrayAndLoop.png',
+        url: '../arrayAndloop/arrayAndloop',
+        children: ['wx-for']
       },
       {
         id: 'condition',
         name: '条件与分支',
-        open: false,
-        pages: [
-          ['wx:if', 'wxif'], 
-          ['wx:elif', 'wxelif'], 
-          ['wx:else', 'wxelse']
-        ]
+        imgUrl: './pics/condition.png',
+        url: '../condition/condition',
+        children: ['wx:if', 'wx:elif', 'wx:else']
       },
       {
         id: 'API',
         name: 'API与回调',
-        open: false,
-        pages: [
-          ['系统信息', 'system'], 
-          ['传感器', 'sensor'], 
-          ['振动', 'vibration'], 
-          ['扫码', 'scan'], 
-          ['获取位置信息', 'location']
-        ]
+        imgUrl: './pics/API.png',
+        url: '../API/API',
+        children: ['系统信息', '传感器', '震动', '扫码', '获取位置信息']
       },
       {
         id: 'Storage',
         name: '数据缓存',
-        open: false,
-        pages: [
-          ['wx.setStorageSync', 'setStorage'], 
-          ['wx.getStorageSync', 'getStorage'], 
-          ['wx.getStorageInfo', 'getInfo'], 
-          ['wx.removeStorageSync', 'removeStorage']
-        ]
+        imgUrl: './pics/Storage.png',
+        url: '../Storage/Storage',
+        children: ['wx.setStorageSync', 'wx.getStorageSync', 'wx.getStorageInfo', 'wx.removeStorageSync']
       },
       {
         id: 'nativeComponent',
         name: '原生组件',
-        open: false,
-        pages: [
-          ['audio', 'audio'],
-          ['video', 'video'],
-          ['map', 'map'],
-          ['canvas', 'canvas'],
-          ['camera', 'camera']
-        ]
+        imgUrl: './pics/nativeCpmponent.png',
+        url: '../nativeComponent/nativeComponent',
+        children: ['audio', 'video', 'canvas', 'camera']
       }, {
         id: 'layout', // 路径
         name: '样式布局', // 类目说明
-        pages: [
-          ['flex 布局']
-        ]
+        imgUrl: './pics/layout.png',
+        url: '../layout/layout',
+        children: ['flex 布局']
       }, {
         id: 'cloud',
         name: '云开发',
-        pages: [
-          ['云函数'],
-          ['云数据库'],
-          ['云存储'],
-          // ['订阅消息'],
-        ]
+        imgUrl: './pics/cloud.png',
+        url: '../cloud/cloud',
+        children: ['云函数', '云数据库', '云存储']
       }
     ]
   },
@@ -123,46 +88,6 @@ Page({
       }
     })
   },
-  // to: function(e) {
-  //   let id = e.target.dataset.id
-  //   if (id == '1') {
-  //     wx.navigateTo({
-  //       url: '/demo1/demo1',
-  //     })
-  //   } else if (id == '2') {
-  //     wx.navigateTo({
-  //       url: '/demo2/demo2',
-  //     })
-  //   } else if (id == '3') {
-  //     wx.navigateTo({
-  //       url: '/demo3/demo3',
-  //     })
-  //   } else if (id == '4') {
-  //     wx.navigateTo({
-  //       url: '/demo4/demo4',
-  //     })
-  //   } else if (id == '5') {
-  //     wx.navigateTo({
-  //       url: '/demo5/demo5',
-  //     })
-  //   } else if (id == '6') {
-  //     wx.navigateTo({
-  //       url: '/demo6/demo6',
-  //     })
-  //   } else if (id == '7') {
-  //     wx.navigateTo({
-  //       url: '/demo7/demo7',
-  //     })
-  //   } else if (id == '8') {
-  //     wx.navigateTo({
-  //       url: '../../log/log',
-  //     })
-  //   } else if (id == '9') {
-  //     wx.navigateTo({
-  //       url: '../../tongji/tongji',
-  //     })
-  //   }
-  // },
 
   kindToggle(e) {
     const id = e.currentTarget.id
