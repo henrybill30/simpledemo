@@ -23,8 +23,10 @@ Page({
         if(res.result.state == true){
           getApp().globalData.openid = res.result.openid
           getApp().globalData.isNewUser = res.result.isNewUser
-          console.log(getApp().globalData)
-          console.log(res.result.msg)
+          // console.log(getApp().globalData)
+          // console.log(res.result.msg)
+          wx.setStorageSync('openid', res.result.openid)
+          // wx.setStorageSync('nickname', JSON.parse(e.detail.rawData).nickName)
           if(res.result.isNewUser){
             wx.switchTab({
               url: '/pages/person/index'

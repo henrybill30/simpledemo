@@ -13,7 +13,7 @@
   width: 95%;
   height:350px;
   border-style: solid;
-  border-color: aquamarine;
+  border-color: rgb(199, 202, 199);
   margin-left: auto;
   margin-right: auto
 }
@@ -21,7 +21,7 @@
   width: 47%;
   height: 36px;
   border-style: solid;
-  border-color: aquamarine;
+  border-color: rgb(199, 202, 199);
   float: left;
   margin-left: auto;
   margin-right: auto
@@ -30,7 +30,7 @@
   width: 47%;
   height: 36px;
   border-style: solid;
-  border-color: aquamarine;
+  border-color: rgb(199, 202, 199);
   float: right;
   margin-left: auto;
   margin-right: auto
@@ -51,7 +51,7 @@
   height: 350px;
   background-color: whitesmoke;
   border-style: solid;
-  border-color: aquamarine;
+  border-color: rgb(199, 202, 199);
   margin-left: auto;
   margin-right: auto
 }

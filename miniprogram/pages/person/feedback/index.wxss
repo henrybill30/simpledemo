@@ -1,36 +1,7 @@
 /* miniprogram/pages/person/feedback/index.wxss */
 .title {
-    display: flex;
-    height: 130rpx;
-    align-items: flex-end;
-    font-size: 61rpx;
+    padding: 30rpx;
 }
-
-.title text {
-    margin-left: 130rpx;
-}
-
-.section {
-    padding: 43rpx;
-}
-
-.section .option {
-    display: inline-block;
-    margin-top: 29rpx;
-    margin-right: 43rpx;
-    padding: 8rpx 22rpx;
-    border-radius: 5px;
-    border: 1px solid #6A84E3;
-    font-size: 29rpx;
-    color: #6A84E3;
-}
-
-.section .sel {
-    border: 1px solid #6A84E3;
-    background: #6A84E3;
-    color: white;
-}
-
 .content {
     margin: 29rpx 43rpx;
     padding: 29rpx;
@@ -38,9 +9,8 @@
     border-radius: 5px;
     font-size: 29rpx;
 }
-
 .confirm {
-    position: absolute;
+    position: fixed;
     right: 43rpx;
     bottom: 72rpx;
     width: 202rpx;
@@ -50,4 +20,7 @@
     font-size: 32rpx;
     background: #6A84E3;
     color: white;
+}
+.value-class {
+  flex: none !important;
 }

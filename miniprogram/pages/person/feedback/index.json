@@ -1,6 +1,14 @@
 {
   "usingComponents": {
-    "van-toast": "/lib/dist/toast/index"
+    "van-toast": "/lib/dist/toast/index",
+    "van-checkbox": "/lib/dist/checkbox/index",
+    "van-checkbox-group": "/lib/dist/checkbox-group/index",
+    "van-cell": "/lib/dist/cell/index",
+    "val-cell-group": "/lib/dist/cell-group/index",
+    "van-panel": "/lib/dist/panel/index",
+    "van-field": "/lib/dist/field/index",
+    "van-notify": "/lib/dist/notify/index",
+    "van-uploader": "/lib/dist/uploader/index"
   },
   "navigationBarTitleText": "反馈"
 }
