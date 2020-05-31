@@ -32,8 +32,6 @@
         "pages/components/nativeComponent/video/video",
         "pages/components/nativeComponent/map/map",
         "pages/components/nativeComponent/audio/audio",
-        "pages/components/nativeComponent/canvas/canvas",
-        "pages/components/nativeComponent/camera/camera",
         "pages/log/log",
         "pages/tongji/tongji",
         "pages/components/layout/layout",
@@ -44,10 +42,11 @@
         "pages/person/usage/index",
         "pages/person/feedback/index",
         "pages/components/article/article",
-        "pages/code/index"
+        "pages/code/index",
+        "pages/person/changelog/index"
     ],
     "window": {
-        "backgroundTextStyle": "light", 
+        "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "WeChat",
         "navigationBarTextStyle": "black"

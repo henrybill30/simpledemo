@@ -1,11 +1,11 @@
-<page-meta>
-  <navigation-bar
-    title="{{nbTitle}}"
-  />
-</page-meta>
-<view class="page-color"></view>
-<view class="container">
-  <view wx:if="{{currentPage==0}}">
+
+<van-tabs
+  active="{{ currentPage }}"
+  sticky
+  title-active-color="#6A84E3"
+  color="#6A84E3"
+  bind:change="onTabChange">
+  <van-tab title="button" :name="0">
     <demo-block title="基础用法">
       <demo-code height="80" name="button" type="basic" num="0">
         <view style="display:flex">
@@ -56,8 +56,9 @@
         </view>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==1}}">
+  </van-tab>
+
+  <van-tab title="switch" :name="1">
     <demo-block title="基础用法">
       <demo-code height="80" name="switch" type="basic" num="0">
         <view style="display:flex; align-items:center">
@@ -73,8 +74,9 @@
         </view>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==2}}">
+  </van-tab>
+
+  <van-tab title="checkbox" :name="2">
     <demo-block title="基础用法">
       <demo-code height="80" name="radio" type="basic" num="0">
         <view style="display:flex; align-items:center">
@@ -106,8 +108,8 @@
         </view>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==3}}">
+  </van-tab>
+  <van-tab title="扫码" :name="3">
     <demo-block title="基础用法">
       <demo-code height="80" name="checkbox" type="basic" num="0">
         <view style="display:flex; align-items:center">
@@ -139,9 +141,9 @@
         </view>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==4}}">
-    <view >
+  </van-tab>
+  <van-tab title="picker" :name="4">
+    <demo-block title="基础用法">
       <view class="section">
         <view class="section__title">普通选择器</view>
         <demo-code height="88" name="picker" type="basic" num="0"> 
@@ -193,9 +195,9 @@
           </picker>
         </demo-code>
       </view>
-    </view>
-  </view>
-  <view wx:if="{{currentPage==5}}">
+    </demo-block>
+  </van-tab>
+  <van-tab title="slider" :name="5">
     <demo-block title="基础用法">
       <demo-code height="120" name="slider" type="basic" num="0">
         <slider bindchange="sliderChange">slider滑块</slider>
@@ -257,8 +259,8 @@
         </view>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==6}}">
+  </van-tab>
+  <van-tab title="input" :name="6">
     <demo-block title="基础用法">
       <demo-code height="80" name="input" type="basic" num="0">
         <input placeholder="最简输入框"></input>
@@ -308,8 +310,8 @@
         <input type="digit" placeholder="带小数点的数字输入键盘"/>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==7}}">
+  </van-tab>
+  <van-tab title="form" :name="7">
     <demo-block title="基础用法">  
       <demo-code height="1100" name="form" type="basic" num="0">
         <form bindsubmit="formSubmit" bindreset="formReset">
@@ -353,9 +355,5 @@
         </form>
       </demo-code>
     </demo-block>
-  </view>
-</view>
-<van-icon name="arrow-left" size="30" class="left-btn animation-{{leftanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
-<van-icon name="arrow" size="30"  class="right-btn animation-{{rightanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
-
-<!-- <demo-tabbar/> -->
+  </van-tab>
+</van-tabs>
