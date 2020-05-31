@@ -8,6 +8,39 @@ Page({
     // width: -1,
     // buttonForbid: false,
     currentPage: 0,
+    components: [
+      {
+        title: 'view组件',
+        name: 'view',
+        type: 'basic',
+        num: 0
+      }, {
+        title: 'text组件',
+        name: 'text',
+        type: 'basic',
+        num: 0
+      }, {
+        title: 'icon组件',
+        name: 'icon',
+        type: 'basic',
+        num: 0
+      }, {
+        title: 'progress组件',
+        name: 'progress',
+        type: 'basic',
+        num: 0
+      }, {
+        title: 'rich-text组件',
+        name: 'richtext',
+        type: 'basic',
+        num: 0
+      }, {
+        title: 'swiper组件',
+        name: 'swiper',
+        type: 'basic',
+        num: 0
+      }
+    ],
     pageNum: 6,
     nbTitle: '',
     titleArr: ['view组件', 'text组件','icon组件','progress组件','rich-text组件','swiper组件'],
@@ -184,12 +217,40 @@ Page({
       })
     }, 200)
   },
+  async onTabChange(e) {
+    await this.addRecord()
+  },
+
+  // 数据埋点
+  async addRecord() {
+      const components = this.data.components
+      const currentPage = this.data.currentPage
+      const event = {
+          envID: getApp().globalData.envID,
+          openid: getApp().globalData.openid,
+          behavior: 'browse',
+          component: components[currentPage].title,
+          cpType: components[currentPage].type,
+          cpNum: components[currentPage].num,
+          time: new Date()
+      }
+      try {
+          await wx.cloud.callFunction({
+          name: 'addRecord',
+          data: event
+          })
+      } catch(e) {
+          console.error(e)
+      }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: async function (options) {
+    const currentPage = parseInt(options.index) || 0
+    await this.addRecord()
     this.setData({
-      currentPage: parseInt(options.index),
+      currentPage,
       nbTitle: this.data.titleArr[parseInt(options.index)]
     })
     wx.cloud.callFunction({

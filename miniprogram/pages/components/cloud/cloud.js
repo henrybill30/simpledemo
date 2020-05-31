@@ -6,10 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-        pageTitle: '云开发', // 页面信息
         currentPage: 0, // 子组件索引
-        MIN_PAGE: 0,
-        MAX_PAGE: 0,
         components: [
             {
                 title: '云函数',
@@ -34,10 +31,6 @@ Page({
             //     num: 0
             // }
         ],
-        leftAnimation: '', // 页面切换效果
-        rightAnimation: '',
-        text: undefined, // 文本存储
-        imgUrl: '', // 文件存储
         //云数据库
         openid: '',
         todoListFetched: false,
@@ -94,181 +87,8 @@ Page({
       })
     },
 
-    // 文本存储 更新已存储文本
-    async updateText(e) {
-        const event = {
-            envID: getApp().globalData.envID,
-            openid: getApp().globalData.openid,
-            action: 'update',
-            text: e.detail.value.textarea
-        }
-        await wx.cloud.callFunction({
-            name: 'textRestore',
-            data: event
-        })
-        await this.getText()
-    },
-
-    // 文本存储 获取已存储文本
-    async getText() {
-        const event = {
-            envID: getApp().globalData.envID,
-            openid: getApp().globalData.openid,
-            action: 'get'
-        }
-        const res = await wx.cloud.callFunction({
-            name: 'textRestore',
-            data: event 
-        })
-        const data = res.result.data
-        this.setData({
-            text: data[0] && data[0].text
-        })
-    },
-
-    // 文件存储 获取已上传文件
-    async getImg() {
-        const DEFAULT_IMG_URL = '/resource/cat.jpg'
-
-        const event = {
-            envID: getApp().globalData.envID,
-            openid: getApp().globalData.openid,
-            action: 'get'
-        }
-        try {
-            const res = await wx.cloud.callFunction({
-                name: 'fileRestore',
-                data: event
-                })
-            const data = res.result.data
-            this.setData({
-                imgUrl: (data[0] && data[0].fileID) || DEFAULT_IMG_URL 
-
-            })
-        } catch(e) {
-            console.error(e)
-            this.setData({
-                imgUrl: DEFAULT_IMG_URL
-            })
-        }
-    },
-
-    // 文件存储 更换图片
-    async updateImg() {
-        // 需用户登录 用户 openid 作为存储索引
-        const openid = getApp().globalData.openid
-        if(!openid) {
-            wx.navigateTo({
-                url: '/pages/login/login'
-            })
-            return
-        }
-        wx.chooseImage({
-            count: 1,
-            sizeType: ['original', 'compressed'],
-            sourceType: ['album', 'camera'],
-            success: async res => {
-                let fileID = this.data.imgUrl
-                await deleteFile(fileID) // 删除已有文件
-                const filePath = res.tempFilePaths[0]
-                const cloudPath = `${openid}-${(new Date).getTime()}`
-                fileID = await uploadFile(cloudPath, filePath) // 上传新文件
-                await updateFileID(fileID) // 数据库中更新文件 ID
-            }
-        })
-
-        // 上传文件到云存储
-        const uploadFile = async (cloudPath, filePath) => {
-            const res = await wx.cloud.uploadFile({
-                cloudPath,
-                filePath
-            })
-            const fileID = res.fileID
-            this.setData({
-                imgUrl: fileID
-            })
-            return fileID
-        }
-        // 从云存储中删除文件
-        const deleteFile = async fileID => {
-            let res =  await wx.cloud.deleteFile({
-                fileList: [fileID]
-            })
-        }
-        // 云数据库中更新对应用户上传的文件
-        const updateFileID = async newFileID => {
-            const event = {
-                envID: getApp().globalData.envID,
-                openid: getApp().globalData.openid,
-                action: 'update',
-                fileID: newFileID
-            }
-            await wx.cloud.callFunction({
-                name: 'fileRestore',
-                data: event
-            })
-        }
-    },
-
-    async deleteImg(){
-      let res =  await wx.cloud.deleteFile({
-        fileList: [this.data.imgUrl]
-      })
-      const event = {
-        envID: getApp().globalData.envID,
-        openid: getApp().globalData.openid,
-        action: 'delete',
-      }
-      await wx.cloud.callFunction({
-        name: 'fileRestore',
-        data: event
-      })
-      await this.getImg()
-      console.log(res)
-    },
-
-    async toBefore(e) {
-        let currentPage = this.data.currentPage
-        if(currentPage <= this.data.MIN_PAGE) {
-            return
-        }
-        currentPage--
-        this.setData({
-            currentPage,
-            leftanimation: 'animation-fade',
-            pageTitle: this.data.components[currentPage].title
-        })
-
-        await this.addRecord()
-
-        const timerID = setTimeout(() => {
-            this.setData({
-                leftAnimation: ''
-            })
-            clearTimeout(timerID)
-        }, 200)
-    },
-
-    async toNext(e) {
-        let currentPage = this.data.currentPage
-        if(currentPage >= this.data.MAX_PAGE) {
-            return
-        }
-        currentPage++
-        this.setData({
-            currentPage,
-            leftAnimation: 'animation-fade',
-            pageTitle: this.data.components[currentPage].title
-        })
-
-        await this.addRecord()
-
-        const timerID = setTimeout(() => {
-            this.setData({
-                rightAnimation: ''
-            })
-            clearTimeout(timerID)
-        }, 200)
+    async onTabChange(e) {
+      await this.addRecord()
     },
 
     // 数据埋点
@@ -497,15 +317,9 @@ Page({
     onLoad: async function (options) {
       // await insertDemoCode2CloudDatabase()
       const currentPage = parseInt(options.index) || 0
-      const components = this.data.components
-      const pageTitle = components[currentPage].title
       this.setData({
-        currentPage,
-        pageTitle,
-        MAX_PAGE: this.data.components.length - 1
+        currentPage
       })
-      await this.getText()
-      await this.getImg()
 
       await this.addRecord()
 

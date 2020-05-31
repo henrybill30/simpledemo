@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "textRestore": "../components/textRestore",
+    "fileRestore": "../components/fileRestore"
+  },
   "navigationBarTitleText": "云开发"
 }

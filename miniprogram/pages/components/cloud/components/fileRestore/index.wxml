@@ -1,0 +1,26 @@
+<!--pages/components/cloud/components/fileRestore/index.wxml-->
+<demo-block title="文件存储">
+  <demo-code name="cloudRestore" type="basic" num="1">
+    <view style="display:flex; justify-content:center; margin-bottom: 40rpx">
+      <image src="{{imgUrl}}"></image>
+    </view>
+    <view style="border: 3px solid black;" wx:if="{{imgUrl!='/resource/cat.jpg'}}">
+      <text style="word-break:break-all">fileID: {{imgUrl}}</text>
+    </view>
+    <button type="primary" bindtap="updateImg">上传图片</button>
+  </demo-code>
+</demo-block>
+<demo-block title="文件删除">
+  <demo-code name="cloudRestore" type="basic" num="2">
+    <view style="display:flex; justify-content:center; margin-bottom: 40rpx" wx:if="{{imgUrl!='/resource/cat.jpg'}}">
+      <image src="{{imgUrl}}"></image>
+    </view>
+    <view style="display:flex; justify-content:center; margin-bottom: 40rpx" wx:else>
+      <text>请先上传图片</text>
+    </view>
+    <view style="border: 3px solid black;" wx:if="{{imgUrl!='/resource/cat.jpg'}}">
+      <text style="word-break:break-all">fileID: {{imgUrl}}</text>
+    </view>
+    <button type="primary" disabled="{{imgUrl=='/resource/cat.jpg'}}" bindtap="deleteImg">删除图片</button>
+  </demo-code>
+</demo-block>
