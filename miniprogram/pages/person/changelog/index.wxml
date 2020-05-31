@@ -1,0 +1,12 @@
+<!--miniprogram/pages/person/changelog/index.wxml-->
+<view style="margin: 80rpx auto; font-size: 40rpx; text-align:center">
+    更新日志
+</view>
+<van-steps
+  steps="{{ steps }}"
+  direction="vertical"
+  desc-class="desc"
+  active-color="#6A84E3"
+  custom-class="custom"
+></van-steps>
+<van-divider contentPosition="center">没有了哦</van-divider>
