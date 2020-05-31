@@ -44,10 +44,11 @@
         "pages/person/usage/index",
         "pages/person/feedback/index",
         "pages/components/article/article",
-        "pages/code/index"
+        "pages/code/index",
+        "pages/person/changelog/index"
     ],
     "window": {
-        "backgroundTextStyle": "light", 
+        "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTitleText": "WeChat",
         "navigationBarTextStyle": "black"
