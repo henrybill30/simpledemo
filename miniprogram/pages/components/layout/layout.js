@@ -6,7 +6,37 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+      currentPage: 0,
+      components: [
+        {
+          title: 'Flex 布局',
+          name: 'layout',
+          type: 'basic',
+          num: 0,
+        }
+      ]
+    },
+    // 数据埋点
+    async addRecord() {
+        const components = this.data.components
+        const currentPage = this.data.currentPage
+        const event = {
+            envID: getApp().globalData.envID,
+            openid: getApp().globalData.openid,
+            behavior: 'browse',
+            component: components[currentPage].title,
+            cpType: components[currentPage].type,
+            cpNum: components[currentPage].num,
+            time: new Date()
+        }
+        try {
+            await wx.cloud.callFunction({
+            name: 'addRecord',
+            data: event
+            })
+        } catch(e) {
+            console.error(e)
+        }
     },
 
     /**
@@ -14,23 +44,7 @@ Page({
      */
     onLoad: async function (options) {
       // await insertDemoCode2CloudDatabase()
-      const event = {
-        envID: getApp().globalData.envID,
-        openid: getApp().globalData.openid,
-        behavior: 'browse',
-        component: 'layout',
-        cpType: 'layout',
-        cpNum: null,
-        time: new Date()
-      }
-      try {
-        await wx.cloud.callFunction({
-          name: 'addRecord',
-          data: event
-        })
-      } catch(e) {
-        console.error(e)
-      }
+      await this.addRecord()
     },
 
     /**

@@ -1,11 +1,12 @@
-<page-meta>
-  <navigation-bar
-    title="{{nbTitle}}"
-  />
-</page-meta>
-<view class="page-color"></view>
-<view class="container">
-  <view wx:if="{{currentPage==0}}">
+
+<van-tabs
+  active="{{ currentPage }}"
+  sticky
+  ellipsis="{{false}}"
+  title-active-color="#6A84E3"
+  color="#6A84E3"
+  bind:change="onTabChange">
+  <van-tab title="setStorage" :name="0">
     <demo-block title="基础用法">
       <demo-code height="80" name="setStorage" type="basic" num="0">
         <input name='key' placeholder="请输入key名称" bindinput="keyInput"/>
@@ -13,8 +14,9 @@
         <button type="primary" disabled="{{disabled}}" bindtap="setStorageSync">数据存储</button>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==1}}">
+  </van-tab>
+
+  <van-tab title="getStorage" :name="1">
     <demo-block title="基础用法">
       <demo-code height="80" name="getStorage" type="basic" num="0">
         <input name='key1' placeholder="请输入key名称" bindinput="keyInput1"/>
@@ -22,8 +24,9 @@
         <text>获取的值为：{{value2}}</text>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==2}}">
+  </van-tab>
+
+  <van-tab title="getStorageInfo" :name="2">
     <demo-block title="基本用法">
       <demo-code height="80" name="getStorageInfo" type="basic" num="0">
         <button type="primary" bindtap="getStorageInfo">获取Storage信息</button>
@@ -37,8 +40,8 @@
         </view>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==3}}">
+  </van-tab>
+  <van-tab title="removeStorage" :name="3">
     <demo-block title="基本用法">
       <demo-code height="80" name="removeStorage" type="basic" num="0">
         <input name='key2' placeholder="请输入key名称" bindinput="keyInput2"/>
@@ -55,10 +58,5 @@
         </view>
       </demo-code>
     </demo-block>
-  </view>
-</view>
-
-<van-icon name="arrow-left" size="30"  class="left-btn animation-{{leftanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
-<van-icon name="arrow" size="30"class="right-btn animation-{{rightanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
-
-<!-- <demo-tabbar/> -->
+  </van-tab>
+</van-tabs>

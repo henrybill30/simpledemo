@@ -1,11 +1,10 @@
-<page-meta>
-  <navigation-bar
-    title="{{nbTitle}}"
-  />
-</page-meta>
-<view class="page-color"></view>
-<view class="container">
-  <view wx:if="{{currentPage==0}}">
+<van-tabs
+  active="{{ currentPage }}"
+  sticky
+  title-active-color="#6A84E3"
+  color="#6A84E3"
+  bind:change="onTabChange">
+  <van-tab title='view' :name="0">
       <view>
         <demo-block title="基础用法">
           <demo-code height="80" name="view" type="basic" num="0">
@@ -41,9 +40,8 @@
           </demo-code>
         </demo-block>
       </view>
-  </view>
-  <!-- </view> -->
-  <view wx:if="{{currentPage==1}}">
+  </van-tab>
+  <van-tab title="text" :name="1">
       <demo-block title="基础用法">
         <demo-code name="text" type="basic" num="0">
           <text>这是一个简单的text组件</text>
@@ -55,9 +53,8 @@
           <text selectable="true" space="emsp">这   是   一个显示连续空格的text组件</text>
         </demo-code>
       </demo-block>
-  </view>
-
-  <view wx:if="{{currentPage==2}}">
+  </van-tab>
+  <van-tab title="icon" :name="2">
     
       <demo-block title="基础用法">
         <demo-code name="icon" type="basic" num="0">
@@ -139,8 +136,8 @@
           </view>
         </demo-code>
       </demo-block>
-  </view>
-  <view wx:if="{{currentPage==3}}">
+  </van-tab>
+  <van-tab title="progress" :name="3">
     
       <demo-block title="基础用法">
         <demo-code height="80" name="progress" type="basic" num="0">
@@ -153,8 +150,8 @@
           <progress percent="80" color="#10AEFF" active stroke-width="3" />
         </demo-code>
       </demo-block>
-  </view>
-  <view wx:if="{{currentPage==4}}">
+  </van-tab>
+  <van-tab title="rich-text" :name="4">
     
       <view>
         <demo-block title="基础用法">
@@ -201,8 +198,8 @@
           </demo-code>
         </demo-block>
       </view>
-  </view>
-  <view wx:if="{{currentPage==5}}">
+  </van-tab>
+  <van-tab title="swiper" :name="5">
     
       <view class="page-body">
         <demo-block title="基础用法">
@@ -273,8 +270,5 @@
           <slider value="{{nextMargin}}" min="0" max="50" bindchange="changeProperty" data-property-name="nextMargin" />
         </view>
       </view>
-  </view>
-</view>
-<van-icon name="arrow-left" size="30" class="left-btn animation-{{leftanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
-<van-icon name="arrow" size="30" class="right-btn animation-{{rightanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
-<!-- <demo-tabbar/> -->
+  </van-tab>
+</van-tabs>

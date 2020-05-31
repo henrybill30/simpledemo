@@ -70,6 +70,8 @@
         "van-row": "./lib/dist/row/index",
         "van-col": "./lib/dist/col/index",
         "van-icon": "./lib/dist/icon/index",
-        "nav-button": "./components/nav-button/navbutton"
+        "nav-button": "./components/nav-button/navbutton",
+        "van-tabs": "./lib/dist/tabs/index",
+        "van-tab": "./lib/dist/tab/index"
     }
 }
