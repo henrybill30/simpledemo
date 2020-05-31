@@ -1,69 +1,25 @@
-<view class="intro">目录：最小系统与最简组件</view>
-<view class="page-color"></view>
-
-<view class="index-bd">
-  <view class="kind-list">
-    <block wx:for-items="{{list}}" wx:for-item="item" wx:key="id">
-      <view class="kind-list-item">
-        <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
-          <view class="kind-list-text">{{item.name}}</view>
-          <!-- <image class="kind-list-img" src="resources/kind/{{item.id}}.png"></image> -->
-        </view>
-        <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
-          <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
-            <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="page">
-              <navigator url="/pages/components/{{item.id}}/{{item.id}}?index={{index}}" class="navigator">
-                <view class="navigator-text">{{page[0]}}</view>
-                <view class="navigator-arrow"></view>
-              </navigator>
-            </block>
-          </view>
-        </view>
+<view class="header">
+  最简组件
+</view>
+<view class="items">
+  <view class="item" wx:for-items="{{ list }}" wx:for-index="idx" wx:key="index" id="{{ item.id }}" bindtap="kindToggle">
+    <view class="{{ item.open ? 'item-title-checked' : '' }}">
+      {{ item.name }}
+      <image src="{{ item.imgUrl }}" class="pic"></image>
+    </view>
+    <view class="item-detail {{ item.open ? (idx % 2 === 0 ? 'item-detail-checked left1' : 'item-detail-checked left2') : ''}}">
+      <view wx:for-items="{{ item.children }}" wx:for-item="child" wx:key="index">
+        <van-cell
+          title="{{ child }}"
+          is-link
+          link-type="navigateTo"
+          url="{{ item.url }}?index={{ index }}"
+          ></van-cell>
       </view>
-    </block>
+    </view>
   </view>
 </view>
 
 <view wx:if="{{admin}}" style="width: 200px;margin-left:auto;margin-right:auto; border:1px solid black">
   <navigator url="/pages/code/index" class="navigator">添加代码</navigator>
 </view>
-
-
-<!-- <button style="width:auto" type='primary' bindtap='to' data-id='1'>
-  Demo1： 信息呈现
-</button>
-
-
-<button style="width:auto" bindtap='to' data-id='2'>
-  Demo2：交互事件
-</button>
-
-
-<button style="width:auto" type='primary' bindtap='to' data-id='3'>
-  Demo3：数据传递
-</button>
-
-<button style="width:auto" bindtap='to' data-id='4'>
-  Demo4：数组与循环
-</button>
-
-<button style="width:auto" type='primary' bindtap='to' data-id='5'>
-  Demo5：条件与分支
-</button>
-
-<button style="width:auto" bindtap='to' data-id='6'>
-  Demo6：API与回调
-</button>
-
-<button style="width:auto" type='primary' bindtap='to' data-id='7'>
-  Demo7：数据与缓存
-</button> -->
-
-<!-- <button style="width:auto" type='warn' bindtap='to' data-id='8'>
-  查看操作日志
-</button>
-
-<button wx:if="{{admin}}" style="width:auto" type='warn' bindtap='to' data-id='9'>
-  查看统计数据
-</button> -->
-<!-- <demo-tabbar/> -->
