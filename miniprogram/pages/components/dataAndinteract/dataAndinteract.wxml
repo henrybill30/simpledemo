@@ -76,7 +76,7 @@
     </demo-block>
   </van-tab>
 
-  <van-tab title="checkbox" :name="2">
+  <van-tab title="radio" :name="2">
     <demo-block title="基础用法">
       <demo-code height="80" name="radio" type="basic" num="0">
         <view style="display:flex; align-items:center">
@@ -109,7 +109,7 @@
       </demo-code>
     </demo-block>
   </van-tab>
-  <van-tab title="扫码" :name="3">
+  <van-tab title="checkbox" :name="3">
     <demo-block title="基础用法">
       <demo-code height="80" name="checkbox" type="basic" num="0">
         <view style="display:flex; align-items:center">
