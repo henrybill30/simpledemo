@@ -1,11 +1,12 @@
-<page-meta>
-  <navigation-bar
-    title="{{nbTitle}}"
-  />
-</page-meta>
-<view class="page-color"></view>
-<view class="container">
-  <view wx:if="{{currentPage==0}}">
+
+<!-- <demo-tabbar/> -->
+<van-tabs
+  active="{{ currentPage }}"
+  sticky
+  title-active-color="#6A84E3"
+  color="#6A84E3"
+  bind:change="onTabChange">
+  <van-tab title="系统信息" :name="0">
     <demo-block title="基础用法">
       <demo-code height="80" name="系统信息" type="basic" num="0">
         <button bindtap="getSystemMsg">获取系统信息</button>
@@ -18,8 +19,9 @@
         <view>操作系统及版本：{{sysInfo.system}}</view>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==1}}">
+  </van-tab>
+
+  <van-tab title="传感器" :name="1">
     <demo-block title="陀螺仪">
       <demo-code height="80" name="传感器" type="basic" num="0">
         <button bindtap="startGyroscope" style="margin-bottom:20rpx">打开陀螺仪</button>
@@ -39,8 +41,9 @@
         <view>精度：{{compass.accuracy}}</view>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==2}}">
+  </van-tab>
+
+  <van-tab title="振动" :name="2">
     <demo-block title="基础用法">
       <demo-code height="80" name="振动" type="basic" num="0">
         <button bindtap="vibrate" data-time="{{true}}" style="margin-bottom:20rpx">较长时间振动</button>
@@ -48,25 +51,20 @@
         <button bindtap="vibrate" data-time="{{false}}">较短时间振动</button>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==3}}">
+  </van-tab>
+  <van-tab title="扫码" :name="3">
     <demo-block title="基础用法">
       <demo-code height="80" name="扫码" type="basic" num="0">
         <button bindtap="scanCode">扫码</button>
         <web-view src="{{toUrl}}" wx:if="{{toUrl!=''}}"></web-view>
       </demo-code>
     </demo-block>
-  </view>
-  <view wx:if="{{currentPage==4}}">
+  </van-tab>
+  <van-tab title="获取位置信息" :name="4">
     <demo-block title="基础用法">
       <demo-code height="80" name="获取位置信息" type="basic" num="0">
         <button bindtap="getLocation">查看当前位置</button>
       </demo-code>
     </demo-block>
-  </view>
-</view>
-
-<van-icon name="arrow-left" size="30"  class="left-btn animation-{{leftanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
-<van-icon name="arrow" size="30"class="right-btn animation-{{rightanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
-
-<!-- <demo-tabbar/> -->
+  </van-tab>
+</van-tabs>

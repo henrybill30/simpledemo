@@ -1,0 +1,8 @@
+/* miniprogram/pages/person/changelog/index.wxss */
+.desc {
+  white-space: pre-line;
+  margin-top: 20rpx;
+}
+.custom {
+  margin-left: 20rpx;
+}

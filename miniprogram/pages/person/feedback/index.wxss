@@ -21,6 +21,15 @@
     background: #6A84E3;
     color: white;
 }
+#submit {
+    height: 84rpx;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 32rpx;
+    background: #6A84E3;
+    color: white;
+    margin: 72rpx 43rpx 72rpx auto;
+}
 .value-class {
   flex: none !important;
 }

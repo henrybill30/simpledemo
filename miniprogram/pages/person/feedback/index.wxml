@@ -54,7 +54,7 @@
     </view>
   </van-panel>
 
-  <button bindtap="confirm" class="confirm">提交反馈</button>
+  <button bindtap="confirm" id="submit">提交反馈</button>
 </block>
 
 <van-toast id="van-toast" />

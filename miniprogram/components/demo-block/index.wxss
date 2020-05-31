@@ -17,5 +17,5 @@
 }
 
 .demo-block{
-  padding:  5rpx 5rpx 0 10rpx;
+  padding:  5rpx 20rpx 0 20rpx;
 }

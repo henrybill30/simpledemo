@@ -1,45 +1,43 @@
-<page-meta>
-  <navigation-bar
-    title="{{nbTitle}}"
-  />
-</page-meta>
-<view class="page-color"></view>
-<view class="container">
-  <view wx:if="{{currentPage==0}}">
-      <view>
-        <demo-block title="基础用法">
-          <demo-code name="wxif" type="basic" num="0">
-            <switch bindchange="xChange" >显示控制</switch>
-            <block wx:if="{{x}}" >
-              <view> 第一个显示单元 </view>
-              <view>
-                <text>progress进度条</text>
-              <progress percent="80" ></progress>
-              </view>
-                <view>image图片</view>
-                <image style="width: 200px; height: 200px;" mode="scaleToFill" src="../../../resource/cat.jpg">  </image>
-              <view> …… </view>
-              <view> 第N个显示单元 </view>
-            </block>
-          </demo-code>
-        </demo-block>
-        <demo-block title="增强用法">
-          <demo-code name="wxif" type="strength" num="0">
-            <view >猜数字</view>
-            <view class="weui-cells weui-cells_after-title">
-              <view class="weui-cell weui-cell_input">
-                <input class="weui-input" placeholder="输入10以内数字" type="text" bindinput="guess"></input>
-              </view>
-            </view>
-            <view wx:if="{{guessNum==randomNum}}">
-              <text>恭喜猜对了！！！这样我才会显示</text>
-            </view>
-          </demo-code>
-        </demo-block>
-      </view>
-  </view>
-  <!-- </view> -->
-  <view wx:if="{{currentPage==1}}">
+
+<van-tabs
+  active="{{ currentPage }}"
+  sticky
+  title-active-color="#6A84E3"
+  color="#6A84E3"
+  bind:change="onTabChange">
+  <van-tab title="wx:if" :name="0">
+    <demo-block title="基础用法">
+      <demo-code name="wxif" type="basic" num="0">
+        <switch bindchange="xChange" >显示控制</switch>
+        <block wx:if="{{x}}" >
+          <view> 第一个显示单元 </view>
+          <view>
+            <text>progress进度条</text>
+          <progress percent="80" ></progress>
+          </view>
+            <view>image图片</view>
+            <image style="width: 200px; height: 200px;" mode="scaleToFill" src="../../../resource/cat.jpg">  </image>
+          <view> …… </view>
+          <view> 第N个显示单元 </view>
+        </block>
+      </demo-code>
+    </demo-block>
+    <demo-block title="增强用法">
+      <demo-code name="wxif" type="strength" num="0">
+        <view >猜数字</view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <input class="weui-input" placeholder="输入10以内数字" type="text" bindinput="guess"></input>
+          </view>
+        </view>
+        <view wx:if="{{guessNum==randomNum}}">
+          <text>恭喜猜对了！！！这样我才会显示</text>
+        </view>
+      </demo-code>
+    </demo-block>
+  </van-tab>
+
+  <van-tab title="wx:elif" :name="1">
     <demo-block title="基础用法">
       <demo-code name="wxelif" type="basic" num="0">
         <view class="weui-cells weui-cells_after-title">
@@ -83,9 +81,9 @@
         </view>
       </demo-code>
     </demo-block>
-  </view>
+  </van-tab>
 
-  <view wx:if="{{currentPage==2}}">
+  <van-tab title="wx:else" :name="2">
     <demo-block title="基础用法">
       <demo-code name="wxelse" type="basic" num="0">
         <switch bindchange="xChange" >显示控制</switch>
@@ -116,8 +114,5 @@
         </view>
       </demo-code>
     </demo-block>
-  </view>
-</view>
-<van-icon name="arrow-left" size="30" class="left-btn animation-{{leftanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=0}}" bindtap="tobefore"/>
-<van-icon name="arrow" size="30" class="right-btn animation-{{rightanimation=='fade'?'fade':''}}" wx:if="{{currentPage!=pageNum-1}}" bindtap="tonext" />
-<!-- <demo-tabbar/> -->
+  </van-tab>
+</van-tabs>
