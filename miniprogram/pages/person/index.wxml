@@ -40,6 +40,10 @@
     is-link
     link-type="navigateTo"
     url="./feedback/index"/>
+  <van-cell title="更新日志"
+    is-link
+    link-type="navigateTo"
+    url="./changelog/index"/>
 </view>
 
 
