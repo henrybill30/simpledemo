@@ -48,7 +48,7 @@
   </van-tab>
 
   <van-tab title="振动" :name="2">
-    <view wx:if="{{currentPage == 0}}">
+    <view wx:if="{{currentPage == 2}}">
       <demo-block title="基础用法">
         <demo-code height="80" name="振动" type="basic" num="0">
           <button bindtap="vibrate" data-time="{{true}}" style="margin-bottom:20rpx">较长时间振动</button>
@@ -59,7 +59,7 @@
     </view>
   </van-tab>
   <van-tab title="扫码" :name="3">
-    <view wx:if="{{currentPage == 0}}">
+    <view wx:if="{{currentPage == 3}}">
       <demo-block title="基础用法">
         <demo-code height="80" name="扫码" type="basic" num="0">
           <button bindtap="scanCode">扫码</button>
@@ -69,7 +69,7 @@
     </view>
   </van-tab>
   <van-tab title="获取位置信息" :name="4">
-    <view wx:if="{{currentPage == 0}}">
+    <view wx:if="{{currentPage == 4}}">
       <demo-block title="基础用法">
         <demo-code height="80" name="获取位置信息" type="basic" num="0">
           <button bindtap="getLocation">查看当前位置</button>
