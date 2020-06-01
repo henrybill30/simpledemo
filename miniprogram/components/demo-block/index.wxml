@@ -1,4 +1,4 @@
-<view wx:if="{{isCurrentPage}}" class="custom-class demo-block van-clearfix">
+<view class="custom-class demo-block van-clearfix">
   <view wx:if="{{ title }}" class="demo-block__title">{{ title }}</view>
   <slot />
 </view>

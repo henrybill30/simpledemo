@@ -79,8 +79,8 @@ Page({
       console.log('[main]login success')
     }
     let res = wx.getSystemInfoSync()
-    console.log("宽1: " + res.screenWidth)
-    console.log("宽2: " + res.windowWidth)
+    // console.log("宽1: " + res.screenWidth)
+    // console.log("宽2: " + res.windowWidth)
     that.setData({
       windowWidth: res.screenWidth,
       windowHeight: res.windowHeight

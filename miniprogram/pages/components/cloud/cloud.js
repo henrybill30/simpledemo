@@ -311,6 +311,13 @@ Page({
       this.queryTodoList()
     },
 
+    onTabChange(e){
+      console.log(e)
+      this.setData({
+        currentPage: e.detail.name
+      })
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */

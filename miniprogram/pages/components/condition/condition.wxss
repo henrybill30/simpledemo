@@ -10,3 +10,9 @@
   right: 5rpx;
   top:45%
 }
+.picker {
+  border: 1px solid rgba(128, 128, 128, 0.808);
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+  text-align: center;
+}

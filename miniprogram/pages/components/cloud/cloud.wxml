@@ -6,6 +6,7 @@
   color="#6A84E3"
   bind:change="onTabChange">
   <van-tab title="云函数" :name="0">
+   <view wx:if="{{currentPage == 0}}">
     <demo-block title="云函数实现加法">
       <demo-code name="cloudFunction" type="basic" num="0">
         <view style="display:flex;">
@@ -31,9 +32,11 @@
         <button bindtap="getInfo">云函数获取openid</button>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
 
   <van-tab title="云数据库" :name="1">
+   <view wx:if="{{currentPage == 1}}">
     <demo-block title="云数据库">
       <demo-code name="cloudDatabase" type="basic" num="0">
         <view class="page-body">
@@ -90,10 +93,13 @@
         </view>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
 
   <van-tab title="云存储" :name="2">
+   <view wx:if="{{currentPage == 2}}">
     <textRestore></textRestore>
     <fileRestore></fileRestore>
+   </view>
   </van-tab>
 </van-tabs>

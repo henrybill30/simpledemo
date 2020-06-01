@@ -6,7 +6,8 @@
   color="#6A84E3"
   bind:change="onTabChange">
   <van-tab title="audio" :name="0">
-   <demo-block title="基础用法">
+   <view wx:if="{{currentPage == 0}}">
+    <demo-block title="基础用法">
       <demo-code name="audio" type="basic" num="0">
         <view style="display:flex;">
           <text style="flex-group:1">歌名：Someday</text>
@@ -26,9 +27,11 @@
         <switch style="flex-group:1;font-size:20rpx" bindchange="audioLoop">是否循环</switch>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
 
   <van-tab title="video" :name="1">
+   <view wx:if="{{currentPage == 0}}">
     <demo-block title="基础用法">
       <demo-code name="video" type="basic" num="0">
         <video id="video1" src="{{videoSrc}}" controls="{{videoControl}}" danmu-list="{{danmuList}}" danmu-btn="true" enable-danmu="true" loop="{{videoLoop}}" muted="{{videoMute}}" poster="{{videoPoster}}" title="云开发" bindtimeupdate="videoTimeUpdate"></video>
@@ -58,9 +61,11 @@
         <button bindtap="danmuSend">发送弹幕</button>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
 
   <van-tab title="map" :name="2">
+   <view wx:if="{{currentPage == 0}}">
     <demo-block title="基础用法">
       <demo-code name="map" type="basic" num="0">
         <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" show-location="{{show_location}}" subkey="MRUBZ-TE3K3-24S3G-YR65Y-7XLBS-5QFHU" layer-style="1" enable-3D="{{enable_3D}}" show-compass="{{show_compass}}" show-scale="{{show_scale}}" enable-overlooking="{{enable_overlooking}}" enable-zoom="{{enable_zoom}}" enable-scroll="{{enable_scroll}}" enable-rotate="{{enable_rotate}}" enable-satellite="{{enable_satellite}}" enable-traffic="{{enable_traffic}}" bindtap="tapMap" bindmarkertap="tapMarker" bindlabeltap="tapLabel" bindcallouttap="tapCallout" bindregionchange="regionchange" bindpoitap="tapPOI"></map> 
@@ -138,8 +143,10 @@
         </view>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
   <van-tab title="canvas" :name="3">
+   <view wx:if="{{currentPage == 0}}">
     <demo-block title="基础用法">
       <demo-code name="canvas" type="basic" num="0">
         <canvas class="canvas" disable-scroll="false" id="myCanvas" canvas-id="canvas1" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchcancel="touchCancel" binderror="error"></canvas>
@@ -167,8 +174,10 @@
         </view>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
   <van-tab title="camera" :name="4">
+   <view wx:if="{{currentPage == 0}}">
     <demo-block title="基础用法">
      <demo-code name="camera" type="basic" num="0">
       <view class="intro">当前模式：{{mode}}</view>
@@ -194,5 +203,6 @@
       </view>
      </demo-code>
     </demo-block>
+   </view>
   </van-tab>
 </van-tabs>

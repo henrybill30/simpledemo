@@ -5,7 +5,7 @@
   color="#6A84E3"
   bind:change="onTabChange">
   <van-tab title='view' :name="0">
-      <view>
+      <view wx:if="{{currentPage == 0}}">
         <demo-block title="基础用法">
           <demo-code height="80" name="view" type="basic" num="0">
             <view>这是一个简单的view组件</view>
@@ -42,20 +42,22 @@
       </view>
   </van-tab>
   <van-tab title="text" :name="1">
-      <demo-block title="基础用法">
-        <demo-code name="text" type="basic" num="0">
-          <text>这是一个简单的text组件</text>
-        </demo-code>
-        <demo-code height="80" name="text" type="basic" num="1">
-          <text selectable="true">这是一个可选择的text组件</text>
-        </demo-code>
-        <demo-code height="80" name="text" type="basic" num="2">
-          <text selectable="true" space="emsp">这   是   一个显示连续空格的text组件</text>
-        </demo-code>
-      </demo-block>
+    <view wx:if="{{currentPage == 1}}">
+     <demo-block title="基础用法">
+      <demo-code name="text" type="basic" num="0">
+        <text>这是一个简单的text组件</text>
+      </demo-code>
+      <demo-code height="80" name="text" type="basic" num="1">
+        <text selectable="true">这是一个可选择的text组件</text>
+      </demo-code>
+      <demo-code height="80" name="text" type="basic" num="2">
+        <text selectable="true" space="emsp">这   是   一个显示连续空格的text组件</text>
+      </demo-code>
+     </demo-block>
+    </view>
   </van-tab>
   <van-tab title="icon" :name="2">
-    
+    <view wx:if="{{currentPage == 2}}">
       <demo-block title="基础用法">
         <demo-code name="icon" type="basic" num="0">
           <view style="display:flex;margin-bottom:20rpx">
@@ -136,9 +138,10 @@
           </view>
         </demo-code>
       </demo-block>
+    </view>
   </van-tab>
   <van-tab title="progress" :name="3">
-    
+    <view wx:if="{{currentPage == 3}}">
       <demo-block title="基础用法">
         <demo-code height="80" name="progress" type="basic" num="0">
           <progress percent="40" show-info stroke-width="3"/>
@@ -150,57 +153,57 @@
           <progress percent="80" color="#10AEFF" active stroke-width="3" />
         </demo-code>
       </demo-block>
+    </view>
   </van-tab>
   <van-tab title="rich-text" :name="4">
-    
-      <view>
-        <demo-block title="基础用法">
-          <view class="card-title">传入html字符串</view>
-          <demo-code height="120" name="richtext" type="basic" num="0">
-            <view class="page-section">
-              <view class="rich-text-wrp">
-                <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
-              </view>
+    <view wx:if="{{currentPage == 4}}">
+      <demo-block title="基础用法">
+        <view class="card-title">传入html字符串</view>
+        <demo-code height="120" name="richtext" type="basic" num="0">
+          <view class="page-section">
+            <view class="rich-text-wrp">
+              <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
             </view>
-          </demo-code>
-          <view class="card-title">传入节点列表</view>
-          <demo-code height="120" name="richtext" type="basic" num="1">
-            <view class="page-section">
-              <view class="rich-text-wrp">
-                <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
-              </view>
+          </view>
+        </demo-code>
+        <view class="card-title">传入节点列表</view>
+        <demo-code height="120" name="richtext" type="basic" num="1">
+          <view class="page-section">
+            <view class="rich-text-wrp">
+              <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
             </view>
-          </demo-code>
-        </demo-block>
+          </view>
+        </demo-code>
+      </demo-block>
 
-        <demo-block title="增强用法">
-          <view class="card-title">显示连续空格</view>
-          <demo-code height="100" name="richtext" type="strength" num="0">
-            <view class="page-section">
-              <view class="rich-text-wrp">
-                <rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>
-              </view>
+      <demo-block title="增强用法">
+        <view class="card-title">显示连续空格</view>
+        <demo-code height="100" name="richtext" type="strength" num="0">
+          <view class="page-section">
+            <view class="rich-text-wrp">
+              <rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>
             </view>
-          </demo-code>
-          <demo-code height="300" name="richtext" type="strength" num="1">
-            <view class="page-section">
-              <view class="rich-text-wrp">
-                <rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>
-              </view>
+          </view>
+        </demo-code>
+        <demo-code height="300" name="richtext" type="strength" num="1">
+          <view class="page-section">
+            <view class="rich-text-wrp">
+              <rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>
             </view>
-          </demo-code>
-          <demo-code height="200" name="richtext" type="strength" num="2">
-            <view class="page-section">
-              <view class="rich-text-wrp">
-                <rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>
-              </view>
+          </view>
+        </demo-code>
+        <demo-code height="200" name="richtext" type="strength" num="2">
+          <view class="page-section">
+            <view class="rich-text-wrp">
+              <rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>
             </view>
-          </demo-code>
-        </demo-block>
-      </view>
+          </view>
+        </demo-code>
+      </demo-block>
+    </view>
   </van-tab>
   <van-tab title="swiper" :name="5">
-    
+    <view wx:if="{{currentPage == 5}}">
       <view class="page-body">
         <demo-block title="基础用法">
           <demo-code height="320" name="swiper" type="basic" num="0">
@@ -270,5 +273,6 @@
           <slider value="{{nextMargin}}" min="0" max="50" bindchange="changeProperty" data-property-name="nextMargin" />
         </view>
       </view>
+    </view>
   </van-tab>
 </van-tabs>

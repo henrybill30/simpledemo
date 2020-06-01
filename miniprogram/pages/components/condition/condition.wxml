@@ -6,7 +6,8 @@
   color="#6A84E3"
   bind:change="onTabChange">
   <van-tab title="wx:if" :name="0">
-    <demo-block title="基础用法">
+    <view wx:if="{{currentPage == 0}}">
+     <demo-block title="基础用法">
       <demo-code name="wxif" type="basic" num="0">
         <switch bindchange="xChange" >显示控制</switch>
         <block wx:if="{{x}}" >
@@ -21,8 +22,8 @@
           <view> 第N个显示单元 </view>
         </block>
       </demo-code>
-    </demo-block>
-    <demo-block title="增强用法">
+     </demo-block>
+     <demo-block title="增强用法">
       <demo-code name="wxif" type="strength" num="0">
         <view >猜数字</view>
         <view class="weui-cells weui-cells_after-title">
@@ -34,57 +35,55 @@
           <text>恭喜猜对了！！！这样我才会显示</text>
         </view>
       </demo-code>
-    </demo-block>
+     </demo-block>
+    </view>
   </van-tab>
 
   <van-tab title="wx:elif" :name="1">
-    <demo-block title="基础用法">
-      <demo-code name="wxelif" type="basic" num="0">
-        <view class="weui-cells weui-cells_after-title">
-          <view class="weui-cell weui-cell_input">
-            <view class="weui-cell__hd">
-              <view class="weui-label">显示图片位置</view>
-            </view>
-            <view class="weui-cell__bd">
-              <picker bindchange="bindPickerChange" value="{{index}}" range="{{imagePos}}">
-                <view class="weui-input">{{imagePos[index]}}</view>
-              </picker>
-            </view>
+    <view wx:if="{{currentPage == 1}}">
+      <demo-block title="基础用法">
+        <demo-code name="wxelif" type="basic" num="0">
+          <view class="weui-label">显示图片位置</view>
+          <view class="picker">
+            <picker bindchange="bindPickerChange" value="{{index}}" range="{{imagePos}}">
+              <text style="text-align: center">{{imagePos[index]}}</text>
+            </picker>
           </view>
-        </view>
-        <view wx:if="{{index==0}}" style="display:flex; justify-content: center;">
-          <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top"></image>
-        </view>
-        <view wx:elif="{{index==1}}" style="display:flex; justify-content: center;">
-          <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom"></image>
-        </view>
-        <view wx:elif="{{index==2}}" style="display:flex; justify-content: center;">
-          <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="left"></image>
-        </view>
-        <view wx:elif="{{index==3}}" style="display:flex; justify-content:center">
-          <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="right"></image>
-        </view>
-        <view wx:elif="{{index==4}}" style="display:flex; justify-content:center">
-          <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top left"></image>
-        </view>
-        <view wx:elif="{{index==5}}" style="display:flex; justify-content:center">
-          <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top right"></image>
-        </view>
-        <view wx:elif="{{index==6}}" style="display:flex; justify-content:center">
-          <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom left"></image>
-        </view>
-        <view wx:elif="{{index==7}}" style="display:flex; justify-content:center">
-          <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom right"></image>
-        </view>
-        <view wx:elif="{{index==8}}" style="display:flex; justify-content:center">
-          <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="center"></image>
-        </view>
-      </demo-code>
-    </demo-block>
+          <view wx:if="{{index==0}}" style="display:flex; justify-content: center;">
+            <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top"></image>
+          </view>
+          <view wx:elif="{{index==1}}" style="display:flex; justify-content: center;">
+            <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom"></image>
+          </view>
+          <view wx:elif="{{index==2}}" style="display:flex; justify-content: center;">
+            <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="left"></image>
+          </view>
+          <view wx:elif="{{index==3}}" style="display:flex; justify-content:center">
+            <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="right"></image>
+          </view>
+          <view wx:elif="{{index==4}}" style="display:flex; justify-content:center">
+            <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top left"></image>
+          </view>
+          <view wx:elif="{{index==5}}" style="display:flex; justify-content:center">
+            <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top right"></image>
+          </view>
+          <view wx:elif="{{index==6}}" style="display:flex; justify-content:center">
+            <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom left"></image>
+          </view>
+          <view wx:elif="{{index==7}}" style="display:flex; justify-content:center">
+            <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom right"></image>
+          </view>
+          <view wx:elif="{{index==8}}" style="display:flex; justify-content:center">
+            <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="center"></image>
+          </view>
+        </demo-code>
+      </demo-block>
+    </view>
   </van-tab>
 
   <van-tab title="wx:else" :name="2">
-    <demo-block title="基础用法">
+    <view wx:if="{{currentPage == 2}}">
+     <demo-block title="基础用法">
       <demo-code name="wxelse" type="basic" num="0">
         <switch bindchange="xChange" >显示控制</switch>
         <block wx:if="{{!x}}" >
@@ -94,8 +93,8 @@
           <text>\nelse,显示这一单元</text>
         </block>
       </demo-code>
-    </demo-block>
-    <demo-block title="增强用法">
+     </demo-block>
+     <demo-block title="增强用法">
       <demo-code name="wxelse" type="strength" num="0">
         <view >猜数字升级</view>
         <view class="weui-cells weui-cells_after-title">
@@ -113,6 +112,7 @@
           <text>猜错了...再猜一次！</text>
         </view>
       </demo-code>
-    </demo-block>
+     </demo-block>
+    </view>
   </van-tab>
 </van-tabs>

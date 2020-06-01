@@ -7,7 +7,8 @@
   color="#6A84E3"
   bind:change="onTabChange">
   <van-tab title="button" :name="0">
-    <demo-block isCurrentPage="{{currentPage == 0}}" title="基础用法">
+    <view wx:if="{{currentPage == 0}}">
+     <demo-block title="基础用法">
       <demo-code height="80" name="button" type="basic" num="0">
         <view style="display:flex">
           <view style="flex-group:1">
@@ -56,11 +57,13 @@
           </view>
         </view>
       </demo-code>
-    </demo-block>
+     </demo-block>
+    </view>
   </van-tab>
 
   <van-tab title="switch" :name="1">
-    <demo-block isCurrentPage="{{currentPage == 1}}" title="基础用法">
+   <view wx:if="{{currentPage == 1}}">
+     <demo-block title="基础用法">
       <demo-code height="80" name="switch" type="basic" num="0">
         <view style="display:flex; align-items:center">
           <view style="flex-group:1">
@@ -75,10 +78,12 @@
         </view>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
 
   <van-tab title="radio" :name="2">
-    <demo-block isCurrentPage="{{currentPage == 2}}" title="基础用法">
+   <view wx:if="{{currentPage == 2}}">
+    <demo-block title="基础用法">
       <demo-code height="80" name="radio" type="basic" num="0">
         <view style="display:flex; align-items:center">
           <view style="flex-group:1">
@@ -93,7 +98,7 @@
         </view>
       </demo-code>
     </demo-block>
-    <demo-block isCurrentPage="{{currentPage == 2}}" title="增强用法">
+    <demo-block title="增强用法">
       <demo-code height="350" name="radio" type="strength" num="0">
         <view style="display:flex;flex-direction: column">
           <radio-group  style="flex-group:1" bindchange="change2">
@@ -109,9 +114,11 @@
         </view>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
   <van-tab title="checkbox" :name="3">
-    <demo-block isCurrentPage="{{currentPage == 3}}" title="基础用法">
+   <view wx:if="{{currentPage == 3}}">
+    <demo-block title="基础用法">
       <demo-code height="80" name="checkbox" type="basic" num="0">
         <view style="display:flex; align-items:center">
           <view style="flex-group:1">
@@ -126,7 +133,7 @@
         </view>
       </demo-code>
     </demo-block>
-    <demo-block isCurrentPage="{{currentPage == 3}}" title="增强用法">
+    <demo-block title="增强用法">
       <demo-code height="360" name="checkbox" type="strength" num="0">
         <view style="display:flex;flex-direction: column">
           <checkbox-group style="flex-group:1" bindchange="checkboxchange2">
@@ -142,9 +149,11 @@
         </view>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
   <van-tab title="picker" :name="4">
-    <demo-block isCurrentPage="{{currentPage == 4}}" title="基础用法">
+   <view wx:if="{{currentPage == 4}}">
+    <demo-block title="基础用法">
       <view class="section">
         <view class="section__title">普通选择器</view>
         <demo-code height="88" name="picker" type="basic" num="0"> 
@@ -197,15 +206,17 @@
         </demo-code>
       </view>
     </demo-block>
+   </view>
   </van-tab>
   <van-tab title="slider" :name="5">
-    <demo-block isCurrentPage="{{currentPage == 5}}" title="基础用法">
+   <view wx:if="{{currentPage == 5}}">
+    <demo-block title="基础用法">
       <demo-code height="120" name="slider" type="basic" num="0">
         <slider bindchange="sliderChange">slider滑块</slider>
       </demo-code>
     </demo-block>
 
-    <demo-block isCurrentPage="{{currentPage == 5}}" title="增强用法">
+    <demo-block title="增强用法">
       <demo-code height="120" name="slider" type="strength" num="0">
         <view>
           <text class="section__title">显示当前value:</text>
@@ -243,7 +254,7 @@
 
     </demo-block>
 
-    <demo-block isCurrentPage="{{currentPage == 5}}" title="常用事件">
+    <demo-block title="常用事件">
       <demo-code height="200" name="slider" type="strength" num="5">
         <view>
           <text class="section__title">bindchange：完成一次拖动后触发</text>
@@ -260,9 +271,11 @@
         </view>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
   <van-tab title="input" :name="6">
-    <demo-block isCurrentPage="{{currentPage == 6}}" title="基础用法">
+   <view wx:if="{{currentPage == 6}}">
+    <demo-block title="基础用法">
       <demo-code height="80" name="input" type="basic" num="0">
         <input placeholder="最简输入框"></input>
       </demo-code>
@@ -294,7 +307,7 @@
       </demo-code>
     </demo-block>
 
-    <demo-block isCurrentPage="{{currentPage == 6}}" title="带不同键盘的输入框">
+    <demo-block title="带不同键盘的输入框">
       <demo-code height="80" name="input" type="strength" num="6">
         <input type="text" placeholder="文本输入键盘"/>
       </demo-code>
@@ -311,9 +324,11 @@
         <input type="digit" placeholder="带小数点的数字输入键盘"/>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
   <van-tab title="form" :name="7">
-    <demo-block isCurrentPage="{{currentPage == 7}}" title="基础用法">  
+   <view wx:if="{{currentPage == 7}}">
+    <demo-block title="基础用法">  
       <demo-code height="1100" name="form" type="basic" num="0">
         <form bindsubmit="formSubmit" bindreset="formReset">
           <view class="section section_gap">
@@ -356,5 +371,6 @@
         </form>
       </demo-code>
     </demo-block>
+   </view>
   </van-tab>
 </van-tabs>
