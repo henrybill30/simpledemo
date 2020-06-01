@@ -27,6 +27,7 @@
   margin: 5px 0;
 }
 .showform{
-  height: 150px;
-  background-color: #FADBDB
+  min-height: 200rpx;
+  background-color: #FADBDB;
+  padding: 15rpx;
 }
