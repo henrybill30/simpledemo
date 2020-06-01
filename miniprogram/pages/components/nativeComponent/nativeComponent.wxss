@@ -14,37 +14,42 @@
   height:350px;
   border-style: solid;
   border-color: rgb(199, 202, 199);
-  margin-left: auto;
-  margin-right: auto
+  margin: 10rpx;
+}
+.row{
+  display: flex;
+  justify-content: center;
+  margin: 8rpx 6rpx;
 }
 .left {
+  padding: 5rpx;
+  margin: 0 8rpx;
   width: 47%;
   height: 36px;
-  border-style: solid;
-  border-color: rgb(199, 202, 199);
-  float: left;
-  margin-left: auto;
-  margin-right: auto
+  border: 1px solid #C7CAC7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .right {
+  padding: 5rpx;
+  margin: 0 4rpx;
   width: 47%;
   height: 36px;
-  border-style: solid;
-  border-color: rgb(199, 202, 199);
-  float: right;
-  margin-left: auto;
-  margin-right: auto
+  border: 1px solid #C7CAC7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .text {
-  width: 50%;
   height: 100%;
   float: left;
-  font-size: 20rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
 }
 .switch {
-  width: 45%;
-  height: 100%;
-  float: right
+  height: 80%;
 }
 .canvas {
   width: 100%;

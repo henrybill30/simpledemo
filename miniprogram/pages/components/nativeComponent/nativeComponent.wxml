@@ -69,56 +69,56 @@
     <demo-block title="基础用法">
       <demo-code name="map" type="basic" num="0">
         <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" show-location="{{show_location}}" subkey="MRUBZ-TE3K3-24S3G-YR65Y-7XLBS-5QFHU" layer-style="1" enable-3D="{{enable_3D}}" show-compass="{{show_compass}}" show-scale="{{show_scale}}" enable-overlooking="{{enable_overlooking}}" enable-zoom="{{enable_zoom}}" enable-scroll="{{enable_scroll}}" enable-rotate="{{enable_rotate}}" enable-satellite="{{enable_satellite}}" enable-traffic="{{enable_traffic}}" bindtap="tapMap" bindmarkertap="tapMarker" bindlabeltap="tapLabel" bindcallouttap="tapCallout" bindregionchange="regionchange" bindpoitap="tapPOI"></map> 
-      <view>
-        <view class="left">
-          <view class="text">显示当前位置</view>
-          <switch class="switch" checked="{{show_location}}" bindchange="is_showLocation"></switch>
+        <view class="row">
+          <view class="left">
+            <view class="text">显示当前位置</view>
+            <switch class="switch" checked="{{show_location}}" bindchange="is_showLocation"></switch>
+          </view>
+          <view class="right">
+            <view class="text">显示3D楼块</view>
+            <switch class="switch" checked="{{enable_3D}}" bindchange="is_enable3D"></switch>
+          </view>
         </view>
-        <view class="right">
-          <view class="text">显示3D楼块</view>
-          <switch class="switch" checked="{{enable_3D}}" bindchange="is_enable3D"></switch>
+        <view class="row">
+          <view class="left">
+            <view class="text">显示指南针</view>
+            <switch class="switch" checked="{{show_compass}}" bindchange="is_showCompass"></switch>
+          </view>
+          <view class="right">
+            <view class="text">显示比例尺</view>
+            <switch class="switch" checked="{{show_scale}}" bindchange="is_showScale"></switch>
+          </view>
         </view>
-      </view>
-      <view>
-        <view class="left">
-          <view class="text">显示指南针</view>
-          <switch class="switch" checked="{{show_compass}}" bindchange="is_showCompass"></switch>
+        <view class="row">
+          <view class="left">
+            <view class="text">开启俯视</view>
+            <switch class="switch" checked="{{enable_overlooking}}" bindchange="is_enableOverlooking"></switch>
+          </view>
+          <view class="right">
+            <view class="text">支持缩放</view>
+            <switch class="switch" checked="{{enable_zoom}}" bindchange="is_enableZoom"></switch>
+          </view>
         </view>
-        <view class="right">
-          <view class="text">显示比例尺</view>
-          <switch class="switch" checked="{{show_scale}}" bindchange="is_showScale"></switch>
+        <view class="row">
+          <view class="left">
+            <view class="text">支持拖动</view>
+            <switch class="switch" checked="{{enable_scroll}}" bindchange="is_enableScroll"></switch>
+          </view>
+          <view class="right">
+            <view class="text">支持旋转</view>
+            <switch class="switch" checked="{{enable_rotate}}" bindchange="is_enableRotate"></switch>
+          </view>
         </view>
-      </view>
-      <view>
-        <view class="left">
-          <view class="text">开启俯视</view>
-          <switch class="switch" checked="{{enable_overlooking}}" bindchange="is_enableOverlooking"></switch>
+        <view class="row">
+          <view class="left">
+            <view class="text">开启卫星图</view>
+            <switch class="switch" checked="{{enable_satellite}}" bindchange="is_enableSatellite"></switch>
+          </view>
+          <view class="right">
+            <view class="text">开启实时路况</view>
+            <switch class="switch" checked="{{enable_traffic}}" bindchange="is_enableTraffic"></switch>
+          </view>
         </view>
-        <view class="right">
-          <view class="text">支持缩放</view>
-          <switch class="switch" checked="{{enable_zoom}}" bindchange="is_enableZoom"></switch>
-        </view>
-      </view>
-      <view>
-        <view class="left">
-          <view class="text">支持拖动</view>
-          <switch class="switch" checked="{{enable_scroll}}" bindchange="is_enableScroll"></switch>
-        </view>
-        <view class="right">
-          <view class="text">支持旋转</view>
-          <switch class="switch" checked="{{enable_rotate}}" bindchange="is_enableRotate"></switch>
-        </view>
-      </view>
-      <view>
-        <view class="left">
-          <view class="text">开启卫星图</view>
-          <switch class="switch" checked="{{enable_satellite}}" bindchange="is_enableSatellite"></switch>
-        </view>
-        <view class="right">
-          <view class="text">开启实时路况</view>
-          <switch class="switch" checked="{{enable_traffic}}" bindchange="is_enableTraffic"></switch>
-        </view>
-      </view>
         <view class="feature-container pl20">
           <view class="feature-content  border-bottom">
             <text class="feature-label">地图点击回调</text>
