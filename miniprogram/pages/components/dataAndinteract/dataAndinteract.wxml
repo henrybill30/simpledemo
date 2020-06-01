@@ -56,15 +56,19 @@
    <view wx:if="{{currentPage == 1}}">
      <demo-block title="基础用法">
       <demo-code height="80" name="switch" type="basic" num="0">
+        <view style="display:flex; align-items:center;">
+          <view style="margin:10rpx">
+            switch控制文字显示：<switch bindchange="switchchange"/>{{switchchange}}
+          </view>
+        </view>
+        <view style="display:flex; align-items:center;">
+          <view style="margin:10rpx">
+            禁用状态的switch：<switch disabled="true"/>
+          </view>
+        </view>
         <view style="display:flex; align-items:center">
-          <view style="flex-group:1">
-            <switch bindchange="switchchange"/>{{switchchange}}
-          </view>
-          <view style="flex-group:1">
-            <switch disabled="true"/>禁用状态
-          </view>
-          <view style="flex-group:1">
-            <switch color="blue"/>改变颜色
+          <view style="margin:10rpx">
+            颜色为蓝色的switch：<switch color="blue"/>
           </view>
         </view>
       </demo-code>
@@ -84,7 +88,7 @@
             <radio disabled="true"/>禁用
           </view>
           <view style="flex-group:1">
-            <radio color="blue" checked="{{checked}}" bindtap="change1"/>变颜色{{change1}}
+            <radio color="blue" checked="{{checked}}" bindtap="change1"/>{{change1}}(变颜色)
           </view>
         </view>
       </demo-code>
@@ -119,7 +123,7 @@
             <checkbox disabled="true">禁用</checkbox>
           </view>
           <view style="flex-group:1">
-            <checkbox color="blue" checked="{{checked}}" bindtap="checkboxchange">变颜色{{checkboxchange}}</checkbox>
+            <checkbox color="blue" checked="{{checked}}" bindtap="checkboxchange">{{checkboxchange}}(变颜色)</checkbox>
           </view>
         </view>
       </demo-code>
