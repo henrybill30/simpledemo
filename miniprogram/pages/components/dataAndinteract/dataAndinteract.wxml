@@ -82,13 +82,13 @@
       <demo-code height="80" name="radio" type="basic" num="0">
         <view style="display:flex; align-items:center">
           <view style="flex-group:1">
-            <radio checked="{{checked}}" bindtap="change1"/>{{change1}}
+            <radio checked="{{checked}}" bindtap="change"/>{{change}}
           </view>
           <view style="flex-group:1">
             <radio disabled="true"/>禁用
           </view>
           <view style="flex-group:1">
-            <radio color="blue" checked="{{checked}}" bindtap="change1"/>{{change1}}(变颜色)
+            <radio color="blue" checked="{{checked1}}" bindtap="change1"/>{{change1}}(变颜色)
           </view>
         </view>
       </demo-code>
@@ -117,13 +117,13 @@
       <demo-code height="80" name="checkbox" type="basic" num="0">
         <view style="display:flex; align-items:center">
           <view style="flex-group:1">
-            <checkbox checked="{{checked}}" bindtap="checkboxchange">{{checkboxchange}}</checkbox>
+            <checkbox checked="{{checked2}}" bindtap="checkboxchange">{{checkboxchange}}</checkbox>
           </view>
           <view style="flex-group:1">
             <checkbox disabled="true">禁用</checkbox>
           </view>
           <view style="flex-group:1">
-            <checkbox color="blue" checked="{{checked}}" bindtap="checkboxchange">{{checkboxchange}}(变颜色)</checkbox>
+            <checkbox color="blue" checked="{{checked3}}" bindtap="checkboxchange1">{{checkboxchange1}}(变颜色)</checkbox>
           </view>
         </view>
       </demo-code>
@@ -132,14 +132,14 @@
       <demo-code height="360" name="checkbox" type="strength" num="0">
         <view style="display:flex;flex-direction: column">
           <checkbox-group style="flex-group:1" bindchange="checkboxchange2">
-            <label wx:for-items="{{language}}" wx:for-item="item" wx:key="value">
+            <label wx:for-items="{{language1}}" wx:for-item="item" wx:key="value">
               <view>
                 <checkbox value="{{item.value}}" checked="{{item.checked}}">{{item.value}}</checkbox>
               </view>
             </label>
           </checkbox-group>
           <view style="flex-group:1">
-            <text>已选择：{{checked_value}}</text>
+            <text>已选择：{{checked_value1}}</text>
           </view>
         </view>
       </demo-code>

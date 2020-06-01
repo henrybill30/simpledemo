@@ -25,7 +25,7 @@
      </demo-block>
      <demo-block title="增强用法">
       <demo-code name="wxif" type="strength" num="0">
-        <view >猜数字</view>
+        <view>猜数字（猜对后会显示隐藏内容）</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
             <input class="weui-input" placeholder="输入10以内数字" type="text" bindinput="guess"></input>
@@ -85,17 +85,6 @@
     <view wx:if="{{currentPage == 2}}">
      <demo-block title="基础用法">
       <demo-code name="wxelse" type="basic" num="0">
-        <switch bindchange="xChange" >显示控制</switch>
-        <block wx:if="{{!x}}" >
-          <text>\nx为false显示这一单元</text>
-        </block>
-        <block wx:else>
-          <text>\nelse,显示这一单元</text>
-        </block>
-      </demo-code>
-     </demo-block>
-     <demo-block title="增强用法">
-      <demo-code name="wxelse" type="strength" num="0">
         <view >猜数字升级</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
@@ -105,7 +94,7 @@
         <view wx:if="{{guessNum1==randomNum1}}">
           <text>恭喜猜对了！！！这样我才会显示</text>
         </view>
-        <view wx:elif="{{guessNum1==-1}}">
+        <view wx:elif="{{guessNum1==-1||guessNum1==''}}">
           <text>准备开始</text>
         </view>
         <view wx:else>

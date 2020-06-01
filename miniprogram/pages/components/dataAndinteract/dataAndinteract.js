@@ -17,8 +17,10 @@ Page({
     //switch
     switchchange: "关闭",
     //radio
+    change: "未选中",
     change1: "未选中",
     checked: false,
+    checked1: false,
     checked_value: "",
     language: [
       {
@@ -44,9 +46,11 @@ Page({
     ],
     //checkbox
     checkboxchange: "未选中",
-    checked: false,
-    checked_value: "",
-    language: [
+    checkboxchange1: "未选中",
+    checked2: false,
+    checked3: false,
+    checked_value1: "",
+    language1: [
       {
         value: "JAVA",
         checked: false
@@ -150,8 +154,9 @@ Page({
   },
 
   contact: function (e) {
+    console.log("页面路径: " + JSON.stringify(e.detail.path) + ",\n 对应参数: " + JSON.stringify(e.detail.query))
     this.setData({
-      contactinfo: "页面路径: " + e.detail.path + ",\n 对应参数: " + e.detail.query
+      contactinfo: "页面路径: " + JSON.stringify(e.detail.path) + ",\n 对应参数: " + JSON.stringify(e.detail.query)
     })
   },
 
@@ -189,15 +194,30 @@ Page({
   // radio
   change1: function (e) {
     this.setData({
-      checked: !this.data.checked
+      checked1: !this.data.checked1
     })
-    if (this.data.checked == true) {
+    if (this.data.checked1 == true) {
       this.setData({
         change1: "选中"
       })
     } else {
       this.setData({
         change1: "未选中"
+      })
+    }
+  },
+
+  change: function (e) {
+    this.setData({
+      checked: !this.data.checked
+    })
+    if (this.data.checked == true) {
+      this.setData({
+        change: "选中"
+      })
+    } else {
+      this.setData({
+        change: "未选中"
       })
     }
   },
@@ -216,9 +236,9 @@ Page({
   //checkbox
   checkboxchange: function (e) {
     this.setData({
-      checked: !this.data.checked
+      checked2: !this.data.checked2
     })
-    if (this.data.checked == true) {
+    if (this.data.checked2 == true) {
       this.setData({
         checkboxchange: "选中"
       })
@@ -229,8 +249,23 @@ Page({
     }
   },
 
+  checkboxchange1: function (e) {
+    this.setData({
+      checked3: !this.data.checked3
+    })
+    if (this.data.checked3 == true) {
+      this.setData({
+        checkboxchange1: "选中"
+      })
+    } else {
+      this.setData({
+        checkboxchange1: "未选中"
+      })
+    }
+  },
+
   checkboxchange2: function (e) {
-    let items = this.data.language;
+    let items = this.data.language1;
     let values = e.detail.value;
     for (let i = 0; i < items.length; i++) {
       items[i].checked = false;
@@ -241,8 +276,8 @@ Page({
       }
     }
     this.setData({
-      language: items,
-      checked_value: values.toString()
+      language1: items,
+      checked_value1: values.toString()
     })
   },
   //picker

@@ -40,14 +40,14 @@ Component({
                     })
                 const data = res.result.data
                 this.setData({
-                    imgUrl: (data[0] && data[0].fileID) || DEFAULT_IMG_URL 
+                    imgUrl: (data[0] && data[0].fileID)
 
                 })
             } catch(e) {
                 console.error(e)
-                this.setData({
-                    imgUrl: DEFAULT_IMG_URL
-                })
+                // this.setData({
+                //     imgUrl: DEFAULT_IMG_URL
+                // })
             }
         },
 
