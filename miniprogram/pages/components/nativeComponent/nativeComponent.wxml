@@ -31,7 +31,7 @@
   </van-tab>
 
   <van-tab title="video" :name="1">
-   <view wx:if="{{currentPage == 0}}">
+   <view wx:if="{{currentPage == 1}}">
     <demo-block title="基础用法">
       <demo-code name="video" type="basic" num="0">
         <video id="video1" src="{{videoSrc}}" controls="{{videoControl}}" danmu-list="{{danmuList}}" danmu-btn="true" enable-danmu="true" loop="{{videoLoop}}" muted="{{videoMute}}" poster="{{videoPoster}}" title="云开发" bindtimeupdate="videoTimeUpdate"></video>
@@ -57,15 +57,15 @@
             </view>
           </view>
         </view>
-        <input class="weui-input" bindinput="danmuInput" placeholder="输入弹幕"></input>
-        <button bindtap="danmuSend">发送弹幕</button>
+        <input class="border weui-input" bindinput="danmuInput" placeholder="输入弹幕"></input>
+        <button type="primary" bindtap="danmuSend">发送弹幕</button>
       </demo-code>
     </demo-block>
    </view>
   </van-tab>
 
   <van-tab title="map" :name="2">
-   <view wx:if="{{currentPage == 0}}">
+   <view wx:if="{{currentPage == 2}}">
     <demo-block title="基础用法">
       <demo-code name="map" type="basic" num="0">
         <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" markers="{{markers}}" show-location="{{show_location}}" subkey="MRUBZ-TE3K3-24S3G-YR65Y-7XLBS-5QFHU" layer-style="1" enable-3D="{{enable_3D}}" show-compass="{{show_compass}}" show-scale="{{show_scale}}" enable-overlooking="{{enable_overlooking}}" enable-zoom="{{enable_zoom}}" enable-scroll="{{enable_scroll}}" enable-rotate="{{enable_rotate}}" enable-satellite="{{enable_satellite}}" enable-traffic="{{enable_traffic}}" bindtap="tapMap" bindmarkertap="tapMarker" bindlabeltap="tapLabel" bindcallouttap="tapCallout" bindregionchange="regionchange" bindpoitap="tapPOI"></map> 
@@ -146,7 +146,7 @@
    </view>
   </van-tab>
   <van-tab title="canvas" :name="3">
-   <view wx:if="{{currentPage == 0}}">
+   <view wx:if="{{currentPage == 3}}">
     <demo-block title="基础用法">
       <demo-code name="canvas" type="basic" num="0">
         <canvas class="canvas" disable-scroll="false" id="myCanvas" canvas-id="canvas1" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd" bindtouchcancel="touchCancel" binderror="error"></canvas>
@@ -177,7 +177,7 @@
    </view>
   </van-tab>
   <van-tab title="camera" :name="4">
-   <view wx:if="{{currentPage == 0}}">
+   <view wx:if="{{currentPage == 4}}">
     <demo-block title="基础用法">
      <demo-code name="camera" type="basic" num="0">
       <view class="intro">当前模式：{{mode}}</view>

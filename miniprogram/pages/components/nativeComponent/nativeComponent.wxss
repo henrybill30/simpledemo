@@ -96,3 +96,8 @@
 .record {
   float: right
 }
+.border{
+  border: 4rpx solid #ACACAC;
+  margin: 20rpx;
+  padding-left: 20rpx;
+}

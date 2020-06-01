@@ -28,12 +28,37 @@ Page({
   },
 
   guess: function(e) {
+    if(e.detail.value==""){
+      this.setData({
+        guessNum: -1
+      })
+      return
+    }
+    if((e.detail.value>=10||e.detail.value<0)||(!/^[0-9]+.?[0-9]*$/.test(e.detail.value))){
+      wx.showToast({
+        title: '请输入一个10以内的数字！',
+        icon: 'none'
+      })
+      return
+    } 
     this.setData({
       guessNum: e.detail.value
     })
+    if(e.detail.value!=this.data.randomNum){
+      wx.showToast({
+        title: '猜错了，再猜！',
+        icon: 'none'
+      })
+    }
   },
 
   guess1: function (e) {
+    if(e.detail.value==""){
+      this.setData({
+        guessNum1: -1
+      })
+      return
+    }
     this.setData({
       guessNum1: e.detail.value
     })
@@ -44,102 +69,7 @@ Page({
       index: e.detail.value
     })
   },
-  tobefore(e) {
-    if (this.data.currentPage === 0) {
-      wx.cloud.callFunction({
-        name: 'addRecord',
-        data: {
-          envID: getApp().globalData.envID,
-          openid: getApp().globalData.openid,
-          behavior: 'browse',
-          component: this.data.titleArr[0],
-          time: new Date()
-        },
-        success: res => {
-          console.log("result: " + JSON.stringify(res.result))
-        },
-        fail: err => {
-          console.log("error: " + JSON.stringify(err))
-        }
-      })
-      return
-    }
-    var that = this;
-    this.setData({
-      currentPage: parseInt(this.data.currentPage) - 1,
-      leftanimation: 'fade',
-      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
-    })
-    wx.cloud.callFunction({
-      name: 'addRecord',
-      data: {
-        envID: getApp().globalData.envID,
-        openid: getApp().globalData.openid,
-        behavior: 'browse',
-        component: this.data.titleArr[parseInt(this.data.currentPage)],
-        time: new Date()
-      },
-      success: res => {
-        console.log("result: " + JSON.stringify(res.result))
-      },
-      fail: err => {
-        console.log("error: " + JSON.stringify(err))
-      }
-    })
-    setTimeout(function () {
-      that.setData({
-        leftanimation: ''
-      })
-    }, 200)
-  },
-  tonext(e) {
-    if (this.data.currentPage === this.data.pageNum - 1) {
-      wx.cloud.callFunction({
-        name: 'addRecord',
-        data: {
-          envID: getApp().globalData.envID,
-          openid: getApp().globalData.openid,
-          behavior: 'browse',
-          component: this.data.titleArr[this.data.pageNum],
-          time: new Date()
-        },
-        success: res => {
-          console.log("result: " + JSON.stringify(res.result))
-        },
-        fail: err => {
-          console.log("error: " + JSON.stringify(err))
-        }
-      })
-      return
-    }
-    var that = this;
-    this.setData({
-      currentPage: parseInt(this.data.currentPage) + 1,
-      rightanimation: 'fade',
-      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) + 1]
-    })
-    wx.cloud.callFunction({
-      name: 'addRecord',
-      data: {
-        envID: getApp().globalData.envID,
-        openid: getApp().globalData.openid,
-        behavior: 'browse',
-        component: this.data.titleArr[parseInt(this.data.currentPage)],
-        time: new Date()
-      },
-      success: res => {
-        console.log("result: " + JSON.stringify(res.result))
-      },
-      fail: err => {
-        console.log("error: " + JSON.stringify(err))
-      }
-    })
-    setTimeout(function () {
-      that.setData({
-        rightanimation: ''
-      })
-    }, 200)
-  },
+
 
   onTabChange(e){
     console.log(e)
