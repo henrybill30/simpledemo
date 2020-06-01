@@ -1,11 +1,21 @@
 .bg {
   background-image: linear-gradient(45deg, white 25%, rgba(173,216,230,0.3) 25%, rgba(173,216,230,0.3) 50%, rgba(255,255,224,0.3) 50%, rgba(255,255,224,0.3) 75%, rgba(144,238,144,0.3) 75%);
 }
+.bg1 {
+  background-color: #ebf6f74d;
+  /* rgba(106, 194, 245, 0.301) */
+  /* #bce2e84d */
+  /* #fff1cf75 */
+  /* #ebf6f74d  *** */
+  /* #eaf4fc2f */
+  /* #bbc8e621 */
+}
 .header {
   height: 160rpx;
-  text-align: center;
+  width: 100%;
+  /* text-align: center;
   line-height: 160rpx;
-  font-size: 40rpx;
+  font-size: 40rpx; */
 }
 .items {
   display: flex;

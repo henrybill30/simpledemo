@@ -1,8 +1,6 @@
-<view class="header">
-  最简组件
-</view>
+ <image style="width: {{windowWidth}}px; height: {{(windowWidth*1)/3}}px" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/simpledemo.png"></image>
 <view class="items">
-  <view class="item" wx:for-items="{{ list }}" wx:for-index="idx" wx:key="index" id="{{ item.id }}" bindtap="kindToggle">
+  <view class="item bg1" wx:for-items="{{ list }}" wx:for-index="idx" wx:key="index" id="{{ item.id }}" bindtap="kindToggle">
     <view class="{{ item.open ? 'item-title-checked' : '' }}">
       {{ item.name }}
       <image src="{{ item.imgUrl }}" class="pic"></image>

@@ -2,6 +2,8 @@ const app = getApp()
 Page({
   data: {
     admin: 0,
+    windowWidth: 0,
+    windowHeight: 0,
     list: [
       {
         id: 'information',
@@ -50,7 +52,7 @@ Page({
         name: '原生组件',
         imgUrl: './pics/nativeCpmponent.png',
         url: '../nativeComponent/nativeComponent',
-        children: ['audio', 'video', 'canvas', 'camera']
+        children: ['audio', 'video', 'map', 'canvas', 'camera']
       }, {
         id: 'layout', // 路径
         name: '样式布局', // 类目说明
@@ -76,6 +78,13 @@ Page({
     } else {
       console.log('[main]login success')
     }
+    let res = wx.getSystemInfoSync()
+    console.log("宽1: " + res.screenWidth)
+    console.log("宽2: " + res.windowWidth)
+    that.setData({
+      windowWidth: res.screenWidth,
+      windowHeight: res.windowHeight
+    })
     wx.cloud.callFunction({
       name: 'getAdmin',
       success: res => {

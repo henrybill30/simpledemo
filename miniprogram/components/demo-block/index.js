@@ -1,7 +1,8 @@
 Component({
   properties: {
     title: String,
-    padding: Boolean
+    padding: Boolean,
+    isCurrentPage: Boolean
   },
 
   externalClasses: ['custom-class']
