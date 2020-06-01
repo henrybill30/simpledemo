@@ -111,5 +111,18 @@ Page({
     this.setData({
       list
     })
+    let query = wx.createSelectorQuery()
+    query.select(`#id${e.currentTarget.id}`).boundingClientRect(function(rect){
+      rect.top     // 节点的上边界坐标
+    }) 
+    query.selectViewport().scrollOffset(function(res){
+      res.scrollTop  // 节点的竖直滚动位置
+    })
+    query.exec(function(res) {
+      if(res[0].top+e.currentTarget.dataset.num*44>wx.getSystemInfoSync().windowHeight)
+      wx.pageScrollTo({
+        scrollTop: res[1].scrollTop+(res[0].top+e.currentTarget.dataset.num*44-wx.getSystemInfoSync().windowHeight)
+      })
+    })
   }
 })
