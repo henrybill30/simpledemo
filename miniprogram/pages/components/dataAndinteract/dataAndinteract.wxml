@@ -10,23 +10,14 @@
     <view wx:if="{{currentPage == 0}}">
      <demo-block title="基础用法">
       <demo-code height="80" name="button" type="basic" num="0">
-        <view style="display:flex">
-          <view style="flex-group:1">
-            <button size="primary" type="primary" bindtap="showdata">显示数据按钮</button>
-          </view>
-          <view style="flex-group:1">
-          <text>{{shuju}}</text>
-          </view>
+        <view style="display:flex;">
+          <button size="mini" type="primary" bindtap="showdata">显示数据按钮</button>
         </view>
+          <view>{{shuju}}</view>
       </demo-code>
       <demo-code height="120" name="button" type="basic" num="1">
         <view style="display:flex">
-          <view style="flex-group:1">
             <button size="mini" type="default" open-type="contact" bindcontact="contact">打开会话</button>
-          </view>
-          <view style="flex-group:1">
-          <text>{{contactinfo}}</text>
-          </view>
         </view>
       </demo-code>
       <demo-code height="120" name="button" type="basic" num="2">
@@ -45,7 +36,7 @@
         </view>
       </demo-code>
       <demo-code height="120" name="button" type="basic" num="4">
-        <view style="display:flex">
+        <view style="display:flex;justify-content:space-around">
           <view style="flex-group:1">
             <button size="mini" type="default" loading="true">加载按钮</button>
           </view>

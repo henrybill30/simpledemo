@@ -144,7 +144,7 @@ Page({
   // button
   showdata: function () {
     this.setData({
-      shuju: "显示数据"
+      shuju: "这是要控制显示的文字"
     })
     console.log(this.data.shuju);
   },
@@ -153,8 +153,6 @@ Page({
     this.setData({
       contactinfo: "页面路径: " + e.detail.path + ",\n 对应参数: " + e.detail.query
     })
-    console.log(e.detail.path);
-    console.log(e.detail.query);
   },
 
   getuser: function (e) {
