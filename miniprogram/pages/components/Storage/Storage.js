@@ -114,9 +114,9 @@ Page({
 
   removeStorageSync: function(){
     try{
-      if(this.data.key3 == 'logs'){
+      if(this.data.key3 == 'openid'){
         wx.showToast({
-          title: '不能删除系统日志！！！',
+          title: '不能删除openid！！！',
           icon: 'none'
         })
         return
@@ -254,6 +254,9 @@ Page({
       nbTitle: this.data.titleArr[parseInt(options.index)]
     })
     try{
+      if(wx.getStorageSync('logs')){
+        wx.removeStorageSync('logs')
+      }
       let keys = wx.getStorageInfoSync().keys;
       let values = []
       for (let i = 0; i < keys.length; i++) {
