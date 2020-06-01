@@ -23,10 +23,14 @@
   justify-content: flex-start;
 }
 .item {
-  display: flex;
-  flex-direction: column;
   margin: 25rpx 0 25rpx 50rpx;
-  width: 250rpx;
+  display: flex;
+  width: 300rpx;
+  flex-direction: column;
+  position: relative;
+  min-height: 120rpx;
+}
+.item-card{
   padding: 25rpx;
   border: 1px solid lightgray;
   border-radius: 10rpx;
@@ -47,8 +51,8 @@
 }
 .item-detail {
   width: 670rpx;
-  position: absolute;
-  top: 180rpx;
+  position: relative;
+  top: 0rpx;
   z-index: 1;
   max-height: 0;
   overflow: hidden;

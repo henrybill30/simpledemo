@@ -99,6 +99,7 @@ Page({
   },
 
   kindToggle(e) {
+    console.log(e)
     const id = e.currentTarget.id
     const list = this.data.list
     for (let i = 0, len = list.length; i < len; ++i) {
@@ -110,6 +111,26 @@ Page({
     }
     this.setData({
       list
+    })
+    let query = wx.createSelectorQuery()
+    query.select(`#id${e.currentTarget.id}`).boundingClientRect(function(rect){
+      rect.dataset // 节点的dataset
+      rect.top     // 节点的上边界坐标
+      rect.bottom  // 节点的下边界坐标
+      rect.width   // 节点的宽度
+      rect.height  // 节点的高度
+    }) 
+    query.selectViewport().scrollOffset(function(res){
+      res.id      // 节点的ID
+      res.dataset // 节点的dataset
+      res.scrollLeft // 节点的水平滚动位置
+      res.scrollTop  // 节点的竖直滚动位置
+    })
+    query.exec(function(res) {
+      if(res[0].top+e.currentTarget.dataset.num*44>wx.getSystemInfoSync().windowHeight)
+      wx.pageScrollTo({
+        scrollTop: res[1].scrollTop+(res[0].top+e.currentTarget.dataset.num*44-wx.getSystemInfoSync().windowHeight)
+      })
     })
   }
 })
