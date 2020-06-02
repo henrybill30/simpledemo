@@ -21,7 +21,8 @@ Component({
     // csscode: String
     name: String,
     type: String,
-    num: Number
+    num: Number,
+    currentPage: Number
   },
   methods: {
     doubleClick: function (e) {
@@ -41,9 +42,66 @@ Component({
       })
     },
     collected(){
-      this.setData({
-        collected: !this.data.collected
-      })
+      const pages = getCurrentPages()
+      let that = this
+      // console.log(getApp().globalData.openid,this.properties.name,this.properties.type,this.properties.num)
+      if(!this.data.collected){
+        wx.cloud.callFunction({
+          name: 'add_collection',
+          data: {
+            envID: getApp().globalData.envID,
+            openid: getApp().globalData.openid,
+            name: this.properties.name,
+            type: this.properties.type,
+            num: this.properties.num,
+            path: `${ pages[pages.length-1].route }?index=${ that.properties.currentPage}`
+          },
+          success: res => {
+            // console.log("result: " + JSON.stringify(res.result))
+            wx.showToast({
+              title: '收藏成功！',
+              icon: 'success'
+            })
+            that.setData({
+              collected: !that.data.collected
+            })
+          },
+          fail: err => {
+            // console.log("error: " + JSON.stringify(err))
+            wx.showToast({
+              title: '收藏失败！',
+              icon: 'none'
+            })
+          }
+        })
+      } else {
+        wx.cloud.callFunction({
+          name: 'del_collection',
+          data: {
+            envID: getApp().globalData.envID,
+            openid: getApp().globalData.openid,
+            name: this.properties.name,
+            type: this.properties.type,
+            num: this.properties.num
+          },
+          success: res => {
+            wx.showToast({
+              title: '取消收藏成功！',
+              icon: 'success'
+            })
+            that.setData({
+              collected: !that.data.collected
+            })
+          },
+          fail: err => {
+            wx.showToast({
+              title: '取消收藏失败！',
+              icon: 'none'
+            })
+          }
+        })
+      }
+      
     },
     showCode: function (event) {
       this.setData({
@@ -151,6 +209,8 @@ Component({
   lifetimes: {
     attached: async function () {
       // 在组件实例进入页面节点树时执行
+      let that = this
+
       wx.cloud.callFunction({
         name: "getComponent",
         data: {
@@ -188,6 +248,27 @@ Component({
         },
         fail: err => {
           console.log("2222: " + err)
+        }
+      })
+      wx.cloud.callFunction({
+        name: 'get_collections',
+        data: {
+          envID: getApp().globalData.envID,
+          openid: getApp().globalData.openid,
+          name: this.properties.name,
+          type: this.properties.type,
+          num: this.properties.num
+        },
+        success: res => {
+          console.log((res.result.res))
+          if(res.result.res.data.length!=0){
+            that.setData({
+              collected: true
+            })
+          }
+        },
+        fail: err => {
+          console.log("error: " + JSON.stringify(err))
         }
       })
     },

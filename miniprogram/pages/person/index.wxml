@@ -28,6 +28,10 @@
 </view>
 
 <view class="list-card shadow-warp">
+  <van-cell title="我的收藏"
+    is-link
+    link-type="navigateTo"
+    url="./collection/index"/>
   <van-cell id="direction" title="使用说明"
     is-link
     link-type="navigateTo"

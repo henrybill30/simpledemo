@@ -9,7 +9,7 @@
   <van-tab title="系统信息" :name="0">
     <view wx:if="{{currentPage == 0}}">
       <demo-block title="基础用法">
-        <demo-code height="80" name="系统信息" type="basic" num="0">
+        <demo-code currentPage="{{currentPage}}" height="80" name="系统信息" type="basic" num="0">
           <button bindtap="getSystemMsg">获取系统信息</button>
           <view>设备品牌及型号：{{sysInfo.model}}</view>
           <view>设备像素比：{{sysInfo.pixelRatio}}</view>
@@ -26,7 +26,7 @@
   <van-tab title="传感器" :name="1">
     <view wx:if="{{currentPage == 1}}">
      <demo-block title="陀螺仪">
-      <demo-code height="80" name="传感器" type="basic" num="0">
+      <demo-code currentPage="{{currentPage}}" height="80" name="传感器" type="basic" num="0">
         <button bindtap="startGyroscope" style="margin-bottom:20rpx">打开陀螺仪</button>
         <button bindtap="stopGyroscope">关闭陀螺仪</button>
         
@@ -36,7 +36,7 @@
       </demo-code>
      </demo-block>
      <demo-block title="罗盘">
-      <demo-code height="80" name="传感器" type="basic" num="1">
+      <demo-code currentPage="{{currentPage}}" height="80" name="传感器" type="basic" num="1">
         <button bindtap="startCompass" style="margin-bottom:20rpx">打开罗盘</button>
         <button bindtap="stopCompass">关闭罗盘</button>
         
@@ -50,7 +50,7 @@
   <van-tab title="振动" :name="2">
     <view wx:if="{{currentPage == 2}}">
       <demo-block title="基础用法">
-        <demo-code height="80" name="振动" type="basic" num="0">
+        <demo-code currentPage="{{currentPage}}" height="80" name="振动" type="basic" num="0">
           <button bindtap="vibrate" data-time="{{true}}" style="margin-bottom:20rpx">较长时间振动</button>
 
           <button bindtap="vibrate" data-time="{{false}}">较短时间振动</button>
@@ -61,7 +61,7 @@
   <van-tab title="扫码" :name="3">
     <view wx:if="{{currentPage == 3}}">
       <demo-block title="基础用法">
-        <demo-code height="80" name="扫码" type="basic" num="0">
+        <demo-code currentPage="{{currentPage}}" height="80" name="扫码" type="basic" num="0">
           <button bindtap="scanCode">扫码</button>
           <web-view src="{{toUrl}}" wx:if="{{toUrl!=''}}"></web-view>
         </demo-code>
@@ -71,7 +71,7 @@
   <van-tab title="获取位置信息" :name="4">
     <view wx:if="{{currentPage == 4}}">
       <demo-block title="基础用法">
-        <demo-code height="80" name="获取位置信息" type="basic" num="0">
+        <demo-code currentPage="{{currentPage}}" height="80" name="获取位置信息" type="basic" num="0">
           <button bindtap="getLocation">查看当前位置</button>
         </demo-code>
       </demo-block>

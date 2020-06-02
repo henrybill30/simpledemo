@@ -17,7 +17,9 @@ exports.main = async (event, context) => {
   try {
     var res = await collection.where({
       openid: event.openid,
-      name: event.name
+      name: event.name,
+      type: event.type, 
+      num: event.num
     }).get({
       success: res => {
         return res.data

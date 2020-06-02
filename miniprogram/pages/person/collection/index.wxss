@@ -1,0 +1,29 @@
+.layout{
+  margin: 30rpx ;
+  border: 4rpx solid #D6D6D6;
+}
+.title{
+  margin: 40rpx;
+  font-size: 36rpx;
+  text-align: center;
+  font-weight: 560;
+}
+.item{
+  padding: 10rpx;
+  word-wrap: break-word;
+}
+.item:nth-child(odd){
+  background-color: #E3F5FF;
+}
+.item:nth-child(even){
+  background-color: #fff;
+}
+.del{
+  color: red;
+}
+.to{
+  color: #1543FA;
+}
+.center{
+  text-align: center;
+}

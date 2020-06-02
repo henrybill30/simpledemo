@@ -22,6 +22,7 @@ exports.main = async (event, context) => {
         name: event.name,
         type: event.type,
         num: event.num,
+        path: event.path,
         time: new Date()
       }
     })

@@ -1,6 +1,6 @@
 <!--miniprogram/pages/components/layout/layout.wxml-->
 <demo-block title="垂直水平居中">
-  <demo-code name="flex" type="centerVerticalHorizon" num="0">
+  <demo-code currentPage="0" name="flex" type="centerVerticalHorizon" num="0">
     <view class="center-vertical-horizon">
       垂直水平居中
     </view>
@@ -8,7 +8,7 @@
 </demo-block>
 
 <demo-block title="左对齐">
-  <demo-code name="flex" type="flexStart" num="0">
+  <demo-code currentPage="0" name="flex" type="flexStart" num="0">
     <view class="flex-start">
       <view class="box" style="background-color: beige"></view>
       <view class="box" style="background-color: ghostwhite"></view>
@@ -18,7 +18,7 @@
 </demo-block>
   
 <demo-block title="纵向排列">
-  <demo-code name="flex" type="flexColumn" num="0">
+  <demo-code currentPage="0" name="flex" type="flexColumn" num="0">
     <view class="flex-column">
       <view class="box" style="background-color: beige"></view>
       <view class="box" style="background-color: ghostwhite"></view>
@@ -28,7 +28,7 @@
 </demo-block>
 
 <demo-block title="均匀排列">
-  <demo-code name="flex" type="flexSpacebetween" num="0">
+  <demo-code currentPage="0" name="flex" type="flexSpacebetween" num="0">
     <view class="flex-spacebetween">
       <view class="box" style="background-color: beige"></view>
       <view class="box" style="background-color: ghostwhite"></view>
@@ -38,7 +38,7 @@
 </demo-block>
 
 <demo-block title="宽度自适应">
-  <demo-code name="flex" type="flexWidthAdaptive" num="0">
+  <demo-code currentPage="0" name="flex" type="flexWidthAdaptive" num="0">
     <view class="flex-width-adaptive">
       <view class="box flex-grow" style="background-color: beige"></view>
       <view class="box flex-grow" style="background-color: ghostwhite"></view>

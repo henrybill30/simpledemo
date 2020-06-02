@@ -17,9 +17,8 @@
     <parser class="code-sty" wx:if="{{ csscode }}" catchlongpress="copycss" html="{{csscode}}" />
   </view>
   <view class="foot">
-    <view></view>
-    <!-- <image bindtap="collected" wx:if="{{!collected}}" style="height:38rpx;width:38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏.png"></image>
-    <image bindtap="collected" wx:if="{{collected}}" style="height:38rpx;width:38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏 (2).png"></image> -->
+    <image bindtap="collected" wx:if="{{!collected}}" style="height:38rpx;width:38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏.png"></image>
+    <image bindtap="collected" wx:if="{{collected}}" style="height:38rpx;width:38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏 (2).png"></image>
     <image bindtap="showCode" wx:if="{{ showcode }}" style="height:40rpx;width:40rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/眼睛 (1).png"></image>
     <image bindtap="showCode" wx:if="{{ !showcode }}" style="height:40rpx;width:40rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/眼睛.png"></image>
   </view>

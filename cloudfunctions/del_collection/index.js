@@ -7,29 +7,46 @@ exports.main = async (event, context) => {
 
   cloud.init({
       env: event.envID,
-  }) 
+  })  
   const db = cloud.database({
       env: event.envID,
   })
 
   const collection = db.collection('Collections')
-
-  try {
-    var result = await collection.where({
-      openid: event.openid,
-      name: event.name,
-      type: event.type,
-      num: event.num
-    }).remove()
-  }catch(e) {
-    return {
-      state: false,
-      msg: e
+  if(event.id){
+    try {
+      var result = await collection.where({
+        _id: event.id
+      }).remove()
+    }catch(e) {
+      return {
+        state: false,
+        msg: e
+      }
     }
-  }
-
-  return {
-    state: true,
-    res: result
+  
+    return {
+      state: true,
+      res: result
+    }
+  } else {
+    try {
+      var result = await collection.where({
+        openid: event.openid,
+        name: event.name,
+        type: event.type,
+        num: event.num
+      }).remove()
+    }catch(e) {
+      return {
+        state: false,
+        msg: e
+      }
+    }
+  
+    return {
+      state: true,
+      res: result
+    }
   }
 }
