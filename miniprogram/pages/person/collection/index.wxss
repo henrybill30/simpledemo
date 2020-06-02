@@ -1,6 +1,6 @@
 .layout{
   margin: 30rpx ;
-  border: 4rpx solid #D6D6D6;
+  /* border: 4rpx solid #D6D6D6; */
 }
 .title{
   margin: 40rpx;
