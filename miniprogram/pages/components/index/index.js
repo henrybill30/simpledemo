@@ -124,5 +124,18 @@ Page({
         scrollTop: res[1].scrollTop+(res[0].top+e.currentTarget.dataset.num*44-wx.getSystemInfoSync().windowHeight)
       })
     })
-  }
+  },
+
+  // async test() {
+  //   let res = await wx.cloud.callFunction({
+  //     name: 'check_application',
+  //     data: {
+  //       envID: getApp().globalData.envID,
+  //       openid: getApp().globalData.openid,
+  //       isAgree: true,
+  //       applyFlag: 'assistant'
+  //     }
+  //   })
+  //   console.log(res)
+  // }
 })

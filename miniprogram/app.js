@@ -2,7 +2,6 @@ const envID = 'simpledemo-9jk60' //线上版本
 // const envID = 'test-pjzus'    //测试版本
 App({
   onLaunch: function() {
-    // wx.clearStorage()
     wx.cloud.init({
       env: envID,
     })

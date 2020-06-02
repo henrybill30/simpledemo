@@ -41,9 +41,9 @@ Page({
         loading: false,
         timetype: true, //默认显示服务端时间
         showMilliseconds: false, //默认不显示毫秒
-        A: 0,
-        B: 0,
-        result: "",
+        A: null,
+        B: null,
+        result: '',
         Openid: ''
     },
 
