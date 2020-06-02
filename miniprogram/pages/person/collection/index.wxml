@@ -2,7 +2,7 @@
 <view class="title">我的收藏</view>
 <view class="layout">
   <view style="padding:20rpx" wx:if="{{ collections.length==0 }}">你还没有收藏任何组件,快去组件识别部分添加收藏吧~</view>
-  <view wx:if="{{ collections.length!=0 }}" class="item">
+  <view wx:if="{{ collections.length!=0 }}" class="item" style="font-weight:560">
     <van-row>
       <van-col span="10">
         <text>组件名称</text>
@@ -11,7 +11,7 @@
         <view>类型</view>
       </van-col>
       <van-col span="3">
-        <view>编号</view>
+        <view>序号</view>
       </van-col>
       <van-col span="4">
         <view>前往</view>
