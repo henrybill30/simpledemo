@@ -9,3 +9,9 @@
   right: 5rpx;
   top:45%
 }
+input{
+  margin: 20rpx;
+  border: 4rpx solid rgb(179, 178, 178);
+  border-radius: 2rpx;
+  padding: 10rpx;
+}

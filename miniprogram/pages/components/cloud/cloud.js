@@ -43,7 +43,7 @@ Page({
         showMilliseconds: false, //默认不显示毫秒
         A: 0,
         B: 0,
-        result: 0,
+        result: "",
         Openid: ''
     },
 

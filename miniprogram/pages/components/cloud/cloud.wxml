@@ -16,7 +16,7 @@
           <text class="text">=</text>
           <text class="input" space="emsp">{{result}}</text>
         </view>
-        <button style="margin-top:10px;margin-left:auto;margin-right:auto;width:80%" bindtap="sum">运行云函数获取结果</button>
+        <button type="primary" style="margin-top:10px;font-size:24rpx;" bindtap="sum">运行云函数获取结果</button>
       </demo-code>
     </demo-block>
     <demo-block title="云函数获取用户信息">
@@ -29,7 +29,7 @@
             <text style="margin-right:auto;margin-left:auto;font-size:38rpx;word-break:break-all">openid: {{Openid}}</text>
           </block>
         </view>
-        <button bindtap="getInfo">云函数获取openid</button>
+        <button type="primary" style="font-size:24rpx;margin-top:20rpx" bindtap="getInfo">云函数获取openid</button>
       </demo-code>
     </demo-block>
    </view>

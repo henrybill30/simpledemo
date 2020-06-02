@@ -40,22 +40,20 @@ rich-text {
 
 .card-title{
   font-size: 28rpx;
-  color: #999999;
+  color: #777676;
   margin: 0 0 20rpx 5rpx;
 }
 /* swiper */
 @import "./weui.wxss";
 
-page {
-  height: 100%;
-  font-size: 32rpx;
-  line-height: 1.6;
-}
 .page-body{
   padding-top: 60rpx;
 }
+.control-area{
+  padding: 0 0 40rpx 40rpx;
+}
 .page-section{
-  width: 100%;
+  width: 90%;
   margin-bottom: 60rpx;
 }
 .page-section_center{

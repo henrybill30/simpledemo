@@ -13,18 +13,18 @@
           <text style="flex-group:1">歌名：Someday</text>
           <text style="flex-group:1" space="emsp">   歌手：Tommy</text>
         </view>
-        <view style="display:flex;">
+        <view style="display:flex;margin:20rpx 0">
           <text style="flex-group:1">时长: </text>
           <text style="flex-group:1" space="emsp">{{audioCurrentTime}}秒   </text>
           <text style="flex-group:1">总时长：</text>
           <text style="flex-group:1" space="emsp">{{audioTime}}秒</text>
         </view>
-        <view style="display:flex;">
-          <button style="flex-group:1;font-size:20rpx;width:150rpx" bindtap="audioPlay">播放</button>
-          <button style="flex-group:1;font-size:20rpx;width:150rpx" bindtap="audioPause">暂停</button>
-          <button style="flex-group:1;font-size:15rpx;width:200rpx" bindtap="audioSeek">跳转至180秒</button>
+        <view style="display:flex;margin:20rpx 0">
+          <button type="primary" style="flex-group:1;font-size:20rpx;width:150rpx" bindtap="audioPlay">播放</button>
+          <button type="primary" style="flex-group:1;font-size:20rpx;width:150rpx" bindtap="audioPause">暂停</button>
+          <button type="primary" style="flex-group:1;font-size:20rpx;width:200rpx;padding:15rpx 12rpx" bindtap="audioSeek">跳转至180秒</button>
         </view>
-        <switch style="flex-group:1;font-size:20rpx" bindchange="audioLoop">是否循环</switch>
+        <switch style="flex-group:1;font-size:30rpx" bindchange="audioLoop">是否循环</switch>
       </demo-code>
     </demo-block>
    </view>
@@ -198,8 +198,8 @@
       </view>
 
       <view class="view1">
-        <button bindtap="show" style="float:left;width:50%;font-size: 15rpx">返回拍照/录像模式</button>
-        <button type="primary" bindtap="changeMode" style="float:right;width:50%;font-size: 15rpx">切换模式</button>
+        <button bindtap="show" style="float:left;width:50%;font-size: 20rpx">返回拍照/录像模式</button>
+        <button type="primary" bindtap="changeMode" style="float:right;width:50%;font-size: 20rpx">切换模式</button>
       </view>
      </demo-code>
     </demo-block>
