@@ -6,7 +6,7 @@
   margin: 40rpx;
   font-size: 36rpx;
   text-align: center;
-  font-weight: 560;
+  font-weight: bold;
 }
 .item{
   padding: 10rpx;
