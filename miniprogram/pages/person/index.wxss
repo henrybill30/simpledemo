@@ -1,18 +1,16 @@
 .bgc{
   position: absolute;
   width: 100vw;
-  height: 60vw;
+  height: 260rpx;
   background-size:100% 100%;
   opacity: 0.8;
   z-index: -1;
 }
 .user{
   width: 100vw;
-  height: 60vw;
+  height: 260rpx;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 3rpx 50rpx rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3rpx 50rpx rgba(107, 107, 107, 0.2);
 }
 .cu-avatar {
 	font-variant: small-caps;
@@ -36,8 +34,8 @@
 }
 
 .cu-avatar.lg {
-	width: 196rpx;
-	height: 196rpx;
+	width: 180rpx;
+	height: 180rpx;
 	font-size: 2em;
 }
 
@@ -46,18 +44,26 @@
 }
 
 .userAvatar{
-  width: 196rpx;
-	height: 196rpx;
+  width: 180rpx;
+	height: 180rpx;
 }
 .center-box{
+  width: 260rpx;
   display: flex;
-  justify-content: space-around;
-  /* margin: 25rpx */
-  color: black;
+  justify-content: flex-end;
+  align-items: center;
   opacity: 1;
   z-index: 0
 }
-
+.font-box{
+  padding-left: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  opacity: 1;
+  z-index: 0;
+}
 .hdimg{
   width: 100vw;
   height: 100vw
