@@ -97,7 +97,7 @@ Page({
       }
     })
   },
-
+  
   kindToggle(e) {
     const id = e.currentTarget.id
     const list = this.data.list
@@ -125,7 +125,9 @@ Page({
       })
     })
   },
+  onShareAppMessage: function () {
 
+  }
   // async test() {
   //   let res = await wx.cloud.callFunction({
   //     name: 'check_application',

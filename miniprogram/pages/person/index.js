@@ -123,5 +123,11 @@ Page({
     })
   },
   onReady: function () {
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '组件学习',
+      path: '/pages/components/index/index'
+    }
   }
 })

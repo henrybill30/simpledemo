@@ -171,5 +171,10 @@ Page({
   onUnload: function () { },
   onPullDownRefresh: function () { },
   onReachBottom: function () { },
-  onShareAppMessage: function () { }
+  onShareAppMessage: function () {
+    return {
+      title: '组件学习',
+      path: '/pages/components/index/index'
+    }
+  }
 });
