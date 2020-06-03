@@ -1,4 +1,5 @@
 <!--miniprogram/pages/components/article/article.wxml-->
+<image style="width: {{windowWidth}}px; height: {{(windowWidth*1)/3}}px" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/article.png"></image>
 <view wx:for="{{ articles }}" wx:key="index">
   <demo-article title="{{ item.title }}" author="{{ item.author }}" date="{{ item.time }}" _id="{{ item._id }}">
     {{ item.introduction }}

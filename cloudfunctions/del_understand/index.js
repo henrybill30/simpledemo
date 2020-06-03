@@ -1,6 +1,7 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 
+
 // 云函数入口函数
 exports.main = async (event, context) => {
   if(!event.envID) return { errCode: -1, errMsg: '环境id为空' }
@@ -23,7 +24,7 @@ exports.main = async (event, context) => {
       num: event.num,
     }).update({
       data: {
-        understandNum: _.inc(1)
+        understandNum: _.inc(-1)
       }
     })
     var result = await component.where({
@@ -34,15 +35,12 @@ exports.main = async (event, context) => {
       understandNum:true
     }).limit(1)
     .get()
-    await understand.add({
-      data: {
-        openid: wxContext.OPENID,
-        name: event.name,
-        type: event.type,
-        num: event.num,
-        time: new Date()
-      }
-    })
+    await understand.where({
+      openid: wxContext.OPENID,
+      name: event.name,
+      type: event.type,
+      num: event.num,
+    }).remove()
   }catch(e){
     return {
       state: false,

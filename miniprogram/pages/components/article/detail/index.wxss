@@ -15,4 +15,5 @@
 .content{
   padding: 20rpx 40rpx;
   line-height: 170%;
+  white-space: pre-wrap
 }

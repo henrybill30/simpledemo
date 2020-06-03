@@ -12,7 +12,9 @@ exports.main = async (event, context) => {
       env: event.envID,
   })
 
+  const wxContext = cloud.getWXContext()
   const component = db.collection('Components')
+  const understand = db.collection('Understands')
 
   try{
     var res = await component.where({
@@ -24,6 +26,14 @@ exports.main = async (event, context) => {
       num: true,
       understandNum: true
     }).get()
+
+    var understood = await understand.where({
+      openid: wxContext.OPENID,
+      name: event.name,
+    }).field({
+      type: true,
+      num: true
+    }).get()
   }catch(e){
     return{
       state: false,
@@ -32,6 +42,7 @@ exports.main = async (event, context) => {
   }
   return {
     state: true,
-    res: res.data
+    res: res.data,
+    understand: understood.data
   }
 }

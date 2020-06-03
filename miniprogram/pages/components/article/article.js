@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    articles: []
+    articles: [],
+    windowWidth: 0,
+    windowHeight: 0,
   },
 
   /**
@@ -13,6 +15,11 @@ Page({
    */
   onLoad: function (options) {
     let that = this
+    let size = wx.getSystemInfoSync()
+    that.setData({
+      windowWidth: size.screenWidth,
+      windowHeight: size.windowHeight
+    })
     wx.cloud.callFunction({
       name: "get_article",
       data: {

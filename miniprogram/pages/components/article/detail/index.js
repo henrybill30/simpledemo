@@ -33,7 +33,7 @@ Page({
           content: res.result.res.data[0].content.replace(/\\n/g,"\n"),
           time: util.formatDate(new Date(res.result.res.data[0].time))
         })
-        console.log(res.result.res.data[0].content)
+        console.log((res.result.res.data[0].time))
         wx.hideLoading()
       },
       fail: err => {

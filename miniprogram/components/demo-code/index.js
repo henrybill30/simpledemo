@@ -42,101 +42,136 @@ Component({
       })
     },
     collected(){
-      const pages = getCurrentPages()
-      let that = this
-      // console.log(getApp().globalData.openid,this.properties.name,this.properties.type,this.properties.num)
-      if(!this.data.collected){
-        wx.cloud.callFunction({
-          name: 'add_collection',
-          data: {
-            envID: getApp().globalData.envID,
-            openid: getApp().globalData.openid,
-            name: this.properties.name,
-            type: this.properties.type,
-            num: this.properties.num,
-            path: `${ pages[pages.length-1].route }?index=${ that.properties.currentPage}`
-          },
-          success: res => {
-            // console.log("result: " + JSON.stringify(res.result))
-            wx.showToast({
-              title: '收藏成功！',
-              icon: 'success'
-            })
-            that.setData({
-              collected: !that.data.collected
-            })
-          },
-          fail: err => {
-            // console.log("error: " + JSON.stringify(err))
-            wx.showToast({
-              title: '收藏失败！',
-              icon: 'none'
-            })
-          }
+      if(!getApp().globalData.loginFlag){
+        wx.showToast({
+          title: '请先登录授权',
+          icon: 'none'
         })
-      } else {
-        wx.cloud.callFunction({
-          name: 'del_collection',
-          data: {
-            envID: getApp().globalData.envID,
-            openid: getApp().globalData.openid,
-            name: this.properties.name,
-            type: this.properties.type,
-            num: this.properties.num
-          },
-          success: res => {
-            wx.showToast({
-              title: '取消收藏成功！',
-              icon: 'success'
-            })
-            that.setData({
-              collected: !that.data.collected
-            })
-          },
-          fail: err => {
-            wx.showToast({
-              title: '取消收藏失败！',
-              icon: 'none'
-            })
-          }
-        })
+        setTimeout(
+          wx.switchTab({
+            url: '/pages/person/index',
+          }),
+          4000
+        )
+      }else{
+        const pages = getCurrentPages()
+        let that = this
+        // console.log(getApp().globalData.openid,this.properties.name,this.properties.type,this.properties.num)
+        if(!this.data.collected){
+          wx.cloud.callFunction({
+            name: 'add_collection',
+            data: {
+              envID: getApp().globalData.envID,
+              openid: getApp().globalData.openid,
+              name: this.properties.name,
+              type: this.properties.type,
+              num: this.properties.num,
+              path: `${ pages[pages.length-1].route }?index=${ that.properties.currentPage}`
+            },
+            success: res => {
+              // console.log("result: " + JSON.stringify(res.result))
+              wx.showToast({
+                title: '收藏成功！',
+                icon: 'success'
+              })
+              that.setData({
+                collected: !that.data.collected
+              })
+            },
+            fail: err => {
+              // console.log("error: " + JSON.stringify(err))
+              wx.showToast({
+                title: '收藏失败！',
+                icon: 'none'
+              })
+            }
+          })
+        } else {
+          wx.cloud.callFunction({
+            name: 'del_collection',
+            data: {
+              envID: getApp().globalData.envID,
+              openid: getApp().globalData.openid,
+              name: this.properties.name,
+              type: this.properties.type,
+              num: this.properties.num
+            },
+            success: res => {
+              wx.showToast({
+                title: '取消收藏成功！',
+                icon: 'success'
+              })
+              that.setData({
+                collected: !that.data.collected
+              })
+            },
+            fail: err => {
+              wx.showToast({
+                title: '取消收藏失败！',
+                icon: 'none'
+              })
+            }
+          })
+        }
       }
-      
     },
     showCode: function (event) {
-      this.setData({
-        showcode: !this.data.showcode
-      })
-      if(!this.data.showcode){
-        return
-      }
-      wx.cloud.callFunction({
-        name: 'addRecord',
-        data: {
-          envID: getApp().globalData.envID,
-          openid: getApp().globalData.openid,
-          behavior: 'showCode',
-          component: this.properties.name,
-          cpType: this.properties.type,
-          cpNum: this.properties.num,
-          time: new Date()
-        },
-        success: res => {
-          console.log("result: " + JSON.stringify(res.result))
-        },
-        fail: err => {
-          console.log("error: " + JSON.stringify(err))
+      if(!getApp().globalData.loginFlag){
+        wx.showToast({
+          title: '请先登录授权',
+          icon: 'none'
+        })
+        wx.switchTab({
+          url: '/pages/person/index',
+        })
+      }else{
+        this.setData({
+          showcode: !this.data.showcode
+        })
+        if(!this.data.showcode){
+          return
         }
-      })
+        wx.cloud.callFunction({
+          name: 'addRecord',
+          data: {
+            envID: getApp().globalData.envID,
+            openid: getApp().globalData.openid,
+            behavior: 'showCode',
+            component: this.properties.name,
+            cpType: this.properties.type,
+            cpNum: this.properties.num,
+            time: new Date()
+          },
+          success: res => {
+            console.log("result: " + JSON.stringify(res.result))
+          },
+          fail: err => {
+            console.log("error: " + JSON.stringify(err))
+          }
+        })
+      }
     },
     feedback: function (event) {
-      const { name, type, num } = this.properties
-      const component = JSON.stringify({
-        name, type, num
-      })
-      wx.navigateTo({
-        url: `/pages/person/feedback/index?component=${component}`
-      })
+      if(!getApp().globalData.loginFlag){
+        wx.showToast({
+          title: '请先登录授权',
+          icon: 'none'
+        })
+        setTimeout(
+          wx.switchTab({
+            url: '/pages/person/index',
+          }),
+          2000
+        )
+      }else{
+        const { name, type, num } = this.properties
+        const component = JSON.stringify({
+          name, type, num
+        })
+        wx.navigateTo({
+          url: `/pages/person/feedback/index?component=${component}`
+        })
+      }
     },
     copyhtml: function (e) {
       var content = this.properties.htmlcode.split("@@")[1];

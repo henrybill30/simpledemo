@@ -70,17 +70,8 @@ Page({
   },
   onLoad: function() {
     let that = this
-    if (!app.globalData.openid) {
-      wx.redirectTo({
-        url: "/pages/login/login"
-      })
-      console.log('[main]login please')
-    } else {
-      console.log('[main]login success')
-    }
+    console.log(getApp().globalData)
     let res = wx.getSystemInfoSync()
-    // console.log("宽1: " + res.screenWidth)
-    // console.log("宽2: " + res.windowWidth)
     that.setData({
       windowWidth: res.screenWidth,
       windowHeight: res.windowHeight
@@ -130,12 +121,12 @@ Page({
   }
   // async test() {
   //   let res = await wx.cloud.callFunction({
-  //     name: 'check_application',
+  //     name: 'del_understand',
   //     data: {
   //       envID: getApp().globalData.envID,
-  //       openid: getApp().globalData.openid,
-  //       isAgree: true,
-  //       applyFlag: 'assistant'
+  //       name: 'view',
+  //       type: 'basic',
+  //       num: 0
   //     }
   //   })
   //   console.log(res)

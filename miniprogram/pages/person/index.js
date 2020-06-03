@@ -20,6 +20,40 @@ Page({
       showimg: false
     })
   },
+
+  async login(e){
+    let that = this
+    getApp().globalData.nickname = JSON.parse(e.detail.rawData).nickName
+    let res = await wx.cloud.callFunction({
+      name: 'login',
+      data: {
+        envID: getApp().globalData.envID,
+        username: getApp().globalData.nickname
+      }
+    })
+    console.log(res)
+    getApp().globalData.openid = res.result.openid
+    getApp().globalData.loginFlag = true
+    wx.cloud.callFunction({
+      name: 'get_userInfo',
+      data: {
+        envID: getApp().globalData.envID,
+        openid: getApp().globalData.openid
+      },
+      success: res => {
+        // console.log(res.result)
+        that.setData({
+          identity: res.result.res[0].flag
+        })
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
+    that.setData({
+      loginflag: true
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -30,10 +64,12 @@ Page({
         var userInfo = res.userInfo
         var nickName = userInfo.nickName
         var avatarUrl = userInfo.avatarUrl
-        var gender = userInfo.gender //性别 0：未知、1：男、2：女
-        var province = userInfo.province
-        var city = userInfo.city
-        var country = userInfo.country
+        // var gender = userInfo.gender //性别 0：未知、1：男、2：女
+        // var province = userInfo.province
+        // var city = userInfo.city
+        // var country = userInfo.country
+
+        getApp().globalData.nickname = nickName
 
         console.log('原来的头像', avatarUrl);
 
@@ -86,32 +122,27 @@ Page({
     })
 
     //获取用户身份
-    wx.cloud.callFunction({
-      name: 'get_userInfo',
-      data: {
-        envID: getApp().globalData.envID,
-        openid: getApp().globalData.openid
-      },
-      success: res => {
-        // console.log(res.result)
-        that.setData({
-          identity: res.result.res[0].flag
-        })
-      },
-      fail: err => {
-        console.log(err)
-      }
-    })
-
-    wx.getSetting({
-      success (res) {
-        // 如果已经授权用户信息，视为已登录
-        if(res.authSetting['scope.userInfo']){
+    if(!getApp().globalData.isNewUser){
+      wx.cloud.callFunction({
+        name: 'get_userInfo',
+        data: {
+          envID: getApp().globalData.envID,
+          openid: getApp().globalData.openid
+        },
+        success: res => {
+          // console.log(res.result)
           that.setData({
-            loginflag: true
+            identity: res.result.res[0].flag
           })
+        },
+        fail: err => {
+          console.log(err)
         }
-      }
+      })
+    }
+
+    that.setData({
+      loginflag: getApp().globalData.loginFlag
     })
   },
   onReady: function () {

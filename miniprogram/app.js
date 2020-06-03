@@ -1,18 +1,36 @@
 const envID = 'simpledemo-9jk60' //线上版本
 // const envID = 'test-pjzus'    //测试版本
 App({
-  onLaunch: function() {
+  onLaunch: async function() {
+    let that = this
     wx.cloud.init({
       env: envID,
     })
-    let openid = wx.getStorageSync('openid')
-    if(openid){
-      this.globalData.openid = openid
-      this.globalData.isNewUser = false
+    wx.getSetting({
+      success (res) {
+        // 如果已经授权用户信息，视为已登录
+        if(res.authSetting['scope.userInfo']){
+          that.globalData.loginFlag = true
+        }
+      }
+    })
+    let res = await wx.cloud.callFunction({
+      name: 'login',
+      data: {
+        envID: envID,
+      }
+    })
+    if(res.result.state){
+      that.globalData.isNewUser = res.result.isNewUser
     }
-    // let logs = wx.getStorageSync('logs') || []
-    // logs.unshift(Date.now())
-    // wx.setStorageSync('logs', logs)
+    if(res.result.isNewUser){
+      that.globalData.loginFlag = false
+      wx.switchTab({
+        url: '/pages/person/index',
+      })
+    }else{
+      this.globalData.openid = res.result.openid
+    }
   },
   globalData: {
     envID: envID,
@@ -21,7 +39,8 @@ App({
     nickname: "",
     openid: "",
     isNewUser: true,
-    isAdmin: false
+    isAdmin: false,
+    loginFlag: false
   }
 })
 

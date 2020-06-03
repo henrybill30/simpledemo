@@ -43,6 +43,20 @@ exports.main = async (event, context) => {
       }
     }
   })
+  if(!event.username){
+    if(a.data.length == 0){
+      return {
+        state: true,
+        isNewUser: true
+      }
+    }else {
+      return {
+        state: true,
+        isNewUser: false,
+        openid: wxContext.OPENID
+      }
+    }
+  }
   // 若不存在则存储进数据库
   if (a.data.length == 0){
     await users.add({

@@ -136,16 +136,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      currentPage: parseInt(options.index)
-    })
+    // this.setData({
+    //   currentPage: parseInt(options.index)
+    // })
     wx.cloud.callFunction({
       name: 'addRecord',
       data: {
         envID: getApp().globalData.envID,
         openid: getApp().globalData.openid,
         behavior: 'browse',
-        component: this.data.titleArr[parseInt(options.index)],
+        component: 'wxfor',
         time: new Date()
       },
       success: res => {
