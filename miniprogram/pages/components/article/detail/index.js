@@ -5,18 +5,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title: "文章加载失败！",
+    title: "",
     author: "",
     content: "",
-    time: -1
+    time: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.id)
     let that = this
+    wx.showLoading({
+      title: '加载中',
+    })
     wx.cloud.callFunction({
       name: "get_article",
       data: {
@@ -31,9 +33,14 @@ Page({
           content: res.result.res.data[0].content,
           time: util.formatDate(new Date(res.result.res.data[0].time))
         })
+        wx.hideLoading()
       },
       fail: err => {
         console.log("调用云函数失败：" + JSON.stringify(err))
+        that.setData({
+          title: "加载文章失败！"
+        })
+        wx.hideLoading()
       }
     })
   },
