@@ -8,6 +8,7 @@ Page({
     width: 0,
     height: 0,
     isNewUser: false,
+    loginflag: false
   },
   headimgHD:function () {
     this.setData({
@@ -82,6 +83,35 @@ Page({
         bottom: res[0].bottom,
         height: res[0].height 
       })
+    })
+
+    //获取用户身份
+    wx.cloud.callFunction({
+      name: 'get_userInfo',
+      data: {
+        envID: getApp().globalData.envID,
+        openid: getApp().globalData.openid
+      },
+      success: res => {
+        // console.log(res.result)
+        that.setData({
+          identity: res.result.res[0].flag
+        })
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
+
+    wx.getSetting({
+      success (res) {
+        // 如果已经授权用户信息，视为已登录
+        if(res.authSetting['scope.userInfo']){
+          that.setData({
+            loginflag: true
+          })
+        }
+      }
     })
   },
   onReady: function () {

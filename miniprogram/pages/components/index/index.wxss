@@ -60,8 +60,9 @@
   max-height: 0;
   overflow: hidden;
 }
+
 .item-detail-checked {
-  background-color: white;
+  background-color: #fff;
   max-height: 1500rpx;
   transition: max-height .3s;
   font-weight: bold;
