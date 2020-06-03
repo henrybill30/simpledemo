@@ -19,7 +19,8 @@
   <view class="foot">
     <image bindtap="collected" wx:if="{{!collected}}" style="height:38rpx;width:38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏.png"></image>
     <image bindtap="collected" wx:if="{{collected}}" style="height:38rpx;width:38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏 (2).png"></image>
-    <image bindtap="showCode" wx:if="{{ showcode }}" style="height:40rpx;width:40rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/眼睛 (1).png"></image>
-    <image bindtap="showCode" wx:if="{{ !showcode }}" style="height:40rpx;width:40rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/眼睛.png"></image>
+    <image bindtap="feedback" style="height: 44rpx; width: 44rpx; margin-left: 10rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/feedback.png"></image>
+    <image bindtap="showCode" wx:if="{{ showcode }}" style="height:40rpx;width:40rpx; margin-left: auto" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/眼睛 (1).png"></image>
+    <image bindtap="showCode" wx:if="{{ !showcode }}" style="height:40rpx;width:40rpx; margin-left: auto" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/眼睛.png"></image>
   </view>
 </view>

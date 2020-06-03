@@ -129,6 +129,15 @@ Component({
         }
       })
     },
+    feedback: function (event) {
+      const { name, type, num } = this.properties
+      const component = JSON.stringify({
+        name, type, num
+      })
+      wx.navigateTo({
+        url: `/pages/person/feedback/index?component=${component}`
+      })
+    },
     copyhtml: function (e) {
       var content = this.properties.htmlcode.split("@@")[1];
       wx.showActionSheet({
