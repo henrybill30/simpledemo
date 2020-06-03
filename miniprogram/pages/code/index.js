@@ -120,6 +120,7 @@ Page({
           code: code
         }
       })
+      console.log(result)
       if(result.result._id){
         wx.showToast({
           title: '创建成功！',

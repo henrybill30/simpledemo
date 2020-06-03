@@ -14,7 +14,6 @@ exports.main = async (event, context) => {
     env: event.envID,
   })
   const components = db.collection('Components')
-  const wxContext = cloud.getWXContext()
 
   return await components.where({
     name: event.name,

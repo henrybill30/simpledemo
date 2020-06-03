@@ -33,7 +33,7 @@ exports.main = async (event, context) => {
   // 获取数据库
   const users = db.collection("Users")
   // 首先查询数据库中是否存过改id
-  let a = await users.where({
+  var a = await users.where({
     openid: wxContext.OPENID
   }).get({
     fail: function(err) {
@@ -48,7 +48,8 @@ exports.main = async (event, context) => {
     await users.add({
       data: {
         openid: wxContext.OPENID,
-        username: event.username
+        username: event.username,
+        flag: 'student'
       },
       fail: function(err) {
         return {
@@ -64,6 +65,13 @@ exports.main = async (event, context) => {
       openid: wxContext.OPENID
     }
   }
+  await users.doc(a.data[0]._id).set({
+    data:{
+      openid: a.data[0].openid,
+      username: event.username,
+      flag: a.data[0].flag
+    }
+  })
 
   return {
     state: true,

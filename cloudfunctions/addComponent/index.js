@@ -22,7 +22,8 @@ exports.main = async (event, context) => {
       name: event.name,
       type: event.type,
       num: event.num,
-      code: event.code
+      code: event.code,
+      understandNum: 0
     }
   })
 }
