@@ -4,5 +4,7 @@
     <text class="author">{{ author }}</text> 
     <text class="time">{{ time }}</text>
   </view>
-  <view class="content">{{ content }}</view>
+  <view class="content">
+    <text>{{ content }}</text>
+  </view>
 </view>

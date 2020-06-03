@@ -30,9 +30,10 @@ Page({
         that.setData({
           title: res.result.res.data[0].title,
           author: res.result.res.data[0].author,
-          content: res.result.res.data[0].content,
+          content: res.result.res.data[0].content.replace(/\\n/g,"\n"),
           time: util.formatDate(new Date(res.result.res.data[0].time))
         })
+        console.log(res.result.res.data[0].content)
         wx.hideLoading()
       },
       fail: err => {
