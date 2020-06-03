@@ -115,7 +115,7 @@ Page({
   // 提交反馈
   confirm: async function () {
     let content = this.data.checkedOptions.join(';')
-    const otherInfo = this.data.otherInfo
+    const { otherInfo, component = {} } = this.data
     if(otherInfo !== '') {
       content = [content, otherInfo].join(';')
     }
@@ -124,6 +124,7 @@ Page({
       acc.push(cur.url)
       return acc
     }, [])
+
 		const event = {
       envID: getApp().globalData.envID,
       action: 'add',
@@ -133,7 +134,8 @@ Page({
         content,
         timestamp: (new Date()).getTime(),
         contact: this.data.contact,
-        imgList
+        imgList,
+        component
       }
     }
     Toast.loading({
@@ -154,7 +156,14 @@ Page({
       Toast.fail('提交失败！')
     }
   },
-  onLoad: function (opt) { },
+  onLoad: function (opt) {
+    // 组件信息
+    if(opt.component) {
+      this.setData({
+        component: JSON.parse(opt.component)
+      })
+    }
+  },
   onReady: function () { },
   onShow: function () { },
   onHide: function () {
