@@ -1,0 +1,17 @@
+.title{
+  font-weight: bolder;
+  font-size: 36rpx;
+  margin: 20rpx 40rpx;
+}
+.author{
+  padding: 0 20rpx 0 40rpx;
+  color: #4B55FA;
+  font-size: 28rpx;
+}
+.time{
+  color: #888888;
+  font-size: 28rpx;
+}
+.content{
+  padding: 20rpx 40rpx;
+}

@@ -6,14 +6,20 @@
       {
         "pagePath": "pages/components/index/index",
         "text": "组件识别",
-        "iconPath": "./pages/components/componentstear/识别1.png",
-        "selectedIconPath": "./pages/components/componentstear/识别2.png"
+        "iconPath": "./lib/pic/识别1.png",
+        "selectedIconPath": "./lib/pic/识别2.png"
+      },
+      {
+        "pagePath": "pages/components/article/article",
+        "text": "精选文章",
+        "iconPath": "./lib/pic/文章.png",
+        "selectedIconPath": "./lib/pic/文章 (1).png"
       },
       {
         "pagePath": "pages/person/index",
         "text": "个人中心",
-        "iconPath": "./pages/components/componentstear/个人中心 - 选中.png",
-        "selectedIconPath": "./pages/components/componentstear/个人中心 - 选中 (1).png"
+        "iconPath": "./lib/pic/个人中心 - 选中.png",
+        "selectedIconPath": "./lib/pic/个人中心 - 选中 (1).png"
       }
     ]
   },
@@ -44,7 +50,8 @@
     "pages/components/article/article",
     "pages/code/index",
     "pages/person/changelog/index",
-    "pages/person/collection/index"
+    "pages/person/collection/index",
+    "pages/components/article/detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

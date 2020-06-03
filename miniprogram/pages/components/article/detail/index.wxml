@@ -1,0 +1,8 @@
+<view>
+  <view class="title">{{ title }}</view>
+  <view>
+    <text class="author">{{ author }}</text> 
+    <text class="time">{{ time }}</text>
+  </view>
+  <view class="content">{{ content }}</view>
+</view>
