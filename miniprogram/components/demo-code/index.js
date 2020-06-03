@@ -6,7 +6,8 @@ Component({
     htmlcode: ``,
     jscode: ``,
     csscode: ``,
-    collected: false
+    collected: false,
+    showMore: false
   },
   options: {
     // multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -202,6 +203,15 @@ Component({
           url: `/pages/person/feedback/index?component=${component}`
         })
       }
+    },
+    showMore: function () {
+      this.setData({
+        showMore: !this.data.showMore
+      })
+      console.log(this.data.showMore)
+    },
+    understand: function () {
+
     },
     copyhtml: function (e) {
       var content = this.properties.htmlcode.split("@@")[1];

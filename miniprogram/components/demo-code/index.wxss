@@ -46,4 +46,35 @@
   background-color: #fff;
   display: flex;
   border-top:3rpx dashed #8E9898;
+  align-items: center;
+  justify-content: space-between;
+}
+.more {
+  position: absolute;
+  height: 100rpx;
+  max-width: 0;
+  overflow: hidden;
+  top: 16rpx;
+  right: 60rpx;
+  transition: max-width .1s;
+  display: flex;
+  transform: translateY(-50%);
+}
+.more-checked {
+  max-width: 600rpx;
+  transition: max-width .5s;
+}
+.more .toolbar {
+  padding: 0 30rpx;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1rpx solid gray;
+  border-radius: 10rpx;
+}
+.tool {
+  height: 38rpx;
+  display: flex;
+  flex: none;
+  align-items: center;
 }
