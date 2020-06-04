@@ -1,5 +1,5 @@
 
-<image class="bgc" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/users.png"/>
+<!-- <view class="bgc" style="width: {{windowWidth}}px; height: {{(windowWidth*1)/3}}px;background-color: #f7fcfe"></view> -->
 <view class="mask" wx:if="{{isNewUser}}">
   <van-cell  
     style="position:fixed;top:{{top}}px;left:{{left}}px;width:{{width}}px"
@@ -16,7 +16,7 @@
     </view>
   </view>
 </view>
-<view class="user">  
+<view class="user" style="width: {{windowWidth}}px; height: {{(windowWidth*1)/3}}px;background-color: #f7fcfe">  
   <view class="center-box">
     <view wx:if="{{loginflag}}" class="cu-avatar lg round margin-left"  style="background-image:url(./用户头像.png);" bindtap="headimgHD">
       <open-data type="userAvatarUrl" class="userAvatar"></open-data>  
@@ -45,7 +45,7 @@
 </view>
 
 <view class="list-card shadow-warp">
-  <van-cell wx:if="{{loginflag}}" title="我的收藏"
+  <van-cell style="backgroud-color:red" wx:if="{{loginflag}}" title="我的收藏"
     is-link
     link-type="navigateTo"
     url="./collection/index"/>

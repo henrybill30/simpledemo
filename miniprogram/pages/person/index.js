@@ -8,7 +8,9 @@ Page({
     width: 0,
     height: 0,
     isNewUser: false,
-    loginflag: false
+    loginflag: false,
+    windowWidth: 0,
+    windowHeight: 0,
   },
   headimgHD:function () {
     if(!this.data.loginflag){
@@ -74,6 +76,10 @@ Page({
    */
   onLoad: async function (options) {
     let that = this;
+    that.setData({
+      windowWidth: getApp().globalData.windowWidth,
+      windowHeight: getApp().globalData.windowHeight
+    })
     wx.getUserInfo({
       success: function (res) {
         var userInfo = res.userInfo

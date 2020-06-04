@@ -6,6 +6,9 @@ App({
     wx.cloud.init({
       env: envID,
     })
+    let size = wx.getSystemInfoSync()
+    that.globalData.windowWidth = size.screenWidth,
+    that.globalData.windowHeight = size.windowHeight
     wx.getSetting({
       success (res) {
         // 如果已经授权用户信息，视为已登录
@@ -40,7 +43,9 @@ App({
     openid: "",
     isNewUser: true,
     isAdmin: false,
-    loginFlag: false
+    loginFlag: false,
+    windowWidth: null,
+    windowHeight: null
   }
 })
 

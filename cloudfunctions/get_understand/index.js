@@ -26,10 +26,11 @@ exports.main = async (event, context) => {
       num: true,
       understandNum: true
     }).get()
-
     var understood = await understand.where({
       openid: wxContext.OPENID,
       name: event.name,
+      type: event.type,
+      num: event.num
     }).field({
       type: true,
       num: true
@@ -42,7 +43,7 @@ exports.main = async (event, context) => {
   }
   return {
     state: true,
-    res: res.data,
-    understand: understood.data
+    res: res.data[0].understandNum,
+    understand: understood.data.length==0 ? false : true
   }
 }

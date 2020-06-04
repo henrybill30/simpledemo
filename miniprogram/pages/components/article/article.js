@@ -15,10 +15,9 @@ Page({
    */
   onLoad: function (options) {
     let that = this
-    let size = wx.getSystemInfoSync()
     that.setData({
-      windowWidth: size.screenWidth,
-      windowHeight: size.windowHeight
+      windowWidth: getApp().globalData.windowWidth,
+      windowHeight: getApp().globalData.windowHeight
     })
     wx.cloud.callFunction({
       name: "get_article",

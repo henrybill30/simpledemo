@@ -71,10 +71,9 @@ Page({
   onLoad: function() {
     let that = this
     console.log(getApp().globalData)
-    let res = wx.getSystemInfoSync()
     that.setData({
-      windowWidth: res.screenWidth,
-      windowHeight: res.windowHeight
+      windowWidth: getApp().globalData.windowWidth,
+      windowHeight: getApp().globalData.windowHeight
     })
     wx.cloud.callFunction({
       name: 'getAdmin',
@@ -118,10 +117,11 @@ Page({
   },
   onShareAppMessage: function () {
 
-  }
+  },
+
   // async test() {
   //   let res = await wx.cloud.callFunction({
-  //     name: 'del_understand',
+  //     name: 'get_understand',
   //     data: {
   //       envID: getApp().globalData.envID,
   //       name: 'view',

@@ -1,10 +1,13 @@
 <!--miniprogram/pages/person/usage/index.wxml-->
 <view class="height-40"/>
-<view class="title">组件识别</view>
-<van-panel title="组件">
+<view class="title">最简组件</view>
+<van-panel title="组件卡片">
   <view class="desc">
-    点击组件示例卡片右下方的<text class="red">眼睛</text>即可<text class="red">显示示例代码</text>
-    <image style="height:230rpx;width:100%" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/shili1.png"></image>
+    <text space="emsp">  点击组件示例卡片左下方的<text class="red">眼睛</text>即可<text class="red">显示示例代码</text>。点击组件示例卡片右下方的<text class="red">三点</text>即可<text class="red">选择更多操作</text>。</text>
+    <image style="height:180rpx;width:100%" src="./shili2.jpg"></image>
+    <text space="emsp">  更多操作包括<text class="red">收藏</text>、<text class="red">反馈</text>和<text class="red">“看懂了”</text>。</text>
+    <image style="height:220rpx;width:100%" src="./shili3.jpg"></image>
+    <text space="emsp">  点击收藏按钮可以将该组件卡片收藏，在个人中心的<text class="red">我的收藏</text>中可以查看所有收藏的组件，点击前往可以跳转到组件卡片所在页面，方便学习。\n  点击反馈按钮会跳转至反馈页面，可以提供针对该组件卡片的一些内容、bug反馈。\n  点击“看懂了”按钮，意味着自己看懂了该组件卡片所呈现的功能和代码，同时可以看到又多少同学看懂了该组件卡片，利于自己判断组件的难易程度。</text>
   </view>
 </van-panel>
 <view class="height-40"/>

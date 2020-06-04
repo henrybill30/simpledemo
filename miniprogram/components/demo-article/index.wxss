@@ -4,7 +4,7 @@
   border-radius:15rpx;
   box-shadow: 0rpx 0rpx 10rpx rgb(126, 125, 125);
   padding: 20rpx;
-  background-color: #fff;
+  background-color: #f7fcfe8f;
 }
 .title{
   font-size: 12pt;
