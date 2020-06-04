@@ -54,6 +54,7 @@ Component({
         // 文件存储 更换图片
         async updateImg() {
             // 需用户登录 用户 openid 作为存储索引
+            let that = this
             const openid = getApp().globalData.openid
             if(!openid) {
                 wx.navigateTo({
@@ -66,8 +67,10 @@ Component({
                 sizeType: ['original', 'compressed'],
                 sourceType: ['album', 'camera'],
                 success: async res => {
-                    let fileID = this.data.imgUrl
-                    await deleteFile(fileID) // 删除已有文件
+                    let fileID = that.data.imgUrl
+                    if(fileID){
+                        await deleteFile(fileID) // 删除已有文件
+                    }
                     const filePath = res.tempFilePaths[0]
                     const cloudPath = `${openid}-${(new Date).getTime()}`
                     fileID = await uploadFile(cloudPath, filePath) // 上传新文件

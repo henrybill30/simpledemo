@@ -19,7 +19,6 @@ Page({
       wx.getUserInfo({
         success: function(res) {
           var userInfo = res.userInfo
-          var nickName = userInfo.nickName
           var avatarUrl = userInfo.avatarUrl
           that.setData({
             uesrImg: avatarUrl
