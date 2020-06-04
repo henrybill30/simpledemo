@@ -11,6 +11,22 @@ Page({
     loginflag: false
   },
   headimgHD:function () {
+    if(!this.data.loginflag){
+      return
+    }
+    let that =this
+    if(!this.data.loginflag){
+      wx.getUserInfo({
+        success: function(res) {
+          var userInfo = res.userInfo
+          var nickName = userInfo.nickName
+          var avatarUrl = userInfo.avatarUrl
+          that.setData({
+            uesrImg: avatarUrl
+          })
+        }
+      })
+    }
     this.setData({
       showimg: true
     })

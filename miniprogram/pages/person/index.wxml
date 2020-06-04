@@ -22,7 +22,7 @@
       <open-data type="userAvatarUrl" class="userAvatar"></open-data>  
     </view>
     <view wx:else class="cu-avatar lg round margin-left">
-      <image class="userAvatar" src="./用户头像.png"></image>
+      <image class="userAvatar" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/用户头像.png"></image>
     </view>  
   </view> 
   <view wx:if="{{ loginflag }}" class="font-box">
