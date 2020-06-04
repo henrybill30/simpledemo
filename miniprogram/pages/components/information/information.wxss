@@ -46,9 +46,6 @@ rich-text {
 /* swiper */
 @import "./weui.wxss";
 
-.page-body{
-  padding-top: 60rpx;
-}
 .control-area{
   padding: 0 0 40rpx 40rpx;
 }

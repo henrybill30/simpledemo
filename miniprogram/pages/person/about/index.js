@@ -63,7 +63,8 @@ Page({
     onShareAppMessage: function () {
         return {
             title: '组件学习',
-            path: '/pages/components/index/index'
+            path: '/pages/components/index/index',
+            imageUrl: 'cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/小程序头像.png'
         }
     }
 })

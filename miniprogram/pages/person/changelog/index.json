@@ -3,5 +3,5 @@
     "van-steps": "/lib/dist/steps/index",
     "van-divider": "/lib/dist/divider/index"
   },
-  "navigationBarTitleText": "更新日志"
+  "navigationBarTitleText": ""
 }

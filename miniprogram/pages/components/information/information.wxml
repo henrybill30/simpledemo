@@ -204,7 +204,7 @@
   </van-tab>
   <van-tab title="swiper" :name="5">
     <view wx:if="{{currentPage == 5}}">
-      <view class="page-body">
+      <view>
         <demo-block title="基础用法">
           <demo-code currentPage="{{currentPage}}" height="320" name="swiper" type="basic" num="0">
             <view class="page-section page-section-spacing swiper">

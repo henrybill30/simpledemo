@@ -10,5 +10,5 @@
     "van-notify": "/lib/dist/notify/index",
     "van-uploader": "/lib/dist/uploader/index"
   },
-  "navigationBarTitleText": "反馈"
+  "navigationBarTitleText": ""
 }

@@ -27,16 +27,16 @@
   </view> 
   <view wx:if="{{ loginflag }}" class="font-box">
     <view>
-      昵称：
+      <!-- 昵称： -->
       <open-data type="userNickName" lang="zh_CN"></open-data>
     </view>
-    <view>
+    <!-- <view>
       身份：
       <text wx:if="{{ identity=='student'}}">学生</text>
       <text wx:elif="{{ identity=='teacher'}}">老师</text>
       <text wx:elif="{{ identity=='admin'}}">管理员</text>
       <text wx:else>助教</text>
-    </view>
+    </view> -->
 
   </view>
   <view wx:else class="font-box">
