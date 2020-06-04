@@ -46,6 +46,9 @@ Component({
         lastTapTime: curTime
       })
     },
+    throttlecollected:throttle(function () {
+      this.collected()
+    }),
     collected(){
       if(!getApp().globalData.loginFlag){
         wx.showModal({

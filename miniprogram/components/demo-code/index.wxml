@@ -22,9 +22,9 @@
     <view style="position: relative">
       <view class="more {{ showMore ? 'more-checked' : '' }}">
         <view class="toolbar">
-          <view class="tool">
-            <image bindtap="collected" wx:if="{{!collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏.png"></image>
-            <image bindtap="collected" wx:if="{{collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏 (2).png"></image>
+          <view class="tool" bindtap="throttlecollected">
+            <image wx:if="{{!collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏.png"></image>
+            <image wx:if="{{collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏 (2).png"></image>
           </view>
           <view class="tool">
             <image bindtap="feedback" style="height: 44rpx; width: 44rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/feedback.png"></image>
