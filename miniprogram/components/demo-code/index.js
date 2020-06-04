@@ -43,16 +43,25 @@ Component({
     },
     collected(){
       if(!getApp().globalData.loginFlag){
-        wx.showToast({
-          title: '请先登录授权',
-          icon: 'none'
+        wx.showModal({
+          title: '提示',
+          content: '请先登录授权',
+          confirmText: '前去登录',
+          confirmColor: '#1685a9',
+          cancelColor: '#9ea1a3',
+          success: res => {
+            if(res.confirm){
+              wx.switchTab({
+                url: '/pages/person/index'
+              })
+            }else if(res.cancel){
+              wx.showToast({
+                title: '这样就无法查看代码或收藏哦~',
+                icon: 'none'
+              })
+            }
+          }
         })
-        setTimeout(
-          wx.switchTab({
-            url: '/pages/person/index',
-          }),
-          4000
-        )
       }else{
         const pages = getCurrentPages()
         let that = this
@@ -117,12 +126,24 @@ Component({
     },
     showCode: function (event) {
       if(!getApp().globalData.loginFlag){
-        wx.showToast({
-          title: '请先登录授权',
-          icon: 'none'
-        })
-        wx.switchTab({
-          url: '/pages/person/index',
+        wx.showModal({
+          title: '提示',
+          content: '请先登录授权',
+          confirmText: '前去登录',
+          confirmColor: '#1685a9',
+          cancelColor: '#9ea1a3',
+          success: res => {
+            if(res.confirm){
+              wx.switchTab({
+                url: '/pages/person/index'
+              })
+            }else if(res.cancel){
+              wx.showToast({
+                title: '这样就无法查看代码或收藏哦~',
+                icon: 'none'
+              })
+            }
+          }
         })
       }else{
         this.setData({
@@ -153,16 +174,25 @@ Component({
     },
     feedback: function (event) {
       if(!getApp().globalData.loginFlag){
-        wx.showToast({
-          title: '请先登录授权',
-          icon: 'none'
+        wx.showModal({
+          title: '提示',
+          content: '请先登录授权',
+          confirmText: '前去登录',
+          confirmColor: '#1685a9',
+          cancelColor: '#9ea1a3',
+          success: res => {
+            if(res.confirm){
+              wx.switchTab({
+                url: '/pages/person/index'
+              })
+            }else if(res.cancel){
+              wx.showToast({
+                title: '这样就无法查看代码或收藏哦~',
+                icon: 'none'
+              })
+            }
+          }
         })
-        setTimeout(
-          wx.switchTab({
-            url: '/pages/person/index',
-          }),
-          2000
-        )
       }else{
         const { name, type, num } = this.properties
         const component = JSON.stringify({
