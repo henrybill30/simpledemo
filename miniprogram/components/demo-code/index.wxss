@@ -78,3 +78,8 @@
   flex: none;
   align-items: center;
 }
+.dot {
+  font-size: 20rpx;
+  height: 38rpx;
+  line-height: 0;
+}

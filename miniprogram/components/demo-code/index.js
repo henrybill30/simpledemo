@@ -7,7 +7,11 @@ Component({
     jscode: ``,
     csscode: ``,
     collected: false,
-    showMore: false
+    showMore: false,
+    understand: {
+      state: false,
+      num: 0
+    }
   },
   options: {
     // multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -208,10 +212,35 @@ Component({
       this.setData({
         showMore: !this.data.showMore
       })
-      console.log(this.data.showMore)
     },
-    understand: function () {
-
+    understand: async function () {
+      const { state } = this.data.understand
+      let functionName = 'add_understand'
+      if(state) {
+        functionName = 'del_understand'
+      }
+      const { name, type, num } = this.properties
+      const res = await wx.cloud.callFunction({
+        name: functionName,
+        data: {
+          envID: getApp().globalData.envID,
+          name, type, num
+        }
+      })
+      if(!res.result.state) {
+        wx.showToast({
+          title: '出现了点故障~',
+          icon: 'none'
+        })
+        return
+      }
+      const { understandNum } = res.result
+      this.setData({
+        understand: {
+          state: !this.data.understand.state,
+          num: understandNum
+        }
+      })
     },
     copyhtml: function (e) {
       var content = this.properties.htmlcode.split("@@")[1];
@@ -289,6 +318,28 @@ Component({
         }
       })
     },
+
+    getUnderstand: async function () {
+      const { name, type, num } = this.properties
+      const res = await wx.cloud.callFunction({
+        name: 'get_understand',
+        data: {
+          envID: getApp().globalData.envID,
+          name, type, num
+        }
+      })
+      if(!res.result.state) {
+        console.error(res)
+        return
+      }
+      const understand = {
+        state: res.result.understand,
+        num: res.result.res
+      }
+      this.setData({
+        understand
+      })
+    }
   },
   lifetimes: {
     attached: async function () {
@@ -355,6 +406,7 @@ Component({
           console.log("error: " + JSON.stringify(err))
         }
       })
+      await this.getUnderstand()
     },
     detached: function () {
       // 在组件实例被从页面节点树移除时执行
