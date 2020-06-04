@@ -29,7 +29,7 @@
           <view class="tool">
             <image bindtap="feedback" style="height: 44rpx; width: 44rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/feedback.png"></image>
           </view>
-          <view class="tool" bindtap="understand">
+          <view class="tool" bindtap="throttleDUnderstand">
             <image wx:if="{{ !understand.state }}" style="height: 38rpx; width: 38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/懂1.png"></image>
             <image wx:if="{{ understand.state }}"style="height: 38rpx; width: 38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/懂2.png"></image>
             <text class="dot">{{ understand.num }}</text>

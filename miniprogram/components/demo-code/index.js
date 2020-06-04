@@ -213,6 +213,9 @@ Component({
         showMore: !this.data.showMore
       })
     },
+    throttleDUnderstand: throttle(function () {
+      this.understand()
+    }),
     understand: async function () {
       const { state } = this.data.understand
       let functionName = 'add_understand'
@@ -414,3 +417,19 @@ Component({
   },
   externalClasses: ['custom-class']
 });
+
+function throttle(func, time) {
+  let inThrottle  = false
+  const throttleDFunc = function(...args) {
+    if(inThrottle) {
+      console.log('节流')
+      return
+    }
+    inThrottle = true
+    func.bind(this)(...args)
+    setTimeout(() => {
+      inThrottle = false
+    }, 1000)
+  }
+  return throttleDFunc
+}
