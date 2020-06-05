@@ -6,6 +6,7 @@ Page({
      * 页面的初始数据
      */
     data: {
+        activeId: '',
         currentPage: 0, // 子组件索引
         components: [
             {
@@ -45,6 +46,11 @@ Page({
         B: null,
         result: '',
         Openid: ''
+    },
+    showMore(e){
+      this.setData({
+        activeId: e.detail.id
+      })
     },
 
     inputA(e) {

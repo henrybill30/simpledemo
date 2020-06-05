@@ -9,7 +9,7 @@
   bind:change="onTabChange">
   <van-tab title="setStorage" :name="0">
     <demo-block title="基础用法">
-      <demo-code currentPage="{{currentPage}}" height="80" name="setStorage" type="basic" num="0">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="setStorage" type="basic" num="0">
         <input name='key' placeholder="请输入key名称" bindinput="keyInput"/>
         <input name='value' placeholder="请输入value名称" bindinput="valueInput"/>
         <button type="primary" disabled="{{disabled}}" bindtap="setStorageSync">数据存储</button>
@@ -19,7 +19,7 @@
 
   <van-tab title="getStorage" :name="1">
     <demo-block title="基础用法">
-      <demo-code currentPage="{{currentPage}}" height="80" name="getStorage" type="basic" num="0">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="getStorage" type="basic" num="0">
         <input name='key1' placeholder="请输入key名称" bindinput="keyInput1"/>
         <button type="primary" disabled="{{disabled1}}" bindtap="getStorageSync">数据获取</button>
         <text>获取的值为：{{value2}}</text>
@@ -29,7 +29,7 @@
 
   <van-tab title="getStorageInfo" :name="2">
     <demo-block title="基本用法">
-      <demo-code currentPage="{{currentPage}}" height="80" name="getStorageInfo" type="basic" num="0">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="getStorageInfo" type="basic" num="0">
         <button type="primary" bindtap="getStorageInfo">获取Storage信息</button>
         <view style="display:flex">
           <view style="flex-group:1;display:flex;flex-direction:column">
@@ -44,7 +44,7 @@
   </van-tab>
   <van-tab title="removeStorage" :name="3">
     <demo-block title="基本用法">
-      <demo-code currentPage="{{currentPage}}" height="80" name="removeStorage" type="basic" num="0">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="removeStorage" type="basic" num="0">
         <input name='key2' placeholder="请输入key名称" bindinput="keyInput2"/>
         <button type="primary" disabled="{{disabled2}}" bindtap="removeStorageSync">数据删除</button>
         <view style="display:flex;">

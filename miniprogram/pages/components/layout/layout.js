@@ -7,6 +7,7 @@ Page({
      */
     data: {
       currentPage: 0,
+      activeId: '',
       components: [
         {
           title: 'Flex 布局',
@@ -15,6 +16,11 @@ Page({
           num: 0,
         }
       ]
+    },
+    showMore(e){
+      this.setData({
+        activeId: e.detail.id
+      })
     },
     // 数据埋点
     async addRecord() {

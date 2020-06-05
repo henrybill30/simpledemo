@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    activeId: '',
     currentPage: 0,
     pageNum: 4,
     nbTitle: '',
@@ -21,6 +22,11 @@ Page({
     allKey: [],
     allValue: [],
     key3: ''
+  },
+  showMore(e){
+    this.setData({
+      activeId: e.detail.id
+    })
   },
 
   keyInput: function(e) {

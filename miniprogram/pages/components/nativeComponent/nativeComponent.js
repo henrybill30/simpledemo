@@ -129,6 +129,12 @@ Page({
     mode: "拍照",
     Camera_mode: "normal",
     is_showCamera: true,
+    activeId: ''
+  },
+  showMore(e){
+    this.setData({
+      activeId: e.detail.id
+    })
   },
   
   audioLoop: function(e) {
