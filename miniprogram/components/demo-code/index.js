@@ -137,6 +137,9 @@ Component({
       }
     },
     showCode: function (event) {
+      this.triggerEvent('showMore', {
+        id: ''
+      }, {})
       if(!getApp().globalData.loginFlag){
         wx.showModal({
           title: '提示',
@@ -225,6 +228,11 @@ Component({
           id: this.data.componentId
         }, {})
       }
+    },
+    cancelShowMore: function(e){
+      this.triggerEvent('showMore', {
+        id: ''
+      }, {})
     },
     throttleDUnderstand: throttle(function () {
       this.understand()
@@ -361,7 +369,6 @@ Component({
     attached: async function () {
       // 在组件实例进入页面节点树时执行
       let that = this
-
       wx.cloud.callFunction({
         name: "getComponent",
         data: {

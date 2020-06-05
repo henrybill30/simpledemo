@@ -8,7 +8,7 @@
   <van-tab title="wx:if" :name="0">
     <view wx:if="{{currentPage == 0}}">
      <demo-block title="基础用法">
-      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wxif" type="basic" num="0">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:if" type="basic" num="0">
         <switch bindchange="xChange" >显示控制</switch>
         <block wx:if="{{x}}" >
           <view> 第一个显示单元 </view>
@@ -24,7 +24,7 @@
       </demo-code>
      </demo-block>
      <demo-block title="增强用法">
-      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wxif" type="strength" num="0">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:if" type="strength" num="0">
         <view>猜数字（猜对后会显示隐藏内容）</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">
@@ -42,7 +42,7 @@
   <van-tab title="wx:elif" :name="1">
     <view wx:if="{{currentPage == 1}}">
       <demo-block title="基础用法">
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wxelif" type="basic" num="0">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:elif" type="basic" num="0">
           <view class="weui-label">显示图片位置</view>
           <view class="picker">
             <picker bindchange="bindPickerChange" value="{{index}}" range="{{imagePos}}">
@@ -84,7 +84,7 @@
   <van-tab title="wx:else" :name="2">
     <view wx:if="{{currentPage == 2}}">
      <demo-block title="基础用法">
-      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wxelse" type="basic" num="0">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:else" type="basic" num="0">
         <view >猜数字升级</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell weui-cell_input">

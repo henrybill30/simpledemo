@@ -1,4 +1,10 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "cameraExample": "./component/cameraExample/index",
+    "mapExample": "./component/mapExample/index",
+    "canvasExample": "./component/canvasExample/index",
+    "videoExample": "./component/videoExample/index",
+    "audioExample": "./component/audioExample/index"
+  },
   "navigationBarTitleText": "原生组件"
 }

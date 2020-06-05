@@ -11,7 +11,8 @@ Component({
      * 组件的初始数据
      */
     data: {
-        text: ''
+        text: '',
+        activeId: ''
     },
 
     lifetimes: {
@@ -24,6 +25,11 @@ Component({
      * 组件的方法列表
      */
     methods: {
+        showMore(e){
+            this.setData({
+              activeId: e.detail.id
+            })
+          },
     // 文本存储 更新已存储文本
     async updateText(e) {
         const event = {

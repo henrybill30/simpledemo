@@ -2,5 +2,5 @@
   "usingComponents": {
     "van-panel": "/lib/dist/panel/index"
   },
-  "navigationBarTitleText": "使用说明"
+  "navigationBarTitleText": ""
 }

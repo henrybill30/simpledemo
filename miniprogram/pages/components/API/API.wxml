@@ -64,7 +64,11 @@
       <demo-block title="基础用法">
         <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="扫码" type="basic" num="0">
           <button bindtap="scanCode">扫码</button>
-          <web-view src="{{toUrl}}" wx:if="{{toUrl!=''}}"></web-view>
+          <view>扫码内容：{{scanResult.result}}</view>
+          <view>扫码类型：{{scanResult.scanType}}</view>
+          <view>扫码字符集：{{scanResult.charSet}}</view>
+          <view wx:if="{{scanResult.path}}">二维码路径：{{scanResult.paht}}</view>
+          <view>原始数据：{{scanResult.rawData}}</view>
         </demo-code>
       </demo-block>
     </view>
@@ -73,7 +77,20 @@
     <view wx:if="{{currentPage == 4}}">
       <demo-block title="基础用法">
         <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="获取位置信息" type="basic" num="0">
-          <button bindtap="getLocation">查看当前位置</button>
+          <view wx:if="{{isScopeLocation}}">
+            <button bindtap="getLocation">查看当前位置</button>
+            <view wx:if="{{locationResult.latitude}}">纬度：{{locationResult.latitude}} 度</view>
+            <view wx:if="{{locationResult.longitude}}">经度：{{locationResult.longitude}} 度</view>
+            <view wx:if="{{locationResult.speed}}">速度：{{locationResult.speed}} m/s</view>
+            <view wx:if="{{locationResult.accuracy}}">位置精确度：{{locationResult.accuracy}}</view>
+            <view wx:if="{{locationResult.altitude}}">高度：{{locationResult.altitude}} m</view>
+            <view wx:if="{{locationResult.verticalAccuracy}}">垂直精度(仅ios)：{{locationResult.verticalAccuracy}} m</view>
+            <view wx:if="{{locationResult.horizontalAccuracy}}">水平精度：{{locationResult.horizontalAccuracy}} m</view>
+            <button wx:if="{{locationResult.latitude && locationResult.longitude}}" bindtap="openLocation">打开当前位置</button>
+          </view>
+          <view wx:else>
+            <button open-type="openSetting" bindopensetting="getLocationScope">获取位置授权</button>
+          </view>
         </demo-code>
       </demo-block>
     </view>

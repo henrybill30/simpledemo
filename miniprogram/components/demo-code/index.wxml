@@ -1,8 +1,8 @@
 <view class=demo-container" style="min-height: 60rpx" bindlongpress="showCode">
-  <view class="demo-name">
+  <view class="demo-name" bindtap="cancelShowMore">
     <slot />  
   </view>
-  <view class="line" wx:if="{{ showcode }}"></view>
+  <view class="line" wx:if="{{ showcode }}" bindtap="cancelShowMore"></view>
   <view class="demo-code" wx:if="{{ showcode }}" bindtap="doubleClick">
     <view class="code-type" wx:if="{{ htmlcode&&(codeNum>1) }}">wxml代码</view>
     <parser class="code-sty" wx:if="{{ htmlcode }}" catchlongpress="copyhtml" html="{{htmlcode}}" />

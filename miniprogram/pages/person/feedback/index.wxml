@@ -1,8 +1,8 @@
 <!--miniprogram/pages/person/feedback/index.wxml-->
 <block wx:if="{{ step === 1 }}">
-  <view style="margin: 80rpx auto; font-size: 40rpx; text-align:center">
+  <view style="margin: 40rpx auto; font-size: 36rpx;font-weight: bold; text-align:center">
       请选择反馈内容
-      <text style="font-size: 24rpx; color: gray;">可多选</text>
+      <text style="font-size: 20rpx; color: gray;">可多选</text>
   </view>
   <van-checkbox-group value="{{ checkedOptions }}" bind:change="onChange">
     <van-cell-group>

@@ -1,6 +1,6 @@
 <view class="layout">
 <!--miniprogram/pages/person/about/index.wxml-->
-  <view style="margin: 20rpx auto; font-size: 36rpx; text-align: center">
+  <view class="title">
     关于组件学习
   </view>
   <view style="margin:0 0 20rpx 0;">

@@ -1,0 +1,7 @@
+/* pages/components/nativeComponent/component/videoExample/index.wxss */
+@import "../../../../../lib/weui.wxss";
+.border{
+  border: 4rpx solid #ACACAC;
+  margin: 20rpx;
+  padding-left: 20rpx;
+}

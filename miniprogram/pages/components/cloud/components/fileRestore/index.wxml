@@ -1,6 +1,6 @@
 <!--pages/components/cloud/components/fileRestore/index.wxml-->
 <demo-block title="文件存储">
-  <demo-code name="cloudRestore" type="basic" num="1">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="cloudRestore" type="basic" num="1">
     <view style="display:flex; flex-direction:column;justify-content:center; margin-bottom: 40rpx" wx:if="{{imgUrl}}">
       <image src="{{imgUrl}}"></image>
       <view style="border: 1px solid black; margin-top:5rpx" >
@@ -14,7 +14,7 @@
   </demo-code>
 </demo-block>
 <demo-block title="文件删除">
-  <demo-code name="cloudRestore" type="basic" num="2">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="cloudRestore" type="basic" num="2">
     <view style="display:flex; flex-direction:column; justify-content:center; margin-bottom: 40rpx" wx:if="{{imgUrl}}">
       <image src="{{imgUrl}}"></image>
       <view style="border: 1px solid black; margin-top:5rpx">

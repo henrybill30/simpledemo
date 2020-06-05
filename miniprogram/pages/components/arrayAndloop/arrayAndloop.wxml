@@ -1,7 +1,7 @@
 
 
   <demo-block title="选择器与矩阵">
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="80" name="wxfor" type="basic" num="0">
+    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="80" name="wx:for" type="basic" num="0">
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
         <view class="picker">
           当前选择：{{array[index]}}
@@ -11,25 +11,25 @@
   </demo-block>
 
   <demo-block title="wx:for">
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="200" name="wxfor" type="basic" num="1">
+    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="200" name="wx:for" type="basic" num="1">
       <view wx:for='{{array}}'> 国家{{index}}：{{item}}</view>
     </demo-code>
   </demo-block>
 
   <demo-block title="wx:for的一种错误用法">
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="260" name="wxfor" type="basic" num="2">
+    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="260" name="wx:for" type="basic" num="2">
       <view wx:for='array'> 国家{{index}}：{{item}}</view>
     </demo-code>
   </demo-block>
 
   <demo-block title="wx:for的另外一种书写方式">
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="200" name="wxfor" type="basic" num="3">
+    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="200" name="wx:for" type="basic" num="3">
       <view wx:for='{{array}}' wx:for-index='countryID' wx:for-item='countryName' >国家{{countryID}}：{{countryName}}</view>
     </demo-code>
   </demo-block>
 
   <demo-block title="wx:for、矩阵与block的结合">
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="360" name="wxfor" type="basic" num="4">
+    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="360" name="wx:for" type="basic" num="4">
       <view>
         <block wx:for="{{['red','orange','yelllow','green','blue','indigo','purple']}}" wx:key="item">
           <view style="display:flex; align-item: center">
@@ -43,7 +43,7 @@
 
   <demo-block title="wx:for的嵌套">
 
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="500" name="wxfor" type="basic" num="5">
+    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="500" name="wx:for" type="basic" num="5">
       <view wx:for="{{num}}" wx:for-item='i' wx:key="i">
         <view wx:for="{{num}}" wx:for-item='j' wx:key="j">
           <view wx:if="{{i<=j}}">

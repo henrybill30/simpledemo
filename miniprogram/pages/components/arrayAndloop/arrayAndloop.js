@@ -151,7 +151,7 @@ Page({
         envID: getApp().globalData.envID,
         openid: getApp().globalData.openid,
         behavior: 'browse',
-        component: 'wxfor',
+        component: 'wx:for',
         time: new Date()
       },
       success: res => {

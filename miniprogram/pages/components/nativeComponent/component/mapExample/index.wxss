@@ -1,0 +1,43 @@
+/* pages/components/nativeComponent/component/mapExample/index.wxss */
+.map {
+  width: 95%;
+  height:350px;
+  border-style: solid;
+  border-color: rgb(199, 202, 199);
+  margin: 10rpx;
+}
+.row{
+  display: flex;
+  justify-content: center;
+  margin: 8rpx 6rpx;
+}
+.left {
+  padding: 5rpx;
+  margin: 0 8rpx;
+  width: 47%;
+  height: 36px;
+  border: 1px solid #C7CAC7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.right {
+  padding: 5rpx;
+  margin: 0 4rpx;
+  width: 47%;
+  height: 36px;
+  border: 1px solid #C7CAC7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.text {
+  height: 100%;
+  float: left;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+}
+.switch {
+  height: 80%;
+}

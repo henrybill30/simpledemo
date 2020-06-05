@@ -1,0 +1,30 @@
+<!--pages/components/nativeComponent/component/videoExample/index.wxml-->
+<demo-block title="基础用法">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="video" type="basic" num="0">
+    <video id="video1" src="{{videoSrc}}" controls="{{videoControl}}" danmu-list="{{danmuList}}" danmu-btn="true" enable-danmu="true" loop="{{videoLoop}}" muted="{{videoMute}}" poster="{{videoPoster}}" title="云开发" bindtimeupdate="videoTimeUpdate" style="width:100%;margin-left:auto;margin-right:auto"></video>
+      <view class="page-section" style="margin-top: 40rpx;margin-bottom: 0;">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">显示基础控件</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{videoControl}}" bindchange="changeProperty" data-property-name="videoControl" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">循环播放</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{videoLoop}}" bindchange="changeProperty" data-property-name="videoLoop" />
+          </view>
+        </view>
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">静音播放</view>
+          <view class="weui-cell__ft">
+            <switch checked="{{videoMute}}" bindchange="changeProperty" data-property-name="videoMute" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <input class="border weui-input" bindinput="danmuInput" placeholder="输入弹幕"></input>
+    <button type="primary" bindtap="danmuSend">发送弹幕</button>
+  </demo-code>
+</demo-block>

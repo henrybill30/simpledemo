@@ -13,7 +13,10 @@ Page({
     sysInfo: {},
     toUrl: '',
     gyroscope: {},
-    compass: {}
+    compass: {},
+    scanResult: {},
+    locationResult: {},
+    isScopeLocation: false
   },
   //系统信息
   getSystemMsg(){
@@ -73,25 +76,57 @@ Page({
     wx.scanCode({
       success(res) {
         console.log(res)
+        let obj = {
+          result: res.result,
+          scanType: res.scanType,
+          charSet: res.charSet,
+          path: res.path,
+          rawData: res.rawData
+        }
         that.setData({
-          toUrl: res.result
+          scanResult: obj
         })
       }
     })
   },
   //位置
+  getLocationScope(e){
+    let that = this
+    if(e.detail.authSetting['scope.userLocation']){
+      that.setData({
+        isScopeLocation: true
+      })
+    }
+  },
   getLocation(){
+    let that = this
     wx.getLocation({
       type: 'gcj02', //返回可以用于wx.openLocation的经纬度
       success(res) {
-        const latitude = res.latitude
-        const longitude = res.longitude
-        wx.openLocation({
-          latitude,
-          longitude,
-          scale: 18
+        let obj = {
+          latitude: res.latitude,
+          longitude: res.longitude,
+          speed: res.speed,
+          accuracy: res.accuracy,
+          altitude: res.altitude,
+          verticalAccuracy: res.verticalAccuracy,
+          horizontalAccuracy: res.horizontalAccuracy
+        }
+        that.setData({
+          locationResult: obj
         })
       }
+    })
+  },
+  openLocation(){
+    let that = this
+    let latitude = that.data.locationResult.latitude
+    let longitude = that.data.locationResult.longitude
+    wx.openLocation({
+      latitude,
+      longitude,
+      scale: 18,
+      name: '我的位置',
     })
   },
   //罗盘
@@ -235,6 +270,16 @@ Page({
     this.setData({
       currentPage: parseInt(options.index),
       nbTitle: this.data.titleArr[parseInt(options.index)]
+    })
+    wx.getSetting({
+      success: res => {
+        if(res.authSetting['scope.userLocation']){
+          this.setData({
+            isScopeLocation: true
+          })
+        }
+      },
+      complete: (res) => {},
     })
     wx.cloud.callFunction({
       name: 'addRecord',

@@ -1,5 +1,5 @@
 <!--miniprogram/pages/person/changelog/index.wxml-->
-<view style="margin: 80rpx auto; font-size: 40rpx; text-align:center">
+<view class="title">
     更新日志
 </view>
 <van-steps

@@ -24,7 +24,7 @@ Page({
         name: '数组与循环',
         imgUrl: './pics/arrayAndLoop.png',
         url: '../arrayAndloop/arrayAndloop',
-        children: ['wx-for']
+        children: ['wx:for']
       },
       {
         id: 'condition',
@@ -38,7 +38,7 @@ Page({
         name: 'API与回调',
         imgUrl: './pics/API.png',
         url: '../API/API',
-        children: ['系统信息', '传感器', '震动', '扫码', '获取位置信息']
+        children: ['系统信息', '传感器', '振动', '扫码', '获取位置信息']
       },
       {
         id: 'Storage',
@@ -121,12 +121,9 @@ Page({
 
   // async test() {
   //   let res = await wx.cloud.callFunction({
-  //     name: 'get_understand',
+  //     name: 'delUsers',
   //     data: {
   //       envID: getApp().globalData.envID,
-  //       name: 'view',
-  //       type: 'basic',
-  //       num: 0
   //     }
   //   })
   //   console.log(res)

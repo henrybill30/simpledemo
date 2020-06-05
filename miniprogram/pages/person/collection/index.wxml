@@ -31,7 +31,7 @@
         <view wx:else>增强</view>
       </van-col>
       <van-col span="3">
-        <view>{{ item.num }}</view>
+        <view>{{ item.num+1 }}</view>
       </van-col>
       <van-col span="4">
         <view class="to" bindtap="to" data-path="{{ item.path }}">前往</view>
