@@ -7,11 +7,11 @@ Component({
     jscode: ``,
     csscode: ``,
     collected: false,
-    showMore: false,
     understand: {
       state: false,
       num: 0
-    }
+    },
+    componentId: '-1'
   },
   options: {
     // multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -27,7 +27,11 @@ Component({
     name: String,
     type: String,
     num: Number,
-    currentPage: Number
+    currentPage: Number,
+    activeId: {
+      type: String,
+      value: ''
+    }
   },
   methods: {
     doubleClick: function (e) {
@@ -212,9 +216,15 @@ Component({
       }
     },
     showMore: function () {
-      this.setData({
-        showMore: !this.data.showMore
-      })
+      if(this.data.componentId==this.data.activeId){
+        this.triggerEvent('showMore', {
+          id: ''
+        }, {})
+      } else {
+        this.triggerEvent('showMore', {
+          id: this.data.componentId
+        }, {})
+      }
     },
     throttleDUnderstand: throttle(function () {
       this.understand()
@@ -362,6 +372,9 @@ Component({
         },
         success: res => {
           // console.log("111: " + JSON.stringify(res.result.data[0].code.js))
+          this.setData({
+            componentId: res.result.data[0]._id
+          })
           if(res.result.data[0].code.html){
             this.setData({
               htmlcode: `<pre><code class="language-html">@@${res.result.data[0].code.html}@@</code></pre>`,

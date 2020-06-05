@@ -70,6 +70,12 @@ Page({
     duration: 500,
     previousMargin: 0,
     nextMargin: 0,
+    activeId: ''
+  },
+  showMore(e){
+    this.setData({
+      activeId: e.detail.id
+    })
   },
   tap() {
     //richtext

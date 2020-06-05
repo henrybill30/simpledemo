@@ -11,6 +11,12 @@ Page({
     array: ['美国', '中国', '巴西', '日本'],
     index: 1,
     num: [1, 2, 3, 4],
+    activeId: ''
+  },
+  showMore(e){
+    this.setData({
+      activeId: e.detail.id
+    })
   },
   //wxfor
   bindPickerChange: function (e) {

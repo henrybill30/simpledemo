@@ -7,22 +7,22 @@
   <van-tab title='view' :name="0">
       <view wx:if="{{currentPage == 0}}">
         <demo-block title="基础用法">
-          <demo-code currentPage="{{currentPage}}" height="80" name="view" type="basic" num="0">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="view" type="basic" num="0">
             <view>这是一个简单的view组件</view>
           </demo-code>
-          <demo-code currentPage="{{currentPage}}" height="80" name="view" type="basic" num="1">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="view" type="basic" num="1">
             <view hover-class="view2" hover-start-time="10" hover-stay-time="400">这是增加了点击态效果的view组件</view>
           </demo-code>
         </demo-block>
         <demo-block title="增强用法">
-          <demo-code currentPage="{{currentPage}}" height="180" name="view" type="strength" num="0">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="180" name="view" type="strength" num="0">
             <view style="display:flex;">
               <view style='background-color:red;flex-grow:1;height:100rpx;'>水平</view>
               <view style='background-color:rgb(105, 170, 243);flex-grow:1;height:100rpx;'>并排</view>
               <view style='background-color:rgba(146, 245, 162, 0.932);flex-grow:1;height:100rpx;'>view组件</view>
             </view>
           </demo-code>
-          <demo-code currentPage="{{currentPage}}" height="180" name="view" type="strength" num="1">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="180" name="view" type="strength" num="1">
             <view style='display:flex;height:100rpx;'>
               <view style='background-color:red;width:250rpx'>左右</view>
                 <view style='flex-grow:1;display:flex;flex-direction:column;'>
@@ -31,7 +31,7 @@
                 </view>
             </view>
           </demo-code>
-          <demo-code currentPage="{{currentPage}}" height="180" name="view" type="strength" num="2">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="180" name="view" type="strength" num="2">
             <view style='display:flex;flex-direction:column;height:150rpx;'>
               <view style='flex-grow:1;background-color:red'>上下</view>
               <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>排列</view>
@@ -44,13 +44,13 @@
   <van-tab title="text" :name="1">
     <view wx:if="{{currentPage == 1}}">
      <demo-block title="基础用法">
-      <demo-code currentPage="{{currentPage}}" name="text" type="basic" num="0">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="text" type="basic" num="0">
         <text>这是一个简单的text组件</text>
       </demo-code>
-      <demo-code currentPage="{{currentPage}}" height="80" name="text" type="basic" num="1">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="text" type="basic" num="1">
         <text selectable="true">这是一个可选择的text组件</text>
       </demo-code>
-      <demo-code currentPage="{{currentPage}}" height="80" name="text" type="basic" num="2">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="text" type="basic" num="2">
         <text selectable="true" space="emsp">这   是   一个显示连续空格的text组件</text>
       </demo-code>
      </demo-block>
@@ -59,7 +59,7 @@
   <van-tab title="icon" :name="2">
     <view wx:if="{{currentPage == 2}}">
       <demo-block title="基础用法">
-        <demo-code currentPage="{{currentPage}}" name="icon" type="basic" num="0">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="icon" type="basic" num="0">
           <view style="display:flex;margin-bottom:20rpx">
             <view style='flex-grow:1;height:80rpx;'>
               <view style="display: flex; flex-direction:column; align-items: center">
@@ -93,7 +93,7 @@
             </view>
           </view>
         </demo-code>
-        <demo-code currentPage="{{currentPage}}" height="150" name="icon" type="basic" num="1">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="150" name="icon" type="basic" num="1">
           <view style="display:flex;margin-bottom:20rpx">
             <view style='width:33.3%;height:80rpx;'>
               <view style="display: flex; flex-direction:column; align-items: center">
@@ -115,7 +115,7 @@
             </view>
           </view>
         </demo-code>
-        <demo-code currentPage="{{currentPage}}" height="150" name="icon" type="basic" num="2">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="150" name="icon" type="basic" num="2">
           <view style="display:flex;margin-bottom:20rpx">
             <view style='width:33.3%;height:80rpx;'>
               <view style="display: flex; flex-direction:column; align-items: center">
@@ -143,13 +143,13 @@
   <van-tab title="progress" :name="3">
     <view wx:if="{{currentPage == 3}}">
       <demo-block title="基础用法">
-        <demo-code currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="0">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="0">
           <progress percent="40" show-info stroke-width="3"/>
         </demo-code>
-        <demo-code currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="1">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="1">
           <progress percent="60" />
         </demo-code>
-        <demo-code currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="2">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="2">
           <progress percent="80" color="#10AEFF" active stroke-width="3" />
         </demo-code>
       </demo-block>
@@ -159,7 +159,7 @@
     <view wx:if="{{currentPage == 4}}">
       <demo-block title="基础用法">
         <view class="card-title">传入html字符串</view>
-        <demo-code currentPage="{{currentPage}}" height="120" name="richtext" type="basic" num="0">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="120" name="richtext" type="basic" num="0">
           <view class="page-section">
             <view class="rich-text-wrp">
               <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
@@ -167,7 +167,7 @@
           </view>
         </demo-code>
         <view class="card-title">传入节点列表</view>
-        <demo-code currentPage="{{currentPage}}" height="120" name="richtext" type="basic" num="1">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="120" name="richtext" type="basic" num="1">
           <view class="page-section">
             <view class="rich-text-wrp">
               <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
@@ -178,21 +178,21 @@
 
       <demo-block title="增强用法">
         <view class="card-title">显示连续空格</view>
-        <demo-code currentPage="{{currentPage}}" height="100" name="richtext" type="strength" num="0">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="100" name="richtext" type="strength" num="0">
           <view class="page-section">
             <view class="rich-text-wrp">
               <rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>
             </view>
           </view>
         </demo-code>
-        <demo-code currentPage="{{currentPage}}" height="300" name="richtext" type="strength" num="1">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="300" name="richtext" type="strength" num="1">
           <view class="page-section">
             <view class="rich-text-wrp">
               <rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>
             </view>
           </view>
         </demo-code>
-        <demo-code currentPage="{{currentPage}}" height="200" name="richtext" type="strength" num="2">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="200" name="richtext" type="strength" num="2">
           <view class="page-section">
             <view class="rich-text-wrp">
               <rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>
@@ -206,7 +206,7 @@
     <view wx:if="{{currentPage == 5}}">
       <view>
         <demo-block title="基础用法">
-          <demo-code currentPage="{{currentPage}}" height="320" name="swiper" type="basic" num="0">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="320" name="swiper" type="basic" num="0">
             <view class="page-section page-section-spacing swiper">
               <swiper
                 indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"

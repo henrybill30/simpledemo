@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    activeId: '',
     currentPage: 0,
     pageNum: 5,
     nbTitle: '',
@@ -216,7 +217,11 @@ Page({
       })
     }, 200)
   },
-
+  showMore(e){
+    this.setData({
+      activeId: e.detail.id
+    })
+  },
   onTabChange(e){
     console.log(e)
     this.setData({
