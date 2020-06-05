@@ -19,6 +19,12 @@ Page({
     ],
     imgUrl: '../../../resource/cat.jpg',
     index: 0,
+    activeId: ''
+  },
+  showMore(e){
+    this.setData({
+      activeId: e.detail.id
+    })
   },
 
   xChange: function (e) {

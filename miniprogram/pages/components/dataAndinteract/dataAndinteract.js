@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    activeId: '',
     active: 'home',
     currentPage: 0,
     pageNum: 8,
@@ -144,6 +145,11 @@ Page({
     sliderValue1: 0,
     sliderValue2: 0,
     showform: ''
+  },
+  showMore(e){
+    this.setData({
+      activeId: e.detail.id
+    })
   },
   // button
   showdata: function () {
