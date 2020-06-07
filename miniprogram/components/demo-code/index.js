@@ -234,7 +234,7 @@ Component({
         id: ''
       }, {})
     },
-    throttleDUnderstand: throttle(function () {
+    throttledUnderstand: throttle(function () {
       this.understand()
     }),
     understand: async function () {
@@ -442,17 +442,21 @@ Component({
 });
 
 function throttle(func, time) {
-  let inThrottle  = false
-  const throttleDFunc = function(...args) {
+  let inThrottle = false
+  const throttledFunc = function(...args) {
     if(inThrottle) {
       console.log('节流')
+      wx.showToast({
+        title: '操作不要太频繁哦~',
+        icon: 'none'
+      })
       return
     }
     inThrottle = true
     func.bind(this)(...args)
     setTimeout(() => {
       inThrottle = false
-    }, 1000)
+    }, time || 300)
   }
-  return throttleDFunc
+  return throttledFunc
 }
