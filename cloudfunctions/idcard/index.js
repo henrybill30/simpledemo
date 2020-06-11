@@ -13,13 +13,13 @@ exports.main = async (event, context) => {
   //   env: event.envID,
   // })
   try {
-    let result = await cloud.openapi.ocr.printedText({
+    let result = await cloud.openapi.ocr.idcard({
       type: 'photo',
       img: {
         contentType: 'image/png',
         value: Buffer.from(event.img) 
       }
-      })
+    })
     return result
   } catch (err) {
     return err

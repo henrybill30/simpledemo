@@ -1,1 +1,3 @@
-/* pages/components/cloudAPI/components/ocr/index.wxss */
+button{
+  margin: 20rpx;
+}

@@ -16,10 +16,10 @@
         "selectedIconPath": "./lib/pic/识别2.png"
       },
       {
-        "pagePath": "pages/components/article/article",
-        "text": "精选文章",
-        "iconPath": "./lib/pic/文章.png",
-        "selectedIconPath": "./lib/pic/文章 (1).png"
+        "pagePath": "pages/components/APIindex/index",
+        "text": "API与语法",
+        "iconPath": "./lib/pic/API.png",
+        "selectedIconPath": "./lib/pic/API (1).png"
       },
       {
         "pagePath": "pages/person/index",
@@ -62,7 +62,8 @@
     "pages/components/cloudFunction/index",
     "pages/components/cloudDatabase/index",
     "pages/components/cloudStorage/index",
-    "pages/components/cloudAPI/index"
+    "pages/components/cloudAPI/index",
+    "pages/components/APIindex/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

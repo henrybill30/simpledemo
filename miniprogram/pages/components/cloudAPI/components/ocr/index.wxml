@@ -1,2 +1,26 @@
-<!--pages/components/cloudAPI/components/ocr/index.wxml-->
-<text>pages/components/cloudAPI/components/ocr/index.wxml</text>
+<!--pages/components/cloudDatabase/components/addData/index.wxml-->
+<demo-block title="图片文字识别">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="ocr" type="basic" num="0">
+    <button type="primary" bindtap="chooseImg">选择图片</button>
+    <image style="width:100%;" mode="widthFix" wx:if="{{ imgUrl!='' }}" src="{{ imgUrl }}"></image>
+    <view style="padding:10rpx" wx:for="{{ text }}">
+      {{ item.text }}
+    </view>
+  </demo-code>
+</demo-block>
+<demo-block title="身份证识别">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="ocr" type="basic" num="1">
+    <button type="primary" bindtap="chooseIDcard">选择身份证</button>
+    <image style="width:100%;" mode="widthFix" wx:if="{{ idcardUrl!='' }}" src="{{ idcardUrl }}"></image>
+    <view>姓名：{{ idcard.name }}</view>
+    <view>性别：{{ idcard.gender }}</view>
+    <view>身份证号：{{ idcard.id }}</view>
+    <view>住址：{{ idcard.addr }}</view>
+    <view>民族：{{ idcard.nationality }}</view>
+    <view>正反：
+      <text wx:if="{{ idcard.type=='Front' }}">正面</text>
+      <text wx:else>反面</text>
+    </view>
+  </demo-code>
+</demo-block>
+
