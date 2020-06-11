@@ -1,0 +1,9 @@
+/* pages/components/cloudDatabase/components/getData/index.wxss */
+@import "../../../../../lib/weui.wxss";
+.time{
+  text-align: right;
+  font-size: 30rpx;
+  color: gray;
+  padding: 0 20rpx;
+  background-color: #f4f4f4
+}
