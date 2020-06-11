@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "crud": "../components/crud/index"
+    "crud": "./components/crud/index"
   },
   "navigationBarTitleText": "云数据库"
 }
