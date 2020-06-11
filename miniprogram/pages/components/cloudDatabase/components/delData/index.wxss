@@ -1,0 +1,18 @@
+.time{
+  text-align: right;
+  font-size: 30rpx;
+  color: gray;
+  padding: 0 20rpx;
+  background-color: #f4f4f4
+}
+button{
+  margin-top: 20rpx;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+.del{
+  text-align: right;
+  color: red;
+}

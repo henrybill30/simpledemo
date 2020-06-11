@@ -1,0 +1,18 @@
+<!--miniprogram/pages/components/cloudDatabase/index.wxml-->
+<van-tabs
+  active="{{ currentPage }}"
+  sticky
+  title-active-color="#6A84E3"
+  color="#6A84E3"
+  bind:change="onTabChange">
+  <van-tab title="小程序码" :name="0">
+    <view wx:if="{{currentPage == 0}}">
+      <wxacode/>
+    </view>
+  </van-tab>
+  <van-tab title="ocr" :name="1">
+    <view wx:if="{{currentPage == 1}}">
+      <ocr/>
+    </view>
+  </van-tab>
+</van-tabs>

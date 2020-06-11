@@ -1,0 +1,24 @@
+<!--pages/components/cloudDatabase/components/getData/index.wxml-->
+<demo-block title="服务端时间">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="getData" type="basic" num="0">
+    <view class="flex">
+      <text>
+        服务端时间:
+      </text>
+      <text>
+        {{ serverTime }}
+      </text>
+    </view>
+    <view class="flex">
+      <text>
+        客户端时间:
+      </text>
+      <text>
+        {{ clientTime }}
+      </text>
+    </view>
+    <button type="primary" bindtap="gettime">获取时间</button>
+  </demo-code>
+</demo-block>
+
+

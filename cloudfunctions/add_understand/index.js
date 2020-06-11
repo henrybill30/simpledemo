@@ -17,41 +17,58 @@ exports.main = async (event, context) => {
   const understand = db.collection('Understands')
   const _ = db.command
   try{
-    var res = await component.where({
+    let isUnderstand = await understand.where({
+      openid: wxContext.OPENID,
       name: event.name,
       type: event.type,
-      num: event.num,
-    }).update({
-      data: {
-        understandNum: _.inc(1)
-      }
-    })
-    var result = await component.where({
-      name: event.name,
-      type: event.type,
-      num: event.num,
-    }).field({
-      understandNum:true
-    }).limit(1)
-    .get()
-    await understand.add({
-      data: {
-        openid: wxContext.OPENID,
+      num: event.num
+    }).get()
+    if(isUnderstand.data.length == 0){
+      await component.where({
         name: event.name,
         type: event.type,
         num: event.num,
-        time: new Date()
+      }).update({
+        data: {
+          understandNum: _.inc(1)
+        }
+      })
+      var result = await component.where({
+        name: event.name,
+        type: event.type,
+        num: event.num,
+      }).field({
+        understandNum:true
+      }).limit(1)
+      .get()
+      await understand.add({
+        data: {
+          openid: wxContext.OPENID,
+          name: event.name,
+          type: event.type,
+          num: event.num,
+          time: new Date()
+        }
+      })
+      return {
+        state: true,
+        understandNum: result.data[0].understandNum
       }
-    })
+    }
+    
+    let uNum = await component.where({
+      name: event.name,
+      type: event.type,
+      num: event.num
+    }).get().data[0].understandNum
+    return{
+      state: true,
+      understandNum: uNum
+    }
   }catch(e){
     return {
       state: false,
       msg: e
     }
-  }
-
-  return {
-    state: true,
-    understandNum: result.data[0].understandNum
   }
 }

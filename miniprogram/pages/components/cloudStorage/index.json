@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "textRestore": "./components/textRestore/index",
+    "fileRestore": "./components/fileRestore/index",
+    "fileDelete": "./components/fileDelete/index"
+  },
+  "navigationBarTitleText": "云开发"
+}

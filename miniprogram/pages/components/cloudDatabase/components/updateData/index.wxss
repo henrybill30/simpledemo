@@ -1,0 +1,22 @@
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+.edit{
+  text-align: center;
+  color: #6A84E3;
+}
+.input {
+  border: 4rpx solid #ACACAC;
+  padding: 10rpx;
+}
+.time{
+  text-align: right;
+  font-size: 30rpx;
+  color: gray;
+  padding: 0 20rpx;
+  background-color: #f4f4f4
+}
+button{
+  margin-top: 20rpx;
+}

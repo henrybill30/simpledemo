@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "createCollection": "./components/createCollection/index",
+    "addData": "./components/addData/index",
+    "getData": "./components/getData/index",
+    "searchData": "./components/searchData/index",
+    "updateData": "./components/updateData/index",
+    "delData": "./components/delData/index",
+    "time": "./components/time/index"
+  }
+}

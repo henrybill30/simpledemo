@@ -1,0 +1,17 @@
+<!--pages/components/cloudDatabase/components/getData/index.wxml-->
+<demo-block title="查询集合所有数据">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="getData" type="basic" num="0">
+    <view wx:for="{{todoList}}" wx:key="_id" data-id="{{item._id}}" wx:if="{{show}}">
+      <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">{{item.description}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" wx:if="{{item.done}}">已完成</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>未完成</view>
+      </view>
+      <view class="time">{{item.time}}</view>
+    </view>
+    <button type="primary" style="width: 80%" bindtap="getData" wx:if="{{!show}}">查询集合所有数据</button>
+    <button type="primary" style="width: 80%" bindtap="getData" wx:else>收起列表</button>
+  </demo-code>
+</demo-block>
+
+

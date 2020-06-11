@@ -30,8 +30,8 @@
     ]
   },
   "pages": [
-    "pages/components/cloudindex/index",
     "pages/components/index/index",
+    "pages/components/cloudindex/index",
     "pages/components/componentstear/index",
     "pages/components/componentpileup/index",
     "pages/login/login",
@@ -58,11 +58,11 @@
     "pages/code/index",
     "pages/person/changelog/index",
     "pages/person/collection/index",
-    "pages/components/article/detail/index", 
-    "pages/components/cloudindex/database/components/crud/detail/detail", 
-    "pages/components/cloudindex/func/index",
-    "pages/components/cloudindex/storage/index",
-    "pages/components/cloudindex/database/index"
+    "pages/components/article/detail/index",
+    "pages/components/cloudFunction/index",
+    "pages/components/cloudDatabase/index",
+    "pages/components/cloudStorage/index",
+    "pages/components/cloudAPI/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

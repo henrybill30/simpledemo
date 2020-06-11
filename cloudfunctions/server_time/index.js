@@ -1,19 +1,18 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 
-// cloud.init()
+cloud.init()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  const wxContext = cloud.getWXContext()
   if(!event.envID) return { errCode: -1, errMsg: '环境id为空' }
 
-    cloud.init({
-        env: event.envID,
-    }) 
+  cloud.init({
+      env: event.envID,
+  }) 
 
   return {
-    openid: wxContext.OPENID,
-    appid: wxContext.APPID
+    clienttime: event.time,
+    servertime: new Date()
   }
 }
