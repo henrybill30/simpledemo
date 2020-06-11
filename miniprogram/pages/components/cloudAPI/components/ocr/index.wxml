@@ -19,7 +19,7 @@
     <view>民族：{{ idcard.nationality }}</view>
     <view>正反：
       <text wx:if="{{ idcard.type=='Front' }}">正面</text>
-      <text wx:else>反面</text>
+      <text wx:if="{{ idcard.type=='Back' }}">反面</text>
     </view>
   </demo-code>
 </demo-block>

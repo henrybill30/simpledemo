@@ -45,33 +45,28 @@ Component({
       })
       // tempFilePath可以作为img标签的src属性显示图片
       const tempFilePaths = res.tempFilePaths
-      console.log(res)
+      // console.log(res)
       that.setData({
         imgUrl: tempFilePaths[0]
       })
-      wx.getFileSystemManager().readFile({
-        filePath: tempFilePaths[0],  //这里做示例，所以就选取第一张图片
-        success: async function(buffer) {
-          console.log(buffer)
-          let resText = null
-          try{
-            resText = await wx.cloud.callFunction({
-              name: 'printText',
-              data: {
-                envID: getApp().globalData.envID,
-                img: buffer.data
-              }
-            })
-          } catch (err) {
-            console.log(err)
+      let buffer = wx.getFileSystemManager().readFileSync(tempFilePaths[0])
+      // console.log(buffer)
+      let resText = null
+      try{
+        resText = await wx.cloud.callFunction({
+          name: 'printText',
+          data: {
+            envID: getApp().globalData.envID,
+            img: buffer
           }
-          that.setData({
-            text: resText.result.items
-          })
-          wx.hideLoading()
-          console.log(resText.result.items)
-        }
+        })
+      } catch (err) {
+        console.log(err)
+      }
+      that.setData({
+        text: resText.result.items
       })
+      wx.hideLoading()
       
     },
     async chooseIDcard(){
@@ -92,38 +87,34 @@ Component({
       })
       // tempFilePath可以作为img标签的src属性显示图片
       const tempFilePaths = res.tempFilePaths
-      console.log(res)
+      // console.log(res)
       that.setData({
         idcardUrl: tempFilePaths[0]
       })
-      wx.getFileSystemManager().readFile({
-        filePath: tempFilePaths[0],  //这里做示例，所以就选取第一张图片
-        success: async function(buffer) {
-          console.log(buffer)
-          let resText = null
-          try{
-            resText = await wx.cloud.callFunction({
-              name: 'idcard',
-              data: {
-                envID: getApp().globalData.envID,
-                img: buffer.data
-              }
-            })
-          } catch (err) {
-            console.log(err)
+      let buffer = wx.getFileSystemManager().readFileSync(tempFilePaths[0])
+      // console.log(buffer)
+      let resText = null
+      try{
+        resText = await wx.cloud.callFunction({
+          name: 'idcard',
+          data: {
+            envID: getApp().globalData.envID,
+            img: buffer
           }
-          console.log(resText)
-          if(resText.result.errCode==-1){
-            wx.showToast({
-              title: '请重新上传身份证！',
-              icon: 'none'
-            })
-            return
-          }
-          that.setData({
-            idcard: resText.result
-          })
-        }
+        })
+      } catch (err) {
+        console.log(err)
+      }
+      if(resText.result.errCode==-1){
+        wx.showToast({
+          title: '请重新上传身份证！',
+          icon: 'none'
+        })
+        return
+      }
+      wx.hideLoading()
+      that.setData({
+        idcard: resText.result
       })
     }
   }
