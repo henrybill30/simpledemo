@@ -1,0 +1,10 @@
+/* pages/components/cloudDatabase/components/addData/index.wxss */
+.image {
+  height: 150rpx;
+}
+.input {
+  border: 1rpx solid black;
+  width: 100%;
+  height: 60rpx;
+  margin-bottom: 15rpx;
+}

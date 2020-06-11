@@ -1,0 +1,25 @@
+<!--pages/components/cloudDatabase/components/getData/index.wxml-->
+<demo-block title="使用关键字查询">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="getData" type="basic" num="1">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd" style="margin-right: 10rpx">
+        <icon class="weui-icon-checkbox_circle" type="search" size="20"></icon>
+      </view>
+      <view class="weui-cell__bd">
+        <input class="weui-input" placeholder="请输入搜索关键词" value="{{searchContent}}" bindinput="onInputSearchContent"/>
+      </view>
+      <button style="width:100rpx;height:60rpx;padding:10rpx" class="btn"  bindtap="searchTodo">查询</button>
+      </view>
+      <view wx:for="{{todoList}}" wx:key="_id" data-id="{{item._id}}" wx:if="{{show}}">
+      <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__bd">{{item.description}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" wx:if="{{item.done}}">已完成</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access" wx:else>未完成</view>
+      </view>
+      <view class="time">{{item.time}}</view>
+    </view>
+    <button type="primary" style="width: 60%" bindtap="close" wx:if="{{show}}">收起列表</button>
+  </demo-code>
+</demo-block>
+
+

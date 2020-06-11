@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "basicFunction": "./components/basicFunction/index",
+    "userInfo": "./components/userInfo/index"
+  },
+  "navigationBarTitleText": "云函数"
+}

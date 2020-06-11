@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "createCollection": "./components/createCollection/index",
+    "addData": "./components/addData/index",
+    "getData": "./components/getData/index",
+    "searchData": "./components/searchData/index"
+  }
+}
