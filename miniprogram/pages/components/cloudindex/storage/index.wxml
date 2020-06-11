@@ -1,0 +1,14 @@
+<!--miniprogram/pages/components/cloud/cloud.wxml-->
+<van-tabs
+  active="{{ currentPage }}"
+  sticky
+  title-active-color="#6A84E3"
+  color="#6A84E3"
+  bind:change="onTabChange">
+  <van-tab title="文本存储" :name="0">
+    <view wx:if="{{currentPage == 0}}">
+      <textRestore></textRestore>
+      <fileRestore></fileRestore>
+    </view>
+  </van-tab>
+</van-tabs>

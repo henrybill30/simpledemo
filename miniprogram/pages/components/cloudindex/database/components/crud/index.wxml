@@ -1,0 +1,89 @@
+<!--pages/components/cloud/components/fileRestore/index.wxml-->
+<demo-block title="数据存储">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="crud" type="basic" num="0">
+    <input bindinput="input1" placeholder="输入要存储的内容" value="{{ saveValue }}"></input>
+    <button type="primary" bindtap="save">存储</button>
+  </demo-code>
+</demo-block>
+<demo-block title="数据查询与更新">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="crud" type="basic" num="1">
+    <view wx:for="{{ list }}">
+      <view class="flex">
+        <view style="width:80%" class="text">
+          <view wx:if="{{ editFlag!=index }}">
+            {{ item.text }}
+          </view>
+          <input value="{{ item.text }}" bindinput="editValue" wx:else>
+          </input>
+        </view>
+        <view class="edit" style="width:20%" bindtap="edit" data-index="{{ index }}" data-id="{{ item.id }}">编辑</view>
+      </view>
+      
+      <view class="time">{{ item.time }}</view>
+    </view>
+    <button wx:if="{{ editFlag=='-1' }}" type="primary" bindtap="get">查询</button>
+    <button wx:else type="primary" bindtap="saveEdit">修改</button>
+  </demo-code>
+</demo-block>
+<demo-block title="数据删除">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="crud" type="basic" num="2">
+    <button type="primary" bindtap="del">删除全部</button>
+  </demo-code>
+</demo-block>
+
+<demo-block title="增强用法">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="crud" type="strength" num="0">
+    <view class="page-body">
+      <view class="page-section">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__hd" style="margin-right: 10rpx">
+              <icon class="weui-icon-checkbox_circle" type="search" size="20"></icon>
+            </view>
+            <view class="weui-cell__bd">
+              <input class="weui-input" placeholder="请输入搜索关键词" value="{{searchContent}}" bindinput="onInputSearchContent"/>
+              
+            </view>
+            <button style="width:100rpx;height:60rpx;padding:10rpx;margin:auto" class="btn"  bindtap="searchTodo">搜索</button>
+          </view>
+        </view>
+          
+        <view class="weui-cells__title">Todo List</view>
+        <view class="weui-cells weui-cells_after-title todolist" wx:if="{{openid}}">
+          <view wx:for="{{todoList}}" wx:key="_id" data-id="{{item._id}}" bindtap="toDetail">
+            <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__hd" data-id="{{item._id}}" data-index="{{index}}" catchtap="toggleComplete" style="margin-right: 10rpx">
+                <icon class="weui-icon-checkbox_circle" type="circle" wx:if="{{!item.done}}"></icon>
+                <icon class="weui-icon-checkbox_success" type="success" wx:else></icon>
+              </view>
+              <view class="weui-cell__bd">{{item.description}}</view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </view>
+            <view class="time">{{item.time}}</view>
+          </view>
+          <view class="weui-cell weui-cell_input" wx:if="{{todoList.length < 5 && !filtered}}">
+            <view class="weui-cell__bd">
+              <input class="weui-input" placeholder="添加新的 Todo" value="{{newContent}}" focus="{{todoListFetched && !todoList.length}}" bindinput="onInputNewContent" />
+            </view>
+            <button style="width:100rpx;height:60rpx;padding:10rpx;margin:auto" class="btn"  bindtap="createTodo">添加</button>
+          </view>
+        </view>
+
+        <view class="page-body-info" wx:if="{{!todoList.length && filtered}}">
+          <text class="page-body-text">无数据</text>
+        </view>
+        <view style="margin:20rpx">
+          是否显示毫秒数：
+          <switch checked="{{showMilliseconds}}" bindchange="switch2Change"/>
+        </view>
+        <view style="margin:20rpx">
+          时间格式(
+            <text wx:if="{{timetype}}">服务端时间</text>
+            <text wx:if="{{!timetype}}">客户端时间</text>
+          ):
+          <switch checked="{{timetype}}" bindchange="switch1Change"/>
+        </view>
+      </view>
+    </view>
+  </demo-code> 
+</demo-block>

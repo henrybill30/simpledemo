@@ -4,6 +4,12 @@
     "selectedColor": "#1196DB",
     "list": [
       {
+        "pagePath": "pages/components/cloudindex/index",
+        "text": "云开发",
+        "iconPath": "./lib/pic/云.png",
+        "selectedIconPath": "./lib/pic/云 (1).png"
+      },
+      {
         "pagePath": "pages/components/index/index",
         "text": "最简组件",
         "iconPath": "./lib/pic/识别1.png",
@@ -24,6 +30,7 @@
     ]
   },
   "pages": [
+    "pages/components/cloudindex/index",
     "pages/components/index/index",
     "pages/components/componentstear/index",
     "pages/components/componentpileup/index",
@@ -51,7 +58,11 @@
     "pages/code/index",
     "pages/person/changelog/index",
     "pages/person/collection/index",
-    "pages/components/article/detail/index"
+    "pages/components/article/detail/index", 
+    "pages/components/cloudindex/database/components/crud/detail/detail", 
+    "pages/components/cloudindex/func/index",
+    "pages/components/cloudindex/storage/index",
+    "pages/components/cloudindex/database/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
