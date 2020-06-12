@@ -15,14 +15,32 @@ exports.main = async (event, context) => {
 
   const targetText = event.text || ''
   const targetTextKeywords = getMatchedKeywords(targetText, keywords)
+  console.log('----------begin-----------')
+  console.log(targetTextKeywords)
+  console.log('----------end-------------')
+
+  const recommendComponents = []
+  let tk = targetTextKeywords
+  for(let i=0;i<components.length;i++){
+    let name = components[i].name
+    if(tk.indexOf(name)>-1){
+      recommendComponents.push(components[i])
+      tk.splice(tk.indexOf(name),1)
+    }
+  }
 
   const sortedComponents = components.sort((c1, c2) => {
     const text1 = comp2text(c1)
     const text2 = comp2text(c2)
     return textCompare(text1, text2, targetTextKeywords)
   })
-
-  const recommendComponents = sortedComponents.slice(0, 4)
+  if(recommendComponents.length<4){
+    let r = sortedComponents.slice(0, 4-recommendComponents.length)
+    for(let rs of r){
+      recommendComponents.push(rs)
+    }
+  }
+  
 
   return recommendComponents 
 }

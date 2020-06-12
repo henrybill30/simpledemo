@@ -24,6 +24,7 @@
     ]
   },
   "pages": [
+    "pages/person/ocr/index",
     "pages/components/index/index",
     "pages/components/componentstear/index",
     "pages/components/componentpileup/index",
@@ -51,8 +52,7 @@
     "pages/code/index",
     "pages/person/changelog/index",
     "pages/person/collection/index",
-    "pages/components/article/detail/index",
-    "pages/person/ocr/index"
+    "pages/components/article/detail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
