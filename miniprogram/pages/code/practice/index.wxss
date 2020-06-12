@@ -1,0 +1,63 @@
+/* miniprogram/pages/code/practice/index.wxss */
+.demo-container{
+  background-color: #fff;
+  margin: 5rpx 15rpx 25rpx 10rpx;
+  /* padding-left: 15rpx; */
+  position:relative;
+  border:1rpx solid #BFC6C6;
+  border-radius:2rpx;
+  box-shadow: 0rpx 0rpx 10rpx #A28E7E;
+}
+.view2 {
+  background:  rgba(97, 213, 241, 0.692);
+}
+.demo-block__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 16px;
+  color: black;
+  padding: 10px 5px 10px;
+}
+
+.demo-block--padding {
+  padding: 0 15px;
+}
+
+.demo-block--padding .demo-block__title {
+  padding-left: 0;
+}
+
+.demo-block{
+  padding:  5rpx 20rpx 0 20rpx;
+}
+
+.table {
+  border: 0px solid darkgray;
+}
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 5rem;
+  align-items: center;
+}
+.td {
+    width:40%;
+    justify-content: center;
+    text-align: center;
+}
+.bg-w{
+  background: snow;
+}
+.bg-g{
+  background: #E6F3F9;
+}
+.th {
+  width: 40%;
+  justify-content: center;
+  background: rgb(76, 165, 224);
+  color: #fff;
+  display: flex;
+  height: 5rem;
+  align-items: center;
+}

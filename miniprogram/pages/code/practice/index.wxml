@@ -1,0 +1,43 @@
+<!--miniprogram/pages/code/practice/index.wxml-->
+<view class="custom-class demo-block van-clearfix">
+
+  <view class="demo-block__title">效果展示</view>
+  <view wx:if="{{name}}=='view'&&{{type}}=='basic'&&{{num}}==1">
+    <view class="demo-container">
+      <view hover-class="view2" hover-start-time="{{view_basic_1_starttime}}" hover-stay-time="{{view_basic_1_staytime}}">{{view_basic_1_content}}</view>
+    </view>
+  </view>
+
+  <view class="demo-block__title">代码修改</view>
+  <view wx:if="{{name}}=='view'&&{{type}}=='basic'&&{{num}}==1">
+    <view class="demo-container">
+      <text></text>
+    </view>
+  </view>
+
+  <view class="demo-block__title">可更改属性</view>
+  <view wx:if="{{name}}=='view'&&{{type}}=='basic'&&{{num}}==1">
+    <view class="demo-container">
+      <view class="table">
+        <view class="tr bg-w">
+          <view class="th">属性</view>
+          <view class="th">类型</view>
+          <view class="th ">说明</view>
+        </view>
+        <block wx:for="{{view_basic_1_list}}" wx:key="index">
+          <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+            <view class="td">{{item.name}}</view>
+            <view class="td">{{item.type}}</view>
+            <view class="td">{{item.describe}}</view>
+          </view>
+          <view class="tr" wx:else>
+            <view class="td">{{item.name}}</view>
+            <view class="td">{{item.type}}</view>
+            <view class="td">{{item.describe}}</view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -10,7 +10,7 @@
           <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="view" type="basic" num="0">
             <view>这是一个简单的view组件</view>
           </demo-code>
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="view" type="basic" num="1">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" isPractice="true" height="80" name="view" type="basic" num="1">
             <view hover-class="view2" hover-start-time="10" hover-stay-time="400">这是增加了点击态效果的view组件</view>
           </demo-code>
         </demo-block>

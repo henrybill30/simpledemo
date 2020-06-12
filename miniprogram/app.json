@@ -53,7 +53,8 @@
     "pages/person/collection/index",
     "pages/components/article/detail/index",
     "pages/components/cloudFunction/index",
-    "pages/components/cloudDatabase/index"
+    "pages/components/cloudDatabase/index",
+    "pages/code/practice/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

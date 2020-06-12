@@ -28,6 +28,7 @@ Component({
     type: String,
     num: Number,
     currentPage: Number,
+    isPractice: Boolean,
     activeId: {
       type: String,
       value: ''
@@ -362,6 +363,13 @@ Component({
       }
       this.setData({
         understand
+      })
+    },
+
+    practice() {
+      let url = '/pages/code/practice/index?name='+this.properties.name+'&type='+this.properties.type+'&num='+this.properties.num
+      wx.navigateTo({
+        url: url,
       })
     }
   },
