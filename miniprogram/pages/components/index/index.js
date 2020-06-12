@@ -1,4 +1,5 @@
 const app = getApp()
+var timer
 Page({
   data: {
     admin: 0,
@@ -52,8 +53,14 @@ Page({
         }
       }
     })
+     
   },
   
+  onShow(){
+    this.setData({
+      orcbtn: getApp().globalData.movedBtn
+    })
+  },
   kindToggle(e) {
     const id = e.currentTarget.id
     const list = this.data.list
@@ -114,6 +121,28 @@ Page({
         // console.log(result.items)
       },
       complete: (res) => {},
+    })
+  },
+  btnMove(e){
+    // console.log(e)
+    if (timer) {
+      // console.log('节流')
+        clearTimeout(timer);
+        timer = null;
+    }
+    timer = setTimeout(function () {
+      // console.log(e)
+      getApp().globalData.movedBtn = {
+        x: e.detail.x,
+        y: e.detail.y
+      }
+      console.log(getApp().globalData.movedBtn)
+    }, 100)
+  },
+
+  toOCR(){
+    wx.navigateTo({
+      url: '../../person/ocr/index',
     })
   }
 })

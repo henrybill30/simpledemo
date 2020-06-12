@@ -45,7 +45,11 @@ App({
     isAdmin: false,
     loginFlag: false,
     windowWidth: null,
-    windowHeight: null
+    windowHeight: null,
+    movedBtn:{
+      x: 0,
+      y: 0
+    }
   }
 })
 

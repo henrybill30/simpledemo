@@ -1,5 +1,8 @@
 
-
+<movable-area class="movable-area">
+  <movable-view class="movable-view" x="{{orcbtn.x}}" y="{{orcbtn.y}}" bindchange="btnMove" bindtap="toOCR" direction="all">
+    <image class="movable-img" src="/lib/pic/图片识别.png"></image>
+  </movable-view>
   <demo-block title="选择器与矩阵">
     <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" height="80" name="wx:for" type="basic" num="0">
       <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
@@ -54,3 +57,4 @@
     </demo-code>
   </demo-block>
 
+</movable-area>

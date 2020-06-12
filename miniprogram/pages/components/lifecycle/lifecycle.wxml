@@ -1,18 +1,22 @@
-<!--miniprogram/pages/components/cloudDatabase/index.wxml-->
-<van-tabs
-  active="{{ currentPage }}"
-  sticky
-  title-active-color="#6A84E3"
-  color="#6A84E3"
-  bind:change="onTabChange">
-  <van-tab title="页面钩子函数" :name="0">
-    <view wx:if="{{currentPage == 0}}">
-      <pagehook/>
-    </view>
-  </van-tab>
-  <van-tab title="组件钩子函数" :name="1">
-    <view wx:if="{{currentPage == 1}}">
-      <componenthook/>
-    </view>
-  </van-tab>
-</van-tabs>
+<movable-area class="movable-area">
+  <movable-view class="movable-view" x="{{orcbtn.x}}" y="{{orcbtn.y}}" bindchange="btnMove" bindtap="toOCR" direction="all">
+    <image class="movable-img" src="/lib/pic/图片识别.png"></image>
+  </movable-view>
+  <van-tabs
+    active="{{ currentPage }}"
+    sticky
+    title-active-color="#6A84E3"
+    color="#6A84E3"
+    bind:change="onTabChange">
+    <van-tab title="页面钩子函数" :name="0">
+      <view wx:if="{{currentPage == 0}}">
+        <pagehook/>
+      </view>
+    </van-tab>
+    <van-tab title="组件钩子函数" :name="1">
+      <view wx:if="{{currentPage == 1}}">
+        <componenthook/>
+      </view>
+    </van-tab>
+  </van-tabs>
+</movable-area>

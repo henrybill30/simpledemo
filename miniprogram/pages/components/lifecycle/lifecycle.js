@@ -1,4 +1,4 @@
-// miniprogram/pages/components/cloudDatabase/index.js
+var timer
 Page({
 
   /**
@@ -51,6 +51,29 @@ Page({
       }
   },
 
+  btnMove(e){
+    // console.log(e)
+    if (timer) {
+      // console.log('节流')
+        clearTimeout(timer);
+        timer = null;
+    }
+    timer = setTimeout(function () {
+      // console.log(e)
+      getApp().globalData.movedBtn = {
+        x: e.detail.x,
+        y: e.detail.y
+      }
+      console.log(getApp().globalData.movedBtn)
+    }, 100)
+  },
+
+  toOCR(){
+    wx.navigateTo({
+      url: '../../person/ocr/index',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -58,7 +81,8 @@ Page({
     console.log('onLoad')
     const currentPage = parseInt(options.index) || 0
     this.setData({
-      currentPage
+      currentPage,
+      orcbtn: getApp().globalData.movedBtn
     })
   },
 

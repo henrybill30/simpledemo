@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "textRestore": "./components/textRestore/index",
-    "fileRestore": "./components/fileRestore/index"
-  },
-  "navigationBarTitleText": "云开发"
-}

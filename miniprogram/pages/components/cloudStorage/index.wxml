@@ -1,23 +1,27 @@
-<!--miniprogram/pages/components/cloudDatabase/index.wxml-->
-<van-tabs
-  active="{{ currentPage }}"
-  sticky
-  title-active-color="#6A84E3"
-  color="#6A84E3"
-  bind:change="onTabChange">
-  <van-tab title="存储文本" :name="0">
-    <view wx:if="{{currentPage == 0}}">
-      <textRestore/>
-    </view>
-  </van-tab>
-  <van-tab title="存储文件" :name="1">
-    <view wx:if="{{currentPage == 1}}">
-      <fileRestore/>
-    </view>
-  </van-tab>
-  <van-tab title="删除文件" :name="2">
-    <view wx:if="{{currentPage == 2}}">
-      <fileDelete/>
-    </view>
-  </van-tab>
-</van-tabs>
+<movable-area class="movable-area">
+  <movable-view class="movable-view" x="{{orcbtn.x}}" y="{{orcbtn.y}}" bindchange="btnMove" bindtap="toOCR" direction="all">
+    <image class="movable-img" src="/lib/pic/图片识别.png"></image>
+  </movable-view>
+  <van-tabs
+    active="{{ currentPage }}"
+    sticky
+    title-active-color="#6A84E3"
+    color="#6A84E3"
+    bind:change="onTabChange">
+    <van-tab title="存储文本" :name="0">
+      <view wx:if="{{currentPage == 0}}">
+        <textRestore/>
+      </view>
+    </van-tab>
+    <van-tab title="存储文件" :name="1">
+      <view wx:if="{{currentPage == 1}}">
+        <fileRestore/>
+      </view>
+    </van-tab>
+    <van-tab title="删除文件" :name="2">
+      <view wx:if="{{currentPage == 2}}">
+        <fileDelete/>
+      </view>
+    </van-tab>
+  </van-tabs>
+</movable-area>

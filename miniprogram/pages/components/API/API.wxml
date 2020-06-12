@@ -1,98 +1,102 @@
 
-<!-- <demo-tabbar/> -->
-<van-tabs
-  active="{{ currentPage }}"
-  sticky
-  ellipsis="{{false}}"
-  title-active-color="#6A84E3"
-  color="#6A84E3"
-  bind:change="onTabChange">
-  <van-tab title="系统信息" :name="0">
-    <view wx:if="{{currentPage == 0}}">
-      <demo-block title="基础用法">
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="系统信息" type="basic" num="0">
-          <button bindtap="getSystemMsg">获取系统信息</button>
-          <view>设备品牌及型号：{{sysInfo.model}}</view>
-          <view>设备像素比：{{sysInfo.pixelRatio}}</view>
-          <view>可使用窗口宽度:{{sysInfo.windowWidth}}</view>
-          <view>可使用窗口高度：{{sysInfo.windowHeight}}</view>
-          <view>微信设置的语言：{{sysInfo.language}}</view>
-          <view>微信版本号：{{sysInfo.version}}</view>
-          <view>操作系统及版本：{{sysInfo.system}}</view>
-        </demo-code>
-      </demo-block>
-    </view>
-  </van-tab>
+<movable-area class="movable-area">
+  <movable-view class="movable-view" x="{{orcbtn.x}}" y="{{orcbtn.y}}" bindchange="btnMove" bindtap="toOCR" direction="all">
+    <image class="movable-img" src="/lib/pic/图片识别.png"></image>
+  </movable-view>
+  <van-tabs
+    active="{{ currentPage }}"
+    sticky
+    ellipsis="{{false}}"
+    title-active-color="#6A84E3"
+    color="#6A84E3"
+    bind:change="onTabChange">
+    <van-tab title="系统信息" :name="0">
+      <view wx:if="{{currentPage == 0}}">
+        <demo-block title="基础用法">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="系统信息" type="basic" num="0">
+            <button bindtap="getSystemMsg">获取系统信息</button>
+            <view>设备品牌及型号：{{sysInfo.model}}</view>
+            <view>设备像素比：{{sysInfo.pixelRatio}}</view>
+            <view>可使用窗口宽度:{{sysInfo.windowWidth}}</view>
+            <view>可使用窗口高度：{{sysInfo.windowHeight}}</view>
+            <view>微信设置的语言：{{sysInfo.language}}</view>
+            <view>微信版本号：{{sysInfo.version}}</view>
+            <view>操作系统及版本：{{sysInfo.system}}</view>
+          </demo-code>
+        </demo-block>
+      </view>
+    </van-tab>
 
-  <van-tab title="传感器" :name="1">
-    <view wx:if="{{currentPage == 1}}">
-     <demo-block title="陀螺仪">
-      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="传感器" type="basic" num="0">
-        <button bindtap="startGyroscope" style="margin-bottom:20rpx">打开陀螺仪</button>
-        <button bindtap="stopGyroscope">关闭陀螺仪</button>
-        
-        <view>x：{{gyroscope.x}}</view>
-        <view>y：{{gyroscope.y}}</view>
-        <view>z: {{gyroscope.z}}</view>
-      </demo-code>
-     </demo-block>
-     <demo-block title="罗盘">
-      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="传感器" type="basic" num="1">
-        <button bindtap="startCompass" style="margin-bottom:20rpx">打开罗盘</button>
-        <button bindtap="stopCompass">关闭罗盘</button>
-        
-        <view>方向：{{compass.direction}}</view>
-        <view>精度：{{compass.accuracy}}</view>
-      </demo-code>
-     </demo-block>
-    </view>
-  </van-tab>
+    <van-tab title="传感器" :name="1">
+      <view wx:if="{{currentPage == 1}}">
+      <demo-block title="陀螺仪">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="传感器" type="basic" num="0">
+          <button bindtap="startGyroscope" style="margin-bottom:20rpx">打开陀螺仪</button>
+          <button bindtap="stopGyroscope">关闭陀螺仪</button>
+          
+          <view>x：{{gyroscope.x}}</view>
+          <view>y：{{gyroscope.y}}</view>
+          <view>z: {{gyroscope.z}}</view>
+        </demo-code>
+      </demo-block>
+      <demo-block title="罗盘">
+        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="传感器" type="basic" num="1">
+          <button bindtap="startCompass" style="margin-bottom:20rpx">打开罗盘</button>
+          <button bindtap="stopCompass">关闭罗盘</button>
+          
+          <view>方向：{{compass.direction}}</view>
+          <view>精度：{{compass.accuracy}}</view>
+        </demo-code>
+      </demo-block>
+      </view>
+    </van-tab>
 
-  <van-tab title="振动" :name="2">
-    <view wx:if="{{currentPage == 2}}">
-      <demo-block title="基础用法">
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="振动" type="basic" num="0">
-          <button bindtap="vibrate" data-time="{{true}}" style="margin-bottom:20rpx">较长时间振动</button>
+    <van-tab title="振动" :name="2">
+      <view wx:if="{{currentPage == 2}}">
+        <demo-block title="基础用法">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="振动" type="basic" num="0">
+            <button bindtap="vibrate" data-time="{{true}}" style="margin-bottom:20rpx">较长时间振动</button>
 
-          <button bindtap="vibrate" data-time="{{false}}">较短时间振动</button>
-        </demo-code>
-      </demo-block>
-    </view>
-  </van-tab>
-  <van-tab title="扫码" :name="3">
-    <view wx:if="{{currentPage == 3}}">
-      <demo-block title="基础用法">
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="扫码" type="basic" num="0">
-          <button bindtap="scanCode">扫码</button>
-          <view>扫码内容：{{scanResult.result}}</view>
-          <view>扫码类型：{{scanResult.scanType}}</view>
-          <view>扫码字符集：{{scanResult.charSet}}</view>
-          <view wx:if="{{scanResult.path}}">二维码路径：{{scanResult.paht}}</view>
-          <view>原始数据：{{scanResult.rawData}}</view>
-        </demo-code>
-      </demo-block>
-    </view>
-  </van-tab>
-  <van-tab title="获取位置信息" :name="4">
-    <view wx:if="{{currentPage == 4}}">
-      <demo-block title="基础用法">
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="获取位置信息" type="basic" num="0">
-          <view wx:if="{{isScopeLocation}}">
-            <button bindtap="getLocation">查看当前位置</button>
-            <view wx:if="{{locationResult.latitude}}">纬度：{{locationResult.latitude}} 度</view>
-            <view wx:if="{{locationResult.longitude}}">经度：{{locationResult.longitude}} 度</view>
-            <view wx:if="{{locationResult.speed}}">速度：{{locationResult.speed}} m/s</view>
-            <view wx:if="{{locationResult.accuracy}}">位置精确度：{{locationResult.accuracy}}</view>
-            <view wx:if="{{locationResult.altitude}}">高度：{{locationResult.altitude}} m</view>
-            <view wx:if="{{locationResult.verticalAccuracy}}">垂直精度(仅ios)：{{locationResult.verticalAccuracy}} m</view>
-            <view wx:if="{{locationResult.horizontalAccuracy}}">水平精度：{{locationResult.horizontalAccuracy}} m</view>
-            <button wx:if="{{locationResult.latitude && locationResult.longitude}}" bindtap="openLocation">打开当前位置</button>
-          </view>
-          <view wx:else>
-            <button open-type="openSetting" bindopensetting="getLocationScope">获取位置授权</button>
-          </view>
-        </demo-code>
-      </demo-block>
-    </view>
-  </van-tab>
-</van-tabs>
+            <button bindtap="vibrate" data-time="{{false}}">较短时间振动</button>
+          </demo-code>
+        </demo-block>
+      </view>
+    </van-tab>
+    <van-tab title="扫码" :name="3">
+      <view wx:if="{{currentPage == 3}}">
+        <demo-block title="基础用法">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="扫码" type="basic" num="0">
+            <button bindtap="scanCode">扫码</button>
+            <view>扫码内容：{{scanResult.result}}</view>
+            <view>扫码类型：{{scanResult.scanType}}</view>
+            <view>扫码字符集：{{scanResult.charSet}}</view>
+            <view wx:if="{{scanResult.path}}">二维码路径：{{scanResult.paht}}</view>
+            <view>原始数据：{{scanResult.rawData}}</view>
+          </demo-code>
+        </demo-block>
+      </view>
+    </van-tab>
+    <van-tab title="获取位置信息" :name="4">
+      <view wx:if="{{currentPage == 4}}">
+        <demo-block title="基础用法">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="获取位置信息" type="basic" num="0">
+            <view wx:if="{{isScopeLocation}}">
+              <button bindtap="getLocation">查看当前位置</button>
+              <view wx:if="{{locationResult.latitude}}">纬度：{{locationResult.latitude}} 度</view>
+              <view wx:if="{{locationResult.longitude}}">经度：{{locationResult.longitude}} 度</view>
+              <view wx:if="{{locationResult.speed}}">速度：{{locationResult.speed}} m/s</view>
+              <view wx:if="{{locationResult.accuracy}}">位置精确度：{{locationResult.accuracy}}</view>
+              <view wx:if="{{locationResult.altitude}}">高度：{{locationResult.altitude}} m</view>
+              <view wx:if="{{locationResult.verticalAccuracy}}">垂直精度(仅ios)：{{locationResult.verticalAccuracy}} m</view>
+              <view wx:if="{{locationResult.horizontalAccuracy}}">水平精度：{{locationResult.horizontalAccuracy}} m</view>
+              <button wx:if="{{locationResult.latitude && locationResult.longitude}}" bindtap="openLocation">打开当前位置</button>
+            </view>
+            <view wx:else>
+              <button open-type="openSetting" bindopensetting="getLocationScope">获取位置授权</button>
+            </view>
+          </demo-code>
+        </demo-block>
+      </view>
+    </van-tab>
+  </van-tabs>
+</movable-area>

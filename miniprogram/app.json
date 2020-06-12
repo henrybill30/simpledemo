@@ -30,8 +30,8 @@
     ]
   },
   "pages": [
-    "pages/person/ocr/index",
     "pages/components/index/index",
+    "pages/person/ocr/index",
     "pages/components/cloudindex/index",
     "pages/components/componentstear/index",
     "pages/components/componentpileup/index",
@@ -49,8 +49,6 @@
     "pages/log/log",
     "pages/tongji/tongji",
     "pages/components/layout/layout",
-    "pages/components/cloud/cloud",
-    "pages/components/cloud/detail/detail",
     "pages/person/index",
     "pages/person/about/index",
     "pages/person/usage/index",

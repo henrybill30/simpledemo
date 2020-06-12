@@ -1,4 +1,4 @@
-// miniprogram/pages/components/layout/layout.js
+var timer
 // 样式布局
 Page({
 
@@ -45,12 +45,37 @@ Page({
         }
     },
 
+    btnMove(e){
+      // console.log(e)
+      if (timer) {
+        // console.log('节流')
+          clearTimeout(timer);
+          timer = null;
+      }
+      timer = setTimeout(function () {
+        // console.log(e)
+        getApp().globalData.movedBtn = {
+          x: e.detail.x,
+          y: e.detail.y
+        }
+        console.log(getApp().globalData.movedBtn)
+      }, 100)
+    },
+  
+    toOCR(){
+      wx.navigateTo({
+        url: '../../person/ocr/index',
+      })
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: async function (options) {
       // await insertDemoCode2CloudDatabase()
       await this.addRecord()
+      this.setData({
+        orcbtn: getApp().globalData.movedBtn
+      })
     },
 
     /**
