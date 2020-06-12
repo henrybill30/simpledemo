@@ -61,3 +61,8 @@
   height: 5rem;
   align-items: center;
 }
+.line{
+  height: 1rpx;
+  border-top:3rpx solid #8E9898;
+  margin: 1rpx;
+}

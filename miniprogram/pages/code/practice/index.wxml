@@ -2,42 +2,67 @@
 <view class="custom-class demo-block van-clearfix">
 
   <view class="demo-block__title">效果展示</view>
-  <view wx:if="{{name}}=='view'&&{{type}}=='basic'&&{{num}}==1">
+  <view wx:if="{{name=='view'&&type=='basic'&&num==1}}">
     <view class="demo-container">
       <view hover-class="view2" hover-start-time="{{view_basic_1_starttime}}" hover-stay-time="{{view_basic_1_staytime}}">{{view_basic_1_content}}</view>
     </view>
   </view>
+  <view wx:if="{{name=='progress'&&type=='basic'&&num==0}}">
+    <view class="demo-container">
+      <progress percent="{{progress_basic_0_percent}}" show-info="{{progress_basic_0_showinfo}}" stroke-width="{{progress_basic_0_strokewidth}}"/>
+    </view>
+  </view>
 
   <view class="demo-block__title">代码修改</view>
-  <view wx:if="{{name}}=='view'&&{{type}}=='basic'&&{{num}}==1">
+  <view wx:if="{{name=='view'&&type=='basic'&&num==1}}">
     <view class="demo-container">
-      <text></text>
+     <form catchsubmit="view_basic_1_submit">
+      <view wx:for="{{view_basic_1_code}}" wx:key="index">
+        <text>{{item}}</text>
+        <input wx:if="{{index!=3}}" name="view_basic_1_{{index}}" style="border: 1rpx solid black; width: 150rpx"></input>
+      </view>
+      <view class="line"></view>
+      <button type="primary" formType="submit" style="margin-bottom: 10rpx; margin-top:10rpx">运行代码</button>
+     </form>
+    </view>
+  </view>
+  <view wx:if="{{name=='progress'&&type=='basic'&&num==0}}">
+    <view class="demo-container">
+     <form catchsubmit="progress_basic_0_submit">
+      <view wx:for="{{progress_basic_0_code}}" wx:key="index">
+       <view style="display:flex">
+        <text>{{item}}</text>
+        <input wx:if="{{index!=10&&index!=0}}" name="view_basic_1_{{index}}" style="border: 1rpx solid black; width: 150rpx"></input>
+       </view>
+      </view>
+      <view class="line"></view>
+      <button type="primary" formType="submit" style="margin-bottom: 10rpx; margin-top:10rpx">运行代码</button>
+     </form>
     </view>
   </view>
 
   <view class="demo-block__title">可更改属性</view>
-  <view wx:if="{{name}}=='view'&&{{type}}=='basic'&&{{num}}==1">
-    <view class="demo-container">
-      <view class="table">
-        <view class="tr bg-w">
-          <view class="th">属性</view>
-          <view class="th">类型</view>
-          <view class="th ">说明</view>
-        </view>
-        <block wx:for="{{view_basic_1_list}}" wx:key="index">
-          <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-            <view class="td">{{item.name}}</view>
-            <view class="td">{{item.type}}</view>
-            <view class="td">{{item.describe}}</view>
-          </view>
-          <view class="tr" wx:else>
-            <view class="td">{{item.name}}</view>
-            <view class="td">{{item.type}}</view>
-            <view class="td">{{item.describe}}</view>
-          </view>
-        </block>
+  <view class="demo-container">
+    <view class="table">
+      <view class="tr bg-w">
+        <view class="th">属性</view>
+        <view class="th">类型</view>
+        <view class="th ">说明</view>
       </view>
+      <block wx:for="{{List}}" wx:key="index">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+          <view class="td">{{item.name}}</view>
+          <view class="td">{{item.type}}</view>
+          <view class="td">{{item.describe}}</view>
+        </view>
+        <view class="tr" wx:else>
+          <view class="td">{{item.name}}</view>
+          <view class="td">{{item.type}}</view>
+          <view class="td">{{item.describe}}</view>
+        </view>
+      </block>
     </view>
   </view>
+
 
 </view>
