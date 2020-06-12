@@ -1,4 +1,5 @@
 const app = getApp()
+var timer
 Page({
   data: {
     admin: 0,
@@ -20,34 +21,6 @@ Page({
         children: ['button', 'switch', 'radio', 'checkbox', 'picker', 'slider', 'input', 'form']
       },
       {
-        id: 'arrayAndloop',
-        name: '数组与循环',
-        imgUrl: './pics/arrayAndLoop.png',
-        url: '../arrayAndloop/arrayAndloop',
-        children: ['wx:for']
-      },
-      {
-        id: 'condition',
-        name: '条件与分支',
-        imgUrl: './pics/condition.png',
-        url: '../condition/condition',
-        children: ['wx:if', 'wx:elif', 'wx:else']
-      },
-      {
-        id: 'API',
-        name: 'API与回调',
-        imgUrl: './pics/API.png',
-        url: '../API/API',
-        children: ['系统信息', '传感器', '振动', '扫码', '获取位置信息']
-      },
-      {
-        id: 'Storage',
-        name: '数据缓存',
-        imgUrl: './pics/Storage.png',
-        url: '../Storage/Storage',
-        children: ['wx.setStorageSync', 'wx.getStorageSync', 'wx.getStorageInfo', 'wx.removeStorageSync']
-      },
-      {
         id: 'nativeComponent',
         name: '原生组件',
         imgUrl: './pics/nativeCpmponent.png',
@@ -59,13 +32,7 @@ Page({
         imgUrl: './pics/layout.png',
         url: '../layout/layout',
         children: ['flex 布局']
-      }, {
-        id: 'cloud',
-        name: '云开发',
-        imgUrl: './pics/cloud.png',
-        url: '../cloud/cloud',
-        children: ['云函数', '云数据库', '云存储']
-      }
+      },
     ]
   },
   onLoad: function() {
@@ -86,8 +53,14 @@ Page({
         }
       }
     })
+     
   },
   
+  onShow(){
+    this.setData({
+      orcbtn: getApp().globalData.movedBtn
+    })
+  },
   kindToggle(e) {
     const id = e.currentTarget.id
     const list = this.data.list
@@ -119,13 +92,58 @@ Page({
 
   },
 
-  // async test() {
-  //   let res = await wx.cloud.callFunction({
-  //     name: 'delUsers',
-  //     data: {
-  //       envID: getApp().globalData.envID,
-  //     }
-  //   })
-  //   console.log(res)
-  // }
+
+  async test() {
+    wx.chooseImage({
+      count:1,
+      success: res =>{
+        wx.request({
+          url: res.tempFilePaths[0],
+          responseType: 'arraybuffer',
+          success: async image => {
+            let result = await wx.cloud.callFunction({
+              name: 'printText',
+              data: {
+                envID: getApp().globalData.envID,
+                buffer: image.data
+              }
+            })
+            console.log(result)
+          }
+        })
+        // console.log(res.tempFilePaths)
+        // let result = await wx.cloud.callFunction({
+        //   name: 'printText',
+        //   data: {
+        //     envID: getApp().globalData.envID,
+        //     imgurl: res.tempFilePaths[0]
+        //   }
+        // })
+        // console.log(result.items)
+      },
+      complete: (res) => {},
+    })
+  },
+  btnMove(e){
+    // console.log(e)
+    if (timer) {
+      // console.log('节流')
+        clearTimeout(timer);
+        timer = null;
+    }
+    timer = setTimeout(function () {
+      // console.log(e)
+      getApp().globalData.movedBtn = {
+        x: e.detail.x,
+        y: e.detail.y
+      }
+      console.log(getApp().globalData.movedBtn)
+    }, 100)
+  },
+
+  toOCR(){
+    wx.navigateTo({
+      url: '../../person/ocr/index',
+    })
+  }
 })

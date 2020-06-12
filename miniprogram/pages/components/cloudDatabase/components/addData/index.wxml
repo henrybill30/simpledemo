@@ -1,0 +1,18 @@
+<!--pages/components/cloudDatabase/components/addData/index.wxml-->
+<demo-block title="云函数添加(模拟中最多添加5条)">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="addData" type="basic" num="1">
+    <input class="input" placeholder="添加todo记录，如学习、运动..." bindinput="input"/>
+    <button type="primary" bindtap="add">添加数据</button>
+  </demo-code>
+</demo-block>
+<demo-block title="控制台添加">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="addData" type="basic" num="0">
+    <text>1、打开开发者工具左上角的云开发控制台</text>
+    <image class="image" src="../../pic/database1.jpg"></image>
+    <text>2、进入数据库界面,单击相应集合并点击左上方”添加记录按钮“</text>
+    <image class="image" src="../../pic/database4.jpg"></image>
+    <text>3、手动输入要添加的记录（为键值对形式）</text>
+    <image style="height:300rpx" src="../../pic/database5.jpg"></image>
+  </demo-code>
+</demo-block>
+

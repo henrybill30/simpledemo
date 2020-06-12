@@ -1,4 +1,4 @@
-// pages/components/arrayAndloop/arrayAndloop.js
+var timer
 Page({
 
   /**
@@ -33,100 +33,6 @@ Page({
     })
     wx.setStorageSync('logs', logs)
   },
-  tobefore(e) {
-    if (this.data.currentPage === 0) {
-      wx.cloud.callFunction({
-        name: 'addRecord',
-        data: {
-          envID: getApp().globalData.envID,
-          openid: getApp().globalData.openid,
-          behavior: 'browse',
-          component: this.data.titleArr[0],
-          time: new Date()
-        },
-        success: res => {
-          console.log("result: " + JSON.stringify(res.result))
-        },
-        fail: err => {
-          console.log("error: " + JSON.stringify(err))
-        }
-      })
-      return
-    }
-    var that = this;
-    this.setData({
-      currentPage: parseInt(this.data.currentPage) - 1,
-      leftanimation: 'fade'
-    })
-    wx.cloud.callFunction({
-      name: 'addRecord',
-      data: {
-        envID: getApp().globalData.envID,
-        openid: getApp().globalData.openid,
-        behavior: 'browse',
-        component: this.data.titleArr[parseInt(this.data.currentPage)],
-        time: new Date()
-      },
-      success: res => {
-        console.log("result: " + JSON.stringify(res.result))
-      },
-      fail: err => {
-        console.log("error: " + JSON.stringify(err))
-      }
-    })
-    setTimeout(function () {
-      that.setData({
-        leftanimation: ''
-      })
-    }, 200)
-  },
-  tonext(e) {
-    if (this.data.currentPage === this.data.pageNum - 1) {
-      wx.cloud.callFunction({
-        name: 'addRecord',
-        data: {
-          envID: getApp().globalData.envID,
-          openid: getApp().globalData.openid,
-          behavior: 'browse',
-          component: this.data.titleArr[this.data.pageNum - 1],
-          time: new Date()
-        },
-        success: res => {
-          console.log("result: " + JSON.stringify(res.result))
-        },
-        fail: err => {
-          console.log("error: " + JSON.stringify(err))
-        }
-      })
-      return
-    }
-    var that = this;
-    this.setData({
-      currentPage: parseInt(this.data.currentPage) + 1,
-      rightanimation: 'fade'
-    })
-    wx.cloud.callFunction({
-      name: 'addRecord',
-      data: {
-        envID: getApp().globalData.envID,
-        openid: getApp().globalData.openid,
-        behavior: 'browse',
-        component: this.data.titleArr[parseInt(this.data.currentPage)],
-        time: new Date()
-      },
-      success: res => {
-        console.log("result: " + JSON.stringify(res.result))
-      },
-      fail: err => {
-        console.log("error: " + JSON.stringify(err))
-      }
-    })
-    setTimeout(function () {
-      that.setData({
-        rightanimation: ''
-      })
-    }, 200)
-  },
   onChange(event) {
     console.log(event)
     const { key } = event.currentTarget.dataset;
@@ -138,13 +44,36 @@ Page({
     this.setData({ [key]: event.detail });
     wx.showToast({ title: `点击标签 ${event.detail + 1}`, icon: 'none' });
   },
+
+  btnMove(e){
+    // console.log(e)
+    if (timer) {
+      // console.log('节流')
+        clearTimeout(timer);
+        timer = null;
+    }
+    timer = setTimeout(function () {
+      // console.log(e)
+      getApp().globalData.movedBtn = {
+        x: e.detail.x,
+        y: e.detail.y
+      }
+      console.log(getApp().globalData.movedBtn)
+    }, 100)
+  },
+
+  toOCR(){
+    wx.navigateTo({
+      url: '../../person/ocr/index',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData({
-    //   currentPage: parseInt(options.index)
-    // })
+    this.setData({
+      orcbtn: getApp().globalData.movedBtn
+    })
     wx.cloud.callFunction({
       name: 'addRecord',
       data: {

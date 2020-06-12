@@ -28,3 +28,27 @@ page {
   right: 5rpx;
   top:45%;
 }
+
+.movable-view{
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  z-index: 1000;
+  border-radius: 5000rpx;
+  border: 1px solid #23cae7e8;
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movable-img{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.movable-area{
+  width: 100vw;
+  height: 100vh;
+}

@@ -1,0 +1,21 @@
+<!--pages/components/cloudDatabase/components/addData/index.wxml-->
+<demo-block title="更新数据">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="updateData" type="basic" num="0">
+    <view wx:for="{{ list }}">
+      <view class="flex">
+        <view style="width:80%" class="text">
+          <view wx:if="{{ editFlag!=index }}">
+            {{ item.description }}
+          </view>
+          <input class="input" value="{{ item.description }}" bindinput="editValue" wx:else>
+          </input>
+        </view>
+        <view class="edit" style="width:20%" bindtap="edit" data-index="{{ index }}" data-id="{{ item._id }}">编辑</view>
+      </view>
+      <view class="time">{{ item.time }}</view>
+    </view>
+    <button type="primary" bindtap="saveEdit">更新数据</button>
+  </demo-code>
+</demo-block>
+
+

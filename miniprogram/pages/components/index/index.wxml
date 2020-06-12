@@ -1,4 +1,10 @@
+<movable-area class="movable-area">
+  <movable-view class="movable-view" x="{{orcbtn.x}}" y="{{orcbtn.y}}" bindchange="btnMove" bindtap="toOCR" direction="all">
+    <image class="movable-img" src="/lib/pic/图片识别.png"></image>
+  </movable-view>
+
 <image style="width: {{windowWidth}}px; height: {{(windowWidth*1)/3}}px;background-color: #f7fcfe" src="./pics/index2.png"></image>
+
 <view class="items">
   <view class="item bg1" wx:for-items="{{ list }}" wx:for-index="idx" wx:key="index" id="{{ item.id }}" data-num="{{item.children.length}}" bindtap="kindToggle">
     <view class="item-card {{ item.open ? 'item-title-checked' : '' }}">
@@ -21,4 +27,5 @@
 <view wx:if="{{admin}}" style="width: 200px;margin-left:auto;margin-right:auto; border:1px solid black">
   <navigator url="/pages/code/index" class="navigator">添加代码</navigator>
 </view>
-<!-- <button bindtap="test" type="primary">删库</button> -->
+<!-- <button bindtap="test" type="primary">上传图片</button> -->
+</movable-area>

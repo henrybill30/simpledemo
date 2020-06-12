@@ -1,0 +1,57 @@
+<!--miniprogram/pages/person/ocr/index.wxml-->
+<view class="title">上传代码图片获取相关组件推荐</view>
+
+<view class="uploader">
+  <van-uploader
+    bind:after-read="afterRead"
+    bind:oversize="imgOversize"
+    max-size="{{ MAX_SIZE }}">
+    <van-button icon="photo" type="info" plain>获取推荐</van-button>
+  </van-uploader>
+</view>
+
+<view class="component" wx:if="{{imgVisible}}">
+  <van-divider/>
+  <view style="font-size:40rpx;margin-bottom:20rpx;font-weight:bold">推荐组件</view>
+  <view class="item" style="font-weight:bold">
+    <van-row>
+      <van-col span="12">
+        <text>组件名称</text>
+      </van-col>
+      <van-col span="12">
+        <view>前往</view>
+      </van-col>
+    </van-row>
+  </view>
+  <view class="item" wx:for="{{ recommondComps }}" wx:for-item="comp" wx:key="index">
+    <van-row>
+      <van-col span="12">
+        {{ comp.name }}
+      </van-col>
+      <van-col span="12">
+        <view class="to" bindtap="to" data-path="{{ comp.path }}">前往</view>
+      </van-col>
+    </van-row>
+  </view>
+</view>
+
+<view class="img" bindtap="previewImage" wx:if="{{ imgVisible }}">
+  <van-divider/>
+  <view style="margin-right:10rpx;font-size:40rpx;font-weight:bold">所上传的代码图片</view>
+  <van-image
+    height="400rpx"
+    width="100%"
+    src="{{ imgUrl }}"
+    fit="contain">
+  </van-image>
+</view>
+
+<!-- <view>
+  识别结果:
+  <parser class="code-sty" html="{{ ocrResult }}" />
+</view> -->
+
+
+<van-toast id="van-toast" />
+
+<!-- <button bindtap="getComponents">获取推荐</button> -->

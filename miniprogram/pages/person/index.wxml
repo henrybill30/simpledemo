@@ -49,6 +49,10 @@
     is-link
     link-type="navigateTo"
     url="./collection/index"/>
+  <van-cell title="精选文章"
+  is-link
+  link-type="navigateTo"
+  url="../components/article/article"/>
   <van-cell id="direction" title="使用说明"
     is-link
     link-type="navigateTo"

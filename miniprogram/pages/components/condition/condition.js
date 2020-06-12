@@ -1,4 +1,4 @@
-// pages/components/condition/condition.js
+var timer
 Page({
 
   /**
@@ -76,11 +76,59 @@ Page({
     })
   },
 
+  async onTabChange(e){
+    await this.addRecord()
+  },
 
   onTabChange(e){
-    console.log(e)
     this.setData({
       currentPage: e.detail.name
+    })
+  },
+  
+  // 数据埋点
+  async addRecord() {
+      const components = this.data.components
+      const currentPage = this.data.currentPage
+      const event = {
+          envID: getApp().globalData.envID,
+          openid: getApp().globalData.openid,
+          behavior: 'browse',
+          component: components[currentPage].title,
+          cpType: components[currentPage].type,
+          cpNum: components[currentPage].num,
+          time: new Date()
+      }
+      try {
+          await wx.cloud.callFunction({
+          name: 'addRecord',
+          data: event
+          })
+      } catch(e) {
+          console.error(e)
+      }
+  },
+
+  btnMove(e){
+    // console.log(e)
+    if (timer) {
+      // console.log('节流')
+        clearTimeout(timer);
+        timer = null;
+    }
+    timer = setTimeout(function () {
+      // console.log(e)
+      getApp().globalData.movedBtn = {
+        x: e.detail.x,
+        y: e.detail.y
+      }
+      console.log(getApp().globalData.movedBtn)
+    }, 100)
+  },
+
+  toOCR(){
+    wx.navigateTo({
+      url: '../../person/ocr/index',
     })
   },
   /**
@@ -89,7 +137,8 @@ Page({
   onLoad: function (options) {
     this.setData({
       currentPage: parseInt(options.index),
-      nbTitle: this.data.titleArr[parseInt(options.index)]
+      nbTitle: this.data.titleArr[parseInt(options.index)],
+      orcbtn: getApp().globalData.movedBtn
     })
     wx.cloud.callFunction({
       name: 'addRecord',

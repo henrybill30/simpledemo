@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "wxacode": "./components/wxacode/index",
+    "ocr": "./components/ocr/index"
+  },
+  "navigationBarTitleText": "云调用"
+}

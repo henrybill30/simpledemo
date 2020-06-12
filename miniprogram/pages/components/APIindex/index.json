@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-divider": "/lib/dist/divider/index",
+    "van-cell": "/lib/dist/cell/index"
+  },
+  "navigationBarTitleText": "接口与语法",
+  "enablePullDownRefresh":false
+}

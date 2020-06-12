@@ -1,8 +1,0 @@
-<!--pages/components/cloud/components/textRestore/index.wxml-->
-<demo-code bindshowMore="showMore" activeId="{{activeId}}" name="cloudRestore" type="basic" num="0">
-  <form bindsubmit="updateText">
-    <textarea style="border: 1rpx solid gray; margin: 0 auto;width:100%" name="textarea"/>
-    <view style="margin: 30rpx auto">{{ text === undefined ? '暂无存储文本' : '已存储文本：' + text}}</view>
-    <button type="primary" form-type="submit"> 提交 </button>
-  </form>
-</demo-code>

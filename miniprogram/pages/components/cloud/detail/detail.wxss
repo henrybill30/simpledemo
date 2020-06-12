@@ -1,6 +1,0 @@
-@import "../../../../lib/weui.wxss";
-.btn-area{
-  display: flex;
-  justify-content: center;
-  padding: 10rpx;
-}

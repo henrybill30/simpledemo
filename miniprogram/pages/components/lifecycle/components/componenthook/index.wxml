@@ -1,0 +1,30 @@
+<!--pages/components/cloudDatabase/components/addData/index.wxml-->
+<demo-block title="基础用法">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="componentHook" type="basic" num="0">
+    <view>
+      attached: 在组件实例进入页面节点树时执行
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="componentHook" type="basic" num="1">
+    <view>
+      detached: 在组件实例被从页面节点树移除时执行
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="componentHook" type="basic" num="2">
+    <view>
+      show: 组件所在页面的生命周期--页面被展示
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="componentHook" type="basic" num="3">
+    <view>
+      hide: 组件所在页面的生命周期--页面被隐藏
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="componentHook" type="basic" num="4">
+    <view>
+      resize: 组件所在页面的生命周期--页面尺寸变化
+    </view>
+  </demo-code>
+</demo-block>
+
+

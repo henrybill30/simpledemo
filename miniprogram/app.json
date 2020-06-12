@@ -4,22 +4,22 @@
     "selectedColor": "#1196DB",
     "list": [
       {
-        "pagePath": "pages/components/cloudindex/index",
-        "text": "云开发",
-        "iconPath": "./lib/pic/云.png",
-        "selectedIconPath": "./lib/pic/云 (1).png"
-      },
-      {
         "pagePath": "pages/components/index/index",
         "text": "最简组件",
         "iconPath": "./lib/pic/识别1.png",
         "selectedIconPath": "./lib/pic/识别2.png"
       },
       {
-        "pagePath": "pages/components/article/article",
-        "text": "精选文章",
-        "iconPath": "./lib/pic/文章.png",
-        "selectedIconPath": "./lib/pic/文章 (1).png"
+        "pagePath": "pages/components/APIindex/index",
+        "text": "接口与语法",
+        "iconPath": "./lib/pic/API.png",
+        "selectedIconPath": "./lib/pic/API (1).png"
+      },
+      {
+        "pagePath": "pages/components/cloudindex/index",
+        "text": "云开发",
+        "iconPath": "./lib/pic/云.png",
+        "selectedIconPath": "./lib/pic/云 (1).png"
       },
       {
         "pagePath": "pages/person/index",
@@ -30,8 +30,9 @@
     ]
   },
   "pages": [
-    "pages/components/cloudindex/index",
     "pages/components/index/index",
+    "pages/person/ocr/index",
+    "pages/components/cloudindex/index",
     "pages/components/componentstear/index",
     "pages/components/componentpileup/index",
     "pages/login/login",
@@ -48,8 +49,6 @@
     "pages/log/log",
     "pages/tongji/tongji",
     "pages/components/layout/layout",
-    "pages/components/cloud/cloud",
-    "pages/components/cloud/detail/detail",
     "pages/person/index",
     "pages/person/about/index",
     "pages/person/usage/index",
@@ -58,11 +57,13 @@
     "pages/code/index",
     "pages/person/changelog/index",
     "pages/person/collection/index",
-    "pages/components/article/detail/index", 
-    "pages/components/cloudindex/database/components/crud/detail/detail", 
-    "pages/components/cloudindex/func/index",
-    "pages/components/cloudindex/storage/index",
-    "pages/components/cloudindex/database/index"
+    "pages/components/article/detail/index",
+    "pages/components/cloudFunction/index",
+    "pages/components/cloudDatabase/index",
+    "pages/components/cloudStorage/index",
+    "pages/components/cloudAPI/index",
+    "pages/components/APIindex/index",
+    "pages/components/lifecycle/lifecycle"
   ],
   "window": {
     "backgroundTextStyle": "light",

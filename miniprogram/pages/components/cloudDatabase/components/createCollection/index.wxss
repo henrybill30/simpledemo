@@ -1,0 +1,4 @@
+/* pages/components/cloudDatabase/components/createCollection/index.wxss */
+.image {
+  height: 150rpx;
+}

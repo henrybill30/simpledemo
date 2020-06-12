@@ -1,0 +1,15 @@
+<!--pages/components/cloud/components/fileRestore/index.wxml-->
+<demo-block title="文件存储">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="cloudRestoreFile" type="basic" num="0">
+    <view style="display:flex; flex-direction:column;justify-content:center; margin-bottom: 40rpx" wx:if="{{imgUrl}}">
+      <image src="{{imgUrl}}"></image>
+      <view style="border: 1px solid black; margin-top:5rpx" >
+        <text style="word-break:break-all">fileID: {{imgUrl}}</text>
+      </view>
+    </view>
+    <view style="display:flex; justify-content:center; margin-bottom: 40rpx" wx:else>
+      <text>请先上传图片</text>
+    </view>
+    <button type="primary" bindtap="updateImg">上传图片</button>
+  </demo-code>
+</demo-block>

@@ -1,0 +1,17 @@
+<!--pages/components/cloudDatabase/components/addData/index.wxml-->
+<demo-block title="删除数据">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="delData" type="basic" num="0">
+    <view wx:for="{{ list }}" wx:key="index">
+      <view class="flex">
+        <view style="width:80%" class="text">
+          {{ item.description }}
+        </view>
+        <view class="del" style="width:20%" bindtap="del" data-id="{{ item._id }}">删除</view>
+      </view>
+      <view class="time">{{ item.time }}</view>
+    </view>
+    <button type="primary" bindtap="delall">删除全部</button>
+  </demo-code>
+</demo-block>
+
+

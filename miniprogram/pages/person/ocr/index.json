@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+      "van-uploader": "/lib/dist/uploader/index",
+      "van-button": "/lib/dist/button/index",
+      "van-image": "/lib/dist/image/index",
+      "van-toast": "/lib/dist/toast/index",
+      "van-divider": "/lib/dist/divider/index"
+  },
+  "navigationBarTitleText": "推荐组件"
+}

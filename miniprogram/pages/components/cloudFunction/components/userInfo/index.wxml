@@ -1,0 +1,15 @@
+<!--pages/components/cloudFunction/components/userInfo/index.wxml-->
+<demo-block title="云函数获取信息">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="cloudGetInfo" type="basic" num="0">
+        <view style="border: 1rpx solid black">
+          <block wx:if="{{Openid?false:true}}">
+            <text>点击下方按钮获取信息</text>
+          </block>
+          <block wx:else>
+            <text style="margin-right:auto;margin-left:auto;font-size:38rpx;word-break:break-all">openid: {{Openid}}\n</text>
+            <text style="margin-right:auto;margin-left:auto;font-size:38rpx;word-break:break-all">小程序id: {{Appid}}\n</text>
+          </block>
+        </view>
+        <button type="primary" style="font-size:24rpx;margin-top:20rpx" bindtap="getInfo">云函数获取信息</button>
+      </demo-code>
+    </demo-block>

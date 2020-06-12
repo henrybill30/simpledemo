@@ -1,0 +1,9 @@
+/* pages/components/cloudDatabase/components/addData/index.wxss */
+.image {
+  height: 150rpx;
+}
+.input {
+  border: 4rpx solid #ACACAC;
+  padding: 10rpx;
+  margin-bottom: 15rpx;
+}

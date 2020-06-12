@@ -1,0 +1,32 @@
+/* miniprogram/pages/person/ocr/index.wxss */
+.title {
+  margin: 40rpx auto;
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.uploader {
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  padding: 40rpx;
+}
+
+.component {
+  padding: 40rpx;
+}
+.item{
+  padding: 10rpx;
+  word-wrap: break-word;
+  text-align: center;
+}
+.item:nth-child(odd){
+  background-color: #F7FCFE;
+  text-align: center;
+}
+.item:nth-child(even){
+  background-color: #fff;
+  text-align: center;
+}

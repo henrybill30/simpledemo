@@ -1,4 +1,5 @@
 const app = getApp()
+var timer
 Page({
   data: {
     admin: 0,
@@ -6,23 +7,29 @@ Page({
     windowHeight: 0,
     list: [
       {
-        id: 'storage',
-        name: '云存储',
-        imgUrl: './pics/云存储.png',
-        url: './storage/index',
-        children: ['基本存储']
+        id: 'func',
+        name: '云函数',
+        imgUrl: './pics/云函数.png',
+        url: '../cloudFunction/index',
+        children: ['简单云函数', '获取信息']
       },{
         id: 'database',
         name: '云数据库',
         imgUrl: './pics/云数据库.png',
-        url: './database/index',
-        children: ['增删改查', '聚合']
+        url: '../cloudDatabase/index',
+        children: ['创建集合', '添加数据', '查询数据', '更新数据', '删除数据', '服务端时间']
       },{
-        id: 'func',
-        name: '云函数',
-        imgUrl: './pics/云函数.png',
-        url: './func/index',
-        children: ['云函数']
+        id: 'storage',
+        name: '云存储',
+        imgUrl: './pics/云存储.png',
+        url: '../cloudStorage/index',
+        children: ['存储文本', '存储文件', '删除文件']
+      },{
+        id: 'cloudAPI',
+        name: '云调用',
+        imgUrl: './pics/cloudAPI.png',
+        url: '../cloudAPI/index',
+        children: ['小程序码', 'ocr']
       }
     ]
   },
@@ -34,7 +41,33 @@ Page({
       windowHeight: getApp().globalData.windowHeight
     })
   },
-  
+  onShow: function(){
+    this.setData({
+      orcbtn: getApp().globalData.movedBtn
+    })
+  },
+  btnMove(e){
+    // console.log(e)
+    if (timer) {
+      console.log('节流')
+        clearTimeout(timer);
+        timer = null;
+    }
+    timer = setTimeout(function () {
+      console.log(e)
+      getApp().globalData.movedBtn = {
+        x: e.detail.x,
+        y: e.detail.y
+      }
+      console.log(getApp().globalData.movedBtn)
+    }, 100)
+  },
+
+  toOCR(){
+    wx.navigateTo({
+      url: '../../person/ocr/index',
+    })
+  },
   kindToggle(e) {
     const id = e.currentTarget.id
     const list = this.data.list

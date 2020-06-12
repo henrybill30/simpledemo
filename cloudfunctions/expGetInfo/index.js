@@ -11,11 +11,9 @@ exports.main = async (event, context) => {
     cloud.init({
         env: event.envID,
     }) 
-    const db = cloud.database({
-        env: event.envID,
-    })
 
   return {
     openid: wxContext.OPENID,
+    appid: wxContext.APPID
   }
 }

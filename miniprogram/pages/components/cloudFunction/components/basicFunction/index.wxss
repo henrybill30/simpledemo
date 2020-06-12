@@ -1,0 +1,9 @@
+/* pages/components/cloudFunction/components/basicFunction/index.wxss */
+.input {
+  border: 1rpx solid black;
+  width: 30%;
+  height: 46rpx;
+}
+.text {
+  padding: 0px 2px 0px 2px
+}
