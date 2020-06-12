@@ -1,6 +1,6 @@
 /* miniprogram/pages/person/ocr/index.wxss */
 .title {
-  margin: 80rpx auto;
+  margin: 40rpx auto;
   font-size: 40rpx;
   text-align: center;
 }
@@ -11,9 +11,22 @@
 }
 
 .img {
-  margin: 40rpx auto;
+  padding: 40rpx;
 }
 
 .component {
   padding: 40rpx;
+}
+.item{
+  padding: 10rpx;
+  word-wrap: break-word;
+  text-align: center;
+}
+.item:nth-child(odd){
+  background-color: #F7FCFE;
+  text-align: center;
+}
+.item:nth-child(even){
+  background-color: #fff;
+  text-align: center;
 }

@@ -14,7 +14,8 @@ Page({
             name: 'wxacode',
             type: 'basic',
             num: 0
-        },{
+        },
+        {
           title: 'ocr',
           name: 'ocr',
           type: 'basic',

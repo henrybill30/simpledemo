@@ -30,12 +30,12 @@ page {
 }
 
 .movable-view{
-  width: 70rpx;
-  height: 70rpx;
+  width: 90rpx;
+  height: 90rpx;
   position: absolute;
   z-index: 1000;
   border-radius: 5000rpx;
-  border: 1px solid #F7984D;
+  border: 1px solid #23cae7e8;
   background-color: white;
   overflow: hidden;
   display: flex;
@@ -44,8 +44,8 @@ page {
 }
 
 .movable-img{
-  width: 40rpx;
-  height: 40rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 
 .movable-area{

@@ -29,7 +29,7 @@ Component({
     },
     async chooseImg(){
       let that = this
-      let res = null
+      let res =null
       try{
         res = await wx.chooseImage({
           count: 1,
@@ -44,31 +44,17 @@ Component({
         title: '识别中',
       })
       // tempFilePath可以作为img标签的src属性显示图片
-      const tempFilePaths = res.tempFilePaths
-      // console.log(res)
+      const tempFilePaths = res.tempFilePaths[0]
       that.setData({
-        imgUrl: tempFilePaths[0]
+        imgUrl: tempFilePaths
       })
-      let buffer = wx.getFileSystemManager().readFileSync(tempFilePaths[0])
-      // console.log(buffer)
-      let resText = null
-      try{
-        resText = await wx.cloud.callFunction({
-          name: 'printText',
-          data: {
-            envID: getApp().globalData.envID,
-            img: buffer
-          }
-        })
-      } catch (err) {
-        console.log(err)
-      }
+      var text = await that.ocr(tempFilePaths, 8)
       that.setData({
-        text: resText.result.items
+        text: text
       })
       wx.hideLoading()
-      
     },
+
     async chooseIDcard(){
       let that = this
       let res = null
@@ -85,37 +71,65 @@ Component({
       wx.showLoading({
         title: '识别中',
       })
-      // tempFilePath可以作为img标签的src属性显示图片
-      const tempFilePaths = res.tempFilePaths
-      // console.log(res)
+      const idtempFilePaths = res.tempFilePaths[0]
       that.setData({
-        idcardUrl: tempFilePaths[0]
+        idcardUrl: idtempFilePaths
       })
-      let buffer = wx.getFileSystemManager().readFileSync(tempFilePaths[0])
-      // console.log(buffer)
-      let resText = null
-      try{
-        resText = await wx.cloud.callFunction({
-          name: 'idcard',
-          data: {
-            envID: getApp().globalData.envID,
-            img: buffer
-          }
-        })
-      } catch (err) {
-        console.log(err)
-      }
-      if(resText.result.errCode==-1){
-        wx.showToast({
-          title: '请重新上传身份证！',
-          icon: 'none'
-        })
-        return
-      }
+      var text = await that.ocr(that.data.idcardUrl, 1)
+      that.setData({
+        idcard: text
+      })
       wx.hideLoading()
-      that.setData({
-        idcard: resText.result
+    },
+
+    async uploadFile2Cloud (cloudPath, filePath) {
+        
+      const res =await wx.cloud.uploadFile({
+          cloudPath,
+          filePath
       })
-    }
-  }
+      return res.fileID
+    },
+  
+    async getTempFileURLfromCloud (fileID) {
+      const res = await wx.cloud.getTempFileURL({
+          fileList: [{
+              fileID,
+              maxAge: 60 * 60, // one hour
+          }]
+          })
+      return res.fileList[0].tempFileURL
+    },
+  
+    async ocr (imgUrl, ocr_type) {
+      // 参考：https://developers.weixin.qq.com/community/servicemarket/detail/000ce4cec24ca026d37900ed551415
+      const data = {
+          img_url: new wx.serviceMarket.CDN({
+            type: 'filepath',
+            filePath: imgUrl,
+          }),
+          data_type: 3, // 图片 url
+          ocr_type: ocr_type // 通用 OCR
+      }
+      const res = await wx.serviceMarket.invokeService({
+          service: 'wx79ac3de8be320b71', // '固定为服务商OCR的appid，非小程序appid',
+          api: 'OcrAllInOne',
+          data
+      })
+      // console.log(res)
+      var code = null
+      if(ocr_type == 8){
+        let results = res.data.ocr_comm_res.items
+        code = results.reduce((acc, cur) => {
+            acc += `\n${cur.text}`
+            return acc
+        }, '')
+      }else if(ocr_type == 1){
+        let result = res.data.idcard_res
+        code = result
+      }
+      
+      return code
+    },
+  },
 })

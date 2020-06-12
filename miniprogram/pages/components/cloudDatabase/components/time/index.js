@@ -12,13 +12,19 @@ Component({
    */
   data: {
     serverTime: '',
-    clientTime: ''
+    clientTime: '',
+    activeId: ''
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    showMore(e){
+      this.setData({
+        activeId: e.detail.id
+      })
+    },
     gettime(){
       wx.cloud.callFunction({
         name: 'server_time',

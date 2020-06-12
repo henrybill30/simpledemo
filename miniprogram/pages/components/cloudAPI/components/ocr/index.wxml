@@ -3,24 +3,28 @@
   <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="ocr" type="basic" num="0">
     <button type="primary" bindtap="chooseImg">选择图片</button>
     <image style="width:100%;" mode="widthFix" wx:if="{{ imgUrl!='' }}" src="{{ imgUrl }}"></image>
-    <view style="padding:10rpx" wx:for="{{ text }}">
-      {{ item.text }}
+    <view style="padding:10rpx" >
+      {{ text }}
     </view>
   </demo-code>
 </demo-block>
 <demo-block title="身份证识别">
   <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="ocr" type="basic" num="1">
-    <button type="primary" bindtap="chooseIDcard">选择身份证</button>
-    <image style="width:100%;" mode="widthFix" wx:if="{{ idcardUrl!='' }}" src="{{ idcardUrl }}"></image>
-    <view>姓名：{{ idcard.name }}</view>
-    <view>性别：{{ idcard.gender }}</view>
-    <view>身份证号：{{ idcard.id }}</view>
-    <view>住址：{{ idcard.addr }}</view>
-    <view>民族：{{ idcard.nationality }}</view>
-    <view>正反：
-      <text wx:if="{{ idcard.type=='Front' }}">正面</text>
-      <text wx:if="{{ idcard.type=='Back' }}">反面</text>
-    </view>
+<button type="primary" bindtap="chooseIDcard">选择身份证</button>
+<image style="width:100%;" mode="widthFix" wx:if="{{ idcardUrl!='' }}" src="{{ idcardUrl }}"></image>
+<view wx:if="{{idcard.type==0}}">
+  <view>姓名：{{ idcard.name.text }}</view>
+  <view>性别：{{ idcard.gender.text }}</view>
+  <view>身份证号：{{ idcard.id.text }}</view>
+  <view>住址：{{ idcard.addr.text }}</view>
+  <view>民族：{{ idcard.nationality.text }}</view>
+  <view>正反：正面</view>
+</view>
+<view wx:if="{{idcard.type==1}}">
+  <view>有效期：{{idcard.valid_date.text}}</view>
+  <view>正反：反面</view>
+</view>
+    
   </demo-code>
 </demo-block>
 

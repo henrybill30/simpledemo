@@ -92,6 +92,7 @@ Page({
 
   },
 
+
   async test() {
     wx.chooseImage({
       count:1,

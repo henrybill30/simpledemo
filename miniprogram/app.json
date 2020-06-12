@@ -4,12 +4,6 @@
     "selectedColor": "#1196DB",
     "list": [
       {
-        "pagePath": "pages/components/cloudindex/index",
-        "text": "云开发",
-        "iconPath": "./lib/pic/云.png",
-        "selectedIconPath": "./lib/pic/云 (1).png"
-      },
-      {
         "pagePath": "pages/components/index/index",
         "text": "最简组件",
         "iconPath": "./lib/pic/识别1.png",
@@ -17,9 +11,15 @@
       },
       {
         "pagePath": "pages/components/APIindex/index",
-        "text": "API与语法",
+        "text": "接口与语法",
         "iconPath": "./lib/pic/API.png",
         "selectedIconPath": "./lib/pic/API (1).png"
+      },
+      {
+        "pagePath": "pages/components/cloudindex/index",
+        "text": "云开发",
+        "iconPath": "./lib/pic/云.png",
+        "selectedIconPath": "./lib/pic/云 (1).png"
       },
       {
         "pagePath": "pages/person/index",

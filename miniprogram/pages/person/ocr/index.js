@@ -12,8 +12,209 @@ Page({
         // imgUrl: 'https://7369-simpledemo-9jk60-1302043964.tcb.qcloud.la/ocr/1591860185045.png?sign=76e7bc741794497a2ecd07bf43d5a1c4&t=1591873638',
         imgUrl: '',
         imgVisible: false,
-        MAX_SIZE: 2 * 1024 * 1024 // 单位 byte,
+        MAX_SIZE: 2 * 1024 * 1024, // 单位 byte,
+        compPath: [
+            {
+                name: 'view',
+                path: 'pages/components/information/information?index=0'
+            },
+            {
+                name: 'text',
+                path: 'pages/components/information/information?index=1'
+            },
+            {
+                name: 'icon',
+                path: 'pages/components/information/information?index=2'
+            },
+            {
+                name: 'progress',
+                path: 'pages/components/information/information?index=3'
+            },
+            {
+                name: 'richtext',
+                path: 'pages/components/information/information?index=4'
+            },
+            {
+                name: 'swiper',
+                path: 'pages/components/information/information?index=5'
+            },
+            {
+                name: 'button',
+                path: 'pages/components/dataAndinteract/dataAndinteract?index=0'
+            },
+            {
+                name: 'switch',
+                path: 'pages/components/dataAndinteract/dataAndinteract?index=1'
+            },
+            {
+                name: 'radio',
+                path: 'pages/components/dataAndinteract/dataAndinteract?index=2'
+            },
+            {
+                name: 'checkbox',
+                path: 'pages/components/dataAndinteract/dataAndinteract?index=3'
+            },
+            {
+                name: 'picker',
+                path: 'pages/components/dataAndinteract/dataAndinteract?index=4'
+            },
+            {
+                name: 'slider',
+                path: 'pages/components/dataAndinteract/dataAndinteract?index=5'
+            },
+            {
+                name: 'input',
+                path: 'pages/components/dataAndinteract/dataAndinteract?index=6'
+            },
+            {
+                name: 'form',
+                path: 'pages/components/dataAndinteract/dataAndinteract?index=7'
+            },
+            {
+                name: 'wx:for',
+                path: 'pages/components/arrayAndloop/arrayAndloop?index=0'
+            },
+            {
+                name: 'wx:if',
+                path: 'pages/components/condition/condition?index=0'
+            },
+            {
+                name: 'wx:elif',
+                path: 'pages/components/condition/condition?index=1'
+            },
+            {
+                name: 'wx:else',
+                path: 'pages/components/condition/condition?index=2'
+            },
+            {
+                name: '系统信息',
+                path: 'pages/components/API/API?index=0'
+            },
+            {
+                name: '传感器',
+                path: 'pages/components/API/API?index=1'
+            },
+            {
+                name: '振动',
+                path: 'pages/components/API/API?index=2'
+            },
+            {
+                name: '扫码',
+                path: 'pages/components/API/API?index=3'
+            },
+            {
+                name: '获取位置信息',
+                path: 'pages/components/API/API?index=4'
+            },
+            {
+                name: 'wx.setStorageSync',
+                path: 'pages/components/Storage/Storage?index=0'
+            },
+            {
+                name: 'wx.getStorageSync',
+                path: 'pages/components/Storage/Storage?index=1'
+            },
+            {
+                name: 'wx.getStorageInfo',
+                path: 'pages/components/Storage/Storage?index=2'
+            },
+            {
+                name: 'wx.removeStorageSync',
+                path: 'pages/components/Storage/Storage?index=3'
+            },
+            {
+                name: 'audio',
+                path: 'pages/components/nativeComponent/nativeComponent?index=0'
+            },
+            {
+                name: 'video',
+                path: 'pages/components/nativeComponent/nativeComponent?index=1'
+            },
+            {
+                name: 'map',
+                path: 'pages/components/nativeComponent/nativeComponent?index=2'
+            },
+            {
+                name: 'canvas',
+                path: 'pages/components/nativeComponent/nativeComponent?index=3'
+            },
+            {
+                name: 'camera',
+                path: 'pages/components/nativeComponent/nativeComponent?index=4'
+            },
+            {
+                name: 'flex',
+                path: 'pages/components/layout/layout?index=0'
+            },
+            {
+                name: 'cloudFunction',
+                path: 'pages/components/cloudFunction/cloudFunction?index=0'
+            },
+            {
+                name: 'cloudGetInfo',
+                path: 'pages/components/cloudFunction/cloudFunction?index=1'
+            },
+            {
+                name: 'createCollection',
+                path: 'pages/components/cloudDatabase/cloudDatabase?index=0'
+            },
+            {
+                name: 'addData',
+                path: 'pages/components/cloudDatabase/cloudDatabase?index=1'
+            },
+            {
+                name: 'getData',
+                path: 'pages/components/cloudDatabase/cloudDatabase?index=2'
+            },
+            {
+                name: 'updateData',
+                path: 'pages/components/cloudDatabase/cloudDatabase?index=3'
+            },
+            {
+                name: 'delData',
+                path: 'pages/components/cloudDatabase/cloudDatabase?index=4'
+            },
+            {
+                name: 'serverTime',
+                path: 'pages/components/cloudDatabase/cloudDatabase?index=5'
+            },
+            {
+                name: 'cloudRestore',
+                path: 'pages/components/cloudStorage/cloudStorage?index=0'
+            },
+            {
+                name: 'cloudRestoreFile',
+                path: 'pages/components/cloudStorage/cloudStorage?index=1'
+            },
+            {
+                name: 'cloudDeleteFile',
+                path: 'pages/components/cloudStorage/cloudStorage?index=2'
+            },
+            {
+                name: 'wxacode',
+                path: 'pages/components/cloudAPI/cloudAPI?index=0'
+            },
+            {
+                name: 'ocr',
+                path: 'pages/components/cloudAPI/cloudAPI?index=1'
+            },
+            {
+                name: 'pageHook',
+                path: 'pages/components/lifecycle/lifecycle?index=0'
+            },
+            {
+                name: 'componentHook',
+                path: 'pages/components/lifecycle/lifecycle?index=1'
+            },
+        ]
     },
+
+    to(e){
+        console.log()
+        wx.navigateTo({
+          url: `../../../${ e.currentTarget.dataset.path }`,
+        })
+      },
 
     async getComponents () {
         const data = {
@@ -24,10 +225,21 @@ Page({
             name: 'ocr',
             data
         })
+        let comps = []
+        for(let i=0;i<res.result.length;i++){
+            for(let comp of this.data.compPath){
+                if(res.result[i].name == comp.name){
+                    comps.push({
+                        name: res.result[i].name,
+                        path: comp.path
+                    })
+                }
+            }
+        }
         this.setData({
-            recommondComps: res.result
+            recommondComps: comps
         })
-        console.log(res)
+        console.log(comps)
     },
 
     async afterRead (event) {

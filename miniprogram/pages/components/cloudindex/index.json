@@ -3,5 +3,6 @@
     "van-divider": "/lib/dist/divider/index",
     "van-cell": "/lib/dist/cell/index"
   },
-  "navigationBarTitleText": "最简组件"
+  "navigationBarTitleText": "云开发",
+  "enablePullDownRefresh":false
 }

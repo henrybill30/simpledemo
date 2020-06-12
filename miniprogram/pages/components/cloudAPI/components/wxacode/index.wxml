@@ -1,2 +1,7 @@
 <!--pages/components/cloudAPI/components/wxacode/index.wxml-->
-<text>pages/components/cloudAPI/components/wxacode/index.wxml</text>
+<demo-block title="获取小程序二维码">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="wxacode" type="basic" num="0">
+    <button type="primary" bindtap="getWxCode">获取小程序二维码</button>
+    <image style="width:100%;" mode="widthFix" wx:if="{{ wxcodeUrl!='' }}" src="{{ wxcodeUrl }}"></image>
+  </demo-code>
+</demo-block>
