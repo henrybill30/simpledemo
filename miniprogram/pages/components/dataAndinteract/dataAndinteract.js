@@ -413,9 +413,11 @@ Page({
     })
   },
 
-
-  async onTabChange(e){
+  async onTabChange(e) {
     await this.addRecord()
+  },
+
+  onTabChange(e){
     this.setData({
       currentPage: e.detail.name
     })

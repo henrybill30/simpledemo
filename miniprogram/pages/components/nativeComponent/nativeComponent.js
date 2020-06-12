@@ -20,6 +20,9 @@ Page({
     titleArr: ['audio', 'video', 'map', 'canvas','camera'],
   },
 
+  async onTabChange(e) {
+    await this.addRecord()
+  },
 
   // 数据埋点
   async addRecord() {
@@ -44,8 +47,7 @@ Page({
     }
   },
 
-  async onTabChange(e) {
-    await this.addRecord()
+  onTabChange(e) {
     this.setData({
       currentPage: e.detail.name
     })
