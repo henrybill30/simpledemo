@@ -1,0 +1,45 @@
+<!--pages/components/cloudDatabase/components/addData/index.wxml-->
+<demo-block title="基础用法">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="pageHook" type="basic" num="0">
+    <view>
+      onLoad: 生命周期函数--监听页面加载
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="pageHook" type="basic" num="1">
+    <view>
+      onShow: 生命周期函数--监听页面显示
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="pageHook" type="basic" num="2">
+    <view>
+      onReady: 生命周期函数--监听页面初次渲染完成
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="pageHook" type="basic" num="3">
+    <view>
+      onHide: 生命周期函数--监听页面隐藏
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="pageHook" type="basic" num="4">
+    <view>
+      onUnload: 生命周期函数--监听页面卸载
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="pageHook" type="basic" num="5">
+    <view>
+      onPullDownRefresh: 页面相关事件处理函数--监听用户下拉动作
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="pageHook" type="basic" num="6">
+    <view>
+      onReachBottom: 页面上拉触底事件的处理函数
+    </view>
+  </demo-code>
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" name="pageHook" type="basic" num="7">
+    <view>
+      onShareAppMessage: 用户点击右上角分享
+    </view>
+  </demo-code>
+</demo-block>
+
+

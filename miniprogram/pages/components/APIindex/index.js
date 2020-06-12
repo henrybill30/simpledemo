@@ -6,6 +6,13 @@ Page({
     windowHeight: 0,
     list: [
       {
+        id: 'lifecycle',
+        name: '生命周期',
+        imgUrl: './pics/lifecycle.png',
+        url: '../lifecycle/lifecycle',
+        children: ['页面钩子函数', '组件钩子函数']
+      },
+      {
         id: 'arrayAndloop',
         name: '数组与循环',
         imgUrl: './pics/arrayAndLoop.png',

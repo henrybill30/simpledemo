@@ -21,111 +21,31 @@ Page({
   },
 
 
-  tobefore(e) {
-    if (this.data.currentPage === 0) {
-      this.setData({
-        nbTitle: this.data.titleArr[0]
-      })
-      wx.cloud.callFunction({
-        name: 'addRecord',
-        data: {
-          envID: getApp().globalData.envID,
-          openid: getApp().globalData.openid,
-          behavior: 'browse',
-          component: this.data.titleArr[0],
-          time: new Date()
-        },
-        success: res => {
-          console.log("result: " + JSON.stringify(res.result))
-        },
-        fail: err => {
-          console.log("error: " + JSON.stringify(err))
-        }
-      })
-      return
-    }
-    var that = this;
-    this.setData({
-      currentPage: parseInt(this.data.currentPage) - 1,
-      leftanimation: 'fade',
-      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) - 1]
-    })
-    wx.cloud.callFunction({
-      name: 'addRecord',
-      data: {
+  // 数据埋点
+  async addRecord() {
+    const components = this.data.components
+    const currentPage = this.data.currentPage
+    const event = {
         envID: getApp().globalData.envID,
         openid: getApp().globalData.openid,
         behavior: 'browse',
-        component: this.data.titleArr[parseInt(this.data.currentPage)],
+        component: components[currentPage].title,
+        cpType: components[currentPage].type,
+        cpNum: components[currentPage].num,
         time: new Date()
-      },
-      success: res => {
-        console.log("result: " + JSON.stringify(res.result))
-      },
-      fail: err => {
-        console.log("error: " + JSON.stringify(err))
-      }
-    })
-    setTimeout(function () {
-      that.setData({
-        leftanimation: ''
-      })
-    }, 200)
-  },
-  tonext(e) {
-    if (this.data.currentPage === this.data.pageNum - 1) {
-      this.setData({
-        nbTitle: this.data.titleArr[this.data.pageNum - 1]
-      })
-      wx.cloud.callFunction({
-        name: 'addRecord',
-        data: {
-          envID: getApp().globalData.envID,
-          openid: getApp().globalData.openid,
-          behavior: 'browse',
-          component: this.data.titleArr[this.data.pageNum],
-          time: new Date()
-        },
-        success: res => {
-          console.log("result: " + JSON.stringify(res.result))
-        },
-        fail: err => {
-          console.log("error: " + JSON.stringify(err))
-        }
-      })
-      return
     }
-    var that = this;
-    this.setData({
-      currentPage: parseInt(this.data.currentPage) + 1,
-      rightanimation: 'fade',
-      nbTitle: this.data.titleArr[parseInt(this.data.currentPage) + 1]
-    })
-    wx.cloud.callFunction({
-      name: 'addRecord',
-      data: {
-        envID: getApp().globalData.envID,
-        openid: getApp().globalData.openid,
-        behavior: 'browse',
-        component: this.data.titleArr[parseInt(this.data.currentPage)],
-        time: new Date()
-      },
-      success: res => {
-        console.log("result: " + JSON.stringify(res.result))
-      },
-      fail: err => {
-        console.log("error: " + JSON.stringify(err))
-      }
-    })
-    setTimeout(function () {
-      that.setData({
-        rightanimation: ''
-      })
-    }, 200)
+    try {
+        await wx.cloud.callFunction({
+        name: 'addRecord',
+        data: event
+        })
+    } catch(e) {
+        console.error(e)
+    }
   },
 
-  onTabChange(e){
-    console.log(e)
+  async onTabChange(e) {
+    await this.addRecord()
     this.setData({
       currentPage: e.detail.name
     })
