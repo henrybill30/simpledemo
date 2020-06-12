@@ -13,7 +13,7 @@
   word-wrap: break-word;
 }
 .item:nth-child(odd){
-  background-color: #E3F5FF;
+  background-color: #F7FCFE;
 }
 .item:nth-child(even){
   background-color: #fff;
