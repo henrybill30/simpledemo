@@ -1,0 +1,36 @@
+<!--miniprogram/pages/person/ocr/index.wxml-->
+<view class="title">上传代码图片获取相关组件推荐</view>
+
+<view class="uploader">
+  <van-uploader
+    bind:after-read="afterRead"
+    bind:oversize="imgOversize"
+    max-size="{{ MAX_SIZE }}">
+    <van-button icon="photo" type="info" plain>获取推荐</van-button>
+  </van-uploader>
+</view>
+
+<view class="img" bindtap="previewImage" wx:if="{{ imgVisible }}">
+  <van-image
+    height="400rpx"
+    width="750rpx"
+    src="{{ imgUrl }}"
+    fit="contain">
+  </van-image>
+</view>
+
+<!-- <view>
+  识别结果:
+  <parser class="code-sty" html="{{ ocrResult }}" />
+</view> -->
+
+<view class="component" wx:if="{{ imgVisible }}">
+  推荐组件
+  <view wx:for="{{ recommondComps }}" wx:for-item="comp" wx:key="index">
+    {{ comp.name }} / {{ comp.type }} / {{ comp.num }}
+  </view>
+</view>
+
+<van-toast id="van-toast" />
+
+<!-- <button bindtap="getComponents">获取推荐</button> -->

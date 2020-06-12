@@ -1,0 +1,19 @@
+/* miniprogram/pages/person/ocr/index.wxss */
+.title {
+  margin: 80rpx auto;
+  font-size: 40rpx;
+  text-align: center;
+}
+
+.uploader {
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  margin: 40rpx auto;
+}
+
+.component {
+  padding: 40rpx;
+}

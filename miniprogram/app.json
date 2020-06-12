@@ -30,6 +30,7 @@
     ]
   },
   "pages": [
+    "pages/person/ocr/index",
     "pages/components/index/index",
     "pages/components/cloudindex/index",
     "pages/components/componentstear/index",
