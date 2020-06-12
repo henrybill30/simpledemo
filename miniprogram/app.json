@@ -51,7 +51,8 @@
     "pages/code/index",
     "pages/person/changelog/index",
     "pages/person/collection/index",
-    "pages/components/article/detail/index"
+    "pages/components/article/detail/index",
+    "pages/person/ocr/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
