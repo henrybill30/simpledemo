@@ -6,5 +6,5 @@
       "van-toast": "/lib/dist/toast/index",
       "van-divider": "/lib/dist/divider/index"
   },
-  "navigationBarTitleText": "推荐组件"
+  "navigationBarTitleText": "模块推荐"
 }
