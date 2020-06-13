@@ -11,6 +11,7 @@
   height: 260rpx;
   display: flex;
   box-shadow: 0 3rpx 50rpx rgba(107, 107, 107, 0.2);
+  margin-bottom: 70rpx;
 }
 .cu-avatar {
 	font-variant: small-caps;
@@ -77,7 +78,7 @@
 }
 
 .list-card{
-  margin: 50rpx 30rpx;
+  margin: 20rpx 30rpx;
   /* width: 90%; */
   background-color: white;
   /* border:1rpx solid #C0C0C0; */

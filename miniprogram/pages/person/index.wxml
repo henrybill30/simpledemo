@@ -50,27 +50,29 @@
     link-type="navigateTo"
     url="./collection/index"/>
   <van-cell title="精选文章"
-  is-link
-  link-type="navigateTo"
-  url="../components/article/article"/>
-  <van-cell id="direction" title="使用说明"
     is-link
     link-type="navigateTo"
-    url="./usage/index"/>
-  <van-cell title="关于最简模块"
-    is-link
-    link-type="navigateTo"
-    url="./about/index"/>
+    url="../components/article/article"/>
   <van-cell title="反馈"
     is-link
     link-type="navigateTo"
     url="./feedback/index"/>
+  <van-cell id="direction" title="使用说明"
+    is-link
+    link-type="navigateTo"
+    url="./usage/index"/>
+</view>
+ 
+<view class="list-card shadow-warp">
+ <van-cell title="关于最简模块"
+    is-link
+    link-type="navigateTo"
+    url="./about/index"/>
   <van-cell title="更新日志"
     is-link
     link-type="navigateTo"
     url="./changelog/index"/>
 </view>
-
 
 <van-overlay show="{{ showimg }}" bindtap="hideHeadimgHD">
   <view class="wrapper">

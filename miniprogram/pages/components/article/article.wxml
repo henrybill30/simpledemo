@@ -1,5 +1,6 @@
 <!--miniprogram/pages/components/article/article.wxml-->
 <image style="width: {{windowWidth}}px; height: {{(windowWidth*1)/3}}px; background-color: #f7fcfe" src="./article.png"></image>
+<van-skeleton title row="3" wx:if="{{ skeletonVisible }}" />
 <view wx:for="{{ articles }}" wx:key="index">
   <demo-article title="{{ item.title }}" author="{{ item.author }}" date="{{ item.time }}" _id="{{ item._id }}">
     {{ item.introduction }}

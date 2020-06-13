@@ -8,6 +8,7 @@ Page({
     articles: [],
     windowWidth: 0,
     windowHeight: 0,
+    skeletonVisible: true
   },
 
   /**
@@ -32,6 +33,11 @@ Page({
       },
       fail: err => {
         console.log("调用云函数失败：" + JSON.stringify(err))
+      },
+      complete: () => {
+        that.setData({
+          skeletonVisible: false
+        })
       }
     })
   },

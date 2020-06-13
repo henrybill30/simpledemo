@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-skeleton": "/lib/dist/skeleton/index"
+  },
   "navigationBarTitleText": "精选文章"
 }
