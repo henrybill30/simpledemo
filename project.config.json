@@ -105,6 +105,20 @@
 					"id": -1,
 					"name": "pages/components/information/information",
 					"pathName": "pages/components/information/information",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/ocr/index",
+					"pathName": "pages/person/ocr/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/person/usage/index",
+					"pathName": "pages/person/usage/index",
 					"scene": null
 				}
 			]

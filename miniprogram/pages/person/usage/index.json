@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "van-panel": "/lib/dist/panel/index"
+    "van-divider": "/lib/dist/divider/index"
   },
   "navigationBarTitleText": ""
 }

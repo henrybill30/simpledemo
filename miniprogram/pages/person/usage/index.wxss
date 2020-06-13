@@ -1,22 +1,42 @@
 /* miniprogram/pages/person/usage/index.wxss */
-.title{
+.page-title{
   margin: 40rpx;
   font-size: 36rpx;
   text-align: center;
   font-weight: bold;
+}   
+.item {
+  margin: 30px 0;
+  padding: 0 30rpx;
+}
+.item .title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.item .title:before {
+    content: '';
+    border-left: 8rpx solid #53a2ff;
+    margin-right: 5rpx;
 }
 .desc {
-  padding: 0 30rpx;
-  white-space: pre-wrap
+  position: relative;
+  font-size: 26rpx;
+  white-space: pre-wrap;
+  padding: 5rpx;
 }
-.height-40{
-  height: 40rpx;
+.desc:before {
+  content: '';
+  position: absolute;
+  border: 4rpx solid #53a2ff;
+  border-radius: 4rpx;
+  top: 20rpx;
+  left: -10rpx;
 }
+.custom-divider {
+  margin: 0;
+  padding: 0;
+}
+
 .red{
   color: red
-}
-.title1{
-  font-size: 30rpx;
-  padding: 30rpx;
-  background-color: #F9F9F9
 }

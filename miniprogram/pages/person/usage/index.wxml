@@ -1,11 +1,9 @@
 <!--miniprogram/pages/person/usage/index.wxml-->
-<view class="title">使用说明</view>
-<van-panel title="推荐模块">
-  <view class="desc">
-    <text>点击组件页面上漂浮的图标可以进行模块推荐，上传代码图片，会自动为您推荐代码中包含的组件、API或语法</text>
-  </view>
-</van-panel>
-<van-panel title="模块卡片">
+<view class="page-title">使用说明</view>
+
+<view class="item">
+  <view class="title">模块卡片</view>
+  <van-divider custom-style="margin: 6rpx"></van-divider>
   <view class="desc">
     <text space="emsp">点击模块示例卡片左下方的<text class="red">眼睛</text>可<text class="red">显示代码</text>，右下方的<text class="red">三点</text>可选择<text class="red">更多操作</text>。</text>
     <image style="height:180rpx;width:100%" src="./shili2.jpg"></image>
@@ -13,14 +11,25 @@
     <image style="height:220rpx;width:100%" src="./shili3.jpg"></image>
     <text space="emsp">  <text class="red">收藏</text>模块，在个人中心-我的收藏中查看。\n<text class="red">反馈</text>模块卡片的内容和bug。\n<text class="red">看懂</text>模块卡片的功能和代码。</text>
   </view>
-</van-panel>
-<view class="height-40"/>
-<van-panel title="示例代码" id="margin-top-40">
+</view>
+
+<view class="item">
+  <view class="title">示例代码</view>
+  <van-divider custom-style="margin: 6rpx"></van-divider>
   <view class="desc">
     <text class="red">长按</text>示例代码可对进行<text class="red">复制</text>
   </view>
   <view class="desc">
     <text class="red">双击</text>示例代码可<text class="red">隐藏</text>
   </view>
-</van-panel>
+</view>
+
+<view class="item">
+  <view class="title">推荐模块</view>
+  <van-divider custom-style="margin: 6rpx"></van-divider>
+  <view class="desc">
+    <text>点击组件页面上漂浮的图标可以进行模块推荐，上传代码图片，会自动为您推荐代码中包含的组件、API或语法</text>
+  </view>
+</view>
+
 <!-- <button bindtap="del">删除用户</button> -->
