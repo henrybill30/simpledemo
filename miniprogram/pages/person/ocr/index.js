@@ -148,55 +148,55 @@ Page({
             },
             {
                 name: 'cloudFunction',
-                path: 'pages/components/cloudFunction/cloudFunction?index=0'
+                path: 'pages/components/cloudFunction/index?index=0'
             },
             {
                 name: 'cloudGetInfo',
-                path: 'pages/components/cloudFunction/cloudFunction?index=1'
+                path: 'pages/components/cloudFunction/index?index=1'
             },
             {
                 name: 'createCollection',
-                path: 'pages/components/cloudDatabase/cloudDatabase?index=0'
+                path: 'pages/components/cloudDatabase/index?index=0'
             },
             {
                 name: 'addData',
-                path: 'pages/components/cloudDatabase/cloudDatabase?index=1'
+                path: 'pages/components/cloudDatabase/index?index=1'
             },
             {
                 name: 'getData',
-                path: 'pages/components/cloudDatabase/cloudDatabase?index=2'
+                path: 'pages/components/cloudDatabase/index?index=2'
             },
             {
                 name: 'updateData',
-                path: 'pages/components/cloudDatabase/cloudDatabase?index=3'
+                path: 'pages/components/cloudDatabase/index?index=3'
             },
             {
                 name: 'delData',
-                path: 'pages/components/cloudDatabase/cloudDatabase?index=4'
+                path: 'pages/components/cloudDatabase/index?index=4'
             },
             {
                 name: 'serverTime',
-                path: 'pages/components/cloudDatabase/cloudDatabase?index=5'
+                path: 'pages/components/cloudDatabase/index?index=5'
             },
             {
                 name: 'cloudRestore',
-                path: 'pages/components/cloudStorage/cloudStorage?index=0'
+                path: 'pages/components/cloudStorage/index?index=0'
             },
             {
                 name: 'cloudRestoreFile',
-                path: 'pages/components/cloudStorage/cloudStorage?index=1'
+                path: 'pages/components/cloudStorage/index?index=1'
             },
             {
                 name: 'cloudDeleteFile',
-                path: 'pages/components/cloudStorage/cloudStorage?index=2'
+                path: 'pages/components/cloudStorage/index?index=2'
             },
             {
                 name: 'wxacode',
-                path: 'pages/components/cloudAPI/cloudAPI?index=0'
+                path: 'pages/components/cloudAPI/index?index=0'
             },
             {
                 name: 'ocr',
-                path: 'pages/components/cloudAPI/cloudAPI?index=1'
+                path: 'pages/components/cloudAPI/index?index=1'
             },
             {
                 name: 'pageHook',
