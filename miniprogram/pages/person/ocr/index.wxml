@@ -1,5 +1,5 @@
 <!--miniprogram/pages/person/ocr/index.wxml-->
-<view class="title">上传代码图片获取相关组件推荐</view>
+<view class="title">上传代码图片获取相关模块推荐</view>
 
 <view class="uploader">
   <van-uploader
@@ -12,11 +12,11 @@
 
 <view class="component" wx:if="{{imgVisible}}">
   <van-divider/>
-  <view style="font-size:40rpx;margin-bottom:20rpx;font-weight:bold">推荐组件</view>
+  <view style="font-size:40rpx;margin-bottom:20rpx;font-weight:bold">推荐模块</view>
   <view class="item" style="font-weight:bold">
     <van-row>
       <van-col span="12">
-        <text>组件名称</text>
+        <text>模块名称</text>
       </van-col>
       <van-col span="12">
         <view>前往</view>

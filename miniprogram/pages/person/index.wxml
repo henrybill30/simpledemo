@@ -57,7 +57,7 @@
     is-link
     link-type="navigateTo"
     url="./usage/index"/>
-  <van-cell title="关于组件学习"
+  <van-cell title="关于最简模块"
     is-link
     link-type="navigateTo"
     url="./about/index"/>
