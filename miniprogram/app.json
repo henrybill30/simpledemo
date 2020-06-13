@@ -24,8 +24,8 @@
       {
         "pagePath": "pages/person/index",
         "text": "个人中心",
-        "iconPath": "./lib/pic/个人中心 - 选中.png",
-        "selectedIconPath": "./lib/pic/个人中心 - 选中 (1).png"
+        "iconPath": "./lib/pic/人.png",
+        "selectedIconPath": "./lib/pic/人 (1).png"
       }
     ]
   },
