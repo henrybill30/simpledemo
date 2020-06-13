@@ -2,284 +2,286 @@
   <movable-view class="movable-view" x="{{orcbtn.x}}" y="{{orcbtn.y}}" bindchange="btnMove" bindtap="toOCR" direction="all">
     <image class="movable-img" src="/lib/pic/图片识别.png"></image>
   </movable-view>
-  <van-tabs
-    active="{{ currentPage }}"
-    sticky
-    title-active-color="#6A84E3"
-    color="#6A84E3"
-    bind:change="onTabChange">
-    <van-tab title='view' :name="0">
-        <view wx:if="{{currentPage == 0}}">
+  <view class="container">
+    <van-tabs
+      active="{{ currentPage }}"
+      sticky
+      title-active-color="#6A84E3"
+      color="#6A84E3"
+      bind:change="onTabChange">
+      <van-tab title='view' :name="0">
+          <view wx:if="{{currentPage == 0}}">
+            <demo-block title="基础用法">
+              <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="view" type="basic" num="0">
+                <view>这是一个简单的view组件</view>
+              </demo-code>
+              <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="view" type="basic" num="1">
+                <view hover-class="view2" hover-start-time="10" hover-stay-time="400">这是增加了点击态效果的view组件</view>
+              </demo-code>
+            </demo-block>
+            <demo-block title="增强用法">
+              <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="180" name="view" type="strength" num="0">
+                <view style="display:flex;">
+                  <view style='background-color:red;flex-grow:1;height:100rpx;'>水平</view>
+                  <view style='background-color:rgb(105, 170, 243);flex-grow:1;height:100rpx;'>并排</view>
+                  <view style='background-color:rgba(146, 245, 162, 0.932);flex-grow:1;height:100rpx;'>view组件</view>
+                </view>
+              </demo-code>
+              <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="180" name="view" type="strength" num="1">
+                <view style='display:flex;height:100rpx;'>
+                  <view style='background-color:red;width:250rpx'>左右</view>
+                    <view style='flex-grow:1;display:flex;flex-direction:column;'>
+                      <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>混合</view>
+                      <view style='flex-grow:1;background-color:rgba(146, 245, 162, 0.932)'>view组件</view>
+                    </view>
+                </view>
+              </demo-code>
+              <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="180" name="view" type="strength" num="2">
+                <view style='display:flex;flex-direction:column;height:150rpx;'>
+                  <view style='flex-grow:1;background-color:red'>上下</view>
+                  <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>排列</view>
+                  <view style='flex-grow:1;background-color:rgba(146, 245, 162, 0.932)'>view组件</view>
+                </view>
+              </demo-code>
+            </demo-block>
+          </view>
+      </van-tab>
+      <van-tab title="text" :name="1">
+        <view wx:if="{{currentPage == 1}}">
+        <demo-block title="基础用法">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="text" type="basic" num="0">
+            <text>这是一个简单的text组件</text>
+          </demo-code>
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="text" type="basic" num="1">
+            <text selectable="true">这是一个可选择的text组件</text>
+          </demo-code>
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="text" type="basic" num="2">
+            <text selectable="true" space="emsp">这   是   一个显示连续空格的text组件</text>
+          </demo-code>
+        </demo-block>
+        </view>
+      </van-tab>
+      <van-tab title="icon" :name="2">
+        <view wx:if="{{currentPage == 2}}">
           <demo-block title="基础用法">
-            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="view" type="basic" num="0">
-              <view>这是一个简单的view组件</view>
-            </demo-code>
-            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="view" type="basic" num="1">
-              <view hover-class="view2" hover-start-time="10" hover-stay-time="400">这是增加了点击态效果的view组件</view>
-            </demo-code>
-          </demo-block>
-          <demo-block title="增强用法">
-            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="180" name="view" type="strength" num="0">
-              <view style="display:flex;">
-                <view style='background-color:red;flex-grow:1;height:100rpx;'>水平</view>
-                <view style='background-color:rgb(105, 170, 243);flex-grow:1;height:100rpx;'>并排</view>
-                <view style='background-color:rgba(146, 245, 162, 0.932);flex-grow:1;height:100rpx;'>view组件</view>
-              </view>
-            </demo-code>
-            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="180" name="view" type="strength" num="1">
-              <view style='display:flex;height:100rpx;'>
-                <view style='background-color:red;width:250rpx'>左右</view>
-                  <view style='flex-grow:1;display:flex;flex-direction:column;'>
-                    <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>混合</view>
-                    <view style='flex-grow:1;background-color:rgba(146, 245, 162, 0.932)'>view组件</view>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="icon" type="basic" num="0">
+              <view style="display:flex;margin-bottom:20rpx">
+                <view style='flex-grow:1;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="success" size="40"></icon>
+                    <text style="flex-grow:1; font-size:10px">成功</text>
                   </view>
+                </view>
+                <view style='flex-grow:1;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="info" size="40"></icon>
+                    <text style="flex-grow:1; font-size:10px">提示</text>
+                  </view>
+                </view>
+                <view style='red;flex-grow:1;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="warn" size="40" color="gray"></icon>
+                    <text style="flex-grow:1; font-size:10px">普通警告</text>
+                  </view>
+                </view>
+                <view style='red;flex-grow:1;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="warn" size="40" ></icon>
+                    <text style="flex-grow:1; font-size:10px">严重警告</text>
+                  </view>
+                </view>
+                <view style='red;flex-grow:1;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="waiting" size="40"></icon>
+                    <text style="flex-grow:1; font-size:10px">等待</text>
+                  </view>
+                </view>
               </view>
             </demo-code>
-            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="180" name="view" type="strength" num="2">
-              <view style='display:flex;flex-direction:column;height:150rpx;'>
-                <view style='flex-grow:1;background-color:red'>上下</view>
-                <view style='flex-grow:1;background-color:rgb(105, 170, 243)'>排列</view>
-                <view style='flex-grow:1;background-color:rgba(146, 245, 162, 0.932)'>view组件</view>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="150" name="icon" type="basic" num="1">
+              <view style="display:flex;margin-bottom:20rpx">
+                <view style='width:33.3%;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="success_no_circle" size="40"></icon>
+                    <text style="flex-grow:1; font-size:10px">多选控件已选择</text>
+                  </view>
+                </view>
+                <view style='width:33.3%;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="circle" size="40"></icon>
+                    <text style="flex-grow:1; font-size:10px">多选控件未选择</text>
+                  </view>
+                </view>
+                <view style='red;width:33.3%;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="download" size="40"></icon>
+                    <text style="flex-grow:1; font-size:10px">下载</text>
+                  </view>
+                </view>
+              </view>
+            </demo-code>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="150" name="icon" type="basic" num="2">
+              <view style="display:flex;margin-bottom:20rpx">
+                <view style='width:33.3%;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="info_circle" size="40"></icon>
+                    <text style="flex-grow:1; font-size:10px">提示</text>
+                  </view>
+                </view>
+                <view style='width:33.3%;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="cancel" size="40"></icon>
+                    <text style="flex-grow:1; font-size:10px">停止或关闭</text>
+                  </view>
+                </view>
+                <view style='red;width:33.3%;height:80rpx;'>
+                  <view style="display: flex; flex-direction:column; align-items: center">
+                    <icon style="flex-grow:1" type="search" size="40"></icon>
+                    <text style="flex-grow:1; font-size:10px">搜索</text>
+                  </view>
+                </view>
               </view>
             </demo-code>
           </demo-block>
         </view>
-    </van-tab>
-    <van-tab title="text" :name="1">
-      <view wx:if="{{currentPage == 1}}">
-      <demo-block title="基础用法">
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="text" type="basic" num="0">
-          <text>这是一个简单的text组件</text>
-        </demo-code>
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="text" type="basic" num="1">
-          <text selectable="true">这是一个可选择的text组件</text>
-        </demo-code>
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="text" type="basic" num="2">
-          <text selectable="true" space="emsp">这   是   一个显示连续空格的text组件</text>
-        </demo-code>
-      </demo-block>
-      </view>
-    </van-tab>
-    <van-tab title="icon" :name="2">
-      <view wx:if="{{currentPage == 2}}">
-        <demo-block title="基础用法">
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="icon" type="basic" num="0">
-            <view style="display:flex;margin-bottom:20rpx">
-              <view style='flex-grow:1;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="success" size="40"></icon>
-                  <text style="flex-grow:1; font-size:10px">成功</text>
-                </view>
-              </view>
-              <view style='flex-grow:1;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="info" size="40"></icon>
-                  <text style="flex-grow:1; font-size:10px">提示</text>
-                </view>
-              </view>
-              <view style='red;flex-grow:1;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="warn" size="40" color="gray"></icon>
-                  <text style="flex-grow:1; font-size:10px">普通警告</text>
-                </view>
-              </view>
-              <view style='red;flex-grow:1;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="warn" size="40" ></icon>
-                  <text style="flex-grow:1; font-size:10px">严重警告</text>
-                </view>
-              </view>
-              <view style='red;flex-grow:1;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="waiting" size="40"></icon>
-                  <text style="flex-grow:1; font-size:10px">等待</text>
-                </view>
-              </view>
-            </view>
-          </demo-code>
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="150" name="icon" type="basic" num="1">
-            <view style="display:flex;margin-bottom:20rpx">
-              <view style='width:33.3%;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="success_no_circle" size="40"></icon>
-                  <text style="flex-grow:1; font-size:10px">多选控件已选择</text>
-                </view>
-              </view>
-              <view style='width:33.3%;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="circle" size="40"></icon>
-                  <text style="flex-grow:1; font-size:10px">多选控件未选择</text>
-                </view>
-              </view>
-              <view style='red;width:33.3%;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="download" size="40"></icon>
-                  <text style="flex-grow:1; font-size:10px">下载</text>
-                </view>
-              </view>
-            </view>
-          </demo-code>
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="150" name="icon" type="basic" num="2">
-            <view style="display:flex;margin-bottom:20rpx">
-              <view style='width:33.3%;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="info_circle" size="40"></icon>
-                  <text style="flex-grow:1; font-size:10px">提示</text>
-                </view>
-              </view>
-              <view style='width:33.3%;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="cancel" size="40"></icon>
-                  <text style="flex-grow:1; font-size:10px">停止或关闭</text>
-                </view>
-              </view>
-              <view style='red;width:33.3%;height:80rpx;'>
-                <view style="display: flex; flex-direction:column; align-items: center">
-                  <icon style="flex-grow:1" type="search" size="40"></icon>
-                  <text style="flex-grow:1; font-size:10px">搜索</text>
-                </view>
-              </view>
-            </view>
-          </demo-code>
-        </demo-block>
-      </view>
-    </van-tab>
-    <van-tab title="progress" :name="3">
-      <view wx:if="{{currentPage == 3}}">
-        <demo-block title="基础用法">
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="0">
-            <progress percent="40" show-info stroke-width="3"/>
-          </demo-code>
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="1">
-            <progress percent="60" />
-          </demo-code>
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="2">
-            <progress percent="80" color="#10AEFF" active stroke-width="3" />
-          </demo-code>
-        </demo-block>
-      </view>
-    </van-tab>
-    <van-tab title="rich-text" :name="4">
-      <view wx:if="{{currentPage == 4}}">
-        <demo-block title="基础用法">
-          <view class="card-title">传入html字符串</view>
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="120" name="richtext" type="basic" num="0">
-            <view class="page-section">
-              <view class="rich-text-wrp">
-                <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
-              </view>
-            </view>
-          </demo-code>
-          <view class="card-title">传入节点列表</view>
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="120" name="richtext" type="basic" num="1">
-            <view class="page-section">
-              <view class="rich-text-wrp">
-                <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
-              </view>
-            </view>
-          </demo-code>
-        </demo-block>
-
-        <demo-block title="增强用法">
-          <view class="card-title">显示连续空格</view>
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="100" name="richtext" type="strength" num="0">
-            <view class="page-section">
-              <view class="rich-text-wrp">
-                <rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>
-              </view>
-            </view>
-          </demo-code>
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="300" name="richtext" type="strength" num="1">
-            <view class="page-section">
-              <view class="rich-text-wrp">
-                <rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>
-              </view>
-            </view>
-          </demo-code>
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="200" name="richtext" type="strength" num="2">
-            <view class="page-section">
-              <view class="rich-text-wrp">
-                <rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>
-              </view>
-            </view>
-          </demo-code>
-        </demo-block>
-      </view>
-    </van-tab>
-    <van-tab title="swiper" :name="5">
-      <view wx:if="{{currentPage == 5}}">
-        <view>
+      </van-tab>
+      <van-tab title="progress" :name="3">
+        <view wx:if="{{currentPage == 3}}">
           <demo-block title="基础用法">
-            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="320" name="swiper" type="basic" num="0">
-              <view class="page-section page-section-spacing swiper">
-                <swiper
-                  indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
-                  interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
-                  <block wx:for="{{background}}" wx:key="*this">
-                    <swiper-item>
-                      <view class="swiper-item {{item}}"></view>
-                    </swiper-item>
-                  </block>
-                </swiper>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="0">
+              <progress percent="40" show-info stroke-width="3"/>
+            </demo-code>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="1">
+              <progress percent="60" />
+            </demo-code>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="2">
+              <progress percent="80" color="#10AEFF" active stroke-width="3" />
+            </demo-code>
+          </demo-block>
+        </view>
+      </van-tab>
+      <van-tab title="rich-text" :name="4">
+        <view wx:if="{{currentPage == 4}}">
+          <demo-block title="基础用法">
+            <view class="card-title">传入html字符串</view>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="120" name="richtext" type="basic" num="0">
+              <view class="page-section">
+                <view class="rich-text-wrp">
+                  <rich-text nodes="{{html}}" bindtap="tap"></rich-text>
+                </view>
+              </view>
+            </demo-code>
+            <view class="card-title">传入节点列表</view>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="120" name="richtext" type="basic" num="1">
+              <view class="page-section">
+                <view class="rich-text-wrp">
+                  <rich-text nodes="{{nodes}}" bindtap="tap"></rich-text>
+                </view>
               </view>
             </demo-code>
           </demo-block>
-          
-          <view class="control-area">
-            <view class="page-section" style="margin-top: 40rpx;margin-bottom: 0;">
-              <view class="weui-cells weui-cells_after-title">
-                <view class="weui-cell weui-cell_switch">
-                  <view class="weui-cell__bd">指示点</view>
-                  <view class="weui-cell__ft">
-                    <switch checked="{{indicatorDots}}" bindchange="changeProperty" data-property-name="indicatorDots" />
-                  </view>
-                </view>
-                <view class="weui-cell weui-cell_switch">
-                  <view class="weui-cell__bd">自动播放</view>
-                  <view class="weui-cell__ft">
-                    <switch checked="{{autoplay}}" bindchange="changeProperty" data-property-name="autoplay" />
-                  </view>
-                </view>
-                <view class="weui-cell weui-cell_switch">
-                  <view class="weui-cell__bd">衔接滑动</view>
-                  <view class="weui-cell__ft">
-                    <switch checked="{{circular}}" bindchange="changeProperty" data-property-name="circular" />
-                  </view>
-                </view>
-                <view class="weui-cell weui-cell_switch">
-                  <view class="weui-cell__bd">竖向</view>
-                  <view class="weui-cell__ft">
-                    <switch checked="{{vertical}}" bindchange="changeProperty" data-property-name="vertical" />
-                  </view>
-                </view>
-              </view>
-            </view>
 
-            <view class="page-section">
-              <view class="card-title">
-                <text>幻灯片切换时长(ms)</text>
-                <text class="info">{{duration}}</text>
+          <demo-block title="增强用法">
+            <view class="card-title">显示连续空格</view>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="100" name="richtext" type="strength" num="0">
+              <view class="page-section">
+                <view class="rich-text-wrp">
+                  <rich-text space="nbsp" nodes="{{nbsphtml}}"></rich-text>
+                </view>
               </view>
-              <slider value="{{duration}}" min="500" max="2000" bindchange="changeProperty" data-property-name="duration" />
-              <view class="card-title">
-                <text>自动播放间隔时长(ms)</text>
-                <text class="info">{{interval}}</text>
+            </demo-code>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="300" name="richtext" type="strength" num="1">
+              <view class="page-section">
+                <view class="rich-text-wrp">
+                  <rich-text space="ensp" nodes="{{ensphtml}}"></rich-text>
+                </view>
               </view>
-              <slider value="{{interval}}" min="2000" max="10000" bindchange="changeProperty" data-property-name="interval" />
-              <view class="card-title">
-                <text>前边距(px)</text>
-                <text class="info">{{previousMargin}}</text>
+            </demo-code>
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="200" name="richtext" type="strength" num="2">
+              <view class="page-section">
+                <view class="rich-text-wrp">
+                  <rich-text space="emsp" nodes="{{emsphtml}}"></rich-text>
+                </view>
               </view>
-              <slider value="{{previousMargin}}" min="0" max="50" bindchange="changeProperty" data-property-name="previousMargin" />
-              <view class="card-title">
-                <text>后边距(px)</text>
-                <text class="info">{{nextMargin}}</text>
+            </demo-code>
+          </demo-block>
+        </view>
+      </van-tab>
+      <van-tab title="swiper" :name="5">
+        <view wx:if="{{currentPage == 5}}">
+          <view>
+            <demo-block title="基础用法">
+              <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="320" name="swiper" type="basic" num="0">
+                <view class="page-section page-section-spacing swiper">
+                  <swiper
+                    indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}"
+                    interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+                    <block wx:for="{{background}}" wx:key="*this">
+                      <swiper-item>
+                        <view class="swiper-item {{item}}"></view>
+                      </swiper-item>
+                    </block>
+                  </swiper>
+                </view>
+              </demo-code>
+            </demo-block>
+            
+            <view class="control-area">
+              <view class="page-section" style="margin-top: 40rpx;margin-bottom: 0;">
+                <view class="weui-cells weui-cells_after-title">
+                  <view class="weui-cell weui-cell_switch">
+                    <view class="weui-cell__bd">指示点</view>
+                    <view class="weui-cell__ft">
+                      <switch checked="{{indicatorDots}}" bindchange="changeProperty" data-property-name="indicatorDots" />
+                    </view>
+                  </view>
+                  <view class="weui-cell weui-cell_switch">
+                    <view class="weui-cell__bd">自动播放</view>
+                    <view class="weui-cell__ft">
+                      <switch checked="{{autoplay}}" bindchange="changeProperty" data-property-name="autoplay" />
+                    </view>
+                  </view>
+                  <view class="weui-cell weui-cell_switch">
+                    <view class="weui-cell__bd">衔接滑动</view>
+                    <view class="weui-cell__ft">
+                      <switch checked="{{circular}}" bindchange="changeProperty" data-property-name="circular" />
+                    </view>
+                  </view>
+                  <view class="weui-cell weui-cell_switch">
+                    <view class="weui-cell__bd">竖向</view>
+                    <view class="weui-cell__ft">
+                      <switch checked="{{vertical}}" bindchange="changeProperty" data-property-name="vertical" />
+                    </view>
+                  </view>
+                </view>
               </view>
-              <slider value="{{nextMargin}}" min="0" max="50" bindchange="changeProperty" data-property-name="nextMargin" />
+
+              <view class="page-section">
+                <view class="card-title">
+                  <text>幻灯片切换时长(ms)</text>
+                  <text class="info">{{duration}}</text>
+                </view>
+                <slider value="{{duration}}" min="500" max="2000" bindchange="changeProperty" data-property-name="duration" />
+                <view class="card-title">
+                  <text>自动播放间隔时长(ms)</text>
+                  <text class="info">{{interval}}</text>
+                </view>
+                <slider value="{{interval}}" min="2000" max="10000" bindchange="changeProperty" data-property-name="interval" />
+                <view class="card-title">
+                  <text>前边距(px)</text>
+                  <text class="info">{{previousMargin}}</text>
+                </view>
+                <slider value="{{previousMargin}}" min="0" max="50" bindchange="changeProperty" data-property-name="previousMargin" />
+                <view class="card-title">
+                  <text>后边距(px)</text>
+                  <text class="info">{{nextMargin}}</text>
+                </view>
+                <slider value="{{nextMargin}}" min="0" max="50" bindchange="changeProperty" data-property-name="nextMargin" />
+              </view>
             </view>
           </view>
         </view>
-      </view>
-    </van-tab>
-  </van-tabs>
+      </van-tab>
+    </van-tabs>
+  </view>
 </movable-area>

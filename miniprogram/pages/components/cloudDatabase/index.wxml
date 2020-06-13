@@ -2,42 +2,44 @@
   <movable-view class="movable-view" x="{{orcbtn.x}}" y="{{orcbtn.y}}" bindchange="btnMove" bindtap="toOCR" direction="all">
     <image class="movable-img" src="/lib/pic/图片识别.png"></image>
   </movable-view>
-  <van-tabs
-    active="{{ currentPage }}"
-    sticky
-    title-active-color="#6A84E3"
-    color="#6A84E3"
-    bind:change="onTabChange">
-    <van-tab title="创建集合" :name="0">
-      <view wx:if="{{currentPage == 0}}">
-        <createCollection></createCollection>
-      </view>
-    </van-tab>
-    <van-tab title="添加数据" :name="1">
-      <view wx:if="{{currentPage == 1}}">
-        <addData></addData>
-      </view>
-    </van-tab>
-    <van-tab title="查询数据" :name="2">
-      <view wx:if="{{currentPage == 2}}">
-        <getData></getData>
-        <searchData></searchData>
-      </view>
-    </van-tab>
-    <van-tab title="更改数据" :name="3">
-      <view wx:if="{{currentPage == 3}}">
-        <updateData></updateData>
-      </view>
-    </van-tab>
-    <van-tab title="删除数据" :name="4">
-      <view wx:if="{{currentPage == 4}}">
-        <delData></delData>
-      </view>
-    </van-tab>
-    <van-tab title="服务端时间" :name="5">
-      <view wx:if="{{currentPage == 5}}">
-        <time/>
-      </view>
-    </van-tab>
-  </van-tabs>
+  <view class="container">
+    <van-tabs
+      active="{{ currentPage }}"
+      sticky
+      title-active-color="#6A84E3"
+      color="#6A84E3"
+      bind:change="onTabChange">
+      <van-tab title="创建集合" :name="0">
+        <view wx:if="{{currentPage == 0}}">
+          <createCollection></createCollection>
+        </view>
+      </van-tab>
+      <van-tab title="添加数据" :name="1">
+        <view wx:if="{{currentPage == 1}}">
+          <addData></addData>
+        </view>
+      </van-tab>
+      <van-tab title="查询数据" :name="2">
+        <view wx:if="{{currentPage == 2}}">
+          <getData></getData>
+          <searchData></searchData>
+        </view>
+      </van-tab>
+      <van-tab title="更改数据" :name="3">
+        <view wx:if="{{currentPage == 3}}">
+          <updateData></updateData>
+        </view>
+      </van-tab>
+      <van-tab title="删除数据" :name="4">
+        <view wx:if="{{currentPage == 4}}">
+          <delData></delData>
+        </view>
+      </van-tab>
+      <van-tab title="服务端时间" :name="5">
+        <view wx:if="{{currentPage == 5}}">
+          <time/>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
 </movable-area>

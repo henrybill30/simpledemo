@@ -2,51 +2,53 @@
   <movable-view class="movable-view" x="{{orcbtn.x}}" y="{{orcbtn.y}}" bindchange="btnMove" bindtap="toOCR" direction="all">
     <image class="movable-img" src="/lib/pic/图片识别.png"></image>
   </movable-view>
-  <demo-block title="垂直水平居中">
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" name="flex" type="centerVerticalHorizon" num="0">
-      <view class="center-vertical-horizon">
-        垂直水平居中
-      </view>
-    </demo-code>
-  </demo-block>
+  <view class="container">
+    <demo-block title="垂直水平居中">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" name="flex" type="centerVerticalHorizon" num="0">
+        <view class="center-vertical-horizon">
+          垂直水平居中
+        </view>
+      </demo-code>
+    </demo-block>
 
-  <demo-block title="左对齐">
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" name="flex" type="flexStart" num="0">
-      <view class="flex-start">
-        <view class="box" style="background-color: beige"></view>
-        <view class="box" style="background-color: ghostwhite"></view>
-        <view class="box" style="background-color: lightblue"></view>
-      </view>
-    </demo-code>
-  </demo-block>
-    
-  <demo-block title="纵向排列">
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" name="flex" type="flexColumn" num="0">
-      <view class="flex-column">
-        <view class="box" style="background-color: beige"></view>
-        <view class="box" style="background-color: ghostwhite"></view>
-        <view class="box" style="background-color: lightblue"></view>
-      </view>
-    </demo-code>
-  </demo-block>
+    <demo-block title="左对齐">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" name="flex" type="flexStart" num="0">
+        <view class="flex-start">
+          <view class="box" style="background-color: beige"></view>
+          <view class="box" style="background-color: ghostwhite"></view>
+          <view class="box" style="background-color: lightblue"></view>
+        </view>
+      </demo-code>
+    </demo-block>
+      
+    <demo-block title="纵向排列">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" name="flex" type="flexColumn" num="0">
+        <view class="flex-column">
+          <view class="box" style="background-color: beige"></view>
+          <view class="box" style="background-color: ghostwhite"></view>
+          <view class="box" style="background-color: lightblue"></view>
+        </view>
+      </demo-code>
+    </demo-block>
 
-  <demo-block title="均匀排列">
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" name="flex" type="flexSpacebetween" num="0">
-      <view class="flex-spacebetween">
-        <view class="box" style="background-color: beige"></view>
-        <view class="box" style="background-color: ghostwhite"></view>
-        <view class="box" style="background-color: lightblue"></view>
-      </view>
-    </demo-code>
-  </demo-block>
+    <demo-block title="均匀排列">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" name="flex" type="flexSpacebetween" num="0">
+        <view class="flex-spacebetween">
+          <view class="box" style="background-color: beige"></view>
+          <view class="box" style="background-color: ghostwhite"></view>
+          <view class="box" style="background-color: lightblue"></view>
+        </view>
+      </demo-code>
+    </demo-block>
 
-  <demo-block title="宽度自适应">
-    <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" name="flex" type="flexWidthAdaptive" num="0">
-      <view class="flex-width-adaptive">
-        <view class="box flex-grow" style="background-color: beige"></view>
-        <view class="box flex-grow" style="background-color: ghostwhite"></view>
-        <view class="box flex-grow" style="background-color: lightblue"></view>
-      </view>
-    </demo-code>
-  </demo-block>
+    <demo-block title="宽度自适应">
+      <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="0" name="flex" type="flexWidthAdaptive" num="0">
+        <view class="flex-width-adaptive">
+          <view class="box flex-grow" style="background-color: beige"></view>
+          <view class="box flex-grow" style="background-color: ghostwhite"></view>
+          <view class="box flex-grow" style="background-color: lightblue"></view>
+        </view>
+      </demo-code>
+    </demo-block>
+  </view>
 </movable-area>

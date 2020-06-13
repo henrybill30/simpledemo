@@ -6,9 +6,7 @@ page {
   line-height: 1.6;
   margin-bottom: 60rpx;
 }
-.container{
-  margin: 0 60rpx 60rpx 60rpx
-}
+
 .page-color{
   position: fixed;
   top: 0;
@@ -51,4 +49,11 @@ page {
 .movable-area{
   width: 100vw;
   height: 100vh;
+  position: fixed;
+}
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
 }

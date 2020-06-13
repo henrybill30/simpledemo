@@ -2,111 +2,113 @@
   <movable-view class="movable-view" x="{{orcbtn.x}}" y="{{orcbtn.y}}" bindchange="btnMove" bindtap="toOCR" direction="all">
     <image class="movable-img" src="/lib/pic/图片识别.png"></image>
   </movable-view>
+  <view class="container">
   
-  <van-tabs
-    active="{{ currentPage }}"
-    sticky
-    title-active-color="#6A84E3"
-    color="#6A84E3"
-    bind:change="onTabChange">
-    <van-tab title="wx:if" :name="0">
-      <view wx:if="{{currentPage == 0}}">
-      <demo-block title="基础用法">
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:if" type="basic" num="0">
-          <switch bindchange="xChange" >显示控制</switch>
-          <block wx:if="{{x}}" >
-            <view> 第一个显示单元 </view>
-            <view>
-              <text>progress进度条</text>
-            <progress percent="80" ></progress>
-            </view>
-              <view>image图片</view>
-              <image style="width: 200px; height: 200px;" mode="scaleToFill" src="../../../resource/cat.jpg">  </image>
-            <view> …… </view>
-            <view> 第N个显示单元 </view>
-          </block>
-        </demo-code>
-      </demo-block>
-      <demo-block title="增强用法">
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:if" type="strength" num="0">
-          <view>猜数字（猜对后会显示隐藏内容）</view>
-          <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_input">
-              <input class="weui-input" placeholder="输入10以内数字" type="text" bindinput="guess"></input>
-            </view>
-          </view>
-          <view wx:if="{{guessNum==randomNum}}">
-            <text>恭喜猜对了！！！这样我才会显示</text>
-          </view>
-        </demo-code>
-      </demo-block>
-      </view>
-    </van-tab>
-
-    <van-tab title="wx:elif" :name="1">
-      <view wx:if="{{currentPage == 1}}">
+    <van-tabs
+      active="{{ currentPage }}"
+      sticky
+      title-active-color="#6A84E3"
+      color="#6A84E3"
+      bind:change="onTabChange">
+      <van-tab title="wx:if" :name="0">
+        <view wx:if="{{currentPage == 0}}">
         <demo-block title="基础用法">
-          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:elif" type="basic" num="0">
-            <view class="weui-label">显示图片位置</view>
-            <view class="picker">
-              <picker bindchange="bindPickerChange" value="{{index}}" range="{{imagePos}}">
-                <text style="text-align: center">{{imagePos[index]}}</text>
-              </picker>
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:if" type="basic" num="0">
+            <switch bindchange="xChange" >显示控制</switch>
+            <block wx:if="{{x}}" >
+              <view> 第一个显示单元 </view>
+              <view>
+                <text>progress进度条</text>
+              <progress percent="80" ></progress>
+              </view>
+                <view>image图片</view>
+                <image style="width: 200px; height: 200px;" mode="scaleToFill" src="../../../resource/cat.jpg">  </image>
+              <view> …… </view>
+              <view> 第N个显示单元 </view>
+            </block>
+          </demo-code>
+        </demo-block>
+        <demo-block title="增强用法">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:if" type="strength" num="0">
+            <view>猜数字（猜对后会显示隐藏内容）</view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                <input class="weui-input" placeholder="输入10以内数字" type="text" bindinput="guess"></input>
+              </view>
             </view>
-            <view wx:if="{{index==0}}" style="display:flex; justify-content: center;">
-              <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top"></image>
-            </view>
-            <view wx:elif="{{index==1}}" style="display:flex; justify-content: center;">
-              <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom"></image>
-            </view>
-            <view wx:elif="{{index==2}}" style="display:flex; justify-content: center;">
-              <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="left"></image>
-            </view>
-            <view wx:elif="{{index==3}}" style="display:flex; justify-content:center">
-              <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="right"></image>
-            </view>
-            <view wx:elif="{{index==4}}" style="display:flex; justify-content:center">
-              <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top left"></image>
-            </view>
-            <view wx:elif="{{index==5}}" style="display:flex; justify-content:center">
-              <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top right"></image>
-            </view>
-            <view wx:elif="{{index==6}}" style="display:flex; justify-content:center">
-              <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom left"></image>
-            </view>
-            <view wx:elif="{{index==7}}" style="display:flex; justify-content:center">
-              <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom right"></image>
-            </view>
-            <view wx:elif="{{index==8}}" style="display:flex; justify-content:center">
-              <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="center"></image>
+            <view wx:if="{{guessNum==randomNum}}">
+              <text>恭喜猜对了！！！这样我才会显示</text>
             </view>
           </demo-code>
         </demo-block>
-      </view>
-    </van-tab>
+        </view>
+      </van-tab>
 
-    <van-tab title="wx:else" :name="2">
-      <view wx:if="{{currentPage == 2}}">
-      <demo-block title="基础用法">
-        <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:else" type="basic" num="0">
-          <view >猜数字升级</view>
-          <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell weui-cell_input">
-              <input class="weui-input" placeholder="输入10以内数字" type="text" bindinput="guess1"></input>
+      <van-tab title="wx:elif" :name="1">
+        <view wx:if="{{currentPage == 1}}">
+          <demo-block title="基础用法">
+            <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:elif" type="basic" num="0">
+              <view class="weui-label">显示图片位置</view>
+              <view class="picker">
+                <picker bindchange="bindPickerChange" value="{{index}}" range="{{imagePos}}">
+                  <text style="text-align: center">{{imagePos[index]}}</text>
+                </picker>
+              </view>
+              <view wx:if="{{index==0}}" style="display:flex; justify-content: center;">
+                <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top"></image>
+              </view>
+              <view wx:elif="{{index==1}}" style="display:flex; justify-content: center;">
+                <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom"></image>
+              </view>
+              <view wx:elif="{{index==2}}" style="display:flex; justify-content: center;">
+                <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="left"></image>
+              </view>
+              <view wx:elif="{{index==3}}" style="display:flex; justify-content:center">
+                <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="right"></image>
+              </view>
+              <view wx:elif="{{index==4}}" style="display:flex; justify-content:center">
+                <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top left"></image>
+              </view>
+              <view wx:elif="{{index==5}}" style="display:flex; justify-content:center">
+                <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="top right"></image>
+              </view>
+              <view wx:elif="{{index==6}}" style="display:flex; justify-content:center">
+                <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom left"></image>
+              </view>
+              <view wx:elif="{{index==7}}" style="display:flex; justify-content:center">
+                <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="bottom right"></image>
+              </view>
+              <view wx:elif="{{index==8}}" style="display:flex; justify-content:center">
+                <image style="width: 400rpx; height: 400rpx;" src="{{imgUrl}}" mode="center"></image>
+              </view>
+            </demo-code>
+          </demo-block>
+        </view>
+      </van-tab>
+
+      <van-tab title="wx:else" :name="2">
+        <view wx:if="{{currentPage == 2}}">
+        <demo-block title="基础用法">
+          <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="wx:else" type="basic" num="0">
+            <view >猜数字升级</view>
+            <view class="weui-cells weui-cells_after-title">
+              <view class="weui-cell weui-cell_input">
+                <input class="weui-input" placeholder="输入10以内数字" type="text" bindinput="guess1"></input>
+              </view>
             </view>
-          </view>
-          <view wx:if="{{guessNum1==randomNum1}}">
-            <text>恭喜猜对了！！！这样我才会显示</text>
-          </view>
-          <view wx:elif="{{guessNum1==-1||guessNum1==''}}">
-            <text>准备开始</text>
-          </view>
-          <view wx:else>
-            <text>猜错了...再猜一次！</text>
-          </view>
-        </demo-code>
-      </demo-block>
-      </view>
-    </van-tab>
-  </van-tabs>
+            <view wx:if="{{guessNum1==randomNum1}}">
+              <text>恭喜猜对了！！！这样我才会显示</text>
+            </view>
+            <view wx:elif="{{guessNum1==-1||guessNum1==''}}">
+              <text>准备开始</text>
+            </view>
+            <view wx:else>
+              <text>猜错了...再猜一次！</text>
+            </view>
+          </demo-code>
+        </demo-block>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
 </movable-area>

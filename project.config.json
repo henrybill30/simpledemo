@@ -20,10 +20,9 @@
 			"disablePlugins": [],
 			"outputPath": ""
 		},
-		"useIsolateContext": true,
 		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false,
-		"compileHotReLoad": false
+		"useIsolateContext": true
 	},
 	"appid": "wxf73004190ea43234",
 	"projectname": "newsimpledemo",
