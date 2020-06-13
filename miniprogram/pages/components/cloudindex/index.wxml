@@ -1,6 +1,6 @@
 <movable-area class="movable-area">
   <movable-view class="movable-view" x="{{orcbtn.x}}" y="{{orcbtn.y}}" bindchange="btnMove" bindtap="toOCR" direction="all">
-    <image class="movable-img" src="/lib/pic/图片识别.png"></image>
+    <image class="movable-img" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/图片识别.png"></image>
   </movable-view>
   <view class="container">
 

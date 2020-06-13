@@ -93,37 +93,37 @@ Page({
   },
 
 
-  async test() {
-    wx.chooseImage({
-      count:1,
-      success: res =>{
-        wx.request({
-          url: res.tempFilePaths[0],
-          responseType: 'arraybuffer',
-          success: async image => {
-            let result = await wx.cloud.callFunction({
-              name: 'printText',
-              data: {
-                envID: getApp().globalData.envID,
-                buffer: image.data
-              }
-            })
-            console.log(result)
-          }
-        })
-        // console.log(res.tempFilePaths)
-        // let result = await wx.cloud.callFunction({
-        //   name: 'printText',
-        //   data: {
-        //     envID: getApp().globalData.envID,
-        //     imgurl: res.tempFilePaths[0]
-        //   }
-        // })
-        // console.log(result.items)
-      },
-      complete: (res) => {},
-    })
-  },
+  // async test() {
+  //   wx.chooseImage({
+  //     count:1,
+  //     success: res =>{
+  //       wx.request({
+  //         url: res.tempFilePaths[0],
+  //         responseType: 'arraybuffer',
+  //         success: async image => {
+  //           let result = await wx.cloud.callFunction({
+  //             name: 'printText',
+  //             data: {
+  //               envID: getApp().globalData.envID,
+  //               buffer: image.data
+  //             }
+  //           })
+  //           console.log(result)
+  //         }
+  //       })
+  //       // console.log(res.tempFilePaths)
+  //       // let result = await wx.cloud.callFunction({
+  //       //   name: 'printText',
+  //       //   data: {
+  //       //     envID: getApp().globalData.envID,
+  //       //     imgurl: res.tempFilePaths[0]
+  //       //   }
+  //       // })
+  //       // console.log(result.items)
+  //     },
+  //     complete: (res) => {},
+  //   })
+  // },
   btnMove(e){
     // console.log(e)
     if (timer) {
