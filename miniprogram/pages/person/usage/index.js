@@ -5,9 +5,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+      activeId: ''
     },
-
+    showMore(e){
+      this.setData({
+        activeId: e.detail.id
+      })
+    },
     // del: function(){
     //   wx.cloud.callFunction({
     //     name: 'delUsers',
