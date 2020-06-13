@@ -9,19 +9,19 @@ Page({
       {
         id: 'func',
         name: '云函数',
-        imgUrl: './pics/云函数.png',
+        imgUrl: './pics/cloudFunction.png',
         url: '../cloudFunction/index',
         children: ['简单云函数', '获取信息']
       },{
         id: 'database',
         name: '云数据库',
-        imgUrl: './pics/云数据库.png',
+        imgUrl: './pics/cloudDatabase.png',
         url: '../cloudDatabase/index',
         children: ['创建集合', '添加数据', '查询数据', '更新数据', '删除数据', '服务端时间']
       },{
         id: 'storage',
         name: '云存储',
-        imgUrl: './pics/云存储.png',
+        imgUrl: './pics/cloudStorage.png',
         url: '../cloudStorage/index',
         children: ['存储文本', '存储文件', '删除文件']
       },{
