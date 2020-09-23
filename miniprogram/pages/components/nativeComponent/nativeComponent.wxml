@@ -36,6 +36,11 @@
         <cameraExample></cameraExample>
       </view>
       </van-tab>
+      <van-tab title="textarea" :name="5">
+        <view wx:if="{{currentPage == 5}}">
+          <myTextArea/>
+        </view>
+      </van-tab>
     </van-tabs>
   </view>
 </movable-area>

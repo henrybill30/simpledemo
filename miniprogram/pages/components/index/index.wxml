@@ -4,7 +4,7 @@
   </movable-view>
 
   <view class="container">
-    <image style="width: {{windowWidth}}px; height: {{(windowWidth*1)/3}}px;background-color: #f7fcfe" src="./pics/index2.png"></image>
+    <image style="width: {{windowWidth}}px; height: {{(windowWidth*1)/3}}px;background-color: #f7fcfe" src="./pics/index.png"></image>
 
     <view class="items">
       <view class="item bg1" wx:for-items="{{ list }}" wx:for-index="idx" wx:key="index" id="{{ item.id }}" data-num="{{item.children.length}}" bindtap="kindToggle">

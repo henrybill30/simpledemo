@@ -1,4 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "myImage": "./components/imagecom/index",
+    "myScrollView": "./components/myScrollView/index"
+  },
   "navigationBarTitleText": "信息呈现"
 }

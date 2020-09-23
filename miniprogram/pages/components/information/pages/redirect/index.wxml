@@ -1,0 +1,3 @@
+<!--miniprogram/pages/components/information/pages/redirect/index.wxml-->
+<text>路由跳转测试：{{ title }} </text>
+<view>由于刚刚的页面已经被关闭，点击左上角返回，会直接回到首页</view>

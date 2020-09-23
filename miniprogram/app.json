@@ -63,7 +63,9 @@
     "pages/components/cloudStorage/index",
     "pages/components/cloudAPI/index",
     "pages/components/APIindex/index",
-    "pages/components/lifecycle/lifecycle"
+    "pages/components/lifecycle/lifecycle",
+    "pages/components/information/pages/navigate/index",
+    "pages/components/information/pages/redirect/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

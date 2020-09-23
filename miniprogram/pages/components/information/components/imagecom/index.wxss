@@ -1,0 +1,42 @@
+@import "../../weui.wxss";
+
+.control-area{
+  padding: 0 0 5rpx 5rpx;
+}
+.page-section{
+  width: 95%;
+  margin-bottom: 60rpx;
+}
+.page-section_center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-section:last-child{
+  margin-bottom: 0;
+}
+.page-section-gap{
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.page-section-spacing{
+  box-sizing: border-box;
+  padding: 0 80rpx;
+}
+.page-section-title{
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 10rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.page-section-gap .page-section-title{
+  padding-left: 0;
+  padding-right: 0;
+}
+.picker-sty{
+  border: 1px solid #999999;
+  padding: 10rpx 15rpx;
+  border-radius: 4rpx;
+  color: #7F95E7;
+}

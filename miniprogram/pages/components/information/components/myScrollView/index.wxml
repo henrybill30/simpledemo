@@ -1,0 +1,36 @@
+<demo-block title="基础用法">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" height="80" name="scroll-view" type="basic" num="0">
+    <view class="page-section-spacing">
+      <scroll-view class="{{scroll_direction == true ? '' : 'scroll-view_H'}}" scroll-y="{{scroll_direction}}" scroll-x="{{!scroll_direction}}"  style="height: 300rpx;" refresher-enabled="{{refresher}}">
+        <view id="demo1" class="{{scroll_direction == true ? 'scroll-view-item' : 'scroll-view-item_H'}} demo-text-1"></view>
+        <view id="demo2"  class="{{scroll_direction == true ? 'scroll-view-item' : 'scroll-view-item_H'}} demo-text-2"></view>
+        <view id="demo3" class="{{scroll_direction == true ? 'scroll-view-item' : 'scroll-view-item_H'}} demo-text-3"></view>
+      </scroll-view>
+      </view>
+  </demo-code>
+  <view class="control-area">
+    <view class="page-section" style="margin-top: 20rpx;margin-bottom: 0;">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_radio">
+          <radio-group bindchange="switch">
+            <label style="margin-left:40rpx">
+              <radio value="scrollY" checked="{{scroll_direction}}">纵向滚动</radio>
+            </label>
+            <label style="margin-left:120rpx">
+              <radio value="scrollX" checked="{{!scroll_direction}}">横向滚动</radio>
+            </label>
+          </radio-group>
+        </view>
+      </view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_switch">
+          <view class="weui-cell__bd">开启下拉刷新状态</view>
+            <view class="weui-cell__ft">
+              <switch checked="{{refresher}}" bindchange="changeProperty" data-property-name="refresher" />
+            </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</demo-block>
+

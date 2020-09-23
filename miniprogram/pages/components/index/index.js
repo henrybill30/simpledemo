@@ -11,7 +11,7 @@ Page({
         imgUrl: './pics/information.png',
         name: '信息呈现',
         url: '../information/information',
-        children: ['view', 'text', 'icon', 'progress', 'rich-text', 'swiper']
+        children: ['view', 'text', 'image', 'navigator', 'icon', 'progress', 'rich-text', 'swiper', 'scroll-view']
       },
       {
         id: 'dataAndinteract',
@@ -25,7 +25,7 @@ Page({
         name: '原生组件',
         imgUrl: './pics/nativeCpmponent.png',
         url: '../nativeComponent/nativeComponent',
-        children: ['audio', 'video', 'map', 'canvas', 'camera']
+        children: ['audio', 'video', 'map', 'canvas', 'camera', 'textarea']
       }, {
         id: 'layout', // 路径
         name: '样式布局', // 类目说明

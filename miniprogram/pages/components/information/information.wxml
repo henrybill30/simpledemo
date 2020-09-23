@@ -61,8 +61,27 @@
         </demo-block>
         </view>
       </van-tab>
-      <van-tab title="icon" :name="2">
+      <van-tab title="image" :name="2">
         <view wx:if="{{currentPage == 2}}">
+          <myImage/>
+        </view>
+      </van-tab>
+      <van-tab title="navigator" :name="3">
+        <view wx:if="{{currentPage == 3}}">
+          <view>
+            <demo-block title="基础用法">
+              <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="navigator" type="basic" num="0">
+                <navigator url="./pages/navigate/index?title=navigate" hover-class="navigator-hover">跳转到新页面</navigator>
+                <navigator url="./pages/redirect/index?title=redirect" open-type="redirect" hover-class="other-navigator-hover">关闭当前页面，跳转到应用内的某个页面</navigator>
+            
+              </demo-code>
+            </demo-block>
+            
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="icon" :name="4">
+        <view wx:if="{{currentPage == 4}}">
           <demo-block title="基础用法">
             <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" name="icon" type="basic" num="0">
               <view style="display:flex;margin-bottom:20rpx">
@@ -145,8 +164,8 @@
           </demo-block>
         </view>
       </van-tab>
-      <van-tab title="progress" :name="3">
-        <view wx:if="{{currentPage == 3}}">
+      <van-tab title="progress" :name="5">
+        <view wx:if="{{currentPage == 5}}">
           <demo-block title="基础用法">
             <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="80" name="progress" type="basic" num="0">
               <progress percent="40" show-info stroke-width="3"/>
@@ -160,8 +179,8 @@
           </demo-block>
         </view>
       </van-tab>
-      <van-tab title="rich-text" :name="4">
-        <view wx:if="{{currentPage == 4}}">
+      <van-tab title="rich-text" :name="6">
+        <view wx:if="{{currentPage == 6}}">
           <demo-block title="基础用法">
             <view class="card-title">传入html字符串</view>
             <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="120" name="richtext" type="basic" num="0">
@@ -207,8 +226,8 @@
           </demo-block>
         </view>
       </van-tab>
-      <van-tab title="swiper" :name="5">
-        <view wx:if="{{currentPage == 5}}">
+      <van-tab title="swiper" :name="7">
+        <view wx:if="{{currentPage == 7}}">
           <view>
             <demo-block title="基础用法">
               <demo-code bindshowMore="showMore" activeId="{{activeId}}" currentPage="{{currentPage}}" height="320" name="swiper" type="basic" num="0">
@@ -282,6 +301,13 @@
           </view>
         </view>
       </van-tab>
+      <van-tab title="scroll-view" :name="8">
+        <view wx:if="{{currentPage == 8}}">
+          <myScrollView/>
+        </view>
+      </van-tab>
+      
+      
     </van-tabs>
   </view>
 </movable-area>

@@ -1,0 +1,27 @@
+<demo-block title="基础用法">
+  <demo-code bindshowMore="showMore" activeId="{{activeId}}" height="80" name="image" type="basic" num="0">
+    <image src="./image.jpg" mode="{{modes[index]}}" lazy-load="{{lazyLoad}}" show-menu-by-longpress="{{isShow}}"></image>
+  </demo-code>
+  <view class="control-area">
+      <view class="page-section" style="margin-top: 20rpx;margin-bottom: 0;">
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_switch">
+            <view class="weui-cell__bd">长按图片显示识别小程序码菜单</view>
+            <view class="weui-cell__ft">
+              <switch checked="{{isShow}}" bindchange="changeProperty" data-property-name="isShow" />
+            </view>
+          </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+          <view class="weui-cell weui-cell_switch">
+            <view class="weui-cell__bd">剪裁、缩放模式</view>
+            <view class="weui-cell__ft">
+              <picker range="{{modes}}" value="{{index}}" bindchange="modeChange">
+                <view class="picker-sty">{{modes[index]}}</view>
+              </picker>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+</demo-block>
