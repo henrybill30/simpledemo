@@ -1,4 +1,11 @@
 
+navigator{
+  text-align: center;
+  border: 1px solid #ccc;
+  padding: 5rpx;
+  margin: 10rpx 0;
+}
+
 .left-btn{
   position: fixed;
   left: 5rpx;

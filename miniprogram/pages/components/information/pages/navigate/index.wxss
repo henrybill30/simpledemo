@@ -1,1 +1,4 @@
 /* miniprogram/pages/components/information/pages/navigate/index.wxss */
+text{
+  padding: 10rpx;
+}

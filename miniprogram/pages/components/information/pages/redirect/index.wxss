@@ -1,1 +1,7 @@
 /* miniprogram/pages/components/information/pages/redirect/index.wxss */
+text{
+  padding: 10rpx 20rpx;
+}
+view{
+  padding: 0rpx 20rpx;
+}
