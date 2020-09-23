@@ -11,7 +11,8 @@ Component({
       state: false,
       num: 0
     },
-    componentId: '-1'
+    componentId: '-1',
+    isIOS: null
   },
   options: {
     // multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -369,6 +370,10 @@ Component({
     attached: async function () {
       // 在组件实例进入页面节点树时执行
       let that = this
+      this.setData({
+        isIOS: getApp().globalData.phoneSystem
+      })
+      
       wx.cloud.callFunction({
         name: "getComponent",
         data: {

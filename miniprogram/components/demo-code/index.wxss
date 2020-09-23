@@ -64,7 +64,23 @@
   max-width: 600rpx;
   transition: max-width .5s;
 }
-.more .toolbar {
+.more-ios {
+  position: absolute;
+  height: 100rpx;
+  max-width: 600rpx;
+  overflow: hidden;
+  top: 16rpx;
+  right: 60rpx;
+  visibility: hidden;
+  transition: visibility .5s;
+  display: flex;
+  transform: translateY(-50%);
+}
+.more-checked-ios {
+  visibility: visible;
+  transition: visibility .5s;
+}
+.more .toolbar, .more-ios .toolbar {
   padding: 0 30rpx;
   display: flex;
   align-items: center;

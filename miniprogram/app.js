@@ -34,6 +34,16 @@ App({
     }else{
       this.globalData.openid = res.result.openid
     }
+    
+    wx.getSystemInfo({
+      success(res) {
+        let obj = {
+          platform: res.platform
+        }
+        that.globalData.phoneSystem = (obj.platform === 'ios')
+      }
+    })
+
   },
   globalData: {
     envID: envID,
@@ -49,7 +59,8 @@ App({
     movedBtn:{
       x: 0,
       y: 0
-    }
+    },
+    phoneSystem: false  // false标识安卓；true标识ios
   }
 })
 
@@ -66,3 +77,5 @@ App({
 //   "iconPath": "./pages/components/componentstear/积木编程.png",
 //   "selectedIconPath": "./pages/components/componentstear/积木编程 (1).png"
 // },
+
+
