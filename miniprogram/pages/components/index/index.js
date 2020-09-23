@@ -25,7 +25,7 @@ Page({
         name: '原生组件',
         imgUrl: './pics/nativeCpmponent.png',
         url: '../nativeComponent/nativeComponent',
-        children: ['audio', 'video', 'map', 'canvas', 'camera', 'textarea']
+        children: ['audio', 'map', 'canvas', 'camera', 'textarea']
       }, {
         id: 'layout', // 路径
         name: '样式布局', // 类目说明

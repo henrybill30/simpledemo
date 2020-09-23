@@ -5,7 +5,7 @@
     "list": [
       {
         "pagePath": "pages/components/index/index",
-        "text": "最简组件",
+        "text": "小程序组件",
         "iconPath": "./lib/pic/识别1.png",
         "selectedIconPath": "./lib/pic/识别2.png"
       },
