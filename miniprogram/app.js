@@ -44,6 +44,26 @@ App({
       }
     })
 
+    // 获取是否已存储学号信息
+    wx.cloud.callFunction({
+      name: 'get_userInfo',
+      data: {
+        envID: getApp().globalData.envID,
+        openid: getApp().globalData.openid
+      },
+      success: res => {
+        console.log(res.result.res[0].stuNum===undefined,'llll')
+        if(res.result.res[0].stuNum===undefined){
+          that.globalData.stuNumExist = false;
+        } else {
+          that.globalData.stuNumExist = true;
+        }
+      },
+      fail: err => {
+        console.log(err)
+      }
+    })
+
   },
   globalData: {
     envID: envID,
@@ -60,6 +80,7 @@ App({
       x: 0,
       y: 0
     },
+    stuNumExist: false,
     phoneSystem: false  // false标识安卓；true标识ios
   }
 })

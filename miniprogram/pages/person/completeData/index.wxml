@@ -1,0 +1,40 @@
+<view class="flex-row" style="margin-top: 80rpx">
+  <view class="text">学号</view>
+  <van-field
+      value="{{ stuNum }}"
+      placeholder="请输入您的学号"
+      border="{{ false }}"
+      bind:change="onChangeNum"
+    />
+</view>
+<view class="error">{{ stuNumErr }}</view>
+<view class="flex-row">
+  <view class="text">姓名</view>
+  <van-field
+      value="{{ stuName }}"
+      placeholder="请输入您的姓名"
+      border="{{ false }}"
+      bind:change="onChangeName"
+    />
+</view>
+<view class="error">{{ stuNameErr }}</view>
+<!-- <view class="flex-row">
+  <view class="text">班级</view>
+  <van-field
+      value="{{ value }}"
+      placeholder="请输入您的班级"
+      border="{{ false }}"
+      bind:change="onChange"
+    />
+</view>
+<view class="flex-row">
+  <view class="text">学校</view>
+  <van-field
+      value="{{ value }}"
+      placeholder="请输入您的学校名称"
+      border="{{ false }}"
+      bind:change="onChange"
+    />
+</view> -->
+<button wx:if="{{ loginFlag }}" type="primary" bindtap="submit" disabled="{{stuNameErr!==''||stuNumErr!==''}}">提交</button>
+<button wx:else type="primary" open-type="getUserInfo" disabled="{{stuNameErr!==''||stuNumErr!==''}}" bindgetuserinfo="login">提交</button>

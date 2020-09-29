@@ -26,10 +26,15 @@
     </view>  
   </view> 
   <view wx:if="{{ loginflag }}" class="font-box">
-    <view>
+    <view class="flex-row">
       <!-- 昵称： -->
       <open-data type="userNickName" lang="zh_CN"></open-data>
+      <view wx:if="{{ !stuNumExist }}" class="complete-data" bindtap="completeData">完善资料</view>
     </view>
+    <!-- <view wx:else>
+      <open-data type="userNickName" lang="zh_CN"></open-data>
+      <view>完善资料</view>
+    </view> -->
     <!-- <view>
       身份：
       <text wx:if="{{ identity=='student'}}">学生</text>
@@ -40,7 +45,8 @@
 
   </view>
   <view wx:else class="font-box">
-    <button style="width:100%;height:30%;background-color: transparent"open-type="getUserInfo" bindgetuserinfo="login">授权/登录</button>
+    <button wx:if="{{ stuNumExist }}" style="width:100%;height:30%;background-color: transparent" open-type="getUserInfo" bindgetuserinfo="login">授权/登录</button>
+    <button wx:if="{{ !stuNumExist }}" style="width:100%;height:30%;background-color: transparent" bindtap="sign">注册/登录</button> 
   </view>
 </view>
 

@@ -17,8 +17,6 @@ exports.main = async (event, context) => {
   try{
     var res = await user.where({
       openid: event.openid
-    }).field({
-      flag: true
     }).get()
   }catch(e){
     return{

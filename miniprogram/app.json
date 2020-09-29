@@ -65,7 +65,8 @@
     "pages/components/APIindex/index",
     "pages/components/lifecycle/lifecycle",
     "pages/components/information/pages/navigate/index",
-    "pages/components/information/pages/redirect/index"
+    "pages/components/information/pages/redirect/index",
+    "pages/person/completeData/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

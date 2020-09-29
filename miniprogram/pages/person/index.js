@@ -11,6 +11,8 @@ Page({
     loginflag: false,
     windowWidth: 0,
     windowHeight: 0,
+    stuNumExist: false,
+    stuNum: ''
   },
   headimgHD:function () {
     if(!this.data.loginflag){
@@ -37,9 +39,17 @@ Page({
       showimg: false
     })
   },
-
+  completeData() {
+    console.log("完善资料");
+    wx.navigateTo({
+      url: './completeData/index'
+    })
+  },
+  sign(){
+    this.completeData();
+  },
   async login(e){
-    let that = this
+    let that = this;
     getApp().globalData.nickname = JSON.parse(e.detail.rawData).nickName
     let res = await wx.cloud.callFunction({
       name: 'login',
@@ -51,23 +61,7 @@ Page({
     console.log(res)
     getApp().globalData.openid = res.result.openid
     getApp().globalData.loginFlag = true
-    wx.cloud.callFunction({
-      name: 'get_userInfo',
-      data: {
-        envID: getApp().globalData.envID,
-        openid: getApp().globalData.openid
-      },
-      success: res => {
-        // console.log(res.result)
-        that.setData({
-          identity: res.result.res[0].flag
-        })
-      },
-      fail: err => {
-        console.log(err)
-      }
-    })
-    that.setData({
+    this.setData({
       loginflag: true
     })
   },
@@ -155,7 +149,6 @@ Page({
           openid: getApp().globalData.openid
         },
         success: res => {
-          // console.log(res.result)
           that.setData({
             identity: res.result.res[0].flag
           })
@@ -167,16 +160,37 @@ Page({
     }
 
     that.setData({
-      loginflag: getApp().globalData.loginFlag
+      loginflag: getApp().globalData.loginFlag,
+      stuNumExist: getApp().globalData.stuNumExist
     })
   },
   onReady: function () {
   },
   onShow(){
     let isNewUser = getApp().globalData.isNewUser
+    console.log(getApp().globalData.loginFlag)
     this.setData({
-      isNewUser: isNewUser
+      isNewUser: isNewUser,
+      stuNumExist: getApp().globalData.stuNumExist,
+      loginflag: getApp().globalData.loginFlag
     })
+    // if(getApp().globalData.stuNumExist){
+    //   wx.cloud.callFunction({
+    //     name: 'get_userInfo',
+    //     data: {
+    //       envID: getApp().globalData.envID,
+    //       openid: getApp().globalData.openid
+    //     },
+    //     success: res => {
+    //       that.setData({
+    //         identity: res.result.res[0].flag
+    //       })
+    //     },
+    //     fail: err => {
+    //       console.log(err)
+    //     }
+    //   })
+    // }
   },
   onReady: function () {
   },

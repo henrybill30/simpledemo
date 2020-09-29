@@ -18,6 +18,7 @@ Page({
     imgList: [], // 图片
     deletable: false // 图片选择使用
   },
+  
   // options 选择
   onChange(event) {
     this.setData({

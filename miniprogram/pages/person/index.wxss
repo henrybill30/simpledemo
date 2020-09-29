@@ -6,6 +6,15 @@
   /* opacity: 0.8; */
   z-index: -1;
 }
+.flex-row{
+  display: flex;
+  justify-content: start;
+}
+.complete-data{
+  margin: 0 20px;
+  color: rgb(35, 102, 209);
+  /* font-weight: 600; */
+}
 .user{
   width: 100vw;
   height: 260rpx;

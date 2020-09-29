@@ -1,0 +1,23 @@
+.flex-row{
+  display: flex;
+  justify-content: start;
+  background-color: #fff;
+  /* margin-bottom: 50rpx; */
+}
+.text{
+  line-height: 88rpx;
+  padding: 0 30rpx;
+}
+.error{
+  line-height: 48rpx;
+  height: 60rpx;
+  margin-left: 160rpx;
+  color: red;
+  font-size: 26rpx;
+}
+page{
+  background-color: #F7F8FA;
+}
+van-field{
+  flex: 1;
+}

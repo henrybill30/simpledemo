@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-field": "/lib/dist/field/index"
+  },
+  "navigationBarTitleText": "完善资料"
+}

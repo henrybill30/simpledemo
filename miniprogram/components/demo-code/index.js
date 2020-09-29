@@ -54,8 +54,9 @@ Component({
     throttlecollected:throttle(function () {
       this.collected()
     }),
-    collected(){
-      if(!getApp().globalData.loginFlag){
+    showTip(flag) {
+      // 0：未授权用户； 1：老用户，但没学号
+      if(flag === 0){
         wx.showModal({
           title: '提示',
           content: '请先登录授权',
@@ -69,12 +70,40 @@ Component({
               })
             }else if(res.cancel){
               wx.showToast({
-                title: '这样就无法查看代码或收藏哦~',
+                title: '这样就无法查看或收藏代码哦~',
                 icon: 'none'
               })
             }
           }
         })
+      } else {
+        wx.showModal({
+          title: '提示',
+          content: '请先完善个人信息',
+          confirmText: '前往',
+          confirmColor: '#1685a9',
+          cancelColor: '#9ea1a3',
+          success: res => {
+            if(res.confirm){
+              wx.switchTab({
+                url: '/pages/person/index'
+              })
+            }else if(res.cancel){
+              wx.showToast({
+                title: '这样就无法查看或收藏代码哦~',
+                icon: 'none'
+              })
+            }
+          }
+        })
+      }
+      
+    },
+    collected(){
+      if(!getApp().globalData.loginFlag){
+        this.showTip(0);
+      } else if(!getApp().globalData.stuNumExist){
+        this.showTip(1);
       }else{
         const pages = getCurrentPages()
         let that = this
@@ -142,26 +171,10 @@ Component({
         id: ''
       }, {})
       if(!getApp().globalData.loginFlag){
-        wx.showModal({
-          title: '提示',
-          content: '请先登录授权',
-          confirmText: '前去登录',
-          confirmColor: '#1685a9',
-          cancelColor: '#9ea1a3',
-          success: res => {
-            if(res.confirm){
-              wx.switchTab({
-                url: '/pages/person/index'
-              })
-            }else if(res.cancel){
-              wx.showToast({
-                title: '这样就无法查看代码或收藏哦~',
-                icon: 'none'
-              })
-            }
-          }
-        })
-      }else{
+        this.showTip(0);
+      } else if(!getApp().globalData.stuNumExist){
+        this.showTip(1);
+      } else {
         this.setData({
           showcode: !this.data.showcode
         })
@@ -190,26 +203,10 @@ Component({
     },
     feedback: function (event) {
       if(!getApp().globalData.loginFlag){
-        wx.showModal({
-          title: '提示',
-          content: '请先登录授权',
-          confirmText: '前去登录',
-          confirmColor: '#1685a9',
-          cancelColor: '#9ea1a3',
-          success: res => {
-            if(res.confirm){
-              wx.switchTab({
-                url: '/pages/person/index'
-              })
-            }else if(res.cancel){
-              wx.showToast({
-                title: '这样就无法查看代码或收藏哦~',
-                icon: 'none'
-              })
-            }
-          }
-        })
-      }else{
+        this.showTip(0);
+      } else if(!getApp().globalData.stuNumExist){
+        this.showTip(1);
+      } else {
         const { name, type, num } = this.properties
         const component = JSON.stringify({
           name, type, num

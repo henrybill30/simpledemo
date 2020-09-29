@@ -79,13 +79,11 @@ exports.main = async (event, context) => {
       openid: wxContext.OPENID
     }
   }
-  await users.doc(a.data[0]._id).set({
+  await users.doc(a.data[0]._id).update({
     data:{
-      openid: a.data[0].openid,
-      username: event.username,
-      flag: a.data[0].flag
+      username: event.username
     }
-  })
+  }) 
 
   return {
     state: true,
