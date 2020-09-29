@@ -15,29 +15,29 @@
       </view>
       </van-tab>
 
-      <van-tab title="video" :name="1">
+      <!-- <van-tab title="video" :name="1">
       <view wx:if="{{currentPage == 1}}">
         <videoExample></videoExample>
       </view>
-      </van-tab>
+      </van-tab> -->
 
-      <van-tab title="map" :name="2">
-      <view wx:if="{{currentPage == 2}}">
+      <van-tab title="map" :name="1">
+      <view wx:if="{{currentPage == 1}}">
         <mapExample></mapExample>
       </view>
       </van-tab>
-      <van-tab title="canvas" :name="3">
-      <view wx:if="{{currentPage == 3}}">
+      <van-tab title="canvas" :name="2">
+      <view wx:if="{{currentPage == 2}}">
         <canvasExample></canvasExample>
       </view>
       </van-tab>
-      <van-tab title="camera" :name="4">
-      <view wx:if="{{currentPage == 4}}">
+      <van-tab title="camera" :name="3">
+      <view wx:if="{{currentPage == 3}}">
         <cameraExample></cameraExample>
       </view>
       </van-tab>
-      <van-tab title="textarea" :name="5">
-        <view wx:if="{{currentPage == 5}}">
+      <van-tab title="textarea" :name="4">
+        <view wx:if="{{currentPage == 4}}">
           <myTextArea/>
         </view>
       </van-tab>

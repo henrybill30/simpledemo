@@ -57,8 +57,7 @@
             <!-- <view style="width: 30rpx"></view> -->
           </view>
         </view>
-      </view>
-      
+      </view>  
       <van-icon bindtap="showMore" name="ellipsis" />
     </view>
   </view>
