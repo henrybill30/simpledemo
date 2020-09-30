@@ -94,6 +94,7 @@
     "van-icon": "./lib/dist/icon/index",
     "nav-button": "./components/nav-button/navbutton",
     "van-tabs": "./lib/dist/tabs/index",
-    "van-tab": "./lib/dist/tab/index"
+    "van-tab": "./lib/dist/tab/index",
+    "van-notice-bar": "./lib/dist/notice-bar/index"
   }
 }

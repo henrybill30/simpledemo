@@ -120,6 +120,13 @@
 					"id": -1,
 					"name": "pages/person/usage/index",
 					"pathName": "pages/person/usage/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "用户信息",
+					"pathName": "pages/person/completeData/index",
 					"scene": null
 				}
 			]
