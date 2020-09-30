@@ -264,82 +264,82 @@ Component({
         }
       })
     },
-    // copyhtml: function (e) {
-    //   var content = this.properties.htmlcode.split("@@")[1];
-    //   wx.showActionSheet({
-    //     itemList: ['复制代码'],
-    //     success(res) {
-    //       var tabIndex = res.tapIndex;
-    //       if (tabIndex == 0) {
-    //         wx.setClipboardData({
-    //           data: content,
-    //           success(res) {
-    //             wx.showToast({
-    //               title: '代码已复制'
-    //             })
-    //           }
-    //         })
-    //       }
-    //     }
-    //   })
-    // },
-    // copyjs: function (e) {
-    //   var content = this.properties.jscode.split("@@")[1];
-    //   wx.showActionSheet({
-    //     itemList: ['复制代码'],
-    //     success(res) {
-    //       var tabIndex = res.tapIndex;
-    //       if (tabIndex == 0) {
-    //         wx.setClipboardData({
-    //           data: content,
-    //           success(res) {
-    //             wx.showToast({
-    //               title: '代码已复制'
-    //             })
-    //           }
-    //         })
-    //       }
-    //     }
-    //   })
-    // },
-    // copycss: function (e) {
-    //   var content = this.properties.csscode.split("@@")[1];
-    //   wx.showActionSheet({
-    //     itemList: ['复制代码'],
-    //     success(res) {
-    //       var tabIndex = res.tapIndex;
-    //       if (tabIndex == 0) {
-    //         wx.setClipboardData({
-    //           data: content,
-    //           success(res) {
-    //             wx.showToast({
-    //               title: '代码已复制'
-    //             })
-    //           }
-    //         })
-    //       }
-    //     }
-    //   })
-    // },
-    // copycloud: function (e) {
-    //   var content = this.properties.cloudcode.split("@@")[1];
-    //   wx.showActionSheet({
-    //     itemList: ['复制代码'],
-    //     success(res) {
-    //       var tabIndex = res.tapIndex;
-    //       if (tabIndex == 0) {
-    //         wx.setClipboardData({
-    //           data: content,
-    //           success(res) {
-    //             wx.showToast({
-    //               title: '代码已复制'
-    //             })
-    //           }
-    //         })
-    //       }
-    //     }
-    //   })
-    // },
+    copyhtml: function (e) {
+      var content = this.properties.htmlcode.split("@@")[1];
+      wx.showActionSheet({
+        itemList: ['复制代码'],
+        success(res) {
+          var tabIndex = res.tapIndex;
+          if (tabIndex == 0) {
+            wx.setClipboardData({
+              data: content,
+              success(res) {
+                wx.showToast({
+                  title: '代码已复制'
+                })
+              }
+            })
+          }
+        }
+      })
+    },
+    copyjs: function (e) {
+      var content = this.properties.jscode.split("@@")[1];
+      wx.showActionSheet({
+        itemList: ['复制代码'],
+        success(res) {
+          var tabIndex = res.tapIndex;
+          if (tabIndex == 0) {
+            wx.setClipboardData({
+              data: content,
+              success(res) {
+                wx.showToast({
+                  title: '代码已复制'
+                })
+              }
+            })
+          }
+        }
+      })
+    },
+    copycss: function (e) {
+      var content = this.properties.csscode.split("@@")[1];
+      wx.showActionSheet({
+        itemList: ['复制代码'],
+        success(res) {
+          var tabIndex = res.tapIndex;
+          if (tabIndex == 0) {
+            wx.setClipboardData({
+              data: content,
+              success(res) {
+                wx.showToast({
+                  title: '代码已复制'
+                })
+              }
+            })
+          }
+        }
+      })
+    },
+    copycloud: function (e) {
+      var content = this.properties.cloudcode.split("@@")[1];
+      wx.showActionSheet({
+        itemList: ['复制代码'],
+        success(res) {
+          var tabIndex = res.tapIndex;
+          if (tabIndex == 0) {
+            wx.setClipboardData({
+              data: content,
+              success(res) {
+                wx.showToast({
+                  title: '代码已复制'
+                })
+              }
+            })
+          }
+        }
+      })
+    },
 
     getUnderstand: async function () {
       const { name, type, num } = this.properties
