@@ -5,16 +5,16 @@
   <view class="line" wx:if="{{ showcode }}" bindtap="cancelShowMore"></view>
   <view class="demo-code" wx:if="{{ showcode }}" bindtap="doubleClick">
     <view class="code-type" wx:if="{{ htmlcode&&(codeNum>1) }}">wxml代码</view>
-    <parser selectable class="code-sty" wx:if="{{ htmlcode }}" html="{{htmlcode}}" />
+    <parser selectable class="code-sty" wx:if="{{ htmlcode }}" catchlongpress="copyhtml" html="{{htmlcode}}" />
 
     <view class="code-type" wx:if="{{ cloudcode&&(codeNum>1) }}">云函数代码</view>
-    <parser selectable class="code-sty" wx:if="{{ cloudcode }}" html="{{cloudcode}}" />
+    <parser selectable class="code-sty" wx:if="{{ cloudcode }}" catchlongpress="copycloud" html="{{cloudcode}}" />
 
     <view class="code-type" wx:if="{{ jscode&&(codeNum>1) }}">js代码</view>
-    <parser selectable class="code-sty" wx:if="{{ jscode }}" html="{{jscode}}" />
+    <parser selectable class="code-sty" wx:if="{{ jscode }}" catchlongpress="copyjs" html="{{jscode}}" />
 
     <view class="code-type" wx:if="{{ csscode&&(codeNum>1) }}">wxss代码</view>
-    <parser selectable class="code-sty" wx:if="{{ csscode }}" html="{{csscode}}" />
+    <parser selectable class="code-sty" wx:if="{{ csscode }}" catchlongpress="copycss" html="{{csscode}}" />
   </view>
   <view class="foot">
     <image bindtap="showCode" wx:if="{{ showcode }}" style="height:40rpx;width:40rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/眼睛 (1).png"></image>
