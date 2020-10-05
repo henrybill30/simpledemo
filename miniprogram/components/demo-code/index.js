@@ -265,10 +265,29 @@ Component({
       })
     },
     copyhtml: function (e) {
+      let _this = this;
       var content = this.properties.htmlcode.split("@@")[1];
       wx.showActionSheet({
         itemList: ['复制代码'],
         success(res) {
+          wx.cloud.callFunction({
+            name: 'addRecord',
+            data: {
+              envID: getApp().globalData.envID,
+              openid: getApp().globalData.openid,
+              behavior: 'copyHtml',
+              component: _this.properties.name,
+              cpType: _this.properties.type,
+              cpNum: _this.properties.num,
+              time: new Date()
+            },
+            success: res => {
+              console.log("result: " + JSON.stringify(res.result))
+            },
+            fail: err => {
+              console.log("error: " + JSON.stringify(err))
+            }
+          })
           var tabIndex = res.tapIndex;
           if (tabIndex == 0) {
             wx.setClipboardData({
@@ -284,10 +303,29 @@ Component({
       })
     },
     copyjs: function (e) {
+      let _this = this;
       var content = this.properties.jscode.split("@@")[1];
       wx.showActionSheet({
         itemList: ['复制代码'],
         success(res) {
+          wx.cloud.callFunction({
+            name: 'addRecord',
+            data: {
+              envID: getApp().globalData.envID,
+              openid: getApp().globalData.openid,
+              behavior: 'copyJs',
+              component: _this.properties.name,
+              cpType: _this.properties.type,
+              cpNum: _this.properties.num,
+              time: new Date()
+            },
+            success: res => {
+              console.log("result: " + JSON.stringify(res.result))
+            },
+            fail: err => {
+              console.log("error: " + JSON.stringify(err))
+            }
+          })
           var tabIndex = res.tapIndex;
           if (tabIndex == 0) {
             wx.setClipboardData({
@@ -303,10 +341,29 @@ Component({
       })
     },
     copycss: function (e) {
+      let _this = this;
       var content = this.properties.csscode.split("@@")[1];
       wx.showActionSheet({
         itemList: ['复制代码'],
         success(res) {
+          wx.cloud.callFunction({
+            name: 'addRecord',
+            data: {
+              envID: getApp().globalData.envID,
+              openid: getApp().globalData.openid,
+              behavior: 'copyWxss',
+              component: _this.properties.name,
+              cpType: _this.properties.type,
+              cpNum: _this.properties.num,
+              time: new Date()
+            },
+            success: res => {
+              console.log("result: " + JSON.stringify(res.result))
+            },
+            fail: err => {
+              console.log("error: " + JSON.stringify(err))
+            }
+          })
           var tabIndex = res.tapIndex;
           if (tabIndex == 0) {
             wx.setClipboardData({
@@ -322,10 +379,29 @@ Component({
       })
     },
     copycloud: function (e) {
+      let _this = this;
       var content = this.properties.cloudcode.split("@@")[1];
       wx.showActionSheet({
         itemList: ['复制代码'],
         success(res) {
+          wx.cloud.callFunction({
+            name: 'addRecord',
+            data: {
+              envID: getApp().globalData.envID,
+              openid: getApp().globalData.openid,
+              behavior: 'copyCloud',
+              component: _this.properties.name,
+              cpType: _this.properties.type,
+              cpNum: _this.properties.num,
+              time: new Date()
+            },
+            success: res => {
+              console.log("result: " + JSON.stringify(res.result))
+            },
+            fail: err => {
+              console.log("error: " + JSON.stringify(err))
+            }
+          })
           var tabIndex = res.tapIndex;
           if (tabIndex == 0) {
             wx.setClipboardData({
