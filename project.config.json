@@ -1,135 +1,135 @@
 {
-	"miniprogramRoot": "miniprogram/",
-	"cloudfunctionRoot": "cloudfunctions/",
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"enhance": true,
-		"postcss": true,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"compileHotReLoad": false,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useIsolateContext": true,
-		"useCompilerModule": false,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
-	"appid": "wxf73004190ea43234",
-	"projectname": "newsimpledemo",
-	"libVersion": "2.11.0",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "db guide",
-					"pathName": "pages/databaseGuide/databaseGuide",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "pages/components/dataAndinteract/button/button",
-					"pathName": "pages/components/dataAndinteract/button/button",
-					"query": "",
-					"scene": 1008
-				},
-				{
-					"id": -1,
-					"name": "pages/components/layout/layout",
-					"pathName": "pages/components/layout/layout",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/components/cloud/cloud",
-					"pathName": "pages/components/cloud/cloud",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/person/index",
-					"pathName": "pages/person/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/person/feedback/index",
-					"pathName": "pages/person/feedback/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/person/changelog/index",
-					"pathName": "pages/person/changelog/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/components/information/information",
-					"pathName": "pages/components/information/information",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/person/ocr/index",
-					"pathName": "pages/person/ocr/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/person/usage/index",
-					"pathName": "pages/person/usage/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "用户信息",
-					"pathName": "pages/person/completeData/index",
-					"scene": null
-				}
-			]
-		}
-	}
+  "miniprogramRoot": "miniprogram/",
+  "cloudfunctionRoot": "cloudfunctions/",
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "coverView": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": false,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "appid": "wxf73004190ea43234",
+  "projectname": "newsimpledemo",
+  "libVersion": "2.11.0",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+  "condition": {
+    "search": {
+      "list": []
+    },
+    "conversation": {
+      "list": []
+    },
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "id": -1,
+          "name": "pages/components/dataAndinteract/button/button",
+          "pathName": "pages/components/dataAndinteract/button/button",
+          "query": "",
+          "scene": 1008
+        },
+        {
+          "id": -1,
+          "name": "pages/components/layout/layout",
+          "pathName": "pages/components/layout/layout",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/components/cloud/cloud",
+          "pathName": "pages/components/cloud/cloud",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/person/index",
+          "pathName": "pages/person/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/person/feedback/index",
+          "pathName": "pages/person/feedback/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/person/changelog/index",
+          "pathName": "pages/person/changelog/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/components/information/information",
+          "pathName": "pages/components/information/information",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/person/ocr/index",
+          "pathName": "pages/person/ocr/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "pages/person/usage/index",
+          "pathName": "pages/person/usage/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "用户信息",
+          "pathName": "pages/person/completeData/index",
+          "scene": null
+        }
+      ]
+    }
+  }
 }

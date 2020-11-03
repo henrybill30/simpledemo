@@ -17,21 +17,21 @@
     <parser selectable class="code-sty" wx:if="{{ csscode }}" catchlongpress="copycss" html="{{csscode}}" />
   </view>
   <view class="foot">
-    <image bindtap="showCode" wx:if="{{ showcode }}" style="height:40rpx;width:40rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/眼睛 (1).png"></image>
-    <image bindtap="showCode" wx:if="{{ !showcode }}" style="height:40rpx;width:40rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/眼睛.png"></image>
+    <image bindtap="showCode" wx:if="{{ showcode }}" style="height:40rpx;width:40rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/eye.png"></image>
+    <image bindtap="showCode" wx:if="{{ !showcode }}" style="height:40rpx;width:40rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/Eye-Close.png"></image>
     <view style="position: relative">
       <view wx:if="{{ isIOS && activeId==componentId }}" class="more-ios {{ activeId==componentId ? 'more-checked-ios' : '' }}">
         <view class="toolbar">
           <view class="tool" bindtap="throttlecollected">
-            <image wx:if="{{!collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏.png"></image>
-            <image wx:if="{{collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏 (2).png"></image>
+            <image wx:if="{{!collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/Star.png"></image>
+            <image wx:if="{{collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/Star_select.png"></image>
           </view>
           <view class="tool">
-            <image bindtap="feedback" style="height: 44rpx; width: 44rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/feedback.png"></image>
+            <image bindtap="feedback" style="height: 44rpx; width: 44rpx; margin-right: 50rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/feed-back2.png"></image>
           </view>
           <view class="tool" bindtap="throttledUnderstand">
-            <image wx:if="{{ !understand.state }}" style="height: 38rpx; width: 38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/懂1.png"></image>
-            <image wx:if="{{ understand.state }}"style="height: 38rpx; width: 38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/懂2.png"></image>
+            <image wx:if="{{ !understand.state }}" style="height: 38rpx; width: 38rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/good.png"></image>
+            <image wx:if="{{ understand.state }}"style="height: 38rpx; width: 38rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/good_select.png"></image>
             <text class="dot">{{ understand.num }}</text>
           </view>
           <!-- toolbar 右侧 padding 消失，添加一个元素占位 -->
@@ -42,15 +42,15 @@
         <view class="more {{ activeId==componentId ? 'more-checked' : '' }}">
           <view class="toolbar">
             <view class="tool" bindtap="throttlecollected">
-              <image wx:if="{{!collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏.png"></image>
-              <image wx:if="{{collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/收 藏 (2).png"></image>
+              <image wx:if="{{!collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/Star.png"></image>
+              <image wx:if="{{collected}}" style="height:38rpx;width:38rpx; margin-right: 50rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/Star_select.png"></image>
             </view>
             <view class="tool">
-              <image bindtap="feedback" style="height: 44rpx; width: 44rpx; margin-right: 50rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/feedback.png"></image>
+              <image bindtap="feedback" style="height: 44rpx; width: 44rpx; margin-right: 50rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/feed-back2.png"></image>
             </view>
             <view class="tool" bindtap="throttledUnderstand">
-              <image wx:if="{{ !understand.state }}" style="height: 38rpx; width: 38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/懂1.png"></image>
-              <image wx:if="{{ understand.state }}"style="height: 38rpx; width: 38rpx" src="cloud://simpledemo-9jk60.7369-simpledemo-9jk60-1302043964/resource/懂2.png"></image>
+              <image wx:if="{{ !understand.state }}" style="height: 38rpx; width: 38rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/good.png"></image>
+              <image wx:if="{{ understand.state }}"style="height: 38rpx; width: 38rpx" src="cloud://production-5gn4rq0l111386bb.7072-production-5gn4rq0l111386bb-1302043964/good_select.png"></image>
               <text class="dot">{{ understand.num }}</text>
             </view>
             <!-- toolbar 右侧 padding 消失，添加一个元素占位 -->

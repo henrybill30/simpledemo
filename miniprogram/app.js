@@ -1,4 +1,4 @@
-const envID = 'simpledemo-9jk60' //线上版本
+const envID = 'production-5gn4rq0l111386bb' //线上版本
 // const envID = 'test-pjzus'    //测试版本
 App({
   onLaunch: async function() {
